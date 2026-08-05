@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Início | Guardiões do Cerrado</title>
+
+    <link rel="stylesheet" href="css/principal.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<aside class="menu-lateral" id="menuLateral">
+
+    <div class="marca">
+        <div class="marca-icone">
+            🐺
+        </div>
+
+        <div>
+            <strong>Guardiões</strong>
+            <span>do Cerrado</span>
+        </div>
+    </div>
+
+    <nav class="menu">
+
+        <a href="principal.html" class="ativo">
+            <span class="menu-icone">🏠</span>
+            <span>Início</span>
+        </a>
+
+        <a href="missoes.html">
+            <span class="menu-icone">🎯</span>
+            <span>Missões</span>
+        </a>
+
+        <a href="biblioteca.html">
+            <span class="menu-icone">📚</span>
+            <span>Biblioteca</span>
+        </a>
+
+        <a href="quiz.html">
+            <span class="menu-icone">❓</span>
+            <span>Quizzes</span>
+        </a>
+
+        <a href="cerradex.html">
+            <span class="menu-icone">🐾</span>
+            <span>Cerradex</span>
+        </a>
+
+        <a href="diario.html">
+            <span class="menu-icone">📖</span>
+            <span>Diário</span>
+        </a>
+
+        <a href="perfil.html">
+            <span class="menu-icone">👤</span>
+            <span>Perfil</span>
+        </a>
+
+        <a href="configuracoes.html">
+            <span class="menu-icone">⚙️</span>
+            <span>Configurações</span>
+        </a>
+
+    </nav>
+
+    <div class="menu-rodape">
+        <div class="mini-perfil">
+            <div class="mini-avatar">
+                <img
+                    src="assets/imagens/avatar.png"
+                    alt="Avatar"
+                    id="avatarMenu"
+                >
+            </div>
+
+            <div>
+                <strong id="nomeMenu">Guardião</strong>
+                <span id="nivelMenu">Nível 1</span>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+<button
+    type="button"
+    class="botao-menu-mobile"
+    id="botaoMenuMobile"
+    aria-label="Abrir menu"
+>
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<main class="conteudo-principal">
+
+    <section class="hero">
+
+        <div class="hero-decoracao decoracao-1">
+            🍃
+        </div>
+
+        <div class="hero-decoracao decoracao-2">
+            🌿
+        </div>
+
+        <div class="hero-texto">
+
+            <span class="hero-etiqueta">
+                <i class="fa-solid fa-compass"></i>
+                Central do Guardião
+            </span>
+
+            <p class="hero-data" id="dataAtual">
+                Expedição de hoje
+            </p>
+
+            <h1>
+                Bem-vinda,
+                <span id="nomeHero">Guardiã</span>!
+            </h1>
+
+            <p class="hero-descricao">
+                O Cerrado guarda novas descobertas a cada visita.
+                Continue explorando, complete missões e registre
+                novas espécies na sua jornada.
+            </p>
+
+            <div class="hero-acoes">
+
+                <a
+                    href="missoes.html"
+                    class="botao-hero principal"
+                >
+                    <i class="fa-solid fa-compass"></i>
+                    Continuar jornada
+                </a>
+
+                <a
+                    href="diario.html"
+                    class="botao-hero secundario"
+                >
+                    <i class="fa-solid fa-book-open"></i>
+                    Abrir Diário
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-lobo">
+
+            <div class="fala-lobo" id="falaLobo">
+                Que bom que você voltou! Temos muito para explorar hoje.
+            </div>
+
+            <div class="lobo-fundo">
+                <div class="circulo-1"></div>
+                <div class="circulo-2"></div>
+            </div>
+
+            <img
+                src="assets/imagens/lobo-principal.png"
+                alt="Lobo-guará Guardião"
+                id="loboPrincipal"
+            >
+
+            <div class="plaquinha-lobo">
+                <i class="fa-solid fa-paw"></i>
+                Guia da Expedição
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="resumo-jornada">
+
+        <div class="titulo-secao">
+            <div>
+                <span>SEU CAMINHO</span>
+                <h2>Resumo da jornada</h2>
+            </div>
+
+            <a href="perfil.html">
+                Ver perfil
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="cards-resumo">
+
+            <article class="card-resumo">
+
+                <div class="card-resumo-topo">
+
+                    <div class="icone-resumo fogo">
+                        🔥
+                    </div>
+
+                    <span class="tag-resumo">
+                        Sequência
+                    </span>
+
+                </div>
+
+                <strong class="numero-resumo" id="sequenciaDias">
+                    1
+                </strong>
+
+                <p id="textoSequencia">
+                    dia seguido
+                </p>
+
+                <div class="mini-semana" id="miniSemana">
+                    <span>S</span>
+                    <span>T</span>
+                    <span>Q</span>
+                    <span>Q</span>
+                    <span>S</span>
+                    <span>S</span>
+                    <span>D</span>
+                </div>
+
+            </article>
+
+            <article class="card-resumo">
+
+                <div class="card-resumo-topo">
+
+                    <div class="icone-resumo estrela">
+                        ⭐
+                    </div>
+
+                    <span class="tag-resumo">
+                        Nível
+                    </span>
+
+                </div>
+
+                <strong
+                    class="nome-nivel"
+                    id="nomeNivel"
+                >
+                    Aprendiz
+                </strong>
+
+                <p id="numeroNivel">
+                    Nível 1
+                </p>
+
+                <div class="barra-nivel">
+                    <div
+                        class="barra-nivel-preenchimento"
+                        id="barraNivel"
+                    ></div>
+                </div>
+
+                <small id="proximoNivel">
+                    0 / 100 XP
+                </small>
+
+            </article>
+
+            <article class="card-resumo">
+
+                <div class="card-resumo-topo">
+
+                    <div class="icone-resumo xp">
+                        ✨
+                    </div>
+
+                    <span class="tag-resumo">
+                        Experiência
+                    </span>
+
+                </div>
+
+                <strong
+                    class="numero-resumo"
+                    id="xpTotal"
+                >
+                    0
+                </strong>
+
+                <p>XP acumulado</p>
+
+                <div class="xp-detalhe">
+                    <i class="fa-solid fa-bolt"></i>
+                    Continue explorando para ganhar mais
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="grade-conteudo">
+
+        <article class="card missao-dia">
+
+            <div class="cabecalho-card">
+
+                <div class="icone-card">
+                    🎯
+                </div>
+
+                <div>
+                    <span>DESAFIO DE HOJE</span>
+                    <h2>Missão do Dia</h2>
+                </div>
+
+                <span
+                    class="status-missao"
+                    id="statusMissao"
+                >
+                    Em andamento
+                </span>
+
+            </div>
+
+            <div class="missao-conteudo">
+
+                <div class="missao-texto">
+
+                    <span
+                        class="missao-tipo"
+                        id="missaoTipo"
+                    >
+                        Exploração
+                    </span>
+
+                    <h3 id="tituloMissao">
+                        Explore o Cerrado
+                    </h3>
+
+                    <p id="descricaoMissao">
+                        Realize uma atividade para avançar na sua jornada.
+                    </p>
+
+                    <div class="recompensa">
+                        <i class="fa-solid fa-star"></i>
+                        <span>
+                            Recompensa:
+                            <strong id="recompensaMissao">
+                                +20 XP
+                            </strong>
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="missao-progresso">
+
+                    <div class="circulo-progresso">
+
+                        <svg viewBox="0 0 120 120">
+
+                            <circle
+                                class="circulo-fundo"
+                                cx="60"
+                                cy="60"
+                                r="50"
+                            ></circle>
+
+                            <circle
+                                class="circulo-valor"
+                                id="circuloMissao"
+                                cx="60"
+                                cy="60"
+                                r="50"
+                            ></circle>
+
+                        </svg>
+
+                        <div class="circulo-texto">
+                            <strong id="porcentagemMissao">
+                                0%
+                            </strong>
+                            <span>concluído</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="missao-rodape">
+
+                <div class="barra-missao">
+                    <div
+                        class="barra-missao-preenchimento"
+                        id="barraMissao"
+                    ></div>
+                </div>
+
+                <a
+                    href="biblioteca.html"
+                    class="botao-missao"
+                    id="botaoMissao"
+                >
+                    Começar missão
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="card progresso-geral">
+
+            <div class="cabecalho-card">
+
+                <div class="icone-card">
+                    🧭
+                </div>
+
+                <div>
+                    <span>REGISTRO DE CAMPO</span>
+                    <h2>Progresso geral</h2>
+                </div>
+
+            </div>
+
+            <div class="lista-progresso">
+
+                <a
+                    href="biblioteca.html"
+                    class="item-progresso"
+                >
+
+                    <div class="item-progresso-icone">
+                        📚
+                    </div>
+
+                    <div class="item-progresso-info">
+
+                        <div class="item-progresso-topo">
+                            <strong>Biblioteca</strong>
+                            <span id="artigosNumero">0</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div
+                                id="barraArtigos"
+                                class="barra-item-valor"
+                            ></div>
+                        </div>
+
+                        <small>
+                            artigos explorados
+                        </small>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="cerradex.html"
+                    class="item-progresso"
+                >
+
+                    <div class="item-progresso-icone">
+                        🐾
+                    </div>
+
+                    <div class="item-progresso-info">
+
+                        <div class="item-progresso-topo">
+                            <strong>Cerradex</strong>
+                            <span id="cerradexNumero">0</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div
+                                id="barraCerradex"
+                                class="barra-item-valor"
+                            ></div>
+                        </div>
+
+                        <small>
+                            espécies descobertas
+                        </small>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="diario.html"
+                    class="item-progresso"
+                >
+
+                    <div class="item-progresso-icone">
+                        📖
+                    </div>
+
+                    <div class="item-progresso-info">
+
+                        <div class="item-progresso-topo">
+                            <strong>Diário</strong>
+                            <span id="diarioNumero">0</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div
+                                id="barraDiario"
+                                class="barra-item-valor"
+                            ></div>
+                        </div>
+
+                        <small>
+                            expedições registradas
+                        </small>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="missoes.html"
+                    class="item-progresso"
+                >
+
+                    <div class="item-progresso-icone">
+                        🎯
+                    </div>
+
+                    <div class="item-progresso-info">
+
+                        <div class="item-progresso-topo">
+                            <strong>Missões</strong>
+                            <span id="missoesNumero">0</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div
+                                id="barraMissoes"
+                                class="barra-item-valor"
+                            ></div>
+                        </div>
+
+                        <small>
+                            missões concluídas
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="atalhos">
+
+        <div class="titulo-secao">
+            <div>
+                <span>CONTINUE EXPLORANDO</span>
+                <h2>Para onde vamos agora?</h2>
+            </div>
+        </div>
+
+        <div class="atalhos-grade">
+
+            <a
+                href="biblioteca.html"
+                class="atalho"
+            >
+                <span class="atalho-icone">
+                    📚
+                </span>
+
+                <div>
+                    <strong>Biblioteca</strong>
+                    <p>
+                        Descubra histórias, animais e plantas.
+                    </p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+                href="cerradex.html"
+                class="atalho"
+            >
+                <span class="atalho-icone">
+                    🐾
+                </span>
+
+                <div>
+                    <strong>Cerradex</strong>
+                    <p>
+                        Complete sua coleção de espécies.
+                    </p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+                href="diario.html"
+                class="atalho"
+            >
+                <span class="atalho-icone">
+                    📖
+                </span>
+
+                <div>
+                    <strong>Diário de Campo</strong>
+                    <p>
+                        Continue sua expedição pelo Cerrado.
+                    </p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div
+    class="fundo-menu"
+    id="fundoMenu"
+></div>
+
+<script src="js/principal.js"></script>
+
+</body>
+</html>
