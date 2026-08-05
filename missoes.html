@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Missões | Guardiões do Cerrado</title>
+
+    <link rel="stylesheet" href="css/missoes.css">
+    <link rel="stylesheet" href="css/notificacoes.css">
+  
+</head>
+
+<body>
+
+<header class="topo">
+    <h1>🎯 Missões</h1>
+    <p>Complete desafios para ganhar experiência e proteger o Cerrado.</p>
+</header>
+
+<main class="conteudo">
+
+    <section class="categoria">
+        <h2>🌞 Missões Diárias</h2>
+        <div id="missoesDiarias" class="listaMissoes"></div>
+    </section>
+
+    <section class="categoria">
+        <h2>🔥 Missões Semanais</h2>
+        <div id="missoesSemanais" class="listaMissoes"></div>
+    </section>
+
+    <section class="categoria">
+        <h2>👑 Missões Permanentes</h2>
+        <div id="missoesPermanentes" class="listaMissoes"></div>
+    </section>
+
+</main>
+
+<script src="js/progresso.js"></script>
+<script src="js/dados.js"></script>
+<script src="js/conquistas.js"></script>
+<script src="js/missoesDados.js"></script>
+<script src="js/missoes.js"></script>
+<script src="js/notificacoes.js"></script>
+
+<script>
+function criarCard(missao) {
+    const progressoAtual = Math.min(
+        Number(missao.atual) || 0,
+        Number(missao.objetivo) || 0
+    );
+
+    const objetivo = Number(missao.objetivo) || 0;
+    const porcentagem = Number(missao.porcentagem) || 0;
+    const recompensa = Number(missao.recompensa) || 0;
+
+    return `
+        <article class="cardMissao ${missao.concluida ? "concluida" : ""}">
+
+            <div class="cabecalho">
+
+                <div>
+                    <h3>${missao.titulo}</h3>
+                    <p>${missao.descricao}</p>
+                </div>
+
+                <span class="xp">
+                    +${recompensa} XP
+                </span>
+
+            </div>
+
+            <div class="barra">
+                <div
+                    class="progresso"
+                    style="width: ${porcentagem}%"
+                ></div>
+            </div>
+
+            <div class="rodape">
+
+                <span>
+                    ${progressoAtual}/${objetivo}
+                </span>
+
+                ${
+                    missao.concluida
+                        ? "<span class='status'>✅ Concluída</span>"
+                        : "<span class='statusPendente'>Em andamento</span>"
+                }
+
+            </div>
+
+        </article>
+    `;
+}
+
+function mostrarMensagemErro(mensagem) {
+    const texto = `
+        <div class="mensagemErro">
+            <strong>Não foi possível carregar as missões.</strong>
+            <p>${mensagem}</p>
+        </div>
+    `;
+
+    document.getElementById("missoesDiarias").innerHTML = texto;
+    document.getElementById("missoesSemanais").innerHTML = "";
+    document.getElementById("missoesPermanentes").innerHTML = "";
+}
+
+function carregarMissoes() {
+    if (
+        !window.sistemaMissoes ||
+        typeof window.sistemaMissoes.listar !== "function"
+    ) {
+        mostrarMensagemErro(
+            "Confira se os arquivos missoes.js e missoesDados.js estão na pasta js."
+        );
+
+        console.error(
+            "window.sistemaMissoes não foi encontrado."
+        );
+
+        return;
+    }
+
+    try {
+        const dados = window.sistemaMissoes.listar();
+
+        const diarias = Array.isArray(dados.diarias)
+            ? dados.diarias
+            : [];
+
+        const semanais = Array.isArray(dados.semanais)
+            ? dados.semanais
+            : [];
+
+        const permanentes = Array.isArray(dados.permanentes)
+            ? dados.permanentes
+            : [];
+
+        document.getElementById("missoesDiarias").innerHTML =
+            diarias.length > 0
+                ? diarias.map(criarCard).join("")
+                : "<p class='semMissoes'>Nenhuma missão diária disponível.</p>";
+
+        document.getElementById("missoesSemanais").innerHTML =
+            semanais.length > 0
+                ? semanais.map(criarCard).join("")
+                : "<p class='semMissoes'>Nenhuma missão semanal disponível.</p>";
+
+        document.getElementById("missoesPermanentes").innerHTML =
+            permanentes.length > 0
+                ? permanentes.map(criarCard).join("")
+                : "<p class='semMissoes'>Nenhuma missão permanente disponível.</p>";
+
+    } catch (erro) {
+        console.error(
+            "Erro ao carregar as missões:",
+            erro
+        );
+
+        mostrarMensagemErro(
+            "Ocorreu um erro no JavaScript. Abra o console para ver os detalhes."
+        );
+    }
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    carregarMissoes
+);
+
+window.addEventListener(
+    "missoesAtualizadas",
+    carregarMissoes
+);
+
+window.addEventListener(
+    "missaoConcluida",
+    carregarMissoes
+);
+
+window.addEventListener(
+    "progressoAtualizado",
+    carregarMissoes
+);
+</script>
+
+</body>
+</html>

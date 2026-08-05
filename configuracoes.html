@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configurações | Guardiões do Cerrado</title>
+
+    <link rel="stylesheet" href="css/configuracoes.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        <img
+            src="assets/imagens/logo.png"
+            alt="Logo Guardiões do Cerrado"
+        >
+
+        <span>Guardiões do Cerrado</span>
+    </a>
+
+    <button
+        type="button"
+        class="botao-menu"
+        id="botaoMenu"
+        aria-label="Abrir menu"
+    >
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="menuNavegacao">
+        <a href="inicio.html">Início</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="diario.html">Diário</a>
+        <a href="cerradex.html">Cerradex</a>
+        <a href="missoes.html">Missões</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="configuracoes.html" class="ativo">Configurações</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <div class="hero-folha hero-folha-1">
+        🍃
+    </div>
+
+    <div class="hero-folha hero-folha-2">
+        🌿
+    </div>
+
+    <div class="hero-cartao">
+
+        <span class="fita fita-esquerda"></span>
+        <span class="fita fita-direita"></span>
+
+        <div class="hero-conteudo">
+
+            <span class="hero-etiqueta">
+                <i class="fa-solid fa-compass"></i>
+                Caderno do Explorador
+            </span>
+
+            <span class="hero-numero">
+                ACAMPAMENTO • 06
+            </span>
+
+            <h1>Configurações</h1>
+
+            <p>
+                Prepare sua mochila, ajuste seus equipamentos e
+                personalize sua experiência antes de continuar sua
+                jornada pelo Cerrado.
+            </p>
+
+            <div class="hero-detalhes">
+
+                <span>
+                    <i class="fa-solid fa-leaf"></i>
+                    Preferências
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-volume-high"></i>
+                    Áudio
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Progresso
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="hero-imagem">
+
+            <div class="hero-circulo"></div>
+
+            <img
+                src="assets/imagens/lobo-configuracoes.png"
+                alt="Lobo-guará explorador"
+            >
+
+            <span class="assinatura-lobo">
+                Equipamento pronto!
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<main class="pagina-configuracoes">
+
+    <section class="card">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+                <span>Sua identidade</span>
+                <h2>Explorador</h2>
+            </div>
+
+        </div>
+
+        <div class="perfil">
+
+            <img
+                src="assets/imagens/avatar.png"
+                alt="Avatar do explorador"
+                class="avatar"
+                id="avatarUsuario"
+            >
+
+            <div class="perfil-informacoes">
+
+                <h3 id="nomeUsuario">
+                    Guardião
+                </h3>
+
+                <p id="emailUsuario">
+                    explorador@cerrado.com
+                </p>
+
+                <div class="perfil-dados">
+
+                    <span id="nivelUsuario">
+                        <i class="fa-solid fa-medal"></i>
+                        Nível 1
+                    </span>
+
+                    <span id="xpUsuario">
+                        <i class="fa-solid fa-star"></i>
+                        0 XP
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <a
+            href="perfil.html"
+            class="botao botao-largo"
+        >
+            Ver perfil
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+    <section class="card">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+
+            <div>
+                <span>Ambiente da jornada</span>
+                <h2>Áudio</h2>
+            </div>
+
+        </div>
+
+        <div class="lista-configuracoes">
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Música</strong>
+
+                    <small>
+                        Música ambiente durante a exploração
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="musica"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Sons da natureza</strong>
+
+                    <small>
+                        Vento, pássaros e sons do Cerrado
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="natureza"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Sons dos botões</strong>
+
+                    <small>
+                        Efeitos ao interagir com o site
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="botoes"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+        </div>
+
+        <div class="controle-volume">
+
+            <div class="controle-volume-topo">
+
+                <label for="volume">
+                    Volume
+                </label>
+
+                <strong id="valorVolume">
+                    80%
+                </strong>
+
+            </div>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="100"
+                value="80"
+            >
+
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+                <span>Detalhes da exploração</span>
+                <h2>Preferências</h2>
+            </div>
+
+        </div>
+
+        <div class="lista-configuracoes">
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Animações</strong>
+
+                    <small>
+                        Movimentos e transições suaves
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="animacoes"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Folhas animadas</strong>
+
+                    <small>
+                        Folhas aparecendo durante a jornada
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="folhas"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Dicas</strong>
+
+                    <small>
+                        Orientações durante as atividades
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="dicas"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Vibração</strong>
+
+                    <small>
+                        Resposta em dispositivos compatíveis
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="vibracao"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+    <section class="card card-estatisticas">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <div>
+                <span>Resumo da aventura</span>
+                <h2>Seu progresso</h2>
+            </div>
+
+        </div>
+
+        <div class="estatisticas">
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    📚
+                </div>
+
+                <span class="estatistica-nome">
+                    Biblioteca
+                </span>
+
+                <strong id="totalArtigos">
+                    0
+                </strong>
+
+                <small>
+                    artigos concluídos
+                </small>
+
+            </div>
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    📖
+                </div>
+
+                <span class="estatistica-nome">
+                    Diário
+                </span>
+
+                <strong id="totalDiario">
+                    0
+                </strong>
+
+                <small>
+                    expedições concluídas
+                </small>
+
+            </div>
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    🐾
+                </div>
+
+                <span class="estatistica-nome">
+                    Cerradex
+                </span>
+
+                <strong id="totalCerradex">
+                    0
+                </strong>
+
+                <small>
+                    espécies descobertas
+                </small>
+
+            </div>
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    🎯
+                </div>
+
+                <span class="estatistica-nome">
+                    Missões
+                </span>
+
+                <strong id="totalMissoes">
+                    0
+                </strong>
+
+                <small>
+                    missões completas
+                </small>
+
+            </div>
+
+            <div class="estatistica estatistica-xp">
+
+                <div class="estatistica-icone">
+                    ⭐
+                </div>
+
+                <span class="estatistica-nome">
+                    Experiência
+                </span>
+
+                <strong id="xpTotal">
+                    0
+                </strong>
+
+                <small>
+                    XP acumulado
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="card card-progresso">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <div>
+                <span>Dados da jornada</span>
+                <h2>Gerenciar progresso</h2>
+            </div>
+
+        </div>
+
+        <p class="descricao-card">
+            Suas preferências são salvas neste dispositivo.
+            Você também pode restaurar as configurações ou
+            iniciar uma nova jornada.
+        </p>
+
+        <div class="botoes-progresso">
+
+            <button
+                type="button"
+                id="btnSalvar"
+                class="botao"
+            >
+                <i class="fa-solid fa-floppy-disk"></i>
+                Salvar configurações
+            </button>
+
+            <button
+                type="button"
+                id="btnRestaurar"
+                class="botao botao-secundario"
+            >
+                <i class="fa-solid fa-rotate-left"></i>
+                Restaurar padrão
+            </button>
+
+            <button
+                type="button"
+                id="btnReiniciar"
+                class="botao botao-perigo"
+            >
+                <i class="fa-solid fa-trash"></i>
+                Reiniciar progresso
+            </button>
+
+        </div>
+
+        <div class="aviso">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <p>
+                Reiniciar apagará XP, artigos concluídos,
+                missões, páginas do Diário e espécies descobertas.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div
+    id="notificacao"
+    class="notificacao"
+></div>
+
+<footer class="rodape">
+
+    <strong>
+        🌿 Guardiões do Cerrado
+    </strong>
+
+    <p>
+        Projeto educativo sobre a fauna e a flora do Cerrado.
+    </p>
+
+    <span>
+        Versão 1.0
+    </span>
+
+</footer>
+
+<script src="js/configuracoes.js"></script>
+
+</body>
+</html>

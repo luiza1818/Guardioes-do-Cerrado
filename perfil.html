@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Perfil do Guardião no projeto Guardiões do Cerrado"
+    >
+    <title>Perfil | Guardiões do Cerrado</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/notificacoes.css">
+  
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="principal.html" class="logo">
+            <div class="logo-icone">🐺</div>
+
+            <div class="logo-texto">
+                <span>Guardiões do</span>
+                <strong>Cerrado</strong>
+            </div>
+        </a>
+
+        <button
+            class="botao-menu"
+            id="botaoMenu"
+            type="button"
+            aria-label="Abrir menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu" id="menu">
+            <a href="principal.html">Início</a>
+            <a href="biblioteca.html">Biblioteca</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="missoes.html">Missões</a>
+            <a href="cerradex.html">Cerradex</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="perfil.html" class="botao-entrar pagina-ativa">
+                Perfil
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="perfil-inicio">
+            <div class="perfil-fundo"></div>
+
+            <div class="perfil-container">
+                <div class="perfil-apresentacao">
+                    <div class="perfil-avatar-area">
+                        <div class="perfil-avatar" id="perfilAvatar">
+                            🐺
+                        </div>
+
+                        <span class="perfil-nivel-selo" id="seloNivel">
+                            Nível 1
+                        </span>
+                    </div>
+
+                    <div class="perfil-identidade">
+                        <span class="perfil-etiqueta">
+                            Perfil do Guardião
+                        </span>
+
+                        <h1 id="nomeUsuario">Guardião do Cerrado</h1>
+
+                        <p>
+                            Continue explorando, aprendendo e protegendo
+                            um dos biomas mais importantes do Brasil.
+                        </p>
+
+                        <div class="perfil-resumo">
+                            <span id="resumoNivel">Nível 1</span>
+                            <span id="resumoXP">0 XP</span>
+                            <span id="resumoSequencia">0 dias de sequência</span>
+                        </div>
+                    </div>
+
+                    <a
+                        href="configuracoes.html"
+                        class="botao-configuracoes"
+                    >
+                        ⚙️ Configurações
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="perfil-conteudo">
+            <div class="perfil-container">
+                <div class="grade-perfil">
+                    <section class="cartao-perfil cartao-progresso">
+                        <div class="cartao-titulo">
+                            <div>
+                                <span>Seu avanço</span>
+                                <h2>Jornada do Guardião</h2>
+                            </div>
+
+                            <strong id="nivelAtual">Nível 1</strong>
+                        </div>
+
+                        <div class="progresso-xp-informacoes">
+                            <span id="textoXP">
+                                0 de 100 XP
+                            </span>
+
+                            <strong id="porcentagemXP">
+                                0%
+                            </strong>
+                        </div>
+
+                        <div class="barra-xp">
+                            <div
+                                class="barra-xp-preenchimento"
+                                id="barraXP"
+                            ></div>
+                        </div>
+
+                        <p class="mensagem-nivel" id="mensagemNivel">
+                            Continue aprendendo para alcançar o próximo nível.
+                        </p>
+                    </section>
+
+                    <section class="cartao-perfil cartao-sequencia">
+                        <div class="sequencia-icone">
+                            🔥
+                        </div>
+
+                        <div>
+                            <span>Sequência atual</span>
+
+                            <strong id="sequenciaAtual">
+                                0 dias
+                            </strong>
+
+                            <p>
+                                Volte todos os dias para manter sua jornada ativa.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="estatisticas-perfil">
+                    <article class="estatistica-perfil">
+                        <div class="estatistica-perfil-icone verde">
+                            📚
+                        </div>
+
+                        <div>
+                            <strong id="totalArtigos">0</strong>
+                            <span>Artigos concluídos</span>
+                        </div>
+                    </article>
+
+                    <article class="estatistica-perfil">
+                        <div class="estatistica-perfil-icone amarelo">
+                            🃏
+                        </div>
+
+                        <div>
+                            <strong id="totalCartas">0</strong>
+                            <span>Cartas descobertas</span>
+                        </div>
+                    </article>
+
+                    <article class="estatistica-perfil">
+                        <div class="estatistica-perfil-icone laranja">
+                            ⭐
+                        </div>
+
+                        <div>
+                            <strong id="xpTotal">0</strong>
+                            <span>XP acumulado</span>
+                        </div>
+                    </article>
+
+                    <article class="estatistica-perfil">
+                        <div class="estatistica-perfil-icone azul">
+                            🏆
+                        </div>
+
+                        <div>
+                            <strong id="totalConquistas">0</strong>
+                            <span>Conquistas</span>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="secao-conquistas">
+                    <div class="titulo-secao-perfil">
+                        <div>
+                            <span>Marcos da jornada</span>
+                            <h2>Conquistas</h2>
+                            <p>
+                                Complete atividades para desbloquear novas medalhas.
+                            </p>
+                        </div>
+
+                        <strong id="contadorConquistas">
+                            0 de 6
+                        </strong>
+                    </div>
+
+                    <div
+                        class="grade-conquistas"
+                        id="gradeConquistas"
+                    ></div>
+                </section>
+
+                <section class="secao-atividade">
+                    <div class="titulo-secao-perfil">
+                        <div>
+                            <span>Resumo da coleção</span>
+                            <h2>Seu progresso no Cerradex</h2>
+                            <p>
+                                Veja quanto da fauna e da flora você já descobriu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="resumo-cerradex-perfil">
+                        <div class="resumo-cerradex-circulo">
+                            <strong id="porcentagemCerradex">0%</strong>
+                            <span>completo</span>
+                        </div>
+
+                        <div class="resumo-cerradex-dados">
+                            <div>
+                                <span>Cartas encontradas</span>
+                                <strong id="cartasEncontradas">
+                                    0 de 12
+                                </strong>
+                            </div>
+
+                            <div class="barra-cerradex-perfil">
+                                <div
+                                    id="barraCerradexPerfil"
+                                    class="barra-cerradex-perfil-preenchimento"
+                                ></div>
+                            </div>
+
+                            <a href="cerradex.html">
+                                Abrir Cerradex
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape rodape-perfil">
+        <a href="principal.html" class="logo logo-rodape">
+            <div class="logo-icone">🐺</div>
+
+            <div class="logo-texto">
+                <span>Guardiões do</span>
+                <strong>Cerrado</strong>
+            </div>
+        </a>
+
+        <p>
+            Conhecer para preservar. Projeto educacional sobre o bioma Cerrado.
+        </p>
+
+        <span>© 2026 Guardiões do Cerrado</span>
+    </footer>
+<script src="js/progresso.js"></script>
+<script src="js/dados.js"></script>
+<script src="js/conquistas.js"></script>
+<script src="js/perfil.js"></script>
+<script src="js/notificacoes.js"></script>
+
+</body>
+</html>

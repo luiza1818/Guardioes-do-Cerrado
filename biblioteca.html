@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Biblioteca | Guardiões do Cerrado</title>
+
+    <link
+        rel="stylesheet"
+        href="css/biblioteca.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/notificacoes.css">
+    
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <a
+            href="principal.html"
+            class="logo"
+        >
+            <span class="logo-icone">🦊</span>
+
+            <div>
+                <strong>Guardiões</strong>
+                <small>do Cerrado</small>
+            </div>
+        </a>
+
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="biblioteca.html" class="selecionado">Biblioteca</a>
+            <a href="cerradex.html">Cerradex</a>
+            <a href="perfil.html">Perfil</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="banner">
+
+            <div class="banner-conteudo">
+
+                <span class="banner-etiqueta">
+                    📚 Conhecimento para preservar
+                </span>
+
+                <h1>Biblioteca do Cerrado</h1>
+
+                <p>
+                    Explore a fauna, a flora e os segredos de um dos
+                    biomas mais importantes do Brasil.
+                </p>
+
+                <label class="campo-pesquisa">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="pesquisa"
+                        placeholder="Pesquisar artigo..."
+                        autocomplete="off"
+                    >
+
+                </label>
+
+            </div>
+
+            <div class="banner-mascote">
+                <div class="circulo-mascote">🦊</div>
+            </div>
+
+        </section>
+
+        <section class="painel-progresso">
+
+            <article class="resumo-progresso">
+
+                <div class="icone-status">⭐</div>
+
+                <div>
+                    <span>Experiência</span>
+                    <strong id="xpUsuario">0 XP</strong>
+                </div>
+
+            </article>
+
+            <article class="resumo-progresso">
+
+                <div class="icone-status">🏆</div>
+
+                <div>
+                    <span>Nível atual</span>
+                    <strong id="nivelUsuario">Bronze</strong>
+                </div>
+
+            </article>
+
+            <article class="resumo-progresso">
+
+                <div class="icone-status">📖</div>
+
+                <div>
+                    <span>Artigos concluídos</span>
+                    <strong id="artigosConcluidos">0 artigos</strong>
+                </div>
+
+            </article>
+
+            <article class="resumo-progresso">
+
+                <div class="icone-status">🔥</div>
+
+                <div>
+                    <span>Sequência</span>
+                    <strong id="sequenciaUsuario">0 dias</strong>
+                </div>
+
+            </article>
+
+            <div class="barra-area">
+
+                <div class="barra-informacoes">
+                    <span>Progresso para o próximo nível</span>
+                    <strong id="porcentagemProgresso">0%</strong>
+                </div>
+
+                <div class="barra-fundo">
+                    <div
+                        class="barra-preenchimento"
+                        id="barraProgresso"
+                    ></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="area-biblioteca">
+
+            <div class="titulo-secao">
+
+                <div>
+                    <span class="subtitulo">Explore e aprenda</span>
+                    <h2>Artigos disponíveis</h2>
+                </div>
+
+                <p id="quantidadeResultados">
+                    Escolha uma categoria para começar.
+                </p>
+
+            </div>
+
+            <div class="categorias">
+
+                <button
+                    type="button"
+                    class="ativo"
+                    data-categoria="Todos"
+                >
+                    Todos
+                </button>
+
+                <button
+                    type="button"
+                    data-categoria="Fauna"
+                >
+                    🦊 Fauna
+                </button>
+
+                <button
+                    type="button"
+                    data-categoria="Flora"
+                >
+                    🌿 Flora
+                </button>
+<button
+    type="button"
+    data-categoria="Ecossistema"
+>
+    🗺️ Ecossistema
+</button>
+
+<button
+    type="button"
+    data-categoria="Conservação"
+>
+    ♻️ Conservação
+</button>
+
+            </div>
+
+            <section id="artigos"></section>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Guardiões do Cerrado 🌿 Conhecer também é preservar.
+        </p>
+    </footer>
+
+    <script src="js/progresso.js"></script>
+<script src="js/biblioteca.js"></script>
+<script src="js/notificacoes.js"></script>
+
+</body>
+
+</html>

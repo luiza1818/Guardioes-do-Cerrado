@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef6ec;
+    color:#2b3b2b;
+}
+
+.topo{
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.topo h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.topo p{
+    opacity:.95;
+    font-size:1rem;
+}
+
+.conteudo{
+    width:min(1100px,92%);
+    margin:40px auto;
+}
+
+.categoria{
+    margin-bottom:45px;
+}
+
+.categoria h2{
+    margin-bottom:20px;
+    color:#1b5e20;
+    border-left:6px solid #43a047;
+    padding-left:12px;
+}
+
+.listaMissoes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.cardMissao{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.cardMissao:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 28px rgba(0,0,0,.15);
+}
+
+.cardMissao.concluida{
+    border:3px solid #4caf50;
+    background:#f4fff4;
+}
+
+.cabecalho{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.cabecalho h3{
+    margin-bottom:6px;
+    color:#1b5e20;
+}
+
+.cabecalho p{
+    color:#666;
+    font-size:.95rem;
+}
+
+.xp{
+    background:#43a047;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:.9rem;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.barra{
+    margin:20px 0 12px;
+    height:14px;
+    background:#d8e8d8;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progresso{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#4caf50,#81c784);
+    border-radius:30px;
+    transition:width .5s;
+}
+
+.rodape{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+}
+
+.status{
+    color:#2e7d32;
+}
+
+@media(max-width:700px){
+
+    .cabecalho{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .xp{
+        align-self:flex-start;
+    }
+
+    .topo h1{
+        font-size:2rem;
+    }
+
+}
+.statusPendente{
+    color:#777;
+    font-size:.9rem;
+}
+
+.semMissoes{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    color:#666;
+    box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
+
+.mensagemErro{
+    background:#fff3f3;
+    color:#8b1e1e;
+    border:1px solid #e7b4b4;
+    padding:20px;
+    border-radius:14px;
+}
+
+.mensagemErro p{
+    margin-top:8px;
+}

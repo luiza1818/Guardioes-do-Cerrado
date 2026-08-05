@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-principal: #2e7d32;
+    --verde-claro: #66bb6a;
+    --verde-suave: #e8f5e9;
+    --bege: #f5f1e8;
+    --branco: #ffffff;
+    --texto: #263238;
+    --texto-secundario: #607d8b;
+    --amarelo: #fbc02d;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bege);
+    color: var(--texto);
+    font-family: "Nunito", sans-serif;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+    background: var(--verde-principal);
+}
+
+.cabecalho a {
+    color: var(--branco);
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.cabecalho a:hover {
+    text-decoration: underline;
+}
+
+.artigo {
+    width: min(1000px, 90%);
+    margin: 40px auto 70px;
+
+    background: var(--branco);
+    border-radius: 28px;
+    overflow: hidden;
+
+    box-shadow: 0 15px 45px rgba(38, 50, 56, 0.12);
+}
+
+.imagem-principal {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+
+    background: var(--verde-suave);
+}
+
+.conteudo {
+    padding: 45px;
+}
+
+.categoria {
+    display: inline-block;
+
+    padding: 7px 15px;
+    border-radius: 999px;
+
+    background: var(--verde-suave);
+    color: var(--verde-principal);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    margin-top: 16px;
+
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.15;
+}
+
+.informacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-top: 18px;
+    margin-bottom: 42px;
+
+    color: var(--texto-secundario);
+}
+
+.informacoes span {
+    padding: 10px 15px;
+    border-radius: 12px;
+
+    background: #f7f7f7;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+section h2 {
+    margin-bottom: 12px;
+
+    color: var(--verde-principal);
+    font-size: 1.35rem;
+}
+
+section p,
+section li {
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.recompensa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 45px;
+    padding: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #fff8d6,
+        #fffdf5
+    );
+
+    border: 2px solid #ffe082;
+    border-radius: 22px;
+}
+
+.recompensa h3 {
+    color: #725800;
+}
+
+.recompensa p {
+    margin-top: 6px;
+    color: #795f00;
+}
+
+#concluir {
+    border: none;
+    border-radius: 14px;
+
+    padding: 14px 22px;
+
+    background: var(--verde-principal);
+    color: var(--branco);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, background 0.2s;
+}
+
+#concluir:hover {
+    background: #246728;
+    transform: translateY(-2px);
+}
+
+#concluir.concluido {
+    background: #90a4ae;
+    cursor: default;
+}
+
+#concluir.concluido:hover {
+    transform: none;
+}
+
+.mensagem {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    max-width: 380px;
+    padding: 18px 22px;
+
+    background: var(--verde-principal);
+    color: var(--branco);
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(30px);
+
+    transition: 0.3s;
+}
+
+.mensagem.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+    .cabecalho {
+        padding: 16px 5%;
+    }
+
+    .inicio {
+        display: none;
+    }
+
+    .artigo {
+        width: 94%;
+        margin-top: 22px;
+        border-radius: 20px;
+    }
+
+    .imagem-principal {
+        height: 280px;
+    }
+
+    .conteudo {
+        padding: 28px 22px;
+    }
+
+    .recompensa {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #concluir {
+        width: 100%;
+    }
+
+    .mensagem {
+        right: 15px;
+        left: 15px;
+        bottom: 15px;
+        max-width: none;
+    }
+}

@@ -1,0 +1,1147 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #d8c39e;
+    color: #263238;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.cabecalho-diario {
+    position: relative;
+    z-index: 100;
+    min-height: 82px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: rgba(18, 75, 52, 0.98);
+    border-bottom: 3px solid rgba(251, 192, 45, 0.8);
+    box-shadow: 0 6px 22px rgba(16, 55, 39, 0.25);
+}
+
+.marca-diario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.icone-marca {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    background: #f5f1e8;
+    border: 3px solid #fbc02d;
+    border-radius: 16px;
+    font-size: 1.7rem;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+.texto-marca {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.texto-marca strong {
+    color: #ffffff;
+    font-size: 1.15rem;
+}
+
+.texto-marca span {
+    margin-top: 5px;
+    color: #fbc02d;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.menu-diario {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.menu-diario a {
+    padding: 11px 14px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none;
+    font-size: 0.94rem;
+    font-weight: 600;
+    border-radius: 11px;
+    transition: 0.25s;
+}
+
+.menu-diario a:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.menu-diario a.ativo {
+    color: #173d2f !important;
+    background: #fbc02d;
+    box-shadow: 0 4px 12px rgba(251, 192, 45, 0.25);
+}
+
+.botao-menu-diario {
+    display: none;
+    width: 44px;
+    height: 44px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 12px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.capa-diario {
+    position: relative;
+    min-height: calc(100vh - 82px);
+    padding: 60px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(251, 192, 45, 0.25),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 12% 75%,
+            rgba(46, 125, 50, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f8f0d8 0%,
+            #e8d3aa 50%,
+            #c9ac78 100%
+        );
+}
+
+.capa-diario::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    pointer-events: none;
+    background-image:
+        linear-gradient(
+            rgba(104, 75, 44, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(104, 75, 44, 0.06) 1px,
+            transparent 1px
+        );
+    background-size: 34px 34px;
+}
+
+.decoracao-capa {
+    position: absolute;
+    z-index: 1;
+    font-size: 8rem;
+    opacity: 0.18;
+    filter: blur(1px);
+}
+
+.decoracao-esquerda {
+    left: -20px;
+    bottom: 10%;
+    transform: rotate(-20deg);
+}
+
+.decoracao-direita {
+    right: 1%;
+    top: 8%;
+    transform: rotate(20deg);
+}
+
+.apresentacao-diario {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, 100%);
+    overflow: hidden;
+    background: rgba(255, 250, 235, 0.94);
+    border: 1px solid rgba(108, 76, 49, 0.18);
+    border-radius: 34px;
+    box-shadow:
+        0 30px 65px rgba(79, 56, 35, 0.23),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.etiqueta-expedicao {
+    position: absolute;
+    z-index: 4;
+    top: 28px;
+    left: 38px;
+    padding: 9px 18px;
+    color: #ffffff;
+    background: #8d6e63;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+}
+
+.conteudo-capa-diario {
+    min-height: 570px;
+    padding: 100px 55px 45px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.texto-capa-diario {
+    position: relative;
+    z-index: 3;
+}
+
+.subtitulo-capa {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #6d4c41;
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.texto-capa-diario h1 {
+    margin: 0;
+    color: #214d37;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 5.7rem);
+    line-height: 0.95;
+    letter-spacing: -3px;
+}
+
+.texto-capa-diario h1 span {
+    display: block;
+    margin-top: 13px;
+    color: #2e7d32;
+    font-size: 0.66em;
+    letter-spacing: -1.5px;
+}
+
+.texto-capa-diario > p {
+    max-width: 610px;
+    margin: 28px 0;
+    color: #46554f;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.informacoes-capa {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.informacao-capa {
+    min-width: 115px;
+    padding: 13px 16px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(46, 125, 50, 0.14);
+    border-radius: 14px;
+}
+
+.informacao-capa strong {
+    color: #2e7d32;
+    font-size: 1.25rem;
+}
+
+.informacao-capa span {
+    margin-top: 3px;
+    color: #607d6f;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.botao-iniciar-diario {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 22px 16px 27px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    border: none;
+    border-radius: 17px;
+    box-shadow: 0 12px 24px rgba(46, 125, 50, 0.28);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.botao-iniciar-diario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px rgba(46, 125, 50, 0.32);
+}
+
+.seta-botao {
+    width: 31px;
+    height: 31px;
+    display: grid;
+    place-items: center;
+    color: #234d34;
+    background: #fbc02d;
+    border-radius: 10px;
+}
+
+.visual-capa-diario {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.circulo-capa {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    bottom: 15px;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #98ce78,
+            #367a43 65%,
+            #1b5136 100%
+        );
+    border: 12px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 25px 45px rgba(35, 90, 54, 0.25);
+}
+
+.lobo-capa-diario {
+    position: relative;
+    z-index: 2;
+    width: min(420px, 92%);
+    max-height: 480px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 15px rgba(48, 34, 25, 0.22));
+}
+
+.cartao-flutuante {
+    position: absolute;
+    z-index: 3;
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(46, 125, 50, 0.12);
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(59, 57, 40, 0.16);
+}
+
+.cartao-flutuante > span {
+    font-size: 1.6rem;
+}
+
+.cartao-flutuante div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-flutuante strong {
+    color: #285d3e;
+    font-size: 0.84rem;
+}
+
+.cartao-flutuante small {
+    color: #66796f;
+    font-size: 0.7rem;
+}
+
+.cartao-local {
+    left: -12px;
+    bottom: 60px;
+}
+
+.cartao-xp {
+    right: -10px;
+    top: 60px;
+}
+
+.rodape-capa-diario {
+    padding: 18px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    color: #ffffff;
+    background: #214d37;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.livro {
+    width: min(1400px, calc(100% - 40px));
+    margin: 35px auto;
+    padding: 35px;
+    background: #f9f3df;
+    border-radius: 24px;
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.5s ease;
+}
+
+.topo-expedicao {
+    position: relative;
+    margin-bottom: 32px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(242, 234, 206, 0.98)
+        );
+    border: 1px solid rgba(109, 76, 65, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 9px 24px rgba(91, 66, 39, 0.1);
+}
+
+.topo-expedicao::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 24px;
+    top: -10px;
+    left: 32px;
+    background: rgba(255, 255, 255, 0.62);
+    border-radius: 3px;
+    transform: rotate(-3deg);
+}
+
+.identificacao-expedicao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.numero-expedicao {
+    margin-bottom: 7px;
+    color: #8d6e63;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.identificacao-expedicao h2 {
+    margin: 0 0 5px;
+    color: #245a39;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 4vw, 2.4rem);
+}
+
+.pagina-atual {
+    color: #718078;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.area-progresso {
+    width: min(330px, 100%);
+}
+
+.texto-progresso,
+.marcadores-progresso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.texto-progresso {
+    margin-bottom: 9px;
+    color: #43584d;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.texto-progresso strong {
+    color: #2e7d32;
+}
+
+.barra {
+    width: 100%;
+    height: 12px;
+    background: #deded4;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#barraProgresso {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #66bb6a, #2e7d32);
+    border-radius: 30px;
+    box-shadow: 0 0 12px rgba(46, 125, 50, 0.25);
+    transition: width 0.4s ease;
+}
+
+.marcadores-progresso {
+    margin-top: 7px;
+    color: #8c958f;
+    font-size: 0.7rem;
+}
+
+.pagina {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 38px;
+    align-items: start;
+}
+
+.coluna-imagem,
+.coluna-conteudo,
+.conteudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna-imagem {
+    gap: 26px;
+}
+
+.coluna-conteudo,
+.conteudo {
+    gap: 24px;
+}
+
+.imagem-local {
+    position: relative;
+}
+
+.imagem-local::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 120px;
+    height: 28px;
+    top: -10px;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.62);
+    border-radius: 4px;
+    transform: translateX(-50%) rotate(-4deg);
+}
+
+.imagem-local img {
+    display: block;
+    width: 100%;
+    min-height: 350px;
+    max-height: 520px;
+    object-fit: cover;
+    border: 8px solid #ffffff;
+    border-radius: 17px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ficha-expedicao {
+    position: relative;
+    padding: 32px 28px 26px;
+    background-color: #f5e8c8;
+    background-image:
+        repeating-linear-gradient(
+            transparent,
+            transparent 31px,
+            rgba(109, 76, 65, 0.12) 32px
+        );
+    border: 2px solid #b99b6b;
+    border-left: 8px solid #689f38;
+    border-radius: 9px;
+    box-shadow: 0 10px 20px rgba(78, 52, 35, 0.2);
+    transform: rotate(-0.35deg);
+}
+
+.ficha-expedicao::before {
+    content: "📎";
+    position: absolute;
+    top: -19px;
+    right: 20px;
+    z-index: 3;
+    font-size: 2rem;
+    transform: rotate(10deg);
+}
+
+.fita-ficha {
+    position: absolute;
+    top: -13px;
+    left: 38px;
+    width: 115px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.55);
+    transform: rotate(-4deg);
+    border-radius: 3px;
+}
+
+.ficha-expedicao h3 {
+    margin: 0;
+    color: #5d4037;
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+    text-align: center;
+}
+
+.linha-ficha {
+    height: 2px;
+    margin: 15px 0 20px;
+    background: rgba(93, 64, 55, 0.35);
+}
+
+.campo-ficha {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.campo-ficha strong {
+    color: #4e342e;
+}
+
+.campo-ficha span {
+    line-height: 1.5;
+}
+
+.lista-especies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px 15px;
+}
+
+.lista-especies span {
+    padding: 7px 10px;
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 8px;
+}
+
+.informacoes-ficha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.informacoes-ficha .campo-ficha {
+    margin-bottom: 0;
+}
+
+#recompensaFicha {
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.tema-chapada {
+    border-left-color: #689f38;
+}
+
+.tema-mata {
+    border-left-color: #2e7d32;
+}
+
+.tema-campo {
+    border-left-color: #d4a832;
+}
+
+.tema-veredas {
+    border-left-color: #4ba3a6;
+}
+
+.tema-rio {
+    border-left-color: #3285b4;
+}
+
+.tema-guardiao {
+    border: 5px double #d19a17;
+    background-color: #fff3c4;
+    transform: none;
+}
+
+.certificado {
+    padding: 12px;
+    text-align: center;
+}
+
+.medalha-certificado {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 4rem;
+    animation: flutuarMedalha 2s ease-in-out infinite;
+}
+
+.certificado h3 {
+    color: #8c6500;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+.certificado p {
+    max-width: 420px;
+    margin: 18px auto;
+    line-height: 1.7;
+}
+
+.nome-explorador {
+    display: block;
+    color: #2e7d32;
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+}
+
+.titulo-conquistado {
+    display: block;
+    margin: 22px 0;
+    color: #1b5e20;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.xp-certificado {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fbc02d;
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+.fala-lobo {
+    min-height: 190px;
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+}
+
+#lobo {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: -45px;
+    margin-bottom: -4px;
+}
+
+.balao {
+    position: relative;
+    flex: 1;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform: translateX(-20px);
+}
+
+.balao::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    bottom: 38px;
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 20px solid #ffffff;
+}
+
+.balao p {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.secao {
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(46, 125, 50, 0.08);
+    border-radius: 17px;
+    box-shadow: 0 7px 17px rgba(61, 63, 46, 0.06);
+}
+
+.secao h3 {
+    margin: 0 0 12px;
+    color: #2e7d32;
+}
+
+.secao p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.desafio {
+    border: 2px dashed #66bb6a;
+    background: rgba(248, 255, 245, 0.82);
+}
+
+.cabecalho-desafio {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.etiqueta-desafio {
+    display: block;
+    margin-bottom: 6px;
+    color: #789179;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.xp-pagina {
+    flex-shrink: 0;
+    padding: 9px 15px;
+    color: #263238;
+    background: #fbc02d;
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.opcao {
+    width: 100%;
+    padding: 14px;
+    color: #263238;
+    background: #ffffff;
+    border: 2px solid #d6d6d6;
+    border-radius: 12px;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.opcao:hover:not(:disabled) {
+    border-color: #2e7d32;
+    background: #f4fbf5;
+    transform: translateX(3px);
+}
+
+.opcao.selecionada {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+}
+
+.opcao.correta {
+    color: #1b5e20;
+    background: #c8e6c9;
+    border-color: #2e7d32;
+    font-weight: 700;
+}
+
+.opcao.errada {
+    color: #b71c1c;
+    background: #ffebee;
+    border-color: #d32f2f;
+}
+
+.botao {
+    padding: 14px 25px;
+    color: #ffffff;
+    background: #2e7d32;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.botao:hover:not(:disabled) {
+    background: #388e3c;
+    transform: translateY(-2px);
+}
+
+.botao:disabled,
+.botao.desativado {
+    opacity: 0.55;
+    cursor: not-allowed;
+    background: #8c9b8d;
+}
+
+.resultado {
+    min-height: 24px;
+    margin: 15px 0 0;
+    font-weight: 700;
+}
+
+.rodape-livro {
+    margin-top: 35px;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(93, 64, 55, 0.15);
+}
+
+#contadorPaginas {
+    color: #2e7d32;
+    font-weight: 800;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuarMedalha {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+@media (max-width: 1050px) {
+    .botao-menu-diario {
+        display: grid;
+        place-items: center;
+    }
+
+    .menu-diario {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 4%;
+        right: 4%;
+        padding: 12px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: #174c36;
+        border-radius: 16px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .menu-diario.aberto {
+        display: flex;
+    }
+
+    .menu-diario a {
+        text-align: center;
+    }
+
+    .conteudo-capa-diario {
+        grid-template-columns: 1fr;
+        padding-top: 110px;
+        text-align: center;
+    }
+
+    .texto-capa-diario > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .informacoes-capa {
+        justify-content: center;
+    }
+
+    .visual-capa-diario {
+        min-height: 400px;
+    }
+
+    .pagina {
+        grid-template-columns: 1fr;
+    }
+
+    .topo-expedicao {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .area-progresso {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .cabecalho-diario {
+        min-height: 72px;
+        padding: 0 16px;
+    }
+
+    .icone-marca {
+        width: 43px;
+        height: 43px;
+    }
+
+    .texto-marca strong {
+        font-size: 1rem;
+    }
+
+    .texto-marca span {
+        font-size: 0.8rem;
+    }
+
+    .capa-diario {
+        padding: 28px 14px;
+    }
+
+    .apresentacao-diario {
+        border-radius: 24px;
+    }
+
+    .etiqueta-expedicao {
+        top: 22px;
+        left: 50%;
+        white-space: nowrap;
+        transform: translateX(-50%) rotate(-2deg);
+    }
+
+    .conteudo-capa-diario {
+        min-height: auto;
+        padding: 90px 22px 32px;
+    }
+
+    .texto-capa-diario h1 {
+        font-size: 3.1rem;
+        letter-spacing: -2px;
+    }
+
+    .texto-capa-diario h1 span {
+        font-size: 0.62em;
+    }
+
+    .informacao-capa {
+        min-width: 90px;
+        flex: 1;
+    }
+
+    .visual-capa-diario {
+        min-height: 330px;
+    }
+
+    .circulo-capa {
+        width: 270px;
+        height: 270px;
+    }
+
+    .lobo-capa-diario {
+        width: 300px;
+        max-height: 330px;
+    }
+
+    .cartao-local {
+        left: -5px;
+        bottom: 18px;
+    }
+
+    .cartao-xp {
+        right: -5px;
+        top: 30px;
+    }
+
+    .rodape-capa-diario {
+        gap: 12px;
+        justify-content: space-around;
+        font-size: 0.74rem;
+    }
+
+    .livro {
+        width: calc(100% - 20px);
+        margin: 15px auto;
+        padding: 20px;
+    }
+
+    .topo-expedicao {
+        padding: 22px 19px;
+    }
+
+    .imagem-local img {
+        min-height: 230px;
+    }
+
+    .lista-especies,
+    .informacoes-ficha {
+        grid-template-columns: 1fr;
+    }
+
+    .fala-lobo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #lobo {
+        width: 220px;
+        margin: 0 0 -18px;
+    }
+
+    .balao {
+        width: 100%;
+        text-align: center;
+        transform: none;
+    }
+
+    .balao::before {
+        top: -18px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        border-bottom: 20px solid #ffffff;
+        border-top: none;
+    }
+
+    .cabecalho-desafio {
+        flex-direction: column;
+    }
+
+    .rodape-livro {
+        flex-direction: column;
+    }
+
+    .rodape-livro .botao {
+        width: 100%;
+    }
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academia dos Guardiões</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quizzes.css">
+    <link rel="stylesheet" href="css/notificacoes.css">
+   
+</head>
+
+<body>
+
+<header class="cabecalho">
+
+    <a href="index.html" class="logo">
+        🐺 Guardiões do Cerrado
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="biblioteca.html">
+            Biblioteca
+        </a>
+
+        <a href="cerradex.html">
+            Cerradex
+        </a>
+
+        <a href="quizzes.html" class="ativo">
+            Academia
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<section class="bannerAcademia">
+
+    <div class="bannerTexto">
+
+        <span class="categoria">
+            Academia dos Guardiões
+        </span>
+
+        <h1>
+            Teste tudo o que você aprendeu sobre o Cerrado.
+        </h1>
+
+        <p>
+
+            Responda quizzes de diferentes dificuldades,
+            ganhe XP, desbloqueie conquistas e torne-se
+            uma verdadeira Lenda do Cerrado.
+
+        </p>
+
+    </div>
+
+
+    <div class="painelResumo">
+
+        <div class="cardResumo">
+
+            <h2 id="xpTotal">
+                0
+            </h2>
+
+            <p>XP Total</p>
+
+        </div>
+
+        <div class="cardResumo">
+
+            <h2 id="quizzesConcluidos">
+                0
+            </h2>
+
+            <p>Quizzes Concluídos</p>
+
+        </div>
+
+        <div class="cardResumo">
+
+            <h2 id="acertosTotais">
+                0
+            </h2>
+
+            <p>Acertos Totais</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="listaQuizzes">
+
+    <div class="topoLista">
+
+        <div>
+
+            <span class="categoria">
+                Desafios
+            </span>
+
+            <h2>
+                Escolha um Quiz
+            </h2>
+
+        </div>
+
+
+        <div class="filtros">
+
+            <input
+                type="text"
+                id="pesquisaQuiz"
+                placeholder="Pesquisar..."
+            >
+
+            <select id="filtroDificuldade">
+
+                <option value="todos">
+                    Todas
+                </option>
+
+                <option value="intermediario">
+                    Intermediário
+                </option>
+
+                <option value="avancado">
+                    Avançado
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="gradeQuizzes"
+        id="gradeQuizzes"
+    >
+
+    </div>
+
+
+    <div
+        id="nenhumQuiz"
+        class="nenhumQuiz"
+        hidden
+    >
+
+        🌿
+
+        <h3>
+            Nenhum quiz encontrado
+        </h3>
+
+        <p>
+            Tente pesquisar outro tema.
+        </p>
+
+    </div>
+
+</section>
+<section
+    id="telaQuiz"
+    class="telaQuiz"
+    hidden
+>
+
+    <div class="barraQuiz">
+
+        <button
+            id="voltarQuizzes"
+            class="botaoVoltar"
+        >
+            ← Voltar
+        </button>
+
+        <div class="progressoQuiz">
+
+            <div class="textoProgresso">
+
+                <span id="contadorQuestao">
+                    Questão 1 de 5
+                </span>
+
+                <span id="contadorAcertos">
+                    0 acertos
+                </span>
+
+            </div>
+
+            <div class="barra">
+
+                <div
+                    id="barraProgresso"
+                    class="preenchimento"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="cardPergunta">
+
+        <div class="informacoesQuiz">
+
+            <span id="temaQuiz"></span>
+
+            <span id="nivelQuiz"></span>
+
+        </div>
+
+        <h2 id="perguntaQuiz"></h2>
+
+        <div
+            id="alternativasQuiz"
+            class="alternativasQuiz"
+        >
+
+        </div>
+
+        <div
+            id="explicacaoQuiz"
+            class="explicacaoQuiz"
+            hidden
+        >
+
+            <h3 id="tituloExplicacao"></h3>
+
+            <p id="textoExplicacao"></p>
+
+        </div>
+
+        <div class="acoesQuiz">
+
+            <button
+                id="confirmarResposta"
+                class="botaoPrincipal"
+                disabled
+            >
+                Confirmar Resposta
+            </button>
+
+            <button
+                id="proximaQuestao"
+                class="botaoPrincipal"
+                hidden
+            >
+                Próxima Questão
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    id="telaResultado"
+    class="telaResultado"
+    hidden
+>
+
+    <div class="cardResultado">
+
+        <div
+            id="iconeResultado"
+            class="iconeResultado"
+        >
+            🏆
+        </div>
+
+        <span class="categoria">
+            Quiz Finalizado
+        </span>
+
+        <h2 id="tituloResultado"></h2>
+
+        <p id="mensagemResultado"></p>
+
+        <div class="notaResultado">
+
+            <h1 id="notaResultado">
+                5/5
+            </h1>
+
+            <span id="porcentagemResultado">
+                100%
+            </span>
+
+        </div>
+
+        <div class="informacoesResultado">
+
+            <div>
+
+                <p>XP Recebido</p>
+
+                <h3 id="xpResultado">
+                    +0 XP
+                </h3>
+
+            </div>
+
+            <div>
+
+                <p>Classificação</p>
+
+                <h3 id="classificacaoResultado">
+                    —
+                </h3>
+
+            </div>
+
+        </div>
+
+        <div class="botoesResultado">
+
+            <button
+                id="refazerQuiz"
+                class="botaoSecundario"
+            >
+                Refazer Quiz
+            </button>
+
+            <button
+                id="outroQuiz"
+                class="botaoPrincipal"
+            >
+                Escolher Outro
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script src="js/progresso.js"></script>
+<script src="js/dados.js"></script>
+<script src="js/conquistas.js"></script>
+<script src="js/missoesDados.js"></script>
+<script src="js/missoes.js"></script>
+
+<script src="js/quizzesDados.js"></script>
+<script src="js/quizzes.js"></script>
+
+<script src="js/notificacoes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diário de Campo | Guardiões do Cerrado</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/diario.css">
+   
+</head>
+
+<body>
+
+<header class="cabecalho-diario">
+    <a href="index.html" class="marca-diario">
+        <div class="icone-marca">🐺</div>
+
+        <div class="texto-marca">
+            <strong>Guardiões</strong>
+            <span>do Cerrado</span>
+        </div>
+    </a>
+
+    <button
+        id="botaoMenuDiario"
+        class="botao-menu-diario"
+        type="button"
+        aria-label="Abrir menu"
+    >
+        ☰
+    </button>
+
+    <nav id="menuDiario" class="menu-diario">
+        <a href="index.html">Início</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="diario.html" class="ativo">Diário de Campo</a>
+        <a href="cerradex.html">Cerradex</a>
+        <a href="missoes.html">Missões</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+</header>
+
+<main>
+    <section id="capaDiario" class="capa-diario">
+        <div class="decoracao-capa decoracao-esquerda">🌿</div>
+        <div class="decoracao-capa decoracao-direita">🍂</div>
+
+        <div class="apresentacao-diario">
+            <div class="etiqueta-expedicao">
+                Diário oficial de expedição
+            </div>
+
+            <div class="conteudo-capa-diario">
+                <div class="texto-capa-diario">
+                    <span class="subtitulo-capa">
+                        🐾 Uma jornada pelo coração do Brasil
+                    </span>
+
+                    <h1>
+                        Diário de Campo
+                        <span>do Lobo-guará</span>
+                    </h1>
+
+                    <p>
+                        Explore os ambientes do Cerrado, registre espécies,
+                        responda desafios e descubra por que esse bioma é tão
+                        importante para a vida.
+                    </p>
+
+                    <div class="informacoes-capa">
+                        <div class="informacao-capa">
+                            <strong>6</strong>
+                            <span>Expedições</span>
+                        </div>
+
+                        <div class="informacao-capa">
+                            <strong>400</strong>
+                            <span>XP disponíveis</span>
+                        </div>
+
+                        <div class="informacao-capa">
+                            <strong>1</strong>
+                            <span>Título especial</span>
+                        </div>
+                    </div>
+
+                    <button id="abrirDiario" class="botao-iniciar-diario">
+                        <span id="textoBotaoAbrir">
+                            Iniciar expedição
+                        </span>
+
+                        <span class="seta-botao">➜</span>
+                    </button>
+                </div>
+
+                <div class="visual-capa-diario">
+                    <div class="circulo-capa"></div>
+
+                    <img
+                        src="assets/imagens/lobo-guara-sentado.png"
+                        alt="Lobo-guará explorador sentado"
+                        class="lobo-capa-diario"
+                    >
+
+                    <div class="cartao-flutuante cartao-local">
+                        <span>📍</span>
+
+                        <div>
+                            <strong>Primeira parada</strong>
+                            <small>Chapada dos Veadeiros</small>
+                        </div>
+                    </div>
+
+                    <div class="cartao-flutuante cartao-xp">
+                        <span>⭐</span>
+
+                        <div>
+                            <strong>Ganhe XP</strong>
+                            <small>Complete os desafios</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rodape-capa-diario">
+                <span>🌱 Conhecer</span>
+                <span>🔎 Explorar</span>
+                <span>💚 Preservar</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="livro" class="livro oculto">
+        <div class="topo-expedicao">
+            <div class="identificacao-expedicao">
+                <span
+                    class="numero-expedicao"
+                    id="numeroExpedicao"
+                >
+                    Expedição 01
+                </span>
+
+                <h2 id="tituloLocal"></h2>
+
+                <span
+                    id="paginaAtual"
+                    class="pagina-atual"
+                ></span>
+            </div>
+
+            <div class="area-progresso">
+                <div class="texto-progresso">
+                    <span>Progresso da jornada</span>
+
+                    <strong id="porcentagemProgresso">
+                        17%
+                    </strong>
+                </div>
+
+                <div class="barra">
+                    <div id="barraProgresso"></div>
+                </div>
+
+                <div class="marcadores-progresso">
+                    <span>Início</span>
+                    <span>Guardião</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagina">
+            <div class="coluna-imagem">
+                <div class="imagem-local">
+                    <img
+                        id="imagemLocal"
+                        src=""
+                        alt="Ambiente do Cerrado"
+                    >
+                </div>
+
+                <div
+                    id="fichaExpedicao"
+                    class="ficha-expedicao"
+                >
+                    <div class="fita-ficha"></div>
+
+                    <div id="fichaNormal">
+                        <h3>📖 Registro da Expedição</h3>
+
+                        <div class="linha-ficha"></div>
+
+                        <div class="campo-ficha">
+                            <strong>📍 Local</strong>
+                            <span id="localFicha"></span>
+                        </div>
+
+                        <div class="campo-ficha">
+                            <strong>👣 Espécies observadas</strong>
+
+                            <div
+                                id="especiesFicha"
+                                class="lista-especies"
+                            ></div>
+                        </div>
+
+                        <div class="informacoes-ficha">
+                            <div class="campo-ficha">
+                                <strong>🎒 Dificuldade</strong>
+                                <span id="dificuldadeFicha"></span>
+                            </div>
+
+                            <div class="campo-ficha">
+                                <strong>⭐ Recompensa</strong>
+                                <span id="recompensaFicha"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        id="certificado"
+                        class="certificado oculto"
+                    >
+                        <span class="medalha-certificado">
+                            🏅
+                        </span>
+
+                        <h3>Certificado de Conclusão</h3>
+
+                        <p>Este documento reconhece que</p>
+
+                        <strong class="nome-explorador">
+                            Explorador do Cerrado
+                        </strong>
+
+                        <p>
+                            concluiu todas as expedições do Diário
+                            de Campo do Lobo-guará.
+                        </p>
+
+                        <span class="titulo-conquistado">
+                            🌿 Guardião do Cerrado 🌿
+                        </span>
+
+                        <span class="xp-certificado">
+                            ⭐ +200 XP
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coluna-conteudo">
+                <div class="fala-lobo">
+                    <img
+                        src="assets/imagens/lobo-guara-explorador.png"
+                        alt="Lobo-guará explorador"
+                        id="lobo"
+                    >
+
+                    <div class="balao">
+                        <p id="falaLobo"></p>
+                    </div>
+                </div>
+
+                <div class="conteudo">
+                    <div class="secao">
+                        <h3>🌎 Onde fica?</h3>
+                        <p id="ondeFica"></p>
+                    </div>
+
+                    <div class="secao">
+                        <h3>🌿 O que encontramos?</h3>
+                        <p id="encontramos"></p>
+                    </div>
+
+                    <div class="secao">
+                        <h3>💡 Curiosidade</h3>
+                        <p id="curiosidade"></p>
+                    </div>
+
+                    <div class="secao desafio">
+                        <div class="cabecalho-desafio">
+                            <div>
+                                <span class="etiqueta-desafio">
+                                    Teste seus conhecimentos
+                                </span>
+
+                                <h3>🎯 Mini Desafio</h3>
+                            </div>
+
+                            <span id="xpPagina" class="xp-pagina">
+                                +40 XP
+                            </span>
+                        </div>
+
+                        <p id="pergunta"></p>
+
+                        <div
+                            id="opcoes"
+                            class="opcoes"
+                        ></div>
+
+                        <button
+                            id="verificarResposta"
+                            class="botao"
+                        >
+                            Verificar resposta
+                        </button>
+
+                        <p
+                            id="resultado"
+                            class="resultado"
+                        ></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rodape-livro">
+            <button id="anterior" class="botao">
+                ◀ Página anterior
+            </button>
+
+            <span id="contadorPaginas">
+                Página 1 de 6
+            </span>
+
+            <button id="proximo" class="botao">
+                Próxima página ▶
+            </button>
+        </div>
+    </section>
+</main>
+
+<script src="js/diario.js"></script>
+
+</body>
+</html>

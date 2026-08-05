@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coleção de animais e plantas do Cerrado">
+    <title>Cerradex | Guardiões do Cerrado</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cerradex.css">
+    <link rel="stylesheet" href="css/notificacoes.css">
+ 
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <a href="principal.html" class="logo">
+        <div class="logo-icone">🐺</div>
+
+        <div class="logo-texto">
+            <span>Guardiões do</span>
+            <strong>Cerrado</strong>
+        </div>
+    </a>
+
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="principal.html">Início</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="quizzes.html">Quizzes</a>
+        <a href="missoes.html">Missões</a>
+        <a href="cerradex.html" class="pagina-ativa">Cerradex</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="perfil.html" class="botao-entrar">Perfil</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="cerradex-inicio">
+        <div class="cerradex-sobreposicao"></div>
+
+        <div class="cerradex-forma cerradex-forma-um"></div>
+        <div class="cerradex-forma cerradex-forma-dois"></div>
+
+        <div class="cerradex-hero">
+            <div class="cerradex-hero-texto">
+                <span class="cerradex-etiqueta">Coleção do Guardião</span>
+
+                <h1>
+                    Descubra o
+                    <strong>Cerradex</strong>
+                </h1>
+
+                <p>
+                    Conheça os animais e as plantas que fazem do Cerrado
+                    um dos biomas mais ricos e importantes do Brasil.
+                </p>
+
+                <a href="#colecao" class="botao-explorar-cerradex">
+                    Explorar coleção
+                    <span>↓</span>
+                </a>
+            </div>
+
+            <div class="cerradex-hero-visual">
+                <div class="circulo-cerradex">
+                    <span>📖</span>
+                </div>
+
+                <div class="cartao-flutuante cartao-flutuante-um">
+                    <span>🐾</span>
+                    <div>
+                        <strong>Fauna</strong>
+                        <small>Animais do Cerrado</small>
+                    </div>
+                </div>
+
+                <div class="cartao-flutuante cartao-flutuante-dois">
+                    <span>🌿</span>
+                    <div>
+                        <strong>Flora</strong>
+                        <small>Plantas do Cerrado</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao-progresso-cerradex">
+        <div class="container-cerradex">
+
+            <div class="painel-progresso-cerradex">
+                <div class="progresso-informacoes">
+                    <div>
+                        <span>Sua coleção</span>
+                        <h2>Progresso do Cerradex</h2>
+                        <p id="textoProgresso">
+                            0 de 12 espécies descobertas
+                        </p>
+                    </div>
+
+                    <strong id="porcentagemProgresso">0%</strong>
+                </div>
+
+                <div class="barra-cerradex">
+                    <div
+                        class="barra-cerradex-preenchimento"
+                        id="barraProgresso"
+                    ></div>
+                </div>
+            </div>
+
+            <div class="estatisticas-cerradex">
+
+                <article class="estatistica-cerradex">
+                    <div class="estatistica-icone-cerradex verde">📚</div>
+
+                    <div>
+                        <strong id="totalDescobertas">0</strong>
+                        <span>Descobertas</span>
+                    </div>
+                </article>
+
+                <article class="estatistica-cerradex">
+                    <div class="estatistica-icone-cerradex laranja">🐾</div>
+
+                    <div>
+                        <strong id="totalFauna">0</strong>
+                        <span>Fauna</span>
+                    </div>
+                </article>
+
+                <article class="estatistica-cerradex">
+                    <div class="estatistica-icone-cerradex verde-claro">🌿</div>
+
+                    <div>
+                        <strong id="totalFlora">0</strong>
+                        <span>Flora</span>
+                    </div>
+                </article>
+
+                <article class="estatistica-cerradex">
+                    <div class="estatistica-icone-cerradex amarelo">✨</div>
+
+                    <div>
+                        <strong id="totalRaras">0</strong>
+                        <span>Raras</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="colecao-cerradex" id="colecao">
+        <div class="container-cerradex">
+
+            <div class="titulo-colecao-cerradex">
+                <div>
+                    <span>Explore e descubra</span>
+                    <h2>Espécies do Cerrado</h2>
+
+                    <p>
+                        Pesquise, filtre e abra as cartas para conhecer
+                        cada espécie.
+                    </p>
+                </div>
+
+                <strong id="contadorResultados">12 cartas</strong>
+            </div>
+
+            <div class="ferramentas-cerradex">
+
+                <div class="pesquisa-cerradex">
+                    <span>🔎</span>
+
+                    <input
+                        type="search"
+                        id="campoPesquisa"
+                        placeholder="Pesquisar espécie..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="filtros-cerradex">
+                    <button
+                        type="button"
+                        class="filtro-cerradex ativo"
+                        data-filtro="todas"
+                    >
+                        Todas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-cerradex"
+                        data-filtro="fauna"
+                    >
+                        🐾 Fauna
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-cerradex"
+                        data-filtro="flora"
+                    >
+                        🌿 Flora
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-cerradex"
+                        data-filtro="descobertas"
+                    >
+                        ✓ Descobertas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-cerradex"
+                        data-filtro="bloqueadas"
+                    >
+                        🔒 Bloqueadas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-cerradex"
+                        data-filtro="raras"
+                    >
+                        ✨ Raras
+                    </button>
+                </div>
+
+            </div>
+<div id="gradeCartas" class="grade-cerradex"></div>
+            <div class="sem-resultados-cerradex" id="semResultados" hidden>
+                <span>🌾</span>
+                <h3>Nenhuma espécie encontrada</h3>
+                <p>Tente pesquisar outro nome ou escolher outro filtro.</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<div class="modal-cerradex-fundo" id="modalCarta">
+    <div class="modal-cerradex">
+
+        <button
+            type="button"
+            class="fechar-modal-cerradex"
+            id="fecharModal"
+            aria-label="Fechar"
+        >
+            ×
+        </button>
+
+        <div class="modal-cerradex-topo">
+            <div class="modal-cerradex-icone" id="modalIcone">❔</div>
+
+            <div>
+                <span id="modalCategoria">Espécie</span>
+                <h2 id="modalNome">Espécie do Cerrado</h2>
+                <strong id="modalRaridade">Comum</strong>
+            </div>
+        </div>
+
+        <p class="modal-cerradex-descricao" id="modalDescricao">
+            Conheça mais sobre esta espécie.
+        </p>
+
+        <div class="modal-cerradex-informacoes">
+
+            <article>
+                <span>🏞️</span>
+
+                <div>
+                    <h3>Habitat</h3>
+                    <p id="modalHabitat"></p>
+                </div>
+            </article>
+
+            <article>
+                <span id="modalIconeAlimentacao">🍽️</span>
+
+                <div>
+                    <h3 id="modalTituloAlimentacao">Alimentação</h3>
+                    <p id="modalAlimentacao"></p>
+                </div>
+            </article>
+
+            <article>
+                <span>🌎</span>
+
+                <div>
+                    <h3>Importância</h3>
+                    <p id="modalImportancia"></p>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="modal-cerradex-rodape">
+            <span id="modalStatus">
+                🔒 Carta bloqueada
+            </span>
+
+            <a href="#" id="botaoArtigoModal">
+                Ler artigo completo
+                <span>→</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<footer class="rodape rodape-cerradex">
+    <a href="principal.html" class="logo logo-rodape">
+        <div class="logo-icone">🐺</div>
+
+        <div class="logo-texto">
+            <span>Guardiões do</span>
+            <strong>Cerrado</strong>
+        </div>
+    </a>
+
+    <p>
+        Conhecer para preservar. Projeto educacional sobre o bioma Cerrado.
+    </p>
+
+    <span>© 2026 Guardiões do Cerrado</span>
+</footer>
+
+<script src="js/progresso.js"></script>
+<script src="js/dados.js"></script>
+<script src="js/conquistas.js"></script>
+<script src="js/missoesDados.js"></script>
+<script src="js/missoes.js"></script>
+
+<script src="js/cerradex.js"></script>
+
+<script src="js/notificacoes.js"></script>
+</body>
+</html>
