@@ -3,1838 +3,1762 @@ const artigos = {
         titulo: "Lobo-guará: o símbolo do Cerrado",
         categoria: "Fauna",
         icone: "🐺",
-        imagem: "assets/imagens/animais/lobo-guara.jpg",
+        imagem: "lobo-guara.jpg",
         tempo: "5 minutos",
         xp: 20,
         resumo: "Conheça um dos animais mais emblemáticos do Cerrado brasileiro.",
         descricao: `
             O lobo-guará é o maior canídeo da América do Sul e uma das espécies
-            mais conhecidas do Cerrado. Suas pernas muito longas permitem que
-            ele caminhe com facilidade entre gramíneas e vegetações altas.
-
-            Apesar do nome, ele não é um lobo igual aos encontrados no
-            Hemisfério Norte. O lobo-guará pertence a uma espécie própria,
-            Chrysocyon brachyurus, e geralmente apresenta comportamento
-            solitário.
+            mais conhecidas do Cerrado. Suas pernas longas ajudam o animal a se
+            deslocar entre gramíneas e vegetações altas. Apesar do nome, ele
+            não é um lobo igual aos encontrados no Hemisfério Norte. Pertence
+            à espécie Chrysocyon brachyurus e costuma apresentar hábitos
+            solitários.
         `,
         habitat: `
-            Vive principalmente em ambientes abertos, como campos, cerrados,
-            áreas de savana e regiões com vegetação arbustiva. Precisa de
-            territórios relativamente grandes para procurar alimento.
+            Vive principalmente em áreas abertas, campos, savanas, cerrados e
+            regiões com vegetação arbustiva. Pode percorrer grandes territórios
+            enquanto procura alimento e abrigo.
         `,
         alimentacao: `
-            É onívoro. Alimenta-se de pequenos vertebrados, insetos e muitos
-            frutos. A lobeira, também chamada fruta-do-lobo, é um dos vegetais
-            mais conhecidos de sua alimentação.
+            É onívoro e se alimenta de pequenos animais, insetos, ovos e
+            diversos frutos. A lobeira, conhecida também como fruta-do-lobo,
+            é um dos alimentos vegetais mais associados à espécie.
         `,
         importancia: `
-            Ao consumir frutos e eliminar sementes em outros locais, o
-            lobo-guará contribui para a dispersão de plantas. Também participa
-            das relações de predador e presa e ajuda a manter o equilíbrio das
-            comunidades animais.
+            Ao consumir frutos e transportar suas sementes, o lobo-guará ajuda
+            na dispersão de plantas. Também participa do controle de pequenos
+            animais e integra diferentes relações ecológicas do Cerrado.
         `,
         curiosidades: [
-            "Suas pernas longas são uma adaptação para caminhar em vegetação alta.",
+            "Suas pernas longas facilitam a movimentação entre gramíneas altas.",
             "Costuma viver sozinho durante grande parte do tempo.",
-            "Sua dieta mistura alimentos de origem animal e vegetal.",
-            "Pode transportar sementes por grandes distâncias."
-        ],
-        carta: "Lobo-guará",
-        raridade: "Rara"
+            "Sua alimentação combina alimentos de origem animal e vegetal.",
+            "Pode contribuir para espalhar sementes por grandes distâncias."
+        ]
     },
 
     "tamandua-bandeira": {
         titulo: "Tamanduá-bandeira: o gigante comedor de formigas",
         categoria: "Fauna",
         icone: "🐾",
-        imagem: "assets/imagens/animais/tamandua.jpg",
+        imagem: "tamandua-bandeira.jpg",
         tempo: "5 minutos",
         xp: 20,
         resumo: "Um mamífero de focinho comprido, grandes garras e uma língua impressionante.",
         descricao: `
-            O tamanduá-bandeira é um dos maiores representantes da família dos
-            tamanduás. Possui focinho alongado, uma grande cauda coberta por
-            pelos e fortes garras nas patas dianteiras.
-
-            Seu corpo é especializado para procurar pequenos insetos sociais,
-            especialmente formigas e cupins.
+            O tamanduá-bandeira é um dos maiores representantes dos tamanduás.
+            Possui focinho alongado, cauda volumosa e grandes garras nas patas
+            dianteiras. Seu corpo é altamente especializado para procurar e
+            capturar pequenos insetos sociais.
         `,
         habitat: `
-            Pode ocupar campos, savanas, áreas abertas e regiões florestadas.
-            No Cerrado, utiliza diferentes ambientes para encontrar alimento,
-            abrigo e locais de descanso.
+            Pode ocupar campos, savanas, áreas abertas e ambientes florestados.
+            No Cerrado, utiliza diferentes tipos de vegetação para procurar
+            alimento, descansar e se proteger.
         `,
         alimentacao: `
-            Alimenta-se principalmente de formigas e cupins. Utiliza suas
-            garras para abrir ninhos e depois captura os insetos com sua língua
-            comprida e pegajosa.
+            Alimenta-se principalmente de formigas e cupins. Usa suas fortes
+            garras para abrir formigueiros e cupinzeiros e captura os insetos
+            com uma língua longa e pegajosa.
         `,
         importancia: `
-            O tamanduá-bandeira participa do controle natural de populações de
-            insetos e faz parte das relações ecológicas do Cerrado.
+            Ao consumir grandes quantidades de insetos, participa naturalmente
+            do equilíbrio das populações de formigas e cupins e das relações
+            ecológicas existentes no bioma.
         `,
         curiosidades: [
             "O tamanduá-bandeira não possui dentes.",
-            "Sua língua é muito comprida e especializada na captura de insetos.",
-            "As fortes garras ajudam a abrir formigueiros e cupinzeiros.",
-            "A cauda volumosa pode ajudar a cobrir o corpo durante o descanso."
-        ],
-        carta: "Tamanduá-bandeira",
-        raridade: "Rara"
+            "Sua língua é longa e especializada na captura de insetos.",
+            "As garras dianteiras são muito fortes.",
+            "Sua grande cauda pode ajudar a proteger o corpo enquanto descansa."
+        ]
     },
 
     "onca-pintada": {
         titulo: "Onça-pintada: a grande predadora",
         categoria: "Fauna",
         icone: "🐆",
-        imagem: "assets/imagens/animais/onca-pintada.jpg",
+        imagem: "onca-pintada.jpg",
         tempo: "6 minutos",
         xp: 25,
         resumo: "Conheça o maior felino das Américas e sua importância ecológica.",
         descricao: `
-            A onça-pintada é o maior felino das Américas. Seu corpo robusto,
-            sua musculatura forte e a pelagem coberta por manchas em forma de
-            rosetas fazem dela um dos animais mais reconhecidos do continente.
-
-            É uma predadora de topo, o que significa que ocupa uma posição
-            elevada nas cadeias alimentares.
+            A onça-pintada é o maior felino das Américas. Possui corpo robusto,
+            forte musculatura e pelagem marcada por manchas chamadas rosetas.
+            É considerada uma predadora de topo, ocupando uma posição elevada
+            nas cadeias alimentares dos ambientes onde vive.
         `,
         habitat: `
-            Pode viver em diferentes tipos de vegetação, incluindo áreas do
-            Cerrado, florestas, matas próximas a rios e regiões com boa oferta
-            de presas e água.
+            Pode ocupar diferentes paisagens, incluindo áreas do Cerrado,
+            florestas, matas próximas a cursos d'água e regiões que oferecem
+            abrigo, água e quantidade suficiente de presas.
         `,
         alimentacao: `
-            É carnívora e pode consumir diferentes animais, incluindo
-            mamíferos, répteis e outras presas disponíveis em seu território.
+            É carnívora e pode capturar diversos animais, incluindo mamíferos,
+            aves e répteis. Sua dieta varia conforme as presas existentes em
+            cada ambiente.
         `,
         importancia: `
-            Predadores de topo ajudam a controlar populações de outros animais.
-            A conservação da onça também exige a proteção de grandes áreas,
-            beneficiando várias outras espécies.
+            Predadores de topo ajudam a regular populações de outros animais.
+            Além disso, conservar a onça exige proteger grandes áreas naturais,
+            beneficiando inúmeras outras espécies.
         `,
         curiosidades: [
             "É o maior felino encontrado nas Américas.",
-            "As manchas de cada indivíduo formam padrões próprios.",
+            "Os desenhos das manchas variam entre os indivíduos.",
             "É uma excelente nadadora.",
-            "Precisa de áreas extensas e preservadas para sobreviver."
-        ],
-        carta: "Onça-pintada",
-        raridade: "Lendária"
+            "Pode utilizar territórios bastante extensos."
+        ]
     },
 
     "tatu-canastra": {
-        titulo: "Tatu-canastra: o engenheiro do Cerrado",
+        titulo: "Tatu-canastra: o gigante de armadura",
         categoria: "Fauna",
-        icone: "🐾",
-        imagem: "assets/imagens/animais/tatu-canastra.jpg",
+        icone: "🦔",
+        imagem: "tatu-canastra.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Suas enormes tocas acabam oferecendo abrigo para diversos outros animais.",
+        resumo: "Descubra o maior tatu do mundo e seu papel na transformação do solo.",
         descricao: `
-            O tatu-canastra é o maior tatu existente atualmente. Possui
-            grandes garras dianteiras e capacidade de escavar estruturas
-            subterrâneas impressionantes.
-
-            Por modificar fisicamente o ambiente, pode ser considerado um
-            verdadeiro engenheiro do ecossistema.
+            O tatu-canastra é o maior tatu existente atualmente. Possui uma
+            carapaça formada por placas resistentes, grandes garras e hábitos
+            predominantemente noturnos. Por passar boa parte do tempo escondido,
+            é um animal difícil de observar na natureza.
         `,
         habitat: `
-            Ocorre em diferentes formações naturais, incluindo áreas do
-            Cerrado. Utiliza solos onde consegue cavar suas grandes tocas.
+            Pode viver em áreas de Cerrado, matas e outros ambientes naturais
+            da América do Sul. Necessita de áreas preservadas onde possa
+            encontrar alimento e locais adequados para construir suas tocas.
         `,
         alimentacao: `
-            Alimenta-se principalmente de insetos, especialmente formigas e
-            cupins, embora outros pequenos organismos também possam fazer
-            parte da alimentação.
+            Sua alimentação é composta principalmente por formigas e cupins,
+            embora também possa consumir outros pequenos invertebrados.
         `,
         importancia: `
-            As cavidades construídas pelo tatu-canastra podem ser utilizadas
-            posteriormente por diversos outros animais como abrigo,
-            proteção contra temperaturas extremas e locais de descanso.
+            Ao escavar grandes tocas, modifica o solo e cria abrigos que podem
+            ser utilizados por diversos outros animais. Por isso, funciona
+            como uma espécie engenheira do ecossistema.
         `,
         curiosidades: [
-            "É o maior tatu do mundo.",
-            "Possui garras dianteiras muito desenvolvidas.",
-            "Suas tocas podem beneficiar outras espécies.",
-            "É difícil de observar por possuir hábitos discretos."
-        ],
-        carta: "Tatu-canastra",
-        raridade: "Rara"
+            "É considerado o maior tatu do mundo.",
+            "Possui enormes garras utilizadas para escavar.",
+            "Suas tocas podem ser aproveitadas por outras espécies.",
+            "Apresenta hábitos principalmente noturnos."
+        ]
     },
 
     "seriema": {
-        titulo: "Seriema: a voz dos campos",
+        titulo: "Seriema: a cantora dos campos",
         categoria: "Fauna",
         icone: "🐦",
-        imagem: "assets/imagens/animais/seriema.jpg",
+        imagem: "seriema.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Uma ave terrestre conhecida por seu canto forte e marcante.",
+        xp: 20,
+        resumo: "Conheça uma das aves mais características das paisagens abertas do Cerrado.",
         descricao: `
-            A seriema é uma ave de pernas longas que passa grande parte do
-            tempo caminhando pelo solo. Seu canto alto pode ser ouvido a
-            grandes distâncias e é uma das sonoridades características de
-            muitas regiões do Cerrado.
+            A seriema é uma ave terrestre de pernas compridas, corpo esguio e
+            um pequeno topete próximo ao bico. Seu canto forte pode ser ouvido
+            a grandes distâncias e é uma das marcas sonoras de diversas áreas
+            do Cerrado.
         `,
         habitat: `
-            Prefere áreas abertas, campos, pastagens e vegetações pouco
-            densas, onde consegue caminhar e procurar alimento.
+            Habita principalmente campos, cerrados abertos, pastagens e áreas
+            com vegetação baixa, onde consegue caminhar e correr com facilidade.
         `,
         alimentacao: `
             Possui alimentação variada e pode consumir insetos, pequenos
-            vertebrados, sementes e outros recursos encontrados no ambiente.
+            vertebrados, sementes, frutos e outros recursos disponíveis.
         `,
         importancia: `
-            Participa das cadeias alimentares e ajuda no controle de pequenos
-            animais e insetos.
+            Participa das cadeias alimentares do Cerrado e contribui para o
+            controle de pequenos animais e insetos presentes nas áreas abertas.
         `,
         curiosidades: [
-            "Seu canto pode ser ouvido de muito longe.",
-            "Passa bastante tempo andando pelo chão.",
-            "Possui pernas longas e fortes.",
-            "Pode correr rapidamente quando ameaçada."
-        ],
-        carta: "Seriema",
-        raridade: "Comum"
+            "Passa muito tempo caminhando pelo chão.",
+            "Consegue correr rapidamente.",
+            "Seu canto pode ser ouvido de longe.",
+            "Costuma viver sozinha ou em pequenos grupos familiares."
+        ]
     },
 
     "ema": {
-        titulo: "Ema: a gigante das planícies",
+        titulo: "Ema: a grande corredora do Cerrado",
         categoria: "Fauna",
         icone: "🪶",
-        imagem: "assets/imagens/animais/ema.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Uma grande ave terrestre adaptada às paisagens abertas.",
+        imagem: "ema.jpg",
+        tempo: "5 minutos",
+        xp: 20,
+        resumo: "Uma ave enorme, veloz e perfeitamente adaptada aos ambientes abertos.",
         descricao: `
-            A ema é uma das maiores aves da América do Sul. Embora tenha asas,
-            não consegue voar. Suas pernas compridas e fortes são utilizadas
-            para correr pelas áreas abertas.
+            A ema é uma das maiores aves da América do Sul. Possui pernas
+            compridas, asas relativamente pequenas e não é capaz de voar.
+            Em compensação, consegue correr em grande velocidade pelas áreas
+            abertas onde vive.
         `,
         habitat: `
-            É encontrada principalmente em campos, cerrados e outras
-            paisagens abertas onde consegue se deslocar com facilidade.
+            É encontrada principalmente em campos, savanas e outras áreas
+            abertas, incluindo diversas regiões do Cerrado.
         `,
         alimentacao: `
-            Possui dieta variada, consumindo plantas, sementes, frutos,
-            insetos e pequenos animais.
+            É onívora e pode consumir plantas, sementes, frutos, insetos e
+            pequenos animais.
         `,
         importancia: `
-            A ema participa da dispersão de sementes e das cadeias
-            alimentares dos ambientes onde vive.
+            Participa da dispersão de sementes e das cadeias alimentares do
+            bioma, além de consumir diferentes organismos presentes nos campos.
         `,
         curiosidades: [
-            "Não voa, mas consegue correr rapidamente.",
-            "É uma das maiores aves da América do Sul.",
-            "Possui alimentação onívora.",
-            "Os machos participam diretamente dos cuidados com ovos e filhotes."
-        ],
-        carta: "Ema",
-        raridade: "Incomum"
+            "A ema não voa.",
+            "Consegue correr rapidamente.",
+            "O macho participa intensamente do cuidado dos ovos e filhotes.",
+            "É uma das maiores aves da América do Sul."
+        ]
     },
 
     "arara-caninde": {
-        titulo: "Arara-canindé: cores sobre o Cerrado",
+        titulo: "Arara-canindé: cores voando pelo Cerrado",
         categoria: "Fauna",
         icone: "🦜",
-        imagem: "assets/imagens/animais/arara-caninde.jpg",
+        imagem: "arara-caninde.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Uma grande ave colorida que participa da dinâmica das florestas e savanas.",
+        resumo: "Azul, amarela e barulhenta: conheça uma das aves mais marcantes do Brasil.",
         descricao: `
-            A arara-canindé chama atenção principalmente pela combinação de
-            azul e amarelo de suas penas. É uma ave inteligente, social e
-            capaz de realizar grandes deslocamentos.
+            A arara-canindé é facilmente reconhecida pela combinação de penas
+            azuis e amarelas. É uma ave inteligente, social e capaz de produzir
+            vocalizações muito fortes.
         `,
         habitat: `
-            Pode utilizar áreas florestadas, matas próximas à água,
-            palmeirais e diferentes formações presentes no Cerrado.
+            Pode ser encontrada em diferentes paisagens brasileiras, incluindo
+            cerrados, matas, palmeirais e áreas próximas a rios.
         `,
         alimentacao: `
-            Consome principalmente frutos, sementes e castanhas, utilizando
-            seu bico forte para quebrar estruturas resistentes.
+            Alimenta-se principalmente de frutos, sementes e castanhas,
+            utilizando seu bico forte para quebrar estruturas resistentes.
         `,
         importancia: `
-            Ao consumir frutos e transportar sementes, participa dos
-            processos de dispersão vegetal e regeneração da vegetação.
+            Ao transportar e consumir frutos e sementes, participa de relações
+            importantes com a vegetação e pode contribuir para a dinâmica das
+            plantas do ambiente.
         `,
         curiosidades: [
-            "Seu bico é forte e adaptado para quebrar sementes.",
+            "Possui um bico extremamente forte.",
             "Forma pares e grupos sociais.",
-            "Pode percorrer grandes distâncias em busca de alimento.",
-            "É uma importante dispersora de sementes."
-        ],
-        carta: "Arara-canindé",
-        raridade: "Incomum"
+            "Utiliza árvores e palmeiras para alimentação e abrigo.",
+            "Suas vocalizações podem ser ouvidas de longe."
+        ]
     },
 
     "veado-campeiro": {
-        titulo: "Veado-campeiro: corredor dos campos",
+        titulo: "Veado-campeiro: delicadeza nos campos",
         categoria: "Fauna",
         icone: "🦌",
-        imagem: "assets/imagens/animais/veado-campeiro.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Um cervídeo adaptado às áreas abertas da América do Sul.",
+        imagem: "veado-campeiro.jpg",
+        tempo: "5 minutos",
+        xp: 20,
+        resumo: "Conheça um mamífero típico das grandes paisagens abertas.",
         descricao: `
-            O veado-campeiro possui corpo esguio e pernas adaptadas para a
-            locomoção em campos e outras paisagens abertas.
+            O veado-campeiro é um cervídeo de porte médio associado a campos
+            e savanas. Possui pernas finas e grande agilidade, características
+            importantes para se deslocar pelos ambientes abertos.
         `,
         habitat: `
-            Vive principalmente em campos, savanas e outras áreas abertas,
-            incluindo formações presentes no Cerrado.
+            Ocorre principalmente em campos naturais, savanas e áreas abertas
+            com vegetação baixa.
         `,
         alimentacao: `
-            É herbívoro e consome gramíneas, folhas, brotos e outras partes
-            de plantas.
+            É herbívoro e consome gramíneas, folhas, brotos e outras partes de
+            plantas disponíveis no ambiente.
         `,
         importancia: `
-            Participa das cadeias alimentares e influencia a vegetação por
-            meio do consumo de plantas.
+            Participa das cadeias alimentares como consumidor de vegetação e
+            também como presa de grandes predadores.
         `,
         curiosidades: [
-            "É adaptado a paisagens abertas.",
-            "Possui alimentação herbívora.",
-            "Consegue se deslocar rapidamente pelos campos.",
-            "Os machos adultos podem apresentar galhadas."
-        ],
-        carta: "Veado-campeiro",
-        raridade: "Rara"
+            "Está associado principalmente a ambientes abertos.",
+            "Os machos apresentam galhadas.",
+            "É bastante ágil.",
+            "Sua presença pode indicar a manutenção de áreas naturais de campo."
+        ]
     },
 
     "anta": {
-        titulo: "Anta: jardineira das florestas",
+        titulo: "Anta: a jardineira das florestas",
         categoria: "Fauna",
         icone: "🐾",
-        imagem: "assets/imagens/animais/anta.jpg",
+        imagem: "anta.jpg",
         tempo: "5 minutos",
-        xp: 20,
-        resumo: "Um grande mamífero que transporta sementes pelo ambiente.",
+        xp: 25,
+        resumo: "O maior mamífero terrestre brasileiro também ajuda a espalhar florestas.",
         descricao: `
-            A anta é o maior mamífero terrestre nativo da América do Sul.
-            Seu corpo robusto e sua pequena tromba são características
-            bastante marcantes.
+            A anta é o maior mamífero terrestre nativo do Brasil. Possui corpo
+            robusto e um focinho flexível que auxilia na coleta de alimentos.
+            Apesar do tamanho, movimenta-se muito bem em ambientes naturais.
         `,
         habitat: `
-            Prefere regiões com vegetação e disponibilidade de água,
-            utilizando matas, cerrados e ambientes próximos a rios.
+            Vive em florestas, cerrados e áreas próximas a rios, lagoas e
+            outros corpos d'água.
         `,
         alimentacao: `
             É herbívora e consome folhas, brotos, frutos e outras partes
             vegetais.
         `,
         importancia: `
-            Ao comer frutos e transportar sementes em seu sistema digestivo,
-            a anta pode espalhá-las por grandes distâncias, contribuindo para
-            a regeneração da vegetação.
+            Ao consumir frutos e transportar sementes em seu sistema digestivo,
+            pode dispersá-las por grandes distâncias. Esse papel faz com que
+            seja frequentemente chamada de jardineira das florestas.
         `,
         curiosidades: [
-            "É o maior mamífero terrestre nativo da América do Sul.",
+            "É o maior mamífero terrestre nativo do Brasil.",
             "É uma excelente nadadora.",
-            "Come grande variedade de plantas e frutos.",
-            "Pode transportar sementes por longas distâncias."
-        ],
-        carta: "Anta",
-        raridade: "Rara"
+            "Ajuda na dispersão de sementes.",
+            "Seu focinho é curto e bastante móvel."
+        ]
     },
 
     "macaco-prego": {
         titulo: "Macaco-prego: inteligência entre as árvores",
         categoria: "Fauna",
         icone: "🐒",
-        imagem: "assets/imagens/animais/macaco-prego.jpg",
+        imagem: "macaco-prego.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Primatas conhecidos por inteligência, curiosidade e habilidade manual.",
+        resumo: "Um primata curioso, social e conhecido por sua grande capacidade de aprendizagem.",
         descricao: `
-            O nome macaco-prego é utilizado para diferentes espécies de
-            primatas do gênero Sapajus. Esses animais apresentam grande
-            habilidade para manipular objetos e resolver problemas.
+            O nome macaco-prego é utilizado para diferentes primatas do gênero
+            Sapajus. Esses animais apresentam grande capacidade de aprendizagem,
+            vivem em grupos sociais e conseguem explorar muitos tipos de
+            alimento.
         `,
         habitat: `
-            Podem utilizar diferentes tipos de vegetação, incluindo matas
-            presentes em áreas do Cerrado.
+            Podem utilizar matas, cerradões, matas de galeria e outras formações
+            com presença de árvores.
         `,
         alimentacao: `
-            A alimentação é variada e pode incluir frutos, sementes,
-            invertebrados e pequenos animais.
+            Possuem dieta variada, incluindo frutos, sementes, insetos, ovos e
+            pequenos animais.
         `,
         importancia: `
-            Ao consumir frutos, esses primatas participam da dispersão de
-            sementes e de várias interações ecológicas.
+            Participam da dispersão de sementes e das relações entre plantas e
+            animais do ambiente.
         `,
         curiosidades: [
-            "Possuem mãos muito habilidosas.",
-            "Algumas populações utilizam pedras como ferramentas.",
             "Vivem em grupos sociais.",
+            "Apresentam grande capacidade de aprendizagem.",
+            "Algumas populações utilizam objetos como ferramentas.",
             "Possuem alimentação bastante variada."
-        ],
-        carta: "Macaco-prego",
-        raridade: "Incomum"
+        ]
     },
 
     "raposa-do-campo": {
         titulo: "Raposa-do-campo: pequena caçadora do Cerrado",
         categoria: "Fauna",
         icone: "🦊",
-        imagem: "assets/imagens/animais/raposa-do-campo.jpg",
-        tempo: "4 minutos",
+        imagem: "raposa-do-campo.jpg",
+        tempo: "5 minutos",
         xp: 20,
-        resumo: "Um pequeno canídeo brasileiro fortemente associado a ambientes abertos.",
+        resumo: "Conheça um pequeno canídeo encontrado principalmente nas regiões abertas.",
         descricao: `
-            A raposa-do-campo é um canídeo nativo da América do Sul e possui
-            forte associação com ambientes de vegetação aberta do Brasil.
-            Seu porte é muito menor que o do lobo-guará.
+            A raposa-do-campo é um pequeno canídeo sul-americano associado a
+            paisagens abertas. Apresenta corpo leve, focinho fino e hábitos que
+            costumam ser mais ativos no período noturno.
         `,
         habitat: `
-            Ocorre principalmente em campos, cerrados e outras paisagens
-            abertas.
+            Vive principalmente em campos e formações abertas do Cerrado.
         `,
         alimentacao: `
-            Consome insetos, pequenos vertebrados e frutos, variando a dieta
-            conforme os recursos disponíveis.
+            Alimenta-se de insetos, pequenos vertebrados, frutos e outros
+            recursos disponíveis.
         `,
         importancia: `
             Participa do controle de pequenos animais e insetos e também pode
-            contribuir para a dispersão de sementes.
+            contribuir para a dispersão de sementes ao consumir frutos.
         `,
         curiosidades: [
             "É menor que o lobo-guará.",
-            "Vive principalmente em ambientes abertos.",
-            "Possui dieta variada.",
-            "É uma espécie característica da fauna sul-americana."
-        ],
-        carta: "Raposa-do-campo",
-        raridade: "Incomum"
+            "Está fortemente associada a ambientes abertos.",
+            "Possui dieta diversificada.",
+            "Pode ser mais ativa durante a noite."
+        ]
     },
 
     "gato-palheiro": {
-        titulo: "Gato-palheiro: felino dos campos",
+        titulo: "Gato-palheiro: o felino discreto dos campos",
         categoria: "Fauna",
         icone: "🐈",
-        imagem: "assets/imagens/animais/gato-palheiro.jpg",
+        imagem: "gato-palheiro.jpg",
         tempo: "5 minutos",
-        xp: 20,
-        resumo: "Um pequeno felino selvagem de hábitos discretos.",
+        xp: 25,
+        resumo: "Um pequeno felino selvagem que quase sempre passa despercebido.",
         descricao: `
-            O gato-palheiro é um felino selvagem associado principalmente a
-            ambientes abertos. Por ser discreto e geralmente evitar a presença
-            humana, é muito menos conhecido que grandes felinos.
+            O gato-palheiro é um pequeno felino selvagem encontrado em regiões
+            abertas da América do Sul. Sua coloração ajuda na camuflagem entre
+            gramíneas e vegetações secas.
         `,
         habitat: `
-            Pode utilizar campos, savanas e outros ambientes de vegetação
-            aberta.
+            Utiliza campos, savanas, áreas de vegetação baixa e outras
+            paisagens naturais abertas.
         `,
         alimentacao: `
-            Alimenta-se principalmente de pequenos vertebrados, como roedores,
-            aves e outros animais que consegue capturar.
+            É carnívoro e pode capturar pequenos mamíferos, aves, répteis e
+            outros animais.
         `,
         importancia: `
-            Como pequeno predador, ajuda a regular populações de suas presas e
-            integra as cadeias alimentares.
+            Como pequeno predador, participa do controle das populações de suas
+            presas e das cadeias alimentares do Cerrado.
         `,
         curiosidades: [
-            "É um felino selvagem, não um gato doméstico.",
-            "Possui comportamento discreto.",
-            "É adaptado a ambientes abertos.",
-            "Alimenta-se de pequenos animais."
-        ],
-        carta: "Gato-palheiro",
-        raridade: "Rara"
+            "É um animal difícil de observar na natureza.",
+            "Sua pelagem favorece a camuflagem.",
+            "É um felino selvagem, não uma variedade de gato doméstico.",
+            "Alimenta-se principalmente de pequenos animais."
+        ]
     },
 
     "coruja-buraqueira": {
-        titulo: "Coruja-buraqueira: sentinela do chão",
+        titulo: "Coruja-buraqueira: olhos atentos no chão",
         categoria: "Fauna",
         icone: "🦉",
-        imagem: "assets/imagens/animais/coruja-buraqueira.jpg",
+        imagem: "coruja-buraqueira.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Uma pequena coruja que utiliza cavidades no solo.",
+        xp: 20,
+        resumo: "Uma pequena coruja que escolheu o chão como endereço.",
         descricao: `
-            A coruja-buraqueira é facilmente reconhecida pelo hábito de ficar
-            próxima ao solo. Diferente de muitas outras corujas, pode ser vista
-            ativa também durante períodos claros do dia.
+            A coruja-buraqueira é uma ave de rapina de pequeno porte que
+            utiliza buracos no solo para descansar, se proteger e reproduzir.
+            Pode ser vista durante o dia com bastante frequência.
         `,
         habitat: `
-            Utiliza campos, cerrados, pastagens e outras áreas abertas onde
-            existam cavidades adequadas para abrigo.
+            Prefere áreas abertas, campos, pastagens e terrenos com vegetação
+            baixa.
         `,
         alimentacao: `
-            Alimenta-se principalmente de insetos e pequenos vertebrados.
+            Consome principalmente insetos e pequenos vertebrados, como roedores
+            e lagartos.
         `,
         importancia: `
-            Ajuda a controlar populações de insetos e pequenos animais,
-            participando das cadeias alimentares.
+            Auxilia no controle natural de insetos e pequenos animais.
         `,
         curiosidades: [
-            "Utiliza buracos no solo como abrigo.",
+            "Utiliza tocas no solo.",
             "Pode ser observada durante o dia.",
-            "Possui olhos grandes e visão adaptada à caça.",
-            "Consome grande quantidade de pequenos animais e insetos."
-        ],
-        carta: "Coruja-buraqueira",
-        raridade: "Comum"
+            "Costuma permanecer próxima da entrada da toca.",
+            "É uma importante predadora de pequenos animais."
+        ]
     },
 
     "tucano-toco": {
         titulo: "Tucano-toco: o grande bico do Cerrado",
         categoria: "Fauna",
         icone: "🐦",
-        imagem: "assets/imagens/animais/tucano-toco.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Conheça a ave de enorme bico alaranjado presente em diferentes paisagens brasileiras.",
+        imagem: "tucano-toco.jpg",
+        tempo: "5 minutos",
+        xp: 20,
+        resumo: "Seu enorme bico chama atenção, mas ele possui funções muito importantes.",
         descricao: `
-            O tucano-toco é o maior representante dos tucanos. Seu enorme bico
-            é leve em relação ao tamanho e possui diversas funções, incluindo
-            a obtenção de alimento.
+            O tucano-toco é o maior dos tucanos e possui um enorme bico
+            alaranjado. Apesar da aparência pesada, o bico apresenta uma
+            estrutura relativamente leve.
         `,
         habitat: `
-            Pode utilizar cerrados, matas, bordas de florestas e outras
-            paisagens com árvores.
+            Pode ser encontrado em cerrados, matas, bordas de florestas e
+            áreas arborizadas.
         `,
         alimentacao: `
-            Consome principalmente frutos, mas sua alimentação também pode
-            incluir outros recursos.
+            Alimenta-se principalmente de frutos, mas também pode consumir
+            ovos, insetos e pequenos animais.
         `,
         importancia: `
-            É um importante consumidor de frutos e pode ajudar a transportar
-            sementes de diferentes plantas.
+            O consumo de frutos permite que participe da dispersão de sementes,
+            ajudando no transporte de material vegetal entre diferentes áreas.
         `,
         curiosidades: [
-            "Possui um enorme bico alaranjado.",
-            "O bico é mais leve do que sua aparência sugere.",
+            "Seu bico é grande, mas relativamente leve.",
             "Consome muitos frutos.",
-            "Pode ajudar na dispersão de sementes."
-        ],
-        carta: "Tucano-toco",
-        raridade: "Incomum"
+            "Pode transportar sementes entre diferentes áreas.",
+            "É encontrado em diversos ambientes além do Cerrado."
+        ]
     },
 
     "sucuri": {
         titulo: "Sucuri: gigante das águas",
         categoria: "Fauna",
         icone: "🐍",
-        imagem: "assets/imagens/animais/sucuri.jpg",
+        imagem: "sucuri.jpg",
         tempo: "5 minutos",
-        xp: 20,
-        resumo: "Uma grande serpente associada a rios, lagos e áreas alagadas.",
+        xp: 25,
+        resumo: "Conheça uma das maiores serpentes do mundo e sua relação com ambientes aquáticos.",
         descricao: `
-            Sucuri é o nome dado a grandes serpentes do gênero Eunectes.
-            Esses animais possuem corpo musculoso e são excelentes nadadores.
+            As sucuris são grandes serpentes sul-americanas adaptadas à vida
+            próxima da água. Possuem corpo musculoso e são excelentes nadadoras.
+            Não utilizam veneno para capturar suas presas.
         `,
         habitat: `
-            Vivem principalmente em ambientes aquáticos e áreas próximas a
-            rios, lagos, brejos e regiões inundáveis.
+            São encontradas principalmente em rios, lagoas, áreas alagadas e
+            regiões de vegetação próxima à água.
         `,
         alimentacao: `
-            São carnívoras e capturam diferentes vertebrados disponíveis no
-            ambiente.
+            São carnívoras e podem capturar peixes, aves, répteis e mamíferos,
+            dependendo do tamanho do indivíduo.
         `,
         importancia: `
-            Como predadoras, participam do controle natural de populações de
-            outros animais e integram as cadeias alimentares aquáticas.
+            Participam das cadeias alimentares dos ambientes aquáticos e ajudam
+            a regular populações de outros animais.
         `,
         curiosidades: [
-            "É uma serpente fortemente associada à água.",
-            "É excelente nadadora.",
-            "Não utiliza veneno para capturar suas presas.",
-            "Seu corpo musculoso é uma importante adaptação para a caça."
-        ],
-        carta: "Sucuri",
-        raridade: "Rara"
+            "Não é uma serpente venenosa.",
+            "É uma excelente nadadora.",
+            "Passa bastante tempo próxima da água.",
+            "Captura as presas usando a força do corpo."
+        ]
     },
 
     "ipe-amarelo": {
-        titulo: "Ipê-amarelo: ouro entre as árvores",
+        titulo: "Ipê-amarelo: ouro entre os galhos",
         categoria: "Flora",
         icone: "🌼",
-        imagem: "assets/imagens/plantas/ipe.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Suas flores amarelas transformam a paisagem durante períodos mais secos.",
+        imagem: "ipe-amarelo.jpg",
+        tempo: "5 minutos",
+        xp: 20,
+        resumo: "Durante a floração, suas flores amarelas transformam completamente a paisagem.",
         descricao: `
             O nome ipê-amarelo é utilizado para diferentes espécies de árvores
-            que produzem flores amarelas muito vistosas.
-
-            Durante a floração, algumas delas perdem grande parte das folhas,
-            fazendo com que as flores se destaquem ainda mais.
+            que produzem flores intensamente amarelas. Algumas delas fazem parte
+            das paisagens do Cerrado e se destacam durante a estação seca.
         `,
         habitat: `
-            Diferentes espécies de ipê ocorrem em várias formações vegetais do
-            Brasil, incluindo áreas do Cerrado.
+            Diferentes espécies de ipê podem ocorrer em cerrados, matas e
+            outras formações vegetais brasileiras.
         `,
         alimentacao: `
-            Como outras plantas, realiza fotossíntese para produzir compostos
-            orgânicos utilizando luz, água e dióxido de carbono.
+            Como outras plantas, produz seu próprio alimento por meio da
+            fotossíntese, utilizando luz, água e gás carbônico.
         `,
         importancia: `
-            Suas flores fornecem recursos para animais polinizadores, enquanto
-            as árvores fazem parte da estrutura e diversidade da vegetação.
+            Suas flores fornecem recursos para animais polinizadores e as árvores
+            participam da estrutura da vegetação e da proteção do solo.
         `,
+        tituloAlimentacao: "Como se desenvolve?",
         curiosidades: [
-            "A floração pode ocorrer quando a árvore está quase sem folhas.",
-            "Existem diferentes espécies conhecidas popularmente como ipê-amarelo.",
-            "Suas flores atraem animais polinizadores.",
-            "É bastante utilizado em arborização."
-        ],
-        carta: "Ipê-amarelo",
-        raridade: "Incomum"
+            "Pode perder muitas folhas antes da floração.",
+            "As flores amarelas ficam muito visíveis durante determinados períodos.",
+            "Existem diferentes espécies conhecidas como ipê-amarelo.",
+            "Suas flores podem ser visitadas por polinizadores."
+        ]
     },
 
     "pequi": {
         titulo: "Pequi: sabor e tradição do Cerrado",
         categoria: "Flora",
         icone: "🟡",
-        imagem: "assets/imagens/plantas/pequi.jpg",
+        imagem: "pequi.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Um dos frutos mais conhecidos da cultura e culinária do Cerrado.",
+        resumo: "Muito além da culinária, o pequizeiro possui forte importância ecológica e cultural.",
         descricao: `
-            O pequi é fruto do pequizeiro e possui forte presença na culinária
-            e cultura de várias regiões do Brasil Central.
-
-            Sua polpa possui aroma e sabor marcantes e é utilizada em diversos
-            pratos tradicionais.
+            O pequizeiro é uma árvore característica do Cerrado e produz o
+            pequi, fruto bastante conhecido na culinária de várias regiões do
+            Brasil Central.
         `,
         habitat: `
-            O pequizeiro é característico de formações do Cerrado e apresenta
-            adaptações às condições sazonais desse ambiente.
+            Cresce em diferentes formações do Cerrado e está adaptado às
+            condições de clima e solo do bioma.
         `,
         alimentacao: `
-            Como planta, o pequizeiro realiza fotossíntese. Seus frutos,
-            entretanto, servem de alimento para seres humanos e diferentes
-            animais.
+            A planta realiza fotossíntese e produz frutos utilizados como
+            alimento por seres humanos e diferentes animais.
         `,
         importancia: `
-            Além de participar das relações ecológicas do Cerrado, o pequi
-            possui valor econômico e cultural para comunidades locais.
+            Possui importância ecológica, econômica e cultural. Seus frutos são
+            utilizados na culinária e fazem parte dos recursos alimentares de
+            diferentes animais.
         `,
+        tituloAlimentacao: "Frutos e desenvolvimento",
         curiosidades: [
-            "O caroço do pequi possui numerosos espinhos pequenos.",
-            "É ingrediente de diferentes pratos tradicionais.",
-            "Os frutos também alimentam animais silvestres.",
-            "Possui grande importância cultural no Brasil Central."
-        ],
-        carta: "Pequi",
-        raridade: "Comum"
+            "O fruto possui espinhos muito finos em sua parte interna.",
+            "É bastante utilizado na culinária do Centro-Oeste.",
+            "Seus frutos também são consumidos por animais.",
+            "O pequizeiro faz parte da cultura de diversas comunidades."
+        ]
     },
 
     "barbatimao": {
-        titulo: "Barbatimão: uma planta tradicional",
+        titulo: "Barbatimão: árvore resistente do Cerrado",
         categoria: "Flora",
-        icone: "🌿",
-        imagem: "assets/imagens/plantas/barbatimao.jpg",
+        icone: "🌳",
+        imagem: "barbatimao.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Uma árvore do Cerrado conhecida por sua presença na cultura popular.",
+        resumo: "Conheça uma planta típica do Cerrado e a importância de utilizá-la de forma responsável.",
         descricao: `
-            Barbatimão é um nome popular associado a espécies vegetais do
-            Cerrado, especialmente Stryphnodendron adstringens.
-
-            Sua casca possui grande quantidade de taninos e tornou a planta
-            conhecida em práticas tradicionais.
+            O barbatimão é o nome popular utilizado para algumas espécies
+            vegetais do Cerrado, especialmente árvores de casca espessa. É uma
+            planta bastante conhecida por populações tradicionais.
         `,
         habitat: `
-            Ocorre principalmente em formações de Cerrado e ambientes de
-            vegetação aberta.
+            Ocorre principalmente em formações abertas do Cerrado e está
+            adaptado a solos geralmente pobres em nutrientes.
         `,
         alimentacao: `
-            Produz seu próprio alimento por fotossíntese e absorve água e sais
-            minerais através das raízes.
+            Produz seu alimento pela fotossíntese e utiliza raízes para obter
+            água e nutrientes do solo.
         `,
         importancia: `
-            Faz parte da diversidade vegetal do Cerrado e possui importância
-            cultural e científica.
+            Além de integrar a vegetação nativa, possui importância cultural e
+            histórica. A retirada excessiva da casca pode prejudicar ou matar
+            a planta, por isso seu uso precisa ser responsável.
         `,
+        tituloAlimentacao: "Como se desenvolve?",
         curiosidades: [
-            "Sua casca apresenta alta concentração de taninos.",
-            "É conhecida em conhecimentos tradicionais.",
-            "É uma planta característica do Cerrado.",
-            "A exploração inadequada da casca pode prejudicar as árvores."
-        ],
-        carta: "Barbatimão",
-        raridade: "Incomum"
+            "Possui casca rica em compostos vegetais.",
+            "É conhecido por comunidades tradicionais.",
+            "A retirada incorreta da casca pode prejudicar a árvore.",
+            "Faz parte da diversidade vegetal do Cerrado."
+        ]
     },
 
     "buriti": {
         titulo: "Buriti: a palmeira das veredas",
         categoria: "Flora",
         icone: "🌴",
-        imagem: "assets/imagens/plantas/buriti.jpg",
+        imagem: "buriti.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Uma grande palmeira fortemente relacionada a áreas úmidas.",
+        resumo: "Uma palmeira que costuma revelar onde a água está escondida na paisagem.",
         descricao: `
-            O buriti é uma palmeira de grande porte muito característica das
-            veredas. Sua presença está fortemente associada a ambientes onde
-            o solo permanece úmido ou possui água próxima à superfície.
+            O buriti é uma grande palmeira muito associada às veredas do
+            Cerrado. Pode atingir grande altura e produz frutos utilizados por
+            animais e comunidades humanas.
         `,
         habitat: `
-            Cresce principalmente em veredas, brejos e outras áreas úmidas do
-            Cerrado.
+            É encontrado principalmente em áreas úmidas, brejos e veredas,
+            frequentemente relacionadas à presença de água próxima da superfície.
         `,
         alimentacao: `
-            Realiza fotossíntese. Seus frutos também são consumidos por vários
-            animais e podem ser utilizados na alimentação humana.
+            Realiza fotossíntese e depende de ambientes com boa disponibilidade
+            de água para seu desenvolvimento.
         `,
         importancia: `
-            O buriti oferece alimento, abrigo e recursos para diversos seres
-            vivos. Também é um elemento marcante das veredas.
+            Oferece alimento e abrigo para diferentes espécies e está associado
+            à manutenção de ambientes úmidos importantes para os recursos
+            hídricos.
         `,
+        tituloAlimentacao: "Relação com a água",
         curiosidades: [
-            "É chamado por muitas pessoas de palmeira das veredas.",
-            "Sua presença costuma estar relacionada a solos úmidos.",
-            "Seus frutos são aproveitados por animais e seres humanos.",
-            "Pode atingir grande altura."
-        ],
-        carta: "Buriti",
-        raridade: "Incomum"
+            "É muito comum em veredas.",
+            "Seus frutos podem ser utilizados na alimentação.",
+            "Diversos animais dependem dessa palmeira.",
+            "Sua presença costuma estar relacionada a terrenos úmidos."
+        ]
     },
 
     "cagaita": {
-        titulo: "Cagaita: pequena fruta do Cerrado",
+        titulo: "Cagaita: pequena fruta, grande Cerrado",
         categoria: "Flora",
         icone: "🍈",
-        imagem: "assets/imagens/plantas/cagaita.jpg",
+        imagem: "cagaita.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Uma fruta nativa que alimenta tanto pessoas quanto animais.",
+        xp: 20,
+        resumo: "Conheça um fruto nativo que faz parte da biodiversidade e da alimentação regional.",
         descricao: `
-            A cagaita é fruto da cagaiteira, uma árvore nativa do Cerrado.
-            Quando madura, apresenta polpa suculenta e pode ser utilizada em
-            alimentos e bebidas.
+            A cagaiteira é uma árvore nativa do Cerrado que produz frutos
+            arredondados conhecidos como cagaitas. Seus frutos possuem polpa
+            suculenta e podem ser utilizados na alimentação.
         `,
         habitat: `
-            A cagaiteira ocorre em formações típicas do Cerrado brasileiro.
+            É encontrada principalmente em formações de Cerrado do Brasil
+            Central.
         `,
         alimentacao: `
-            A planta realiza fotossíntese. Seus frutos são consumidos por
-            diferentes animais e também pela população humana.
+            Produz seu próprio alimento por fotossíntese e seus frutos podem
+            servir de alimento para animais e seres humanos.
         `,
         importancia: `
-            É uma fonte de alimento para a fauna e possui potencial econômico
-            para comunidades que aproveitam frutos nativos de forma sustentável.
+            Contribui para a biodiversidade vegetal e possui potencial
+            alimentar e econômico para comunidades locais.
         `,
+        tituloAlimentacao: "Frutos",
         curiosidades: [
             "É uma fruta nativa do Cerrado.",
-            "Pode ser utilizada em sucos e outros produtos.",
-            "Seus frutos são consumidos pela fauna.",
-            "A árvore é adaptada às condições do bioma."
-        ],
-        carta: "Cagaita",
-        raridade: "Comum"
+            "Pode ser utilizada na preparação de alimentos.",
+            "Seus frutos também atraem animais.",
+            "A árvore faz parte da flora típica do Brasil Central."
+        ]
     },
 
     "araticum": {
-        titulo: "Araticum: doce nativo do Cerrado",
+        titulo: "Araticum: fruto perfumado do Cerrado",
         categoria: "Flora",
         icone: "🍃",
-        imagem: "assets/imagens/plantas/araticum.jpg",
+        imagem: "araticum.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Um fruto aromático produzido por uma planta nativa do Cerrado.",
+        xp: 20,
+        resumo: "Uma fruta nativa de aroma marcante e importante para animais e pessoas.",
         descricao: `
-            O araticum, também conhecido por diferentes nomes regionais, é um
-            fruto típico do Cerrado. Sua polpa é aromática e pode ser consumida
-            ou utilizada no preparo de alimentos.
+            O araticum, também chamado de marolo em algumas regiões, é um fruto
+            produzido por espécies nativas do Cerrado. Possui polpa aromática
+            e sabor característico.
         `,
         habitat: `
-            Cresce em diferentes formações naturais do Cerrado.
+            Sua planta ocorre em diferentes formações abertas do Cerrado.
         `,
         alimentacao: `
-            A planta produz seu alimento por fotossíntese e seus frutos servem
-            como recurso alimentar para animais.
+            O fruto pode ser consumido por diferentes animais e também é
+            utilizado na alimentação humana.
         `,
         importancia: `
-            Participa das relações entre plantas e animais e também representa
-            um recurso alimentar nativo com valor cultural.
+            Ajuda a manter relações entre plantas e animais e possui valor
+            cultural e alimentar para populações do Cerrado.
         `,
+        tituloAlimentacao: "Frutos e dispersão",
         curiosidades: [
-            "É um fruto nativo do Cerrado.",
-            "Possui aroma forte e característico.",
-            "É consumido por animais e seres humanos.",
-            "Pode ser utilizado em doces e outros alimentos."
-        ],
-        carta: "Araticum",
-        raridade: "Comum"
+            "Também pode ser chamado de marolo.",
+            "Possui aroma marcante.",
+            "É utilizado em doces e outras receitas.",
+            "Animais também consomem seus frutos."
+        ]
     },
 
     "baru": {
         titulo: "Baru: a castanha do Cerrado",
         categoria: "Flora",
         icone: "🌰",
-        imagem: "assets/imagens/plantas/baru.jpg",
+        imagem: "baru.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Uma árvore nativa cujo fruto guarda uma semente muito valorizada.",
+        resumo: "Conheça uma árvore que produz uma das sementes mais valorizadas do Cerrado.",
         descricao: `
-            O baru é fruto do baruzeiro, árvore nativa do Cerrado. Dentro de
-            seu fruto existe uma semente conhecida como castanha de baru,
-            utilizada na alimentação.
+            O baruzeiro é uma árvore nativa do Cerrado que produz frutos
+            contendo uma semente conhecida como castanha de baru.
         `,
         habitat: `
-            O baruzeiro ocorre naturalmente em diversas áreas do Cerrado.
+            Pode ocorrer em áreas de Cerrado e outras formações vegetais do
+            Brasil Central.
         `,
         alimentacao: `
-            Realiza fotossíntese. Os frutos e sementes podem servir de alimento
-            para animais e pessoas.
+            Seus frutos e sementes fazem parte da alimentação de animais e a
+            castanha também é utilizada na alimentação humana após preparo
+            adequado.
         `,
         importancia: `
-            O aproveitamento sustentável do baru pode gerar renda mantendo as
-            árvores em pé, unindo conservação ambiental e economia local.
+            O baru possui importância ecológica e econômica e pode favorecer
+            atividades sustentáveis baseadas em produtos nativos.
         `,
+        tituloAlimentacao: "Frutos e sementes",
         curiosidades: [
-            "A semente é conhecida como castanha de baru.",
-            "Pode ser consumida após preparo adequado.",
-            "É uma espécie nativa do Cerrado.",
-            "Possui importância econômica para o extrativismo sustentável."
-        ],
-        carta: "Baru",
-        raridade: "Incomum"
+            "A castanha fica protegida dentro de uma estrutura muito resistente.",
+            "É utilizada em diversos alimentos.",
+            "O baruzeiro pode alcançar grande porte.",
+            "Seu aproveitamento sustentável pode gerar renda."
+        ]
     },
 
     "mangaba": {
-        titulo: "Mangaba: fruta de sabor marcante",
+        titulo: "Mangaba: fruta delicada do Cerrado",
         categoria: "Flora",
         icone: "🍈",
-        imagem: "assets/imagens/plantas/mangaba.jpg",
+        imagem: "mangaba.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Fruto nativo produzido pela mangabeira.",
+        xp: 20,
+        resumo: "Descubra uma fruta nativa utilizada em sucos, doces e diversas preparações.",
         descricao: `
-            A mangaba é produzida pela mangabeira e possui polpa macia e sabor
-            característico. O fruto possui importância cultural e econômica
-            em diferentes regiões brasileiras.
+            A mangabeira é uma planta nativa de diferentes regiões brasileiras,
+            inclusive áreas do Cerrado. Produz a mangaba, fruta aromática e de
+            polpa macia.
         `,
         habitat: `
-            A mangabeira pode ocorrer em ambientes de Cerrado e outras
-            formações naturais brasileiras.
+            Pode ocorrer em cerrados, áreas arenosas e outros ambientes
+            naturais.
         `,
         alimentacao: `
-            A árvore realiza fotossíntese e produz frutos consumidos por
-            animais e seres humanos.
+            Seus frutos são consumidos por animais e seres humanos e podem ser
+            utilizados em sucos, sorvetes e doces.
         `,
         importancia: `
-            Além do papel ecológico, a coleta e utilização dos frutos podem
-            contribuir para economias locais.
+            A espécie possui importância ecológica, alimentar e econômica e
+            integra a diversidade de frutos nativos brasileiros.
         `,
+        tituloAlimentacao: "Frutos e usos",
         curiosidades: [
-            "Seu fruto possui polpa macia.",
-            "É utilizada em diferentes produtos alimentícios.",
-            "É uma espécie nativa do Brasil.",
-            "Seus frutos podem servir de alimento à fauna."
-        ],
-        carta: "Mangaba",
-        raridade: "Comum"
+            "Seu fruto é bastante aromático.",
+            "Pode ser utilizado em sucos e sobremesas.",
+            "Animais também ajudam a dispersar suas sementes.",
+            "É encontrada em diferentes regiões brasileiras."
+        ]
     },
 
     "lobeira": {
-        titulo: "Lobeira: a fruta do lobo-guará",
+        titulo: "Lobeira: a fruta ligada ao lobo-guará",
         categoria: "Flora",
-        icone: "🍏",
-        imagem: "assets/imagens/plantas/lobeira.jpg",
+        icone: "🫐",
+        imagem: "lobeira.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Uma planta famosa por sua relação alimentar com o lobo-guará.",
+        resumo: "Conheça a planta que mantém uma relação famosa com o lobo-guará.",
         descricao: `
-            A lobeira é uma planta típica de áreas do Cerrado. Produz frutos
-            conhecidos como fruta-do-lobo, que fazem parte da alimentação do
-            lobo-guará.
+            A lobeira é uma planta típica de áreas abertas do Cerrado. Produz
+            frutos grandes e arredondados conhecidos como frutas-do-lobo.
         `,
         habitat: `
-            É encontrada em áreas abertas e formações características do
-            Cerrado.
+            Cresce em campos, cerrados e áreas abertas, sendo capaz de ocupar
+            ambientes sujeitos a condições secas.
         `,
         alimentacao: `
-            Realiza fotossíntese. Seus frutos são consumidos por animais,
-            especialmente pelo lobo-guará.
+            Seus frutos são consumidos por diferentes animais, com destaque
+            para o lobo-guará.
         `,
         importancia: `
-            A relação entre lobeira e animais consumidores de frutos demonstra
-            como plantas e fauna dependem umas das outras.
+            A relação entre a lobeira e animais frugívoros favorece a dispersão
+            de suas sementes e demonstra como plantas e animais dependem uns
+            dos outros no ecossistema.
         `,
+        tituloAlimentacao: "Frutos e dispersão",
         curiosidades: [
             "Também é conhecida como fruta-do-lobo.",
-            "Seu fruto faz parte da dieta do lobo-guará.",
-            "Pode crescer em áreas abertas do Cerrado.",
-            "Animais ajudam a transportar suas sementes."
-        ],
-        carta: "Lobeira",
-        raridade: "Comum"
+            "O lobo-guará é um importante consumidor de seus frutos.",
+            "Suas sementes podem ser transportadas por animais.",
+            "É comum em áreas abertas do Cerrado."
+        ]
     },
 
     "sucupira": {
-        titulo: "Sucupira: resistência do Cerrado",
+        titulo: "Sucupira: força entre as árvores",
         categoria: "Flora",
         icone: "🌳",
-        imagem: "assets/imagens/plantas/sucupira.jpg",
+        imagem: "sucupira.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Árvores conhecidas popularmente pelo nome sucupira fazem parte da vegetação brasileira.",
+        resumo: "Uma árvore nativa que participa da estrutura e diversidade do Cerrado.",
         descricao: `
-            Sucupira é um nome popular utilizado para diferentes espécies de
-            árvores. Algumas delas ocorrem naturalmente em regiões do Cerrado
-            e apresentam características associadas à sobrevivência em
-            ambientes sazonais.
+            O nome sucupira é utilizado para diferentes espécies de árvores
+            brasileiras. Algumas são características de áreas do Cerrado e
+            apresentam madeira resistente e sementes particulares.
         `,
         habitat: `
-            Pode ocorrer em diferentes formações de Cerrado, dependendo da
-            espécie considerada.
+            Pode ocorrer em formações de Cerrado, cerradões e outras áreas
+            naturais.
         `,
         alimentacao: `
-            Como planta, produz matéria orgânica por meio da fotossíntese e
-            obtém água e nutrientes do solo.
+            Assim como outras árvores, produz seu alimento pela fotossíntese e
+            absorve água e nutrientes pelas raízes.
         `,
         importancia: `
-            As árvores participam da estrutura da vegetação e oferecem recursos
-            para diferentes organismos.
+            Integra a vegetação nativa e oferece recursos e estrutura para
+            diferentes organismos do ambiente.
         `,
+        tituloAlimentacao: "Desenvolvimento",
         curiosidades: [
-            "Sucupira é um nome popular utilizado para mais de uma espécie.",
-            "Algumas sucupiras são encontradas no Cerrado.",
-            "São árvores adaptadas a condições sazonais.",
-            "Suas flores e frutos participam das relações ecológicas."
-        ],
-        carta: "Sucupira",
-        raridade: "Incomum"
+            "O nome sucupira pode se referir a diferentes espécies.",
+            "Algumas possuem madeira bastante resistente.",
+            "Faz parte da vegetação do Cerrado.",
+            "Suas sementes apresentam formas características."
+        ]
     },
 
     "copaiba": {
         titulo: "Copaíba: a árvore do óleo",
         categoria: "Flora",
         icone: "🌳",
-        imagem: "assets/imagens/plantas/copaiba.jpg",
+        imagem: "copaiba.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Conheça árvores capazes de produzir uma substância oleosa em seu tronco.",
+        resumo: "Conheça uma árvore famosa por produzir uma substância oleosa em seu tronco.",
         descricao: `
-            Copaíba é o nome popular dado a espécies do gênero Copaifera.
-            Algumas produzem uma substância oleosa armazenada em estruturas
-            internas do tronco.
+            As copaíbas são árvores do gênero Copaifera encontradas em
+            diferentes biomas brasileiros. Algumas espécies ocorrem no
+            Cerrado e podem atingir grande porte.
         `,
         habitat: `
-            Espécies de copaíba podem ocorrer em diferentes formações
-            brasileiras, inclusive regiões de Cerrado.
+            Podem ocorrer em matas, cerrados e outras formações naturais.
         `,
         alimentacao: `
-            Realizam fotossíntese e absorvem água e minerais por suas raízes.
+            Produzem alimento por fotossíntese e utilizam extensos sistemas
+            radiculares para obter água e nutrientes.
         `,
         importancia: `
-            As copaíbas fazem parte da biodiversidade vegetal e possuem
-            importância ecológica, cultural e econômica.
+            Fazem parte da biodiversidade vegetal e são conhecidas pelo óleo
+            produzido em seus troncos. A exploração precisa ocorrer de forma
+            responsável para evitar danos às árvores.
         `,
+        tituloAlimentacao: "Desenvolvimento",
         curiosidades: [
-            "Copaíba é um nome aplicado a diferentes espécies.",
-            "O tronco pode armazenar uma substância oleosa.",
-            "Algumas espécies ocorrem no Cerrado.",
-            "São árvores importantes para diferentes organismos."
-        ],
-        carta: "Copaíba",
-        raridade: "Incomum"
+            "Algumas copaíbas produzem óleo em cavidades do tronco.",
+            "Existem diferentes espécies de copaíba.",
+            "Podem alcançar grande porte.",
+            "Seu uso deve ser realizado de maneira sustentável."
+        ]
     },
 
     "jatoba": {
-        titulo: "Jatobá: gigante de frutos duros",
+        titulo: "Jatobá: gigante de frutos resistentes",
         categoria: "Flora",
         icone: "🌳",
-        imagem: "assets/imagens/plantas/jatoba.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Uma árvore conhecida pelos frutos de casca resistente.",
+        imagem: "jatoba.jpg",
+        tempo: "5 minutos",
+        xp: 20,
+        resumo: "Uma árvore importante para a fauna e para diferentes comunidades brasileiras.",
         descricao: `
-            Jatobá é um nome popular utilizado para árvores do gênero
-            Hymenaea. Seus frutos possuem casca dura e podem conter polpa
-            consumida por diferentes animais.
+            O jatobá é uma árvore de grande porte encontrada em diferentes
+            regiões brasileiras. Produz frutos de casca muito resistente que
+            guardam uma polpa seca e nutritiva.
         `,
         habitat: `
-            Espécies de jatobá ocorrem em diferentes ambientes brasileiros,
-            incluindo áreas do Cerrado.
+            Pode ocorrer em cerrados, matas e outras formações vegetais.
         `,
         alimentacao: `
-            Realiza fotossíntese. Os frutos podem servir de alimento para
-            diferentes animais.
+            Seus frutos podem ser consumidos por diversos animais e também
+            apresentam usos tradicionais na alimentação humana.
         `,
         importancia: `
-            Fornece recursos para a fauna e faz parte da diversidade e
-            estrutura das comunidades vegetais.
+            Fornece alimento, sombra e estrutura para diferentes organismos e
+            contribui para a diversidade das formações vegetais.
         `,
+        tituloAlimentacao: "Frutos",
         curiosidades: [
-            "Seus frutos possuem casca muito resistente.",
-            "Alguns animais consomem a polpa dos frutos.",
-            "Existem diferentes espécies chamadas de jatobá.",
-            "Pode atingir grande porte."
-        ],
-        carta: "Jatobá",
-        raridade: "Incomum"
+            "O fruto possui uma casca muito dura.",
+            "A polpa apresenta odor e sabor marcantes.",
+            "Pode atingir grande porte.",
+            "Seus frutos são consumidos por animais."
+        ]
     },
 
     "murici": {
-        titulo: "Murici: pequeno fruto, grande importância",
+        titulo: "Murici: pequeno fruto de grande valor",
         categoria: "Flora",
-        icone: "🟠",
-        imagem: "assets/imagens/plantas/murici.jpg",
+        icone: "🟡",
+        imagem: "murici.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Conheça frutos nativos consumidos pela fauna e pelas populações humanas.",
+        xp: 20,
+        resumo: "Um fruto nativo que alimenta animais e também aparece em receitas regionais.",
         descricao: `
-            Murici é o nome de frutos produzidos por diferentes espécies,
-            especialmente do gênero Byrsonima. Muitas dessas plantas ocorrem
-            em formações do Cerrado.
+            O nome murici é utilizado para diferentes espécies do gênero
+            Byrsonima. Muitas delas produzem pequenos frutos amarelos de aroma
+            marcante.
         `,
         habitat: `
-            Diferentes espécies podem viver em áreas abertas e outras
-            formações naturais do Cerrado.
+            Espécies de murici podem ocorrer em cerrados e outras formações
+            naturais brasileiras.
         `,
         alimentacao: `
-            As plantas realizam fotossíntese. Os frutos servem como alimento
-            para diferentes animais.
+            Seus frutos são utilizados como alimento por animais e seres
+            humanos.
         `,
         importancia: `
-            Os muricis ajudam a sustentar redes de interação entre plantas e
-            animais e também podem ser aproveitados pela população.
+            Contribui para as relações entre fauna e flora e também possui
+            importância cultural e alimentar.
         `,
+        tituloAlimentacao: "Frutos",
         curiosidades: [
-            "Murici pode se referir a diferentes espécies.",
-            "Seus frutos são pequenos e aromáticos.",
-            "Animais podem ajudar na dispersão das sementes.",
-            "Também é utilizado na alimentação humana."
-        ],
-        carta: "Murici",
-        raridade: "Comum"
+            "Existem várias espécies conhecidas como murici.",
+            "Os frutos costumam apresentar aroma marcante.",
+            "Pode ser utilizado em sucos e doces.",
+            "Animais participam da dispersão de suas sementes."
+        ]
     },
 
     "sempre-viva": {
-        titulo: "Sempre-vivas: flores que parecem não envelhecer",
+        titulo: "Sempre-viva: delicadeza que resiste ao tempo",
         categoria: "Flora",
-        icone: "🌾",
-        imagem: "assets/imagens/plantas/sempre-viva.jpg",
+        icone: "🌼",
+        imagem: "sempre-viva.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Plantas conhecidas por manterem a aparência mesmo depois de secas.",
+        xp: 20,
+        resumo: "Pequenas plantas que preservam sua aparência mesmo depois de secas.",
         descricao: `
-            Sempre-viva é um nome popular utilizado para diversas plantas
-            cujas estruturas florais conseguem conservar sua forma e aparência
-            durante muito tempo após a secagem.
+            O nome sempre-viva é utilizado para diferentes plantas cujas
+            estruturas florais mantêm a forma e a aparência por bastante tempo
+            após secarem.
         `,
         habitat: `
-            Diferentes espécies podem ocorrer em campos, regiões de altitude e
-            outros ambientes do Cerrado.
+            Muitas espécies vivem em campos rupestres e áreas abertas associadas
+            ao Cerrado, frequentemente em solos rasos e ambientes de altitude.
         `,
         alimentacao: `
-            Produzem seu alimento pela fotossíntese e absorvem nutrientes do
-            solo.
+            Realizam fotossíntese e apresentam adaptações para sobreviver em
+            ambientes onde água e nutrientes podem ser limitados.
         `,
         importancia: `
-            Fazem parte da diversidade vegetal e podem ter relações importantes
-            com polinizadores e outros organismos.
+            Fazem parte de ecossistemas extremamente diversos e algumas espécies
+            possuem distribuição restrita, tornando a proteção de seus habitats
+            especialmente importante.
         `,
+        tituloAlimentacao: "Adaptações",
         curiosidades: [
-            "O nome está relacionado à aparência duradoura das flores secas.",
-            "Existem diversas espécies conhecidas como sempre-vivas.",
-            "Algumas vivem em ambientes bastante específicos.",
-            "A coleta sem controle pode prejudicar populações naturais."
-        ],
-        carta: "Sempre-viva",
-        raridade: "Rara"
+            "Mantêm a aparência por bastante tempo depois de secas.",
+            "Muitas vivem em ambientes de altitude.",
+            "Algumas possuem distribuição muito limitada.",
+            "São bastante associadas aos campos rupestres."
+        ]
     },
 
     "canela-de-ema": {
-        titulo: "Canela-de-ema: sobrevivente do fogo",
+        titulo: "Canela-de-ema: sobrevivente dos campos",
         categoria: "Flora",
         icone: "🌱",
-        imagem: "assets/imagens/plantas/canela-de-ema.jpg",
+        imagem: "canela-de-ema.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Plantas de aspecto peculiar adaptadas aos ambientes abertos do Cerrado.",
+        resumo: "Uma planta de aparência peculiar adaptada a ambientes abertos e rochosos.",
         descricao: `
-            O nome canela-de-ema é utilizado para diferentes plantas típicas
-            do Cerrado, muitas associadas a ambientes abertos e condições
-            ambientais desafiadoras.
+            O nome canela-de-ema é utilizado para diferentes plantas típicas de
+            campos rupestres e áreas de Cerrado. Algumas apresentam caules
+            alongados e folhas concentradas nas extremidades.
         `,
         habitat: `
-            Ocorrem principalmente em campos e outras formações abertas do
-            Cerrado.
+            É encontrada especialmente em campos rupestres e terrenos abertos,
+            muitas vezes sobre solos pedregosos e pobres em nutrientes.
         `,
         alimentacao: `
-            Produzem seu próprio alimento pela fotossíntese.
+            Produz alimento pela fotossíntese e apresenta adaptações que
+            permitem sobreviver em ambientes com condições difíceis.
         `,
         importancia: `
-            Demonstram a enorme variedade de adaptações que permitem às plantas
-            sobreviver à seca e a outros fatores naturais do Cerrado.
+            Faz parte de comunidades vegetais especializadas e contribui para a
+            biodiversidade de áreas rupestres.
         `,
+        tituloAlimentacao: "Adaptações",
         curiosidades: [
-            "O nome popular pode representar diferentes espécies.",
-            "Algumas apresentam estruturas resistentes próximas ao solo.",
-            "São adaptadas a ambientes sazonais.",
-            "Fazem parte da flora característica do Cerrado."
-        ],
-        carta: "Canela-de-ema",
-        raridade: "Rara"
+            "É muito associada a campos rupestres.",
+            "Pode viver em solos pedregosos.",
+            "Possui aparência bastante característica.",
+            "Algumas espécies apresentam crescimento lento."
+        ]
     },
 
     "o-que-e-cerrado": {
         titulo: "O que é o Cerrado?",
-        categoria: "Ecossistema",
+        categoria: "Bioma",
         icone: "🌎",
-        imagem: "assets/imagens/cerrado.jpg",
+        imagem: "o-que-e-cerrado.jpg",
         tempo: "6 minutos",
         xp: 25,
-        resumo: "Conheça as principais características de um dos maiores biomas brasileiros.",
-        tituloHabitat: "🗺️ Onde fica?",
-        tituloAlimentacao: "🌿 Como é a paisagem?",
-        tituloImportancia: "🌎 Por que ele é importante?",
+        resumo: "Descubra por que o Cerrado é muito mais diverso do que uma paisagem de árvores retorcidas.",
         descricao: `
-            O Cerrado é um grande bioma sul-americano que ocupa uma extensa
-            área do território brasileiro. Ele reúne paisagens muito variadas:
-            campos quase sem árvores, savanas com arbustos, matas densas,
-            veredas e ambientes próximos a cursos d'água.
-
-            Essa variedade de ambientes ajuda a explicar sua enorme
-            biodiversidade.
+            O Cerrado é um grande bioma tropical da América do Sul e ocupa uma
+            extensa área do território brasileiro. Suas paisagens incluem
+            campos quase sem árvores, savanas, formações arbustivas e regiões
+            com vegetação mais fechada.
         `,
         habitat: `
-            Sua maior área de ocorrência está no Brasil Central, embora o
-            bioma alcance diferentes estados e regiões do país.
+            Está concentrado principalmente no Brasil Central, mas também
+            alcança outras regiões do país. As condições de solo, relevo, água
+            e clima criam diversos tipos de ambientes.
         `,
         alimentacao: `
-            Não existe apenas uma aparência de Cerrado. Há formações abertas,
-            áreas com árvores espaçadas, matas de galeria, veredas, cerradões e
-            diversos ambientes intermediários.
+            Sua biodiversidade depende das relações entre plantas, animais,
+            fungos, microrganismos, solo, água, clima e fogo.
         `,
         importancia: `
-            Além de abrigar grande diversidade de seres vivos, o Cerrado está
-            relacionado às nascentes e cursos de água de importantes bacias
-            hidrográficas brasileiras.
+            O Cerrado possui enorme biodiversidade, abriga nascentes e cursos
+            d'água importantes e fornece alimentos e outros recursos utilizados
+            por comunidades humanas.
         `,
+        tituloHabitat: "Onde está o Cerrado?",
+        tituloAlimentacao: "Como funciona?",
+        tituloImportancia: "Por que ele é importante?",
         curiosidades: [
-            "O Cerrado apresenta vários tipos de vegetação.",
-            "Muitas espécies só são encontradas nessa região.",
-            "Possui uma estação seca e outra chuvosa bem marcadas em muitas áreas.",
-            "Sua vegetação está relacionada à manutenção de importantes recursos hídricos."
+            "O Cerrado possui diferentes tipos de paisagem.",
+            "Grande parte das plantas possui estruturas subterrâneas importantes.",
+            "O bioma apresenta uma estação seca e outra chuvosa.",
+            "Abriga enorme variedade de plantas e animais."
         ]
     },
 
     "veredas": {
         titulo: "Veredas: caminhos de água no Cerrado",
-        categoria: "Ecossistema",
+        categoria: "Ecossistemas",
         icone: "💧",
-        imagem: "assets/imagens/veredas.jpg",
+        imagem: "veredas.jpg",
         tempo: "5 minutos",
-        xp: 20,
-        resumo: "Ambientes úmidos reconhecidos pela presença marcante dos buritis.",
-        tituloHabitat: "💧 Onde aparecem?",
-        tituloAlimentacao: "🌴 Como funcionam?",
-        tituloImportancia: "🌎 Por que preservar?",
+        xp: 25,
+        resumo: "Ambientes úmidos marcados pela presença do buriti e fundamentais para a água.",
         descricao: `
-            As veredas são ambientes associados a áreas úmidas do Cerrado.
-            Frequentemente possuem buritis e vegetação adaptada a solos com
-            grande disponibilidade de água.
+            As veredas são ambientes úmidos encontrados em regiões do Cerrado.
+            São frequentemente reconhecidas pela presença de buritis e por
+            solos encharcados ou com água próxima da superfície.
         `,
         habitat: `
-            Aparecem em locais onde a água subterrânea está próxima à
-            superfície e em áreas de nascentes ou drenagem natural.
+            Formam-se em áreas onde as condições do relevo e do solo favorecem
+            o acúmulo ou afloramento de água.
         `,
         alimentacao: `
-            A água influencia diretamente o solo e a vegetação. Buritis,
-            gramíneas e outras plantas adaptadas à umidade formam uma paisagem
-            muito diferente dos campos secos ao redor.
+            Funcionam como ambientes de alimentação, abrigo e reprodução para
+            diversas espécies de plantas e animais.
         `,
         importancia: `
-            As veredas ajudam a proteger nascentes, armazenar água e oferecer
-            habitat, alimento e abrigo para inúmeros organismos.
+            Possuem grande importância para a conservação dos recursos
+            hídricos e da biodiversidade.
         `,
+        tituloHabitat: "Como se formam?",
+        tituloAlimentacao: "Quem vive nas veredas?",
+        tituloImportancia: "Importância ambiental",
         curiosidades: [
-            "O buriti é uma das plantas mais características das veredas.",
-            "São ambientes associados à presença de água.",
-            "Podem funcionar como abrigo e corredor para animais.",
-            "Sua conservação é importante para os recursos hídricos."
+            "O buriti é uma planta muito característica das veredas.",
+            "Seus solos podem permanecer úmidos durante longos períodos.",
+            "São importantes para diversas espécies.",
+            "Sua conservação ajuda a proteger a água."
         ]
     },
 
     "mata-de-galeria": {
-        titulo: "Matas de galeria: florestas junto aos rios",
-        categoria: "Ecossistema",
+        titulo: "Mata de Galeria: florestas acompanhando os rios",
+        categoria: "Ecossistemas",
         icone: "🌳",
-        imagem: "assets/imagens/mata-galeria.jpg",
+        imagem: "mata-de-galeria.jpg",
         tempo: "5 minutos",
-        xp: 20,
-        resumo: "Faixas de floresta que acompanham rios e córregos do Cerrado.",
-        tituloHabitat: "🗺️ Onde aparecem?",
-        tituloAlimentacao: "🌳 Como são?",
-        tituloImportancia: "💧 Qual é sua importância?",
+        xp: 25,
+        resumo: "Descubra as florestas que formam corredores verdes ao longo dos cursos d'água.",
         descricao: `
-            As matas de galeria são formações florestais associadas a cursos
-            de água. Em muitas paisagens abertas do Cerrado, elas formam
-            corredores verdes acompanhando rios e córregos.
+            Mata de galeria é uma formação florestal que acompanha rios e
+            pequenos cursos d'água. As copas das árvores podem se aproximar
+            sobre o rio, formando uma espécie de galeria vegetal.
         `,
         habitat: `
-            Desenvolvem-se principalmente junto a cursos de água, onde existe
+            Ocorre ao longo de cursos d'água em áreas do Cerrado, onde existe
             maior disponibilidade de umidade.
         `,
         alimentacao: `
-            Apresentam vegetação mais alta e fechada que os campos e savanas
-            ao redor, formando condições ambientais próprias.
+            Oferece frutos, sementes, folhas, insetos e muitos outros recursos
+            utilizados por animais.
         `,
         importancia: `
-            Contribuem para a proteção das margens, oferecem habitat para
-            muitas espécies e podem facilitar o deslocamento de animais pela
-            paisagem.
+            Ajuda a proteger margens de rios, oferece habitat para várias
+            espécies e facilita a movimentação de animais pela paisagem.
         `,
+        tituloHabitat: "Onde se forma?",
+        tituloAlimentacao: "Vida na mata",
         curiosidades: [
-            "Acompanham rios e córregos.",
-            "Podem formar corredores de vegetação em áreas abertas.",
-            "Possuem ambiente mais úmido que regiões vizinhas.",
-            "Ajudam a proteger cursos de água."
+            "Acompanha cursos d'água.",
+            "Pode formar corredores naturais na paisagem.",
+            "Possui vegetação mais fechada que muitas áreas de Cerrado.",
+            "Ajuda a proteger as margens dos rios."
         ]
     },
 
     "campo-limpo": {
-        titulo: "Campo limpo: um oceano de gramíneas",
-        categoria: "Ecossistema",
+        titulo: "Campo Limpo: um Cerrado quase sem árvores",
+        categoria: "Ecossistemas",
         icone: "🌾",
-        imagem: "assets/imagens/campo-limpo.jpg",
+        imagem: "campo-limpo.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Paisagens abertas dominadas por vegetação baixa.",
-        tituloHabitat: "🗺️ Onde ocorre?",
-        tituloAlimentacao: "🌾 Como é a vegetação?",
-        tituloImportancia: "🌎 Por que é importante?",
+        xp: 20,
+        resumo: "Uma paisagem dominada por gramíneas e outras plantas herbáceas.",
         descricao: `
-            Campo limpo é uma formação muito aberta do Cerrado, dominada
-            principalmente por plantas herbáceas, com pouca presença de
-            arbustos e árvores.
+            O Campo Limpo é uma formação do Cerrado dominada principalmente por
+            gramíneas e outras plantas de pequeno porte, com poucas ou nenhuma
+            árvore espalhada pela paisagem.
         `,
         habitat: `
-            Ocorre em diferentes áreas do Cerrado, dependendo das condições
-            de solo, relevo, água e histórico ambiental.
+            Pode ocorrer em diferentes condições de solo e relevo dentro do
+            Cerrado.
         `,
         alimentacao: `
-            Gramíneas e outras plantas de pequeno porte dominam a paisagem.
-            Mesmo parecendo simples, esses campos possuem grande diversidade.
+            Abriga plantas, insetos, aves, répteis e mamíferos adaptados às
+            áreas abertas.
         `,
         importancia: `
-            Fornecem habitat para inúmeras plantas, aves, mamíferos, insetos e
-            outros organismos especializados em áreas abertas.
+            É um ambiente natural próprio e não uma área vazia. Sua diversidade
+            depende justamente da manutenção da vegetação campestre.
         `,
+        tituloHabitat: "Como é a paisagem?",
+        tituloAlimentacao: "Quem vive aqui?",
         curiosidades: [
             "Possui poucas árvores.",
-            "É dominado por vegetação baixa.",
-            "Abriga espécies adaptadas aos campos.",
-            "Uma paisagem aberta também pode ter alta biodiversidade."
+            "Gramíneas dominam grande parte da paisagem.",
+            "Abriga espécies adaptadas a ambientes abertos.",
+            "Não deve ser confundido com uma área degradada."
         ]
     },
 
     "campo-sujo": {
-        titulo: "Campo sujo: entre gramíneas e arbustos",
-        categoria: "Ecossistema",
+        titulo: "Campo Sujo: gramíneas, arbustos e diversidade",
+        categoria: "Ecossistemas",
         icone: "🌿",
-        imagem: "assets/imagens/campo-sujo.jpg",
+        imagem: "campo-sujo.jpg",
         tempo: "4 minutos",
-        xp: 15,
-        resumo: "Uma formação aberta com vegetação herbácea e presença de arbustos.",
-        tituloHabitat: "🗺️ Onde ocorre?",
-        tituloAlimentacao: "🌿 Como é a vegetação?",
-        tituloImportancia: "🌎 Qual é sua função?",
+        xp: 20,
+        resumo: "Uma formação campestre onde arbustos começam a dividir espaço com as gramíneas.",
         descricao: `
-            O campo sujo apresenta grande quantidade de vegetação herbácea,
-            mas também possui arbustos e pequenas plantas lenhosas espalhadas.
+            O Campo Sujo é uma formação do Cerrado marcada por grande presença
+            de plantas herbáceas e gramíneas, acompanhadas por arbustos e
+            pequenas plantas lenhosas espalhadas.
         `,
         habitat: `
-            Ocorre em diferentes regiões do Cerrado, formando transições com
-            outros tipos de vegetação.
+            Ocorre em diferentes partes do Cerrado dependendo de fatores como
+            solo, relevo e disponibilidade de água.
         `,
         alimentacao: `
-            Mistura gramíneas, ervas e arbustos, criando diferentes alturas e
-            microambientes.
+            A combinação de gramíneas, flores e arbustos oferece alimento e
+            abrigo para muitos animais.
         `,
         importancia: `
-            Essa diversidade estrutural oferece recursos para diferentes
-            animais e plantas.
+            A diversidade de estruturas vegetais cria diferentes espaços para
+            a fauna e contribui para a biodiversidade do bioma.
         `,
+        tituloHabitat: "Como é a paisagem?",
+        tituloAlimentacao: "Vida no Campo Sujo",
         curiosidades: [
-            "É mais arbustivo que o campo limpo.",
-            "Ainda é considerado uma formação aberta.",
-            "Pode abrigar grande diversidade de plantas.",
-            "Serve de habitat para animais especializados em campos."
+            "Possui mais arbustos que o Campo Limpo.",
+            "Continua sendo uma formação predominantemente aberta.",
+            "Abriga muitos insetos e aves.",
+            "Faz parte da diversidade natural do Cerrado."
         ]
     },
 
     "cerradao": {
-        titulo: "Cerradão: a floresta do Cerrado",
-        categoria: "Ecossistema",
-        icone: "🌲",
-        imagem: "assets/imagens/cerradao.jpg",
+        titulo: "Cerradão: quando o Cerrado parece floresta",
+        categoria: "Ecossistemas",
+        icone: "🌳",
+        imagem: "cerradao.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Uma formação mais alta e fechada dentro do mosaico do Cerrado.",
-        tituloHabitat: "🗺️ Onde aparece?",
-        tituloAlimentacao: "🌳 Como é a vegetação?",
-        tituloImportancia: "🌎 Por que é importante?",
+        resumo: "Uma formação mais fechada e cheia de árvores dentro do mesmo bioma.",
         descricao: `
-            O cerradão é uma formação florestal do Cerrado. Possui maior
-            cobertura de árvores e aspecto mais fechado do que as formações
-            savânicas típicas.
+            O Cerradão é uma formação vegetal do Cerrado com maior quantidade
+            e densidade de árvores. Sua aparência pode lembrar uma floresta,
+            embora apresente características próprias.
         `,
         habitat: `
-            Ocorre em locais cujas características ambientais permitem o
-            desenvolvimento de vegetação arbórea mais densa.
+            Surge em locais onde condições de solo, água e outros fatores
+            favorecem o desenvolvimento de vegetação mais alta e fechada.
         `,
         alimentacao: `
-            Possui árvores relativamente altas e copa mais contínua,
-            modificando luminosidade, temperatura e umidade próximas ao solo.
+            A variedade de árvores, frutos, folhas e pequenos organismos cria
+            inúmeros recursos para a fauna.
         `,
         importancia: `
-            Aumenta a variedade de ambientes disponíveis dentro do Cerrado e
-            abriga comunidades específicas de plantas e animais.
+            Aumenta a variedade de habitats existentes no Cerrado e oferece
+            abrigo para espécies que dependem de vegetação mais fechada.
         `,
+        tituloHabitat: "Como é a paisagem?",
+        tituloAlimentacao: "Vida no Cerradão",
         curiosidades: [
-            "É uma formação florestal.",
-            "Possui mais árvores que o cerrado típico.",
-            "Faz parte do mosaico de paisagens do bioma.",
-            "Cria condições ambientais diferentes no interior da vegetação."
+            "Possui vegetação mais fechada.",
+            "As árvores podem formar uma cobertura significativa.",
+            "Não representa todo o Cerrado.",
+            "Ajuda a aumentar a diversidade de habitats do bioma."
         ]
     },
 
     "fogo-no-cerrado": {
-        titulo: "Fogo no Cerrado: inimigo ou parte da natureza?",
-        categoria: "Ecossistema",
+        titulo: "Fogo no Cerrado: entre natureza e perigo",
+        categoria: "Ecologia",
         icone: "🔥",
-        imagem: "assets/imagens/fogo-cerrado.jpg",
+        imagem: "fogo-no-cerrado.jpg",
         tempo: "7 minutos",
         xp: 30,
-        resumo: "Entenda por que nem todo fogo possui a mesma origem ou o mesmo efeito.",
-        tituloHabitat: "🔥 Onde o fogo aparece?",
-        tituloAlimentacao: "🌱 Como o Cerrado responde?",
-        tituloImportancia: "🛡️ Por que o manejo importa?",
+        resumo: "O fogo faz parte da história do Cerrado, mas incêndios intensos ou frequentes podem causar grandes danos.",
         descricao: `
-            O fogo faz parte da história ecológica de várias formações do
-            Cerrado, mas isso não significa que qualquer incêndio seja
-            benéfico.
-
-            Frequência, intensidade, época do ano e extensão alteram
-            profundamente seus efeitos. Incêndios muito frequentes,
-            extensos ou intensos podem causar grandes perdas.
+            O fogo está presente na história ecológica do Cerrado há muito
+            tempo. Diversas plantas apresentam características que favorecem
+            sua sobrevivência após certos eventos de fogo. Entretanto, isso
+            não significa que qualquer incêndio seja benéfico.
         `,
         habitat: `
-            Incêndios podem atingir campos, savanas, matas e áreas de
-            transição. Diferentes ambientes possuem diferentes níveis de
-            resistência ao fogo.
+            Eventos de fogo podem ocorrer principalmente em áreas abertas e
+            durante períodos secos, quando a vegetação perde umidade.
         `,
         alimentacao: `
-            Algumas plantas apresentam casca espessa, órgãos subterrâneos ou
-            capacidade de rebrotar. Entretanto, muitas espécies e ambientes
-            continuam vulneráveis a regimes inadequados de fogo.
+            A intensidade, a época do ano e a frequência do fogo determinam
+            seus efeitos. Incêndios provocados repetidamente ou em condições
+            extremas podem matar animais, degradar a vegetação e empobrecer o
+            ambiente.
         `,
         importancia: `
-            O manejo responsável procura compreender quando, onde e como o
-            fogo ocorre. Prevenir incêndios destrutivos e proteger ambientes
-            sensíveis é fundamental.
+            Compreender o papel ecológico do fogo ajuda a diferenciar processos
+            naturais e manejados de incêndios destrutivos e favorece estratégias
+            melhores de conservação.
         `,
+        tituloHabitat: "Onde pode ocorrer?",
+        tituloAlimentacao: "O que determina seus efeitos?",
+        tituloImportancia: "Por que compreender o fogo?",
         curiosidades: [
-            "Nem todas as partes do Cerrado respondem ao fogo da mesma maneira.",
-            "Algumas plantas conseguem rebrotar após queimadas.",
-            "Incêndios muito frequentes podem impedir a recuperação da vegetação.",
-            "O manejo do fogo exige conhecimento ecológico e planejamento."
+            "Algumas plantas apresentam cascas espessas.",
+            "Estruturas subterrâneas podem ajudar certas espécies a rebrotar.",
+            "Fogo frequente demais pode causar grandes danos.",
+            "Incêndios provocados e descontrolados ameaçam animais e vegetação."
         ]
     },
 
     "estacao-seca": {
-        titulo: "A estação seca do Cerrado",
-        categoria: "Ecossistema",
+        titulo: "Estação seca: meses de resistência",
+        categoria: "Clima",
         icone: "☀️",
-        imagem: "assets/imagens/estacao-seca.jpg",
+        imagem: "estacao-seca.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "Meses de pouca chuva transformam a paisagem e o comportamento dos seres vivos.",
-        tituloHabitat: "☀️ Quando acontece?",
-        tituloAlimentacao: "🌱 Como a vida responde?",
-        tituloImportancia: "🌎 Qual é sua importância?",
+        resumo: "Veja como a redução das chuvas transforma a paisagem e desafia os seres vivos.",
         descricao: `
-            Muitas áreas do Cerrado apresentam forte sazonalidade, com uma
-            época chuvosa e outra de menor precipitação.
-
-            Durante a estação seca, a disponibilidade de água diminui e a
-            aparência da vegetação pode mudar bastante.
+            O clima de grande parte do Cerrado apresenta uma estação seca bem
+            definida. Durante vários meses, as chuvas diminuem bastante e a
+            disponibilidade de água superficial pode ser reduzida.
         `,
         habitat: `
-            A duração e intensidade da estação seca variam conforme a região,
-            mas a alternância sazonal é uma característica importante do
-            clima de grande parte do Cerrado.
+            As consequências da seca aparecem em campos, matas, rios, veredas
+            e outros ambientes do bioma.
         `,
         alimentacao: `
-            Plantas podem perder folhas, utilizar estruturas subterrâneas e
-            reduzir atividades. Animais alteram alimentação, horários de
-            atividade e deslocamentos.
+            Plantas e animais apresentam diferentes estratégias para atravessar
+            o período, como raízes profundas, queda de folhas, alteração de
+            atividade e procura por áreas com água.
         `,
         importancia: `
-            A sazonalidade influencia ciclos de reprodução, floração,
-            frutificação, disponibilidade de alimento e diversas relações
-            ecológicas.
+            A alternância entre seca e chuva influencia os ciclos de plantas,
+            animais, rios e diversas atividades humanas.
         `,
+        tituloHabitat: "O que acontece?",
+        tituloAlimentacao: "Como os seres vivos enfrentam a seca?",
+        tituloImportancia: "Importância do ciclo",
         curiosidades: [
-            "Muitas árvores perdem folhas na seca.",
-            "A disponibilidade de água muda ao longo do ano.",
-            "Animais podem alterar seus horários de atividade.",
-            "A floração de algumas plantas ocorre justamente durante a seca."
+            "A umidade do ar pode cair bastante.",
+            "Algumas plantas perdem folhas durante o período seco.",
+            "Animais podem concentrar-se próximos à água.",
+            "A vegetação seca aumenta o risco de incêndios."
         ]
     },
 
     "estacao-chuvosa": {
-        titulo: "Quando as chuvas voltam ao Cerrado",
-        categoria: "Ecossistema",
+        titulo: "Estação chuvosa: o Cerrado desperta",
+        categoria: "Clima",
         icone: "🌧️",
-        imagem: "assets/imagens/estacao-chuvosa.jpg",
+        imagem: "estacao-chuvosa.jpg",
         tempo: "5 minutos",
         xp: 20,
-        resumo: "A chegada da chuva inicia uma nova fase para plantas e animais.",
-        tituloHabitat: "🌧️ Quando acontece?",
-        tituloAlimentacao: "🌱 O que muda?",
-        tituloImportancia: "🌎 Por que é importante?",
+        resumo: "A volta das chuvas muda rios, plantas, animais e toda a paisagem.",
         descricao: `
-            Depois dos meses secos, a chegada das chuvas transforma muitas
-            paisagens do Cerrado. A vegetação ganha novas folhas, plantas
-            crescem rapidamente e a disponibilidade de água aumenta.
+            Depois do período seco, o aumento das chuvas transforma o Cerrado.
+            A vegetação ganha novas folhas, muitas plantas florescem e a água
+            volta a ocupar temporariamente diversos locais.
         `,
         habitat: `
-            A estação chuvosa varia regionalmente, mas em grande parte do
-            Cerrado concentra boa parte da precipitação anual.
+            Os efeitos podem ser observados em todo o bioma, desde campos até
+            matas e ambientes aquáticos.
         `,
         alimentacao: `
-            Surgem novos brotos, flores, frutos e insetos. Isso aumenta os
-            recursos disponíveis para muitos animais.
+            A maior disponibilidade de água favorece o crescimento vegetal e
+            aumenta diversos recursos utilizados pelos animais.
         `,
         importancia: `
-            A chuva influencia reprodução, crescimento vegetal, cursos de
-            água e inúmeros ciclos ecológicos.
+            As chuvas recarregam cursos d'água e solos e sustentam inúmeros
+            ciclos ecológicos.
         `,
+        tituloHabitat: "O que muda?",
+        tituloAlimentacao: "Como a vida responde?",
+        tituloImportancia: "Importância das chuvas",
         curiosidades: [
-            "A vegetação pode mudar rapidamente após as primeiras chuvas.",
-            "A quantidade de insetos costuma aumentar.",
-            "Muitos animais sincronizam reprodução com períodos favoráveis.",
-            "Os rios e áreas úmidas também respondem às chuvas."
+            "A paisagem pode ficar muito mais verde.",
+            "Diversos animais se reproduzem durante períodos favoráveis.",
+            "Rios e córregos podem aumentar de volume.",
+            "A floração de várias espécies acompanha as mudanças sazonais."
         ]
     },
 
     "berco-das-aguas": {
         titulo: "Cerrado: o berço das águas",
-        categoria: "Ecossistema",
+        categoria: "Água",
         icone: "💦",
-        imagem: "assets/imagens/agua-cerrado.jpg",
+        imagem: "berco-das-aguas.jpg",
         tempo: "6 minutos",
-        xp: 25,
-        resumo: "Entenda por que a conservação do Cerrado está profundamente ligada à água.",
-        tituloHabitat: "💧 Onde está a água?",
-        tituloAlimentacao: "🌱 Como o sistema funciona?",
-        tituloImportancia: "🌎 Por que conservar?",
+        xp: 30,
+        resumo: "Entenda por que proteger o Cerrado também significa proteger a água.",
         descricao: `
-            O Cerrado está ligado às cabeceiras e nascentes de importantes
-            sistemas hidrográficos brasileiros. Solo, relevo, vegetação e
-            águas subterrâneas formam uma rede complexa.
+            O Cerrado abriga nascentes e áreas que contribuem para importantes
+            sistemas hidrográficos sul-americanos. Sua posição geográfica,
+            relevo, solos e vegetação possuem grande relação com a circulação
+            e armazenamento da água.
         `,
         habitat: `
-            Nascentes, veredas, matas de galeria, rios e áreas de recarga
-            aparecem em diferentes partes do bioma.
+            Nascentes, veredas, matas de galeria, córregos, rios e áreas de
+            recarga estão distribuídos pelo bioma.
         `,
         alimentacao: `
-            A água da chuva pode infiltrar no solo, alimentar reservas
-            subterrâneas e depois alcançar nascentes e cursos de água.
-            A vegetação ajuda a proteger o solo durante esse processo.
+            Parte da água da chuva infiltra no solo e pode contribuir para
+            reservas subterrâneas, enquanto outra parte alimenta rios e
+            córregos.
         `,
         importancia: `
-            A perda de vegetação e a degradação do solo podem alterar
-            infiltração, erosão e disponibilidade de água. Conservar paisagens
-            naturais também significa proteger recursos hídricos.
+            A conservação da vegetação e do solo ajuda a proteger a qualidade,
+            infiltração e disponibilidade da água.
         `,
+        tituloHabitat: "Onde está a água?",
+        tituloAlimentacao: "Como a água circula?",
+        tituloImportancia: "Por que conservar?",
         curiosidades: [
-            "Muitos rios importantes recebem água de regiões do Cerrado.",
-            "Veredas estão fortemente ligadas à dinâmica hídrica.",
+            "O Cerrado contém muitas áreas de nascente.",
+            "Veredas possuem forte relação com os recursos hídricos.",
             "Vegetação e solo influenciam a infiltração da água.",
-            "Proteger nascentes exige conservar também o ambiente ao redor."
+            "A degradação do solo pode prejudicar rios e nascentes."
         ]
     },
 
     "desmatamento": {
-        titulo: "Desmatamento: quando o Cerrado desaparece",
+        titulo: "Desmatamento: quando o Cerrado perde espaço",
         categoria: "Conservação",
-        icone: "🪵",
-        imagem: "assets/imagens/desmatamento.jpg",
+        icone: "🪓",
+        imagem: "desmatamento.jpg",
         tempo: "6 minutos",
-        xp: 25,
-        resumo: "A retirada da vegetação natural modifica toda a rede de vida.",
-        tituloHabitat: "🗺️ Onde acontece?",
-        tituloAlimentacao: "🪵 O que acontece com o ambiente?",
-        tituloImportancia: "🛡️ Por que combater?",
+        xp: 30,
+        resumo: "Entenda como a retirada da vegetação modifica muito mais do que a paisagem.",
         descricao: `
-            Desmatamento é a remoção da vegetação natural para que a área seja
-            utilizada de outra maneira.
-
-            Quando grandes áreas são convertidas, não desaparecem apenas as
-            árvores: animais perdem habitat, o solo fica mais exposto e
-            diversas interações ecológicas são alteradas.
+            Desmatamento é a retirada da cobertura vegetal de uma área. Quando
+            ocorre em grande escala, modifica habitats, solo, disponibilidade
+            de água e as relações entre os seres vivos.
         `,
         habitat: `
-            Pode atingir campos, savanas, matas, cerradões e outras formações
-            naturais do Cerrado.
+            Pode afetar campos, savanas, matas, veredas e diferentes formações
+            do Cerrado.
         `,
         alimentacao: `
-            A retirada da vegetação reduz abrigo, alimento e locais de
-            reprodução para animais. Também pode aumentar erosão e modificar
-            processos relacionados à água.
+            Com a perda da vegetação, animais podem perder alimento, abrigo,
+            locais de reprodução e caminhos entre diferentes áreas naturais.
         `,
         importancia: `
-            Evitar a perda de vegetação nativa é essencial para conservar
-            biodiversidade, solos, recursos hídricos e serviços ambientais.
+            Reduzir a perda de vegetação e recuperar áreas degradadas são
+            medidas importantes para conservar biodiversidade, solos e recursos
+            hídricos.
         `,
+        tituloHabitat: "O que é afetado?",
+        tituloAlimentacao: "Consequências para a vida",
+        tituloImportancia: "O que podemos proteger?",
         curiosidades: [
-            "Desmatamento afeta plantas e animais ao mesmo tempo.",
-            "A vegetação protege o solo contra parte da erosão.",
-            "Áreas pequenas e isoladas podem ter dificuldade para manter algumas espécies.",
-            "Conservação e produção podem exigir planejamento territorial."
+            "A retirada de vegetação pode aumentar a erosão.",
+            "Animais podem ficar isolados em fragmentos.",
+            "Nascentes e rios também podem ser afetados.",
+            "A recuperação da vegetação pode diminuir alguns impactos."
         ]
     },
 
     "fragmentacao": {
-        titulo: "Fragmentação de habitats",
+        titulo: "Fragmentação: ilhas de natureza",
         categoria: "Conservação",
         icone: "🧩",
-        imagem: "assets/imagens/fragmentacao.jpg",
-        tempo: "5 minutos",
-        xp: 20,
-        resumo: "Quando uma grande área natural é dividida em pequenos pedaços isolados.",
-        tituloHabitat: "🧩 Como acontece?",
-        tituloAlimentacao: "🐾 O que muda para os animais?",
-        tituloImportancia: "🌿 Por que conectar áreas?",
+        imagem: "fragmentacao.jpg",
+        tempo: "6 minutos",
+        xp: 25,
+        resumo: "Mesmo quando uma área natural permanece de pé, o isolamento pode criar novos problemas.",
         descricao: `
-            Fragmentação ocorre quando uma paisagem natural contínua é
-            separada em partes menores por estradas, cidades, plantações ou
-            outras alterações.
+            Fragmentação ocorre quando uma área natural contínua é dividida em
+            partes menores e separadas por estradas, cidades, plantações ou
+            outras alterações da paisagem.
         `,
         habitat: `
-            Pode ocorrer em praticamente qualquer tipo de ambiente natural
-            quando áreas contínuas são divididas.
+            Pode acontecer em qualquer formação natural do Cerrado.
         `,
         alimentacao: `
-            Algumas espécies passam a ter dificuldade para encontrar alimento,
-            parceiros reprodutivos ou novos territórios. Pequenos fragmentos
-            também sofrem maior influência de suas bordas.
+            Espécies que precisam percorrer grandes áreas podem encontrar
+            dificuldades para alcançar alimento, parceiros e novos habitats.
         `,
         importancia: `
-            Manter áreas grandes e criar conexões entre fragmentos pode
-            facilitar deslocamentos e aumentar as chances de sobrevivência de
-            diferentes populações.
+            Manter áreas conectadas permite maior movimentação de organismos e
+            fluxo genético entre populações.
         `,
+        tituloHabitat: "Como acontece?",
+        tituloAlimentacao: "O que muda para os animais?",
+        tituloImportancia: "Por que conectar áreas?",
         curiosidades: [
-            "Um fragmento não funciona exatamente como uma área contínua.",
-            "Estradas podem dificultar o deslocamento de animais.",
-            "As bordas dos fragmentos possuem condições ambientais diferentes.",
-            "Corredores ecológicos podem ajudar a conectar habitats."
+            "Um fragmento pode parecer preservado e ainda sofrer isolamento.",
+            "Estradas podem funcionar como barreiras para alguns animais.",
+            "Populações pequenas podem ficar geneticamente isoladas.",
+            "Corredores ecológicos podem ajudar na conexão."
         ]
     },
 
     "corredores-ecologicos": {
-        titulo: "Corredores ecológicos: caminhos para a vida",
+        titulo: "Corredores ecológicos: pontes para a biodiversidade",
         categoria: "Conservação",
         icone: "🌿",
-        imagem: "assets/imagens/corredor-ecologico.jpg",
+        imagem: "corredores-ecologicos.jpg",
         tempo: "5 minutos",
-        xp: 20,
-        resumo: "Conexões entre áreas naturais podem facilitar o deslocamento das espécies.",
-        tituloHabitat: "🗺️ Onde são criados?",
-        tituloAlimentacao: "🐾 Como funcionam?",
-        tituloImportancia: "🌿 Por que são importantes?",
+        xp: 25,
+        resumo: "Áreas conectadas permitem que a vida continue circulando pela paisagem.",
         descricao: `
-            Corredores ecológicos são áreas que ajudam a conectar ambientes
-            naturais anteriormente isolados ou distantes.
+            Corredores ecológicos são áreas que contribuem para conectar
+            fragmentos de vegetação natural e facilitar o deslocamento de
+            organismos pela paisagem.
         `,
         habitat: `
-            Podem acompanhar rios, matas, áreas restauradas e outras faixas de
-            vegetação entre unidades de habitat.
+            Podem envolver matas, campos, margens de rios e outras áreas
+            naturais ou restauradas.
         `,
         alimentacao: `
-            Ao criar continuidade ou pontos de passagem, facilitam a
-            movimentação de animais e a dispersão de plantas entre áreas.
+            A conexão permite que animais procurem alimento, abrigo, parceiros
+            e novos territórios com menos isolamento.
         `,
         importancia: `
-            A conexão ajuda a reduzir alguns efeitos da fragmentação e pode
-            favorecer diversidade genética e recolonização de áreas.
+            Favorecem a circulação de organismos e podem reduzir alguns efeitos
+            causados pela fragmentação dos habitats.
         `,
+        tituloHabitat: "Como são formados?",
+        tituloAlimentacao: "Como ajudam os animais?",
+        tituloImportancia: "Importância",
         curiosidades: [
-            "Podem conectar fragmentos separados.",
-            "Matas ao longo de rios podem funcionar como corredores.",
-            "Nem todas as espécies utilizam corredores da mesma maneira.",
-            "Planejamento da paisagem é essencial para sua eficácia."
+            "Não precisam possuir sempre a mesma largura.",
+            "Matas próximas a rios podem funcionar como corredores.",
+            "A conectividade é importante para muitas espécies.",
+            "Áreas restauradas podem ajudar a reconectar fragmentos."
         ]
     },
 
     "especies-ameacadas": {
-        titulo: "Espécies ameaçadas do Cerrado",
+        titulo: "Espécies ameaçadas: sinais de alerta",
         categoria: "Conservação",
         icone: "⚠️",
-        imagem: "assets/imagens/especies-ameacadas.jpg",
+        imagem: "especies-ameacadas.jpg",
         tempo: "6 minutos",
-        xp: 25,
-        resumo: "Alguns habitantes do Cerrado enfrentam pressões que reduzem suas populações.",
-        tituloHabitat: "🐾 Quem pode ser afetado?",
-        tituloAlimentacao: "⚠️ Quais são as ameaças?",
-        tituloImportancia: "🛡️ Como proteger?",
+        xp: 30,
+        resumo: "Descubra por que algumas espécies correm maior risco de desaparecer.",
         descricao: `
-            Uma espécie pode entrar em situação de ameaça quando suas
-            populações diminuem muito ou quando seu habitat e suas condições
-            de sobrevivência são severamente reduzidos.
-
-            O Cerrado abriga espécies que necessitam de atenção especial de
-            conservação.
+            Uma espécie pode ser considerada ameaçada quando enfrenta risco
+            elevado de desaparecer da natureza. Esse risco pode aumentar por
+            diferentes pressões ambientais.
         `,
         habitat: `
-            Animais e plantas de campos, savanas, florestas, veredas e outros
-            ambientes podem ser afetados.
+            Espécies ameaçadas podem viver em qualquer formação do Cerrado,
+            desde campos até florestas e ambientes aquáticos.
         `,
         alimentacao: `
-            Perda de habitat, fragmentação, atropelamentos, incêndios
-            inadequados, caça e outras pressões podem atuar isoladamente ou em
-            conjunto.
+            Perda de habitat, caça, atropelamentos, incêndios, poluição,
+            mudanças ambientais e isolamento populacional estão entre fatores
+            que podem afetar diferentes espécies.
         `,
         importancia: `
-            Proteger espécies exige conservar habitats, reduzir ameaças e
-            produzir conhecimento científico para orientar decisões.
+            Proteger espécies ameaçadas também significa proteger seus habitats
+            e as relações ecológicas das quais elas participam.
         `,
+        tituloHabitat: "Onde vivem?",
+        tituloAlimentacao: "O que provoca ameaças?",
+        tituloImportancia: "Por que protegê-las?",
         curiosidades: [
-            "A ameaça pode variar conforme a região e a espécie.",
-            "Proteger habitat ajuda várias espécies simultaneamente.",
-            "Grandes animais geralmente precisam de áreas extensas.",
-            "Monitoramento científico ajuda a avaliar populações."
+            "Nem todas as espécies enfrentam os mesmos tipos de ameaça.",
+            "Proteger habitats beneficia muitas espécies ao mesmo tempo.",
+            "Monitoramento científico ajuda a identificar mudanças populacionais.",
+            "A conservação depende de ações públicas e individuais."
         ]
     },
 
     "unidades-conservacao": {
-        titulo: "Unidades de conservação",
+        titulo: "Unidades de Conservação: territórios protegidos",
         categoria: "Conservação",
         icone: "🏞️",
-        imagem: "assets/imagens/unidade-conservacao.jpg",
-        tempo: "5 minutos",
-        xp: 20,
-        resumo: "Áreas protegidas são uma das ferramentas utilizadas para conservar a natureza.",
-        tituloHabitat: "🏞️ Onde existem?",
-        tituloAlimentacao: "🛡️ Como funcionam?",
-        tituloImportancia: "🌎 Por que são necessárias?",
+        imagem: "unidades-conservacao.jpg",
+        tempo: "6 minutos",
+        xp: 30,
+        resumo: "Conheça áreas criadas especialmente para proteger natureza e recursos ambientais.",
         descricao: `
-            Unidades de conservação são áreas legalmente protegidas com
-            objetivos relacionados à conservação ambiental.
-
-            Existem diferentes categorias, com regras e formas de uso
-            distintas.
+            Unidades de Conservação são áreas definidas e protegidas com
+            objetivos relacionados à conservação da natureza. Existem
+            diferentes categorias, cada uma com regras e finalidades próprias.
         `,
         habitat: `
-            Podem proteger campos, florestas, rios, veredas, áreas marinhas e
-            muitos outros ambientes.
+            Podem proteger florestas, cerrados, campos, rios, montanhas e muitos
+            outros ambientes.
         `,
         alimentacao: `
-            Dependendo da categoria, podem priorizar proteção mais restrita ou
-            permitir determinadas formas de uso sustentável.
+            Dependendo da categoria, podem permitir pesquisa, visitação,
+            educação ambiental e diferentes formas regulamentadas de uso dos
+            recursos naturais.
         `,
         importancia: `
-            Ajudam a preservar habitats, espécies, paisagens, recursos
-            naturais e processos ecológicos.
+            Ajudam a conservar espécies, paisagens, recursos hídricos e processos
+            ecológicos importantes.
         `,
+        tituloHabitat: "O que elas protegem?",
+        tituloAlimentacao: "Como funcionam?",
+        tituloImportancia: "Por que são importantes?",
         curiosidades: [
-            "Existem diferentes categorias de unidades de conservação.",
-            "Parques são apenas um dos tipos possíveis.",
-            "Algumas permitem atividades de uso sustentável.",
-            "Áreas protegidas também podem apoiar pesquisa e educação ambiental."
+            "Existem diferentes categorias de Unidade de Conservação.",
+            "Algumas permitem visitação pública.",
+            "São importantes para pesquisa científica.",
+            "Podem proteger grandes conjuntos de espécies."
         ]
     },
 
     "polinizadores": {
         titulo: "Polinizadores: pequenos trabalhadores da natureza",
-        categoria: "Conservação",
+        categoria: "Ecologia",
         icone: "🐝",
-        imagem: "assets/imagens/polinizadores.jpg",
-        tempo: "5 minutos",
-        xp: 20,
-        resumo: "Animais que transportam pólen ajudam inúmeras plantas a produzir sementes e frutos.",
-        tituloHabitat: "🌼 Onde trabalham?",
-        tituloAlimentacao: "🐝 Como acontece a polinização?",
-        tituloImportancia: "🌎 Por que proteger?",
+        imagem: "polinizadores.jpg",
+        tempo: "6 minutos",
+        xp: 25,
+        resumo: "Abelhas, aves, morcegos e outros animais participam da reprodução de inúmeras plantas.",
         descricao: `
-            Polinização é a transferência de pólen entre estruturas
-            reprodutivas das flores. Vários animais participam desse processo,
-            incluindo abelhas, borboletas, besouros, aves e morcegos.
+            Polinização é o transporte de grãos de pólen entre estruturas
+            reprodutivas das flores. Muitos animais participam desse processo
+            enquanto procuram néctar, pólen ou outros recursos.
         `,
         habitat: `
-            Polinizadores podem atuar em campos, matas, cerrados, jardins e
-            diversos outros ambientes que apresentem plantas floridas.
+            Polinizadores podem viver em campos, florestas, cerrados, jardins e
+            muitos outros ambientes.
         `,
         alimentacao: `
-            Ao visitar flores em busca de néctar, pólen ou outros recursos, o
-            animal pode transportar grãos de pólen entre plantas.
+            Abelhas, borboletas, besouros, aves e morcegos estão entre os grupos
+            que podem atuar como polinizadores de diferentes plantas.
         `,
         importancia: `
             A polinização permite a reprodução de muitas espécies vegetais e
-            influencia a produção de frutos e sementes.
+            influencia a formação de frutos e sementes.
         `,
+        tituloHabitat: "Onde acontece?",
+        tituloAlimentacao: "Quem são os polinizadores?",
+        tituloImportancia: "Por que são essenciais?",
         curiosidades: [
-            "Abelhas não são os únicos polinizadores.",
-            "Morcegos podem polinizar algumas plantas.",
-            "Flores possuem diferentes formas de atrair seus visitantes.",
-            "Sem polinização, muitas plantas teriam dificuldade para produzir sementes."
+            "Nem toda polinização é realizada por abelhas.",
+            "Algumas flores são polinizadas à noite.",
+            "Morcegos podem ser importantes polinizadores.",
+            "A diversidade de plantas depende de muitas relações de polinização."
         ]
     },
 
     "sementes": {
-        titulo: "A viagem das sementes",
-        categoria: "Conservação",
+        titulo: "Sementes: pequenas viajantes do Cerrado",
+        categoria: "Ecologia",
         icone: "🌱",
-        imagem: "assets/imagens/sementes.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Antes de virar uma nova planta, muitas sementes fazem grandes viagens.",
-        tituloHabitat: "🌱 De onde partem?",
-        tituloAlimentacao: "🌬️ Como viajam?",
-        tituloImportancia: "🌳 Por que a dispersão importa?",
+        imagem: "sementes.jpg",
+        tempo: "5 minutos",
+        xp: 20,
+        resumo: "Vento, água e animais ajudam as plantas a conquistar novos lugares.",
         descricao: `
-            Depois de serem produzidas, sementes precisam alcançar locais onde
-            tenham condições de germinar.
-
-            Esse deslocamento recebe o nome de dispersão.
+            As sementes carregam estruturas capazes de originar novas plantas.
+            Para aumentar as chances de sobrevivência, muitas espécies possuem
+            mecanismos que permitem que suas sementes se afastem da planta mãe.
         `,
         habitat: `
-            A dispersão ocorre em praticamente todos os ambientes que possuem
-            plantas com sementes.
+            A dispersão acontece em praticamente todos os ambientes do Cerrado.
         `,
         alimentacao: `
-            Sementes podem ser transportadas por vento, água, animais ou até
-            mecanismos da própria planta. Frutos comestíveis frequentemente
-            atraem animais dispersores.
+            Vento, água, gravidade e animais podem transportar sementes.
+            Frutos consumidos por aves e mamíferos são um exemplo muito comum.
         `,
         importancia: `
-            A dispersão reduz a concentração de sementes perto da planta-mãe e
-            ajuda espécies vegetais a alcançar novos locais.
+            A dispersão permite a colonização de novos locais, ajuda na
+            regeneração da vegetação e conecta a vida de plantas e animais.
         `,
+        tituloHabitat: "Onde acontece?",
+        tituloAlimentacao: "Como as sementes viajam?",
+        tituloImportancia: "Por que a dispersão importa?",
         curiosidades: [
-            "Algumas sementes possuem estruturas parecidas com asas.",
-            "Animais podem carregar sementes dentro do corpo após comer frutos.",
-            "A água pode transportar sementes.",
-            "Lobo-guará, anta e aves podem atuar como dispersores."
+            "Algumas sementes possuem estruturas semelhantes a asas.",
+            "Animais podem transportar sementes no corpo ou no sistema digestivo.",
+            "Frutos atraem dispersores.",
+            "A dispersão ajuda na recuperação da vegetação."
         ]
     },
 
     "agua": {
-        titulo: "Por que proteger a água do Cerrado?",
-        categoria: "Conservação",
+        titulo: "Água no Cerrado: cada gota conecta a paisagem",
+        categoria: "Água",
         icone: "💧",
-        imagem: "assets/imagens/agua.jpg",
-        tempo: "5 minutos",
-        xp: 20,
-        resumo: "Água, solo e vegetação fazem parte de um sistema inseparável.",
-        tituloHabitat: "💧 Onde encontramos?",
-        tituloAlimentacao: "🌱 Como a vegetação ajuda?",
-        tituloImportancia: "🛡️ Como proteger?",
+        imagem: "agua.jpg",
+        tempo: "6 minutos",
+        xp: 25,
+        resumo: "Solo, raízes, nascentes e chuvas formam uma grande rede hídrica.",
         descricao: `
-            Nascentes, córregos, rios, veredas e reservas subterrâneas fazem
-            parte do funcionamento hídrico das paisagens do Cerrado.
-
-            A qualidade e disponibilidade da água dependem também das
-            condições do solo e da vegetação.
+            A água conecta praticamente todos os componentes do Cerrado. As
+            chuvas alimentam solos, rios, córregos, veredas e reservas
+            subterrâneas.
         `,
         habitat: `
-            A água aparece em rios, lagos, áreas úmidas e no subsolo, além de
-            circular continuamente pela atmosfera.
+            Está presente em rios, nascentes, veredas, lagoas, águas
+            subterrâneas e até na umidade armazenada no solo.
         `,
         alimentacao: `
-            Raízes, cobertura vegetal e matéria orgânica ajudam a proteger o
-            solo. Quando a superfície fica degradada, erosão e assoreamento
-            podem aumentar.
+            Parte da chuva escoa pela superfície e outra parte infiltra no
+            solo. A vegetação influencia esse caminho ao proteger e estruturar
+            o terreno.
         `,
         importancia: `
-            Conservar vegetação próxima a cursos d'água, evitar poluição e
-            utilizar água com responsabilidade ajudam a proteger esse recurso.
+            Água limpa e disponível é essencial para animais, plantas,
+            comunidades humanas e atividades econômicas.
         `,
+        tituloHabitat: "Onde encontramos água?",
+        tituloAlimentacao: "Como ela circula?",
+        tituloImportancia: "Por que protegê-la?",
         curiosidades: [
-            "Grande parte da água também está armazenada no subsolo.",
-            "Vegetação ajuda a proteger o solo.",
-            "Erosão pode carregar sedimentos para rios.",
-            "Preservar uma nascente exige cuidar de toda a área ao redor."
+            "A vegetação ajuda a proteger o solo.",
+            "Nascentes podem ser prejudicadas pela degradação ao redor.",
+            "Veredas possuem relação direta com ambientes úmidos.",
+            "Uso responsável reduz desperdícios e impactos."
         ]
     },
 
     "consumo-consciente": {
-        titulo: "Consumo consciente e preservação",
-        categoria: "Conservação",
+        titulo: "Consumo consciente: escolhas que deixam pegadas menores",
+        categoria: "Sustentabilidade",
         icone: "♻️",
-        imagem: "assets/imagens/consumo-consciente.jpg",
-        tempo: "4 minutos",
-        xp: 15,
-        resumo: "Pequenas decisões cotidianas também fazem parte da relação entre pessoas e natureza.",
-        tituloHabitat: "🏠 Onde podemos agir?",
-        tituloAlimentacao: "♻️ O que podemos fazer?",
-        tituloImportancia: "🌎 Por que nossas escolhas importam?",
+        imagem: "consumo-consciente.jpg",
+        tempo: "5 minutos",
+        xp: 25,
+        resumo: "Pequenas escolhas cotidianas podem diminuir desperdícios e o uso desnecessário de recursos.",
         descricao: `
-            Tudo aquilo que utilizamos precisa de recursos para ser produzido,
-            transportado e descartado. Por isso, hábitos de consumo também
-            possuem impactos ambientais.
+            Consumo consciente significa observar os impactos associados aos
+            produtos e serviços utilizados no cotidiano. Isso envolve pensar
+            antes de comprar, evitar desperdícios e valorizar produtos que
+            utilizem recursos de maneira responsável.
         `,
         habitat: `
-            Ações podem começar em casa, na escola e na comunidade, mas também
-            dependem de empresas e políticas públicas.
+            As consequências do consumo aparecem muito além das cidades, pois
+            a produção de alimentos e objetos depende de água, energia, solo e
+            matérias-primas.
         `,
         alimentacao: `
-            Evitar desperdício, reutilizar materiais, separar resíduos,
-            conservar água e valorizar produtos provenientes de cadeias
-            responsáveis são exemplos de atitudes possíveis.
+            Reduzir desperdícios, reutilizar objetos, separar materiais
+            recicláveis e consumir apenas o necessário são algumas atitudes
+            possíveis.
         `,
         importancia: `
-            Nenhuma ação individual resolve sozinha grandes problemas
-            ambientais, mas hábitos responsáveis podem reduzir desperdícios e
-            fortalecer mudanças coletivas.
+            Quando muitas pessoas e organizações adotam práticas responsáveis,
+            é possível diminuir pressão sobre recursos naturais e reduzir a
+            geração de resíduos.
         `,
+        tituloHabitat: "Onde nosso consumo impacta?",
+        tituloAlimentacao: "O que podemos fazer?",
+        tituloImportancia: "Por que isso importa?",
         curiosidades: [
-            "Reduzir costuma ser mais eficiente que simplesmente descartar.",
-            "Reutilizar aumenta o tempo de vida de vários objetos.",
-            "Planejar compras pode diminuir desperdícios.",
-            "Preservação ambiental também depende de escolhas coletivas."
+            "Consumo consciente não significa deixar de consumir tudo.",
+            "Planejamento ajuda a evitar compras desnecessárias.",
+            "Reutilizar prolonga a vida útil dos objetos.",
+            "Reduzir desperdícios também economiza recursos naturais."
         ]
     },
 
     "guardiao-do-cerrado": {
-        titulo: "Como se tornar um Guardião do Cerrado",
-        categoria: "Conservação",
-        icone: "🛡️",
-        imagem: "assets/imagens/guardiao-cerrado.jpg",
-        tempo: "5 minutos",
-        xp: 30,
-        resumo: "Conhecimento é uma das ferramentas mais importantes para cuidar do Cerrado.",
-        tituloHabitat: "🌿 Onde começar?",
-        tituloAlimentacao: "🧭 O que um Guardião pode fazer?",
-        tituloImportancia: "🛡️ Por que participar?",
+        titulo: "Guardião do Cerrado: conhecimento que vira atitude",
+        categoria: "Sustentabilidade",
+        icone: "🐺",
+        imagem: "guardiao-do-cerrado.jpg",
+        tempo: "7 minutos",
+        xp: 50,
+        resumo: "Chegou a hora de transformar tudo que você descobriu em ações para proteger o bioma.",
         descricao: `
-            Ser um Guardião do Cerrado não significa viver dentro de uma
-            floresta ou trabalhar profissionalmente com conservação.
-
-            Significa compreender o valor do bioma, buscar informação,
-            respeitar os seres vivos e tomar decisões responsáveis.
+            Ser um Guardião do Cerrado não exige morar dentro de uma área
+            natural. Significa compreender que nossas escolhas estão conectadas
+            ao ambiente e reconhecer a importância de proteger a biodiversidade,
+            a água e as paisagens naturais.
         `,
         habitat: `
-            A jornada pode começar na escola, em casa, em parques, na internet
-            ou simplesmente observando a natureza próxima.
+            A proteção pode começar em casa, na escola, no bairro, nas redes
+            sociais e em qualquer espaço onde decisões e informações sejam
+            compartilhadas.
         `,
         alimentacao: `
-            Aprender sobre espécies, evitar desperdícios, compartilhar
-            conhecimento confiável, respeitar áreas protegidas e participar de
-            atividades ambientais são algumas possibilidades.
+            Aprender sobre espécies, evitar desperdícios, respeitar animais,
+            cuidar da água, não provocar incêndios, apoiar conservação e
+            compartilhar informações confiáveis são exemplos de atitudes.
         `,
         importancia: `
-            Quanto mais pessoas compreendem a relação entre biodiversidade,
-            água, clima, cultura e sociedade, maior é a capacidade coletiva de
-            tomar decisões responsáveis.
+            A conservação depende de ciência, políticas públicas, comunidades,
+            organizações e participação da sociedade. Cada pessoa pode colaborar
+            dentro de suas possibilidades.
         `,
+        tituloHabitat: "Onde um Guardião atua?",
+        tituloAlimentacao: "Como proteger o Cerrado?",
+        tituloImportancia: "Sua missão como Guardião",
         curiosidades: [
             "Educação ambiental também é uma forma de conservação.",
-            "Você não precisa ser cientista para observar e valorizar a natureza.",
-            "Compartilhar informação correta ajuda outras pessoas a aprender.",
-            "O último passo da jornada pode ser o começo de muitas outras."
+            "Compartilhar informação correta pode influenciar outras pessoas.",
+            "Conhecer a biodiversidade ajuda a compreender por que protegê-la.",
+            "Conservar o Cerrado também significa cuidar da água."
         ]
     }
 };
@@ -1892,10 +1816,12 @@ const ordemArtigos = [
     "guardiao-do-cerrado"
 ];
 
+window.artigos = artigos;
+window.ordemArtigos = ordemArtigos;
+
 const parametros = new URLSearchParams(window.location.search);
 const artigoId = parametros.get("id");
 const artigo = artigos[artigoId];
-
 const botaoConcluir = document.getElementById("concluir");
 
 if (!artigo) {
@@ -1906,57 +1832,49 @@ if (!artigo) {
     verificarLeituraConcluida();
 
     if (botaoConcluir) {
-        botaoConcluir.addEventListener(
-            "click",
-            concluirLeitura
-        );
+        botaoConcluir.addEventListener("click", concluirLeitura);
     }
 }
 
 function preencherArtigo() {
-    document.title =
-        `${artigo.titulo} | Guardiões do Cerrado`;
+    document.title = `${artigo.titulo} | Guardiões do Cerrado`;
 
-    document.getElementById("titulo").textContent =
-        artigo.titulo;
+    preencherTexto("titulo", artigo.titulo);
+    preencherTexto("categoria", artigo.categoria);
+    preencherTexto("tempo", artigo.tempo);
+    preencherTexto("xp", `+${artigo.xp} XP`);
+    preencherTexto("resumo", artigo.resumo || "");
+    preencherTexto("descricao", limparTexto(artigo.descricao));
+    preencherTexto("habitat", limparTexto(artigo.habitat));
+    preencherTexto("alimentacao", limparTexto(artigo.alimentacao));
+    preencherTexto("importancia", limparTexto(artigo.importancia));
 
-    document.getElementById("categoria").textContent =
-        artigo.categoria;
+    preencherTexto(
+        "tituloHabitat",
+        artigo.tituloHabitat || "Habitat"
+    );
 
-    document.getElementById("tempo").textContent =
-        artigo.tempo;
+    preencherTexto(
+        "tituloAlimentacao",
+        artigo.tituloAlimentacao || "Alimentação"
+    );
 
-    document.getElementById("xp").textContent =
-        `+${artigo.xp} XP`;
-
-    document.getElementById("resumo").textContent =
-        artigo.resumo || "";
-
-    document.getElementById("descricao").textContent =
-        limparTexto(artigo.descricao);
-
-    document.getElementById("habitat").textContent =
-        limparTexto(artigo.habitat);
-
-    document.getElementById("alimentacao").textContent =
-        limparTexto(artigo.alimentacao);
-
-    document.getElementById("importancia").textContent =
-        limparTexto(artigo.importancia);
-
-    document.getElementById("tituloHabitat").textContent =
-        artigo.tituloHabitat || "🌿 Habitat";
-
-    document.getElementById("tituloAlimentacao").textContent =
-        artigo.tituloAlimentacao || "🍎 Alimentação";
-
-    document.getElementById("tituloImportancia").textContent =
-        artigo.tituloImportancia ||
-        "🌎 Importância para o Cerrado";
+    preencherTexto(
+        "tituloImportancia",
+        artigo.tituloImportancia || "Importância para o Cerrado"
+    );
 
     preencherCuriosidades();
     configurarImagem();
     configurarRecompensa();
+}
+
+function preencherTexto(id, texto) {
+    const elemento = document.getElementById(id);
+
+    if (elemento) {
+        elemento.textContent = texto;
+    }
 }
 
 function limparTexto(texto) {
@@ -1966,104 +1884,128 @@ function limparTexto(texto) {
 }
 
 function preencherCuriosidades() {
-    const lista =
-        document.getElementById("curiosidades");
+    const lista = document.getElementById("curiosidades");
+
+    if (!lista) {
+        return;
+    }
 
     lista.innerHTML = "";
 
-    artigo.curiosidades.forEach(curiosidade => {
-        const item =
-            document.createElement("li");
+    const curiosidades = Array.isArray(artigo.curiosidades)
+        ? artigo.curiosidades
+        : [];
 
-        item.textContent =
-            curiosidade;
-
+    curiosidades.forEach(curiosidade => {
+        const item = document.createElement("li");
+        item.textContent = curiosidade;
         lista.appendChild(item);
     });
 }
 
 function configurarImagem() {
-    const imagem =
-        document.getElementById("imagem");
+    const imagem = document.getElementById("imagem");
+    const alternativa = document.getElementById("imagemAlternativa");
+    const icone = document.getElementById("iconeArtigo");
 
-    const alternativa =
-        document.getElementById("imagemAlternativa");
+    if (icone) {
+        icone.textContent = artigo.icone || "";
+    }
 
-    const icone =
-        document.getElementById("iconeArtigo");
-
-    icone.textContent =
-        artigo.icone || "🌿";
-
-    if (!artigo.imagem) {
-        imagem.style.display = "none";
-        alternativa.style.display = "grid";
+    if (!imagem || !alternativa) {
         return;
     }
 
-    imagem.src =
-        artigo.imagem;
+    const caminhos = [
+        `assets/artigos/${artigoId}.jpg`,
+        `assets/artigos/${artigoId}.jpeg`,
+        `assets/artigos/${artigoId}.png`,
+        `assets/artigos/${artigoId}.webp`
+    ];
 
-    imagem.alt =
-        artigo.titulo;
+    let indice = 0;
 
-    alternativa.style.display =
-        "none";
+    imagem.alt = artigo.titulo;
+    imagem.style.display = "none";
+    alternativa.style.display = "grid";
 
-    imagem.addEventListener(
-        "error",
-        () => {
-            imagem.style.display =
-                "none";
-
-            alternativa.style.display =
-                "grid";
+    function tentarProximaImagem() {
+        if (indice >= caminhos.length) {
+            imagem.removeAttribute("src");
+            imagem.style.display = "none";
+            alternativa.style.display = "grid";
+            return;
         }
-    );
+
+        imagem.src = caminhos[indice];
+        indice++;
+    }
+
+    imagem.onload = () => {
+        imagem.style.display = "block";
+        alternativa.style.display = "none";
+    };
+
+    imagem.onerror = tentarProximaImagem;
+
+    tentarProximaImagem();
 }
 
 function configurarRecompensa() {
-    const texto =
-        document.getElementById(
-            "textoRecompensa"
-        );
+    const texto = document.getElementById("textoRecompensa");
 
-    if (artigo.carta) {
-        texto.textContent =
-            `Complete a leitura para ganhar ${artigo.xp} XP e desbloquear a carta ${artigo.carta} no Cerradex.`;
-    } else {
-        texto.textContent =
-            `Complete a leitura para ganhar ${artigo.xp} XP e avançar na sua jornada.`;
-    }
-}
-
-function concluirLeitura() {
-    const progressoAntes =
-        obterProgresso();
-
-    if (
-        progressoAntes.artigos &&
-        progressoAntes.artigos.includes(artigoId)
-    ) {
-        mostrarMensagem(
-            "Você já concluiu este artigo."
-        );
-
-        verificarLeituraConcluida();
-
+    if (!texto) {
         return;
     }
 
-    concluirArtigo(
-        artigoId,
-        artigo.xp
-    );
+    const quiz = buscarQuizDoArtigo();
 
-    if (artigo.carta) {
-        salvarInformacoesDaCarta();
+    if (quiz) {
+        texto.textContent =
+            `Complete a leitura para ganhar ${artigo.xp} XP e desbloquear o desafio "${quiz.titulo}". Ao concluir o quiz, você libera uma nova descoberta no Cerradex.`;
+    } else {
+        texto.textContent =
+            `Complete a leitura para ganhar ${artigo.xp} XP e continuar sua jornada na Academia dos Guardiões.`;
+    }
+}
 
+function buscarQuizDoArtigo() {
+    if (typeof window.buscarQuizPorArtigo === "function") {
+        try {
+            return window.buscarQuizPorArtigo(artigoId);
+        } catch (erro) {
+        }
+    }
+
+    if (Array.isArray(window.quizzes)) {
+        return window.quizzes.find(
+            quiz => quiz.artigoId === artigoId
+        ) || null;
+    }
+
+    return null;
+}
+
+function concluirLeitura() {
+    const progressoAntes = obterProgressoSeguro();
+
+    const artigosConcluidos = Array.isArray(progressoAntes.artigos)
+        ? progressoAntes.artigos
+        : [];
+
+    if (artigosConcluidos.includes(artigoId)) {
+        mostrarMensagem("Você já concluiu este artigo.");
+        verificarLeituraConcluida();
+        return;
+    }
+
+    registrarConclusaoArtigo();
+
+    const quiz = buscarQuizDoArtigo();
+
+    if (quiz) {
         mostrarMensagem(
-            `Leitura concluída! Você ganhou ${artigo.xp} XP e desbloqueou a carta ${artigo.carta}.`
+            `Leitura concluída! Você ganhou ${artigo.xp} XP e desbloqueou o quiz "${quiz.titulo}".`
         );
     } else {
         mostrarMensagem(
@@ -2072,48 +2014,112 @@ function concluirLeitura() {
     }
 
     verificarLeituraConcluida();
+
+    window.dispatchEvent(
+        new CustomEvent("artigoConcluido", {
+            detail: {
+                artigoId,
+                xp: artigo.xp
+            }
+        })
+    );
 }
 
-function salvarInformacoesDaCarta() {
-    if (!artigo.carta) {
-        return;
+function registrarConclusaoArtigo() {
+    if (typeof window.concluirArtigo === "function") {
+        try {
+            window.concluirArtigo(
+                artigoId,
+                artigo.xp
+            );
+
+            return;
+        } catch (erro) {
+        }
     }
 
-    const cartasDetalhadas =
-        JSON.parse(
-            localStorage.getItem(
-                "cartasDetalhadas"
-            )
-        ) || [];
+    const progresso = obterProgressoSeguro();
 
-    const cartaJaExiste =
-        cartasDetalhadas.some(
-            carta =>
-                carta.id === artigoId
-        );
-
-    if (cartaJaExiste) {
-        return;
+    if (!Array.isArray(progresso.artigos)) {
+        progresso.artigos = [];
     }
 
-    cartasDetalhadas.push({
-        id: artigoId,
-        nome: artigo.carta,
-        raridade:
-            artigo.raridade || "Comum",
-        imagem:
-            artigo.imagem || "",
-        categoria:
-            artigo.categoria,
-        icone:
-            artigo.icone || "🌿"
-    });
+    if (!progresso.artigos.includes(artigoId)) {
+        progresso.artigos.push(artigoId);
+
+        progresso.xp =
+            (Number(progresso.xp) || 0) +
+            (Number(artigo.xp) || 0);
+    }
+
+    salvarProgressoSeguro(progresso);
+}
+
+function obterProgressoSeguro() {
+    if (typeof window.obterProgresso === "function") {
+        try {
+            const progresso = window.obterProgresso();
+
+            if (progresso) {
+                return normalizarProgresso(progresso);
+            }
+        } catch (erro) {
+        }
+    }
+
+    const chaves = [
+        "progressoGuardioes",
+        "guardioesProgresso",
+        "progresso"
+    ];
+
+    for (const chave of chaves) {
+        try {
+            const dados = JSON.parse(
+                localStorage.getItem(chave)
+            );
+
+            if (dados) {
+                return normalizarProgresso(dados);
+            }
+        } catch (erro) {
+        }
+    }
+
+    return {
+        xp: 0,
+        artigos: []
+    };
+}
+
+function normalizarProgresso(progresso) {
+    const dados = progresso || {};
+
+    if (!Array.isArray(dados.artigos)) {
+        dados.artigos = [];
+    }
+
+    if (!Number.isFinite(Number(dados.xp))) {
+        dados.xp = 0;
+    }
+
+    dados.xp = Number(dados.xp) || 0;
+
+    return dados;
+}
+
+function salvarProgressoSeguro(progresso) {
+    if (typeof window.salvarProgresso === "function") {
+        try {
+            window.salvarProgresso(progresso);
+            return;
+        } catch (erro) {
+        }
+    }
 
     localStorage.setItem(
-        "cartasDetalhadas",
-        JSON.stringify(
-            cartasDetalhadas
-        )
+        "progresso",
+        JSON.stringify(progresso)
     );
 }
 
@@ -2122,121 +2128,112 @@ function verificarLeituraConcluida() {
         return;
     }
 
-    const progresso =
-        obterProgresso();
+    const progresso = obterProgressoSeguro();
 
-    const artigosConcluidos =
-        Array.isArray(
-            progresso.artigos
-        )
-            ? progresso.artigos
-            : [];
+    const artigosConcluidos = Array.isArray(progresso.artigos)
+        ? progresso.artigos
+        : [];
 
     const artigoFoiConcluido =
-        artigosConcluidos.includes(
-            artigoId
-        );
+        artigosConcluidos.includes(artigoId);
+
+    const quiz = buscarQuizDoArtigo();
 
     if (artigoFoiConcluido) {
-        botaoConcluir.textContent =
-            "✓ Artigo concluído";
+        botaoConcluir.textContent = quiz
+            ? "✓ Leitura concluída • Quiz liberado"
+            : "✓ Artigo concluído";
 
-        botaoConcluir.disabled =
-            true;
+        botaoConcluir.disabled = true;
+        botaoConcluir.classList.add("concluido");
 
-        botaoConcluir.classList.add(
-            "concluido"
-        );
+        atualizarTextoRecompensaConcluida(quiz);
     } else {
-        botaoConcluir.textContent =
-            "Concluir leitura";
+        botaoConcluir.textContent = "Concluir leitura";
+        botaoConcluir.disabled = false;
+        botaoConcluir.classList.remove("concluido");
+    }
+}
 
-        botaoConcluir.disabled =
-            false;
+function atualizarTextoRecompensaConcluida(quiz) {
+    const texto = document.getElementById("textoRecompensa");
 
-        botaoConcluir.classList.remove(
-            "concluido"
-        );
+    if (!texto) {
+        return;
+    }
+
+    if (quiz) {
+        texto.innerHTML =
+            `Leitura concluída. O desafio <strong>${quiz.titulo}</strong> está disponível na Academia dos Guardiões. Complete o quiz para continuar sua jornada.`;
+    } else {
+        texto.textContent =
+            "Leitura concluída. Seu progresso como Guardião foi atualizado.";
     }
 }
 
 function configurarNavegacao() {
-    const indice =
-        ordemArtigos.indexOf(
-            artigoId
-        );
+    const indice = ordemArtigos.indexOf(artigoId);
 
-    const anterior =
-        document.getElementById(
-            "artigoAnterior"
-        );
+    const anterior = document.getElementById("artigoAnterior");
+    const proximo = document.getElementById("proximoArtigo");
 
-    const proximo =
-        document.getElementById(
-            "proximoArtigo"
-        );
+    if (anterior) {
+        if (indice > 0) {
+            const idAnterior =
+                ordemArtigos[indice - 1];
 
-    if (indice > 0) {
-        const idAnterior =
-            ordemArtigos[indice - 1];
+            anterior.href =
+                `artigo.html?id=${encodeURIComponent(idAnterior)}`;
 
-        anterior.href =
-            `artigo.html?id=${idAnterior}`;
-
-        anterior.style.visibility =
-            "visible";
-    } else {
-        anterior.style.visibility =
-            "hidden";
+            anterior.style.visibility = "visible";
+        } else {
+            anterior.removeAttribute("href");
+            anterior.style.visibility = "hidden";
+        }
     }
 
-    if (
-        indice <
-        ordemArtigos.length - 1
-    ) {
-        const idProximo =
-            ordemArtigos[indice + 1];
+    if (proximo) {
+        if (
+            indice >= 0 &&
+            indice < ordemArtigos.length - 1
+        ) {
+            const idProximo =
+                ordemArtigos[indice + 1];
 
-        proximo.href =
-            `artigo.html?id=${idProximo}`;
+            proximo.href =
+                `artigo.html?id=${encodeURIComponent(idProximo)}`;
 
-        proximo.style.visibility =
-            "visible";
-    } else {
-        proximo.style.visibility =
-            "hidden";
+            proximo.style.visibility = "visible";
+        } else {
+            proximo.removeAttribute("href");
+            proximo.style.visibility = "hidden";
+        }
     }
 }
 
 function mostrarMensagem(texto) {
-    const mensagem =
-        document.getElementById(
-            "mensagem"
-        );
+    const mensagem = document.getElementById("mensagem");
 
     if (!mensagem) {
         return;
     }
 
-    mensagem.textContent =
-        texto;
+    mensagem.textContent = texto;
+    mensagem.classList.add("mostrar");
 
-    mensagem.classList.add(
-        "mostrar"
+    clearTimeout(
+        mostrarMensagem.temporizador
     );
 
-    setTimeout(() => {
-        mensagem.classList.remove(
-            "mostrar"
-        );
-    }, 4000);
+    mostrarMensagem.temporizador =
+        setTimeout(() => {
+            mensagem.classList.remove("mostrar");
+        }, 4000);
 }
 
 function mostrarArtigoNaoEncontrado() {
     const conteudoPrincipal =
-        document.querySelector(
-            "main"
-        );
+        document.querySelector("main");
 
     if (!conteudoPrincipal) {
         return;
@@ -2244,17 +2241,11 @@ function mostrarArtigoNaoEncontrado() {
 
     conteudoPrincipal.innerHTML = `
         <div class="artigo-nao-encontrado">
-            <span>🌿</span>
-
-            <h1>
-                Artigo não encontrado
-            </h1>
-
+            <h1>Artigo não encontrado</h1>
             <p>
                 Parece que essa página se perdeu
                 em alguma trilha do Cerrado.
             </p>
-
             <a
                 href="biblioteca.html"
                 class="botao-voltar"

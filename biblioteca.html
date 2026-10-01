@@ -1,237 +1,243 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Biblioteca | Guardiões do Cerrado</title>
 
-    <link
-        rel="stylesheet"
-        href="css/biblioteca.css"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link rel="stylesheet" href="css/biblioteca.css">
     <link rel="stylesheet" href="css/notificacoes.css">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
-    <header class="cabecalho">
+<header class="cabecalho">
 
-        <a
-            href="principal.html"
-            class="logo"
-        >
-            <span class="logo-icone">🦊</span>
+    <a href="perfil.html" class="logo">
 
-            <div>
-                <strong>Guardiões</strong>
-                <small>do Cerrado</small>
-            </div>
-        </a>
+        <div class="logo-icone">🐺</div>
 
-        <nav class="menu">
-            <a href="principal.html">Início</a>
-            <a href="biblioteca.html" class="selecionado">Biblioteca</a>
-            <a href="cerradex.html">Cerradex</a>
-            <a href="perfil.html">Perfil</a>
-        </nav>
+        <div class="logo-texto">
+            <strong>Guardiões</strong>
+            <span>do Cerrado</span>
+        </div>
 
-    </header>
+    </a>
 
-    <main>
+    <nav class="menu">
+        <a href="principal.html">Voltar</a>
+        <a href="missoes.html">Missões</a>
+        <a href="biblioteca.html" class="ativo">Biblioteca</a>
+        <a href="quizzes.html">Quizzes</a>
+        <a href="cerradex.html">Cerradex</a>
+        <a href="diario.html">Diário</a>
+    </nav>
 
-        <section class="banner">
+</header>
 
-            <div class="banner-conteudo">
+<main>
 
-                <span class="banner-etiqueta">
-                    📚 Conhecimento para preservar
-                </span>
+    <section class="hero">
+        <div class="hero-papel">
+            <div class="hero-texto">
+                <span class="etiqueta">BIBLIOTECA DO EXPLORADOR</span>
 
-                <h1>Biblioteca do Cerrado</h1>
+                <p class="hero-subtitulo">📚 Conhecimento para proteger o Cerrado</p>
 
-                <p>
-                    Explore a fauna, a flora e os segredos de um dos
-                    biomas mais importantes do Brasil.
-                </p>
+                <h1>Biblioteca<span>do Cerrado</span></h1>
 
-                <label class="campo-pesquisa">
+                <p class="hero-descricao">Descubra animais, plantas, paisagens e histórias que revelam a riqueza de um dos biomas mais importantes do Brasil.</p>
 
-                    <span>🔍</span>
-
-                    <input
-                        type="text"
-                        id="pesquisa"
-                        placeholder="Pesquisar artigo..."
-                        autocomplete="off"
-                    >
-
+                <label class="campo-pesquisa"><span>🔎</span>
+                    <input type="text" id="pesquisa" placeholder="O que você quer descobrir?" autocomplete="off">
                 </label>
 
             </div>
+            <div class="hero-mascote">
+                <div class="circulo-mascote"></div>
+                <img src="assets/imagens/lobo-biblioteca.png" alt="Lobo-guará explorador" onerror="this.style.display='none'; this.parentElement.classList.add('sem-imagem')">
 
-            <div class="banner-mascote">
-                <div class="circulo-mascote">🦊</div>
+                <div class="fala-mascote">
+                    <span>📖</span>
+                    <div>
+                        <strong>Explore</strong>
+                        <small>50 artigos disponíveis</small>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-        </section>
-
-        <section class="painel-progresso">
-
-            <article class="resumo-progresso">
-
-                <div class="icone-status">⭐</div>
-
+    <section class="progresso">
+        <div class="progresso-cabecalho">
+            <div>
+                <span class="mini-titulo">SEU REGISTRO</span>
+                <h2>Progresso de leitura</h2>
+            </div>
+            <div class="selo-progresso">🌿 Jornada do Guardião</div>
+        </div>
+        <div class="progresso-grade">
+            <article class="progresso-card">
+                <div class="progresso-icone">⭐</div>
                 <div>
                     <span>Experiência</span>
                     <strong id="xpUsuario">0 XP</strong>
                 </div>
-
             </article>
 
-            <article class="resumo-progresso">
-
-                <div class="icone-status">🏆</div>
-
+            <article class="progresso-card">
+                <div class="progresso-icone">
+                    🏆
+                </div>
                 <div>
                     <span>Nível atual</span>
                     <strong id="nivelUsuario">Bronze</strong>
                 </div>
-
             </article>
 
-            <article class="resumo-progresso">
-
-                <div class="icone-status">📖</div>
-
-                <div>
-                    <span>Artigos concluídos</span>
-                    <strong id="artigosConcluidos">0 artigos</strong>
+            <article class="progresso-card">
+                <div class="progresso-icone">
+                    📖
                 </div>
 
+                <div>
+                    <span>Concluídos</span>
+                    <strong id="artigosConcluidos">0 artigos</strong>
+                </div>
             </article>
 
-            <article class="resumo-progresso">
-
-                <div class="icone-status">🔥</div>
+            <article class="progresso-card">
+                <div class="progresso-icone">
+                    🔥
+                </div>
 
                 <div>
                     <span>Sequência</span>
                     <strong id="sequenciaUsuario">0 dias</strong>
                 </div>
-
             </article>
 
-            <div class="barra-area">
+        </div>
 
-                <div class="barra-informacoes">
-                    <span>Progresso para o próximo nível</span>
-                    <strong id="porcentagemProgresso">0%</strong>
-                </div>
+        <div class="barra-area">
+            <div class="barra-topo">
+                <span>
+                    Progresso para o próximo nível
+                </span>
 
-                <div class="barra-fundo">
-                    <div
-                        class="barra-preenchimento"
-                        id="barraProgresso"
-                    ></div>
-                </div>
-
+                <strong id="porcentagemProgresso">
+                    0%
+                </strong>
             </div>
 
-        </section>
+            <div class="barra-fundo">
+                <div
+                    id="barraProgresso"
+                    class="barra-preenchimento"
+                ></div>
+            </div>
 
-        <section class="area-biblioteca">
+        </div>
 
-            <div class="titulo-secao">
+    </section>
 
-                <div>
-                    <span class="subtitulo">Explore e aprenda</span>
-                    <h2>Artigos disponíveis</h2>
-                </div>
+    <section class="biblioteca">
 
-                <p id="quantidadeResultados">
-                    Escolha uma categoria para começar.
+        <div class="biblioteca-topo">
+
+            <div>
+                <span class="mini-titulo">
+                    ARQUIVO DE CAMPO
+                </span>
+
+                <h2>
+                    Artigos disponíveis
+                </h2>
+
+                <p>
+                    Escolha uma trilha de conhecimento e comece a explorar.
                 </p>
-
             </div>
 
-            <div class="categorias">
-
-                <button
-                    type="button"
-                    class="ativo"
-                    data-categoria="Todos"
-                >
-                    Todos
-                </button>
-
-                <button
-                    type="button"
-                    data-categoria="Fauna"
-                >
-                    🦊 Fauna
-                </button>
-
-                <button
-                    type="button"
-                    data-categoria="Flora"
-                >
-                    🌿 Flora
-                </button>
-<button
-    type="button"
-    data-categoria="Ecossistema"
->
-    🗺️ Ecossistema
-</button>
-
-<button
-    type="button"
-    data-categoria="Conservação"
->
-    ♻️ Conservação
-</button>
-
+            <div class="quantidade">
+                <span>📚</span>
+                <strong id="quantidadeResultados">
+                    Carregando artigos...
+                </strong>
             </div>
 
-            <section id="artigos"></section>
+        </div>
 
-        </section>
+        <div class="categorias">
 
-    </main>
+            <button type="button" class="ativo" data-categoria="Todos">Todos</button>
 
-    <footer>
-        <p>
-            Guardiões do Cerrado 🌿 Conhecer também é preservar.
-        </p>
-    </footer>
+            <button
+                type="button"
+                data-categoria="Fauna"
+            >
+                🐾 Fauna
+            </button>
 
-    <script src="js/progresso.js"></script>
+            <button
+                type="button"
+                data-categoria="Flora"
+            >
+                🌿 Flora
+            </button>
+
+            <button
+                type="button"
+                data-categoria="Ecossistema"
+            >
+                🗺️ Ecossistemas
+            </button>
+
+            <button
+                type="button"
+                data-categoria="Conservação"
+            >
+                ♻️ Conservação
+            </button>
+
+        </div>
+
+        <section id="artigos"></section>
+
+    </section>
+
+</main>
+
+<footer class="rodape">
+
+    <div>
+        <strong>
+            🌿 Guardiões do Cerrado
+        </strong>
+
+        <span>
+            Conhecer também é preservar.
+        </span>
+    </div>
+
+    <a href="quizzes.html">
+        Voltar ao Quizzes
+    </a>
+
+</footer>
+
+<script src="js/progresso.js"></script>
 <script src="js/biblioteca.js"></script>
 <script src="js/notificacoes.js"></script>
 
 </body>
-
 </html>

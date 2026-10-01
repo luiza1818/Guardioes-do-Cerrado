@@ -11,12 +11,12 @@ body {
     min-height: 100vh;
     background: #d8c39e;
     color: #263238;
-    font-family: "Poppins", Arial, sans-serif;
 }
 
 button,
 a {
     -webkit-tap-highlight-color: transparent;
+    font-family: "Nunito", sans-serif;
 }
 
 .oculto {
@@ -24,17 +24,19 @@ a {
 }
 
 .cabecalho-diario {
-    position: relative;
+    width: 100%;
+    position: sticky;
     z-index: 100;
-    min-height: 82px;
-    padding: 0 6%;
+    min-height: 92px;
+    padding: 13px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    background: rgba(18, 75, 52, 0.98);
-    border-bottom: 3px solid rgba(251, 192, 45, 0.8);
-    box-shadow: 0 6px 22px rgba(16, 55, 39, 0.25);
+    gap: 35px;
+    background-color: #216247;
+    border-bottom: 4px solid rgba(246, 189, 53, 0.75);
+    box-shadow: 0 5px 17px rgba(30, 57, 42, 0.18);
+    top: 0;
 }
 
 .marca-diario {
@@ -47,73 +49,148 @@ a {
 }
 
 .icone-marca {
-    width: 50px;
-    height: 50px;
+    width: 58px;
+    height: 58px;
     display: grid;
     place-items: center;
-    background: #f5f1e8;
+    background: #fff8e8;
     border: 3px solid #fbc02d;
-    border-radius: 16px;
-    font-size: 1.7rem;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+    border-radius: 17px;
+    font-size: 1.9rem;
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.15);
 }
 
 .texto-marca {
     display: flex;
     flex-direction: column;
-    line-height: 1;
 }
 
 .texto-marca strong {
-    color: #ffffff;
-    font-size: 1.15rem;
+    color: var(--branco);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.05;
 }
 
 .texto-marca span {
-    margin-top: 5px;
-    color: #fbc02d;
-    font-size: 0.9rem;
-    font-weight: 600;
+    margin-top: 2px;
+    color: var(--amarelo);
+    font-size: 0.85rem;
+    font-weight: 800;
 }
 
-.menu-diario {
+.cabecalho {
+    width: 100%;
+    min-height: 92px;
+    padding: 13px 6%;
     display: flex;
     align-items: center;
-    gap: 7px;
+    justify-content: space-between;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #1f5d43;
+    border-bottom: 4px solid rgba(246, 189, 53, 0.75);
+    box-shadow: 0 5px 17px rgba(30, 57, 42, 0.18);
 }
 
-.menu-diario a {
-    padding: 11px 14px;
-    color: rgba(255, 255, 255, 0.9) !important;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
     text-decoration: none;
-    font-size: 0.94rem;
-    font-weight: 600;
-    border-radius: 11px;
-    transition: 0.25s;
 }
 
-.menu-diario a:hover {
-    color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
+.logo-icone {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border: 3px solid #f6bd35;
+    border-radius: 17px;
+    background: #fff8e8;
+    font-size: 1.9rem;
 }
 
-.menu-diario a.ativo {
-    color: #173d2f !important;
-    background: #fbc02d;
-    box-shadow: 0 4px 12px rgba(251, 192, 45, 0.25);
+.logo-texto {
+    display: flex;
+    flex-direction: column;
 }
 
-.botao-menu-diario {
-    display: none;
-    width: 44px;
-    height: 44px;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 12px;
-    font-size: 1.5rem;
-    cursor: pointer;
+.logo-texto strong {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.05;
+}
+
+.logo-texto span {
+    margin-top: 2px;
+    color: #f6bd35;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    padding: 11px 15px;
+    border-radius: 13px;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.menu a.ativo {
+    background-color: #f6bd35;
+    color: #4c4227;
+    box-shadow: 0 6px 14px rgba(246, 189, 53, 0.28);
+}
+
+@media (max-width: 820px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 580px) {
+    .cabecalho {
+        padding: 11px 4%;
+    }
+
+    .logo-icone {
+        width: 49px;
+        height: 49px;
+    }
+
+    .menu {
+        gap: 3px;
+    }
+
+    .menu a {
+        padding: 8px 6px;
+        font-size: 0.66rem;
+    }
 }
 
 .capa-diario {
@@ -747,11 +824,12 @@ a {
 #lobo {
     position: relative;
     z-index: 3;
-    width: 300px;
+    width: 200px;
     height: auto;
     flex-shrink: 0;
-    margin-right: -45px;
+    margin-right: 0;
     margin-bottom: -4px;
+    transform: translateX(-20px);
 }
 
 .balao {
@@ -947,28 +1025,6 @@ a {
     .botao-menu-diario {
         display: grid;
         place-items: center;
-    }
-
-    .menu-diario {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 4%;
-        right: 4%;
-        padding: 12px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        background: #174c36;
-        border-radius: 16px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .menu-diario.aberto {
-        display: flex;
-    }
-
-    .menu-diario a {
-        text-align: center;
     }
 
     .conteudo-capa-diario {

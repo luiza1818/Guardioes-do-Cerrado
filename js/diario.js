@@ -1,7 +1,7 @@
 const paginas = [
     {
         titulo: "📍 Chapada dos Veadeiros",
-        imagem: "97c53ad3d0de70047f1368f51f95622e.jpg",
+        imagem: "pexels-pablomelo15-9478873.jpg",
         fala: "Bem-vindo à Chapada dos Veadeiros! Aqui nascem rios importantes e vivem muitas espécies do Cerrado.",
         ondeFica: "Localizada no estado de Goiás, a Chapada dos Veadeiros é um dos parques nacionais mais famosos do Brasil.",
         encontramos: "Cachoeiras, campos rupestres, sempre-vivas, lobos-guará, veados-campeiros e muitas aves.",
@@ -26,7 +26,7 @@ const paginas = [
     },
     {
         titulo: "🌳 Mata de Galeria",
-        imagem: "assets/imagens/diario/mata-galeria.jpg",
+        imagem: "36054193741_0bbf1a7f42_b.jpg",
         fala: "As árvores acompanham os rios e criam corredores naturais para muitos animais.",
         ondeFica: "Ao longo de rios e córregos do Cerrado.",
         encontramos: "Árvores altas, macacos, tucanos, antas e muita sombra.",
@@ -51,7 +51,7 @@ const paginas = [
     },
     {
         titulo: "🌾 Campo Limpo",
-        imagem: "assets/imagens/diario/campo-limpo.jpg",
+        imagem: "cerrado-deforestation-goiás-goiânia.jpg",
         fala: "Aqui quase não existem árvores. As gramíneas dominam a paisagem.",
         ondeFica: "É encontrado em diversas regiões do Cerrado.",
         encontramos: "Capins, flores, emas, seriemas e pequenos mamíferos.",
@@ -76,7 +76,7 @@ const paginas = [
     },
     {
         titulo: "💧 Veredas",
-        imagem: "assets/imagens/diario/veredas.jpg",
+        imagem: "vereda-foto-1.jpg",
         fala: "As veredas são verdadeiros oásis do Cerrado. A água que brota aqui mantém a vida de muitas espécies.",
         ondeFica: "São encontradas em áreas úmidas do Cerrado, próximas às nascentes e aos pequenos cursos de água.",
         encontramos: "Buritis, capivaras, garças, peixes, anfíbios e muitos insetos.",
@@ -101,7 +101,7 @@ const paginas = [
     },
     {
         titulo: "🏞️ Rio Cristalino",
-        imagem: "assets/imagens/diario/rio-cristalino.jpg",
+        imagem: "6bec7536a8cfb8730aada9c4874a9504.jpg",
         fala: "A água limpa permite enxergar peixes, pedras e plantas aquáticas. É um ambiente muito delicado.",
         ondeFica: "Diversos rios do Cerrado apresentam águas extremamente transparentes.",
         encontramos: "Peixes, lontras, aves aquáticas, pedras e vegetação ciliar.",
@@ -126,7 +126,7 @@ const paginas = [
     },
     {
         titulo: "🏆 Guardião do Cerrado",
-        imagem: "assets/imagens/diario/guardiao.jpg",
+        imagem: "pexels-hiagorocha-17025997.jpg",
         fala: "Parabéns! Você chegou ao fim da nossa expedição. Agora conhece muito mais sobre o Cerrado e pode ajudar a protegê-lo.",
         ondeFica: "O Cerrado ocupa uma grande parte do território brasileiro e está presente em vários estados.",
         encontramos: "Animais, plantas, rios, comunidades e muita biodiversidade que precisam ser preservados.",

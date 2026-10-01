@@ -105,7 +105,7 @@ button {
     display: flex;
     align-items: center;
     gap: 30px;
-    color: var(--branco);
+    color: white;
     font-weight: 700;
 }
 
@@ -149,8 +149,9 @@ button {
 
 .botao-entrar:hover {
     color: var(--branco) !important;
-    background: #82c64d;
+    background: var(--amarelo);
     transform: translateY(-2px);
+    transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .botao-entrar::after {
@@ -385,7 +386,7 @@ button {
 .mascote {
     position: relative;
     z-index: 2;
-    width: min(100%, 520px);
+    width: min(100%, 350px);
     max-height: 650px;
     object-fit: contain;
     filter: drop-shadow(0 28px 28px rgba(0, 0, 0, 0.32));
@@ -407,7 +408,7 @@ button {
     position: absolute;
     z-index: 4;
     top: 115px;
-    right: -10px;
+    right: -90px;
     width: 230px;
     padding: 16px;
     display: flex;

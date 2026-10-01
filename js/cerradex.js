@@ -64,14 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("modalHabitat");
 
     const modalIconeAlimentacao =
-        document.getElementById(
-            "modalIconeAlimentacao"
-        );
+        document.getElementById("modalIconeAlimentacao");
 
     const modalTituloAlimentacao =
-        document.getElementById(
-            "modalTituloAlimentacao"
-        );
+        document.getElementById("modalTituloAlimentacao");
 
     const modalAlimentacao =
         document.getElementById("modalAlimentacao");
@@ -79,137 +75,403 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalImportancia =
         document.getElementById("modalImportancia");
 
+    const modalCuriosidade =
+        document.getElementById("modalCuriosidade");
+
     const modalStatus =
         document.getElementById("modalStatus");
 
     const botaoArtigoModal =
         document.getElementById("botaoArtigoModal");
 
-    const botaoMenu =
-        document.getElementById("botaoMenu");
-
-    const menu =
-        document.getElementById("menu");
-
     let filtroAtual = "todas";
     let pesquisaAtual = "";
-
-    function progressoPadrao() {
-        return {
-            xp: 0,
-            artigos: [],
-            cartas: [],
-            sequencia: 0,
-            quizzesConcluidos: 0,
-            respostasCorretas: 0
-        };
-    }
-
-    function lerProgressoLocal() {
-        const nomesPossiveis = [
-            "progressoGuardioes",
-            "progresso",
-            "guardioesProgresso"
-        ];
-
-        for (const nome of nomesPossiveis) {
-            try {
-                const salvo =
-                    localStorage.getItem(nome);
-
-                if (salvo) {
-                    return JSON.parse(salvo);
-                }
-            } catch {
-                continue;
-            }
-        }
-
-        return progressoPadrao();
-    }
-
-    function obterDadosProgresso() {
-        let progresso = progressoPadrao();
-
-        try {
-            if (
-                typeof window.obterProgresso ===
-                "function"
-            ) {
-                progresso =
-                    window.obterProgresso();
-            } else if (
-                typeof obterProgresso ===
-                "function"
-            ) {
-                progresso =
-                    obterProgresso();
-            } else {
-                progresso =
-                    lerProgressoLocal();
-            }
-        } catch {
-            progresso =
-                lerProgressoLocal();
-        }
-
-        return {
-            xp:
-                Number(progresso?.xp) || 0,
-
-            artigos:
-                Array.isArray(progresso?.artigos)
-                    ? progresso.artigos
-                    : [],
-
-            cartas:
-                Array.isArray(progresso?.cartas)
-                    ? progresso.cartas
-                    : [],
-
-            sequencia:
-                Number(progresso?.sequencia) || 0,
-
-            quizzesConcluidos:
-                Number(
-                    progresso?.quizzesConcluidos
-                ) || 0,
-
-            respostasCorretas:
-                Number(
-                    progresso?.respostasCorretas
-                ) || 0
-        };
-    }
 
     function normalizarTexto(texto) {
         return String(texto || "")
             .normalize("NFD")
-            .replace(
-                /[\u0300-\u036f]/g,
-                ""
-            )
+            .replace(/[\u0300-\u036f]/g, "")
             .toLowerCase()
             .trim();
     }
 
-    function cartaDesbloqueada(
-        especie,
-        progresso
-    ) {
-        return progresso.cartas.includes(
+    function obterProgressoPrincipal() {
+        try {
+            if (
+                typeof window.obterProgresso === "function"
+            ) {
+                const progresso =
+                    window.obterProgresso();
+
+                if (progresso) {
+                    return progresso;
+                }
+            }
+        } catch (erro) {
+        }
+
+        const chaves = [
+            "progresso",
+            "progressoGuardioes",
+            "guardioesProgresso"
+        ];
+
+        for (const chave of chaves) {
+            try {
+                const salvo =
+                    localStorage.getItem(chave);
+
+                if (salvo) {
+                    return JSON.parse(salvo);
+                }
+            } catch (erro) {
+            }
+        }
+
+        return {
+            xp: 0,
+            nivel: 1,
+            artigos: []
+        };
+    }
+
+    function obterProgressoQuizzes() {
+        try {
+            const salvo =
+                JSON.parse(
+                    localStorage.getItem(
+                        "guardioesQuizProgresso"
+                    )
+                );
+
+            if (salvo) {
+                return {
+                    concluidos:
+                        Array.isArray(
+                            salvo.concluidos
+                        )
+                            ? salvo.concluidos
+                            : [],
+                    resultados:
+                        salvo.resultados &&
+                        typeof salvo.resultados === "object"
+                            ? salvo.resultados
+                            : {}
+                };
+            }
+        } catch (erro) {
+        }
+
+        return {
+            concluidos: [],
+            resultados: {}
+        };
+    }
+
+    function obterDescobertasSalvas() {
+        try {
+            const salvo =
+                JSON.parse(
+                    localStorage.getItem(
+                        "descobertasCerradex"
+                    )
+                );
+
+            return Array.isArray(salvo)
+                ? salvo
+                : [];
+        } catch (erro) {
+            return [];
+        }
+    }
+
+    function salvarDescobertas(lista) {
+        const unicas =
+            [...new Set(lista)];
+
+        localStorage.setItem(
+            "descobertasCerradex",
+            JSON.stringify(unicas)
+        );
+    }
+
+    function obterNivelAtual() {
+        const progresso =
+            obterProgressoPrincipal();
+
+        if (
+            typeof window.obterNivelAtual ===
+            "function"
+        ) {
+            try {
+                const nivel =
+                    window.obterNivelAtual();
+
+                if (
+                    typeof nivel === "number" &&
+                    nivel > 0
+                ) {
+                    return nivel;
+                }
+
+                if (
+                    nivel &&
+                    typeof nivel.nivel === "number"
+                ) {
+                    return nivel.nivel;
+                }
+            } catch (erro) {
+            }
+        }
+
+        if (
+            typeof progresso.nivel === "number" &&
+            progresso.nivel > 0
+        ) {
+            return progresso.nivel;
+        }
+
+        const xp =
+            Number(progresso.xp) || 0;
+
+        return Math.floor(xp / 100) + 1;
+    }
+
+    function artigoConcluido(id) {
+        if (!id) {
+            return false;
+        }
+
+        const progresso =
+            obterProgressoPrincipal();
+
+        const artigos =
+            Array.isArray(progresso.artigos)
+                ? progresso.artigos
+                : [];
+
+        return artigos.includes(id);
+    }
+
+    function quizConcluido(id) {
+        if (!id) {
+            return false;
+        }
+
+        const progressoQuiz =
+            obterProgressoQuizzes();
+
+        return progressoQuiz.concluidos.includes(
+            id
+        );
+    }
+
+    function regraFoiCumprida(especie) {
+        const regra =
+            especie.desbloqueio;
+
+        if (!regra) {
+            return false;
+        }
+
+        if (
+            regra.tipo === "artigoQuiz"
+        ) {
+            return (
+                artigoConcluido(
+                    regra.artigoId
+                ) &&
+                quizConcluido(
+                    regra.quizId
+                )
+            );
+        }
+
+        if (
+            regra.tipo === "nivel"
+        ) {
+            return (
+                obterNivelAtual() >=
+                Number(regra.nivel)
+            );
+        }
+
+        if (
+            regra.tipo === "artigoQuizNivel"
+        ) {
+            return (
+                artigoConcluido(
+                    regra.artigoId
+                ) &&
+                quizConcluido(
+                    regra.quizId
+                ) &&
+                obterNivelAtual() >=
+                    Number(regra.nivel)
+            );
+        }
+
+        return false;
+    }
+
+    function sincronizarDesbloqueios() {
+        const descobertas =
+            obterDescobertasSalvas();
+
+        let alterou = false;
+
+        especies.forEach(especie => {
+            if (
+                regraFoiCumprida(especie) &&
+                !descobertas.includes(
+                    especie.id
+                )
+            ) {
+                descobertas.push(
+                    especie.id
+                );
+
+                alterou = true;
+            }
+        });
+
+        if (alterou) {
+            salvarDescobertas(
+                descobertas
+            );
+        }
+
+        return descobertas;
+    }
+
+    function cartaDesbloqueada(especie) {
+        const descobertas =
+            sincronizarDesbloqueios();
+
+        return descobertas.includes(
             especie.id
         );
     }
 
-    function correspondeAoFiltro(
-        especie,
-        progresso
-    ) {
+    function obterNomeCategoria(categoria) {
+        if (categoria === "fauna") {
+            return "Fauna";
+        }
+
+        if (categoria === "flora") {
+            return "Flora";
+        }
+
+        return "Cerrado";
+    }
+
+    function obterClasseRaridade(raridade) {
+        const valor =
+            normalizarTexto(
+                raridade
+            );
+
+        if (valor === "comum") {
+            return "comum";
+        }
+
+        if (valor === "incomum") {
+            return "incomum";
+        }
+
+        if (valor === "rara") {
+            return "rara";
+        }
+
+        if (valor === "lendaria") {
+            return "lendaria";
+        }
+
+        return "comum";
+    }
+
+    function obterTextoRequisito(especie) {
+        const regra =
+            especie.desbloqueio;
+
+        if (!regra) {
+            return "Continue explorando para descobrir esta carta.";
+        }
+
+        if (
+            regra.tipo === "artigoQuiz"
+        ) {
+            const artigoOk =
+                artigoConcluido(
+                    regra.artigoId
+                );
+
+            const quizOk =
+                quizConcluido(
+                    regra.quizId
+                );
+
+            if (!artigoOk) {
+                return "📖 Leia o artigo correspondente para começar esta descoberta.";
+            }
+
+            if (!quizOk) {
+                return "🧠 Artigo concluído. Agora complete o quiz correspondente.";
+            }
+
+            return "✓ Requisitos concluídos.";
+        }
+
+        if (
+            regra.tipo === "nivel"
+        ) {
+            const nivelAtual =
+                obterNivelAtual();
+
+            return `⭐ Alcance o nível ${regra.nivel}. Seu nível atual é ${nivelAtual}.`;
+        }
+
+        if (
+            regra.tipo === "artigoQuizNivel"
+        ) {
+            const artigoOk =
+                artigoConcluido(
+                    regra.artigoId
+                );
+
+            const quizOk =
+                quizConcluido(
+                    regra.quizId
+                );
+
+            const nivelAtual =
+                obterNivelAtual();
+
+            if (!artigoOk) {
+                return "📖 Leia primeiro o artigo desta espécie.";
+            }
+
+            if (!quizOk) {
+                return "🧠 Complete o quiz correspondente.";
+            }
+
+            if (
+                nivelAtual <
+                Number(regra.nivel)
+            ) {
+                return `⭐ Alcance o nível ${regra.nivel}. Seu nível atual é ${nivelAtual}.`;
+            }
+
+            return "✓ Todos os requisitos foram concluídos.";
+        }
+
+        return "Continue sua jornada para descobrir esta carta.";
+    }
+
+    function correspondeFiltro(especie) {
         const desbloqueada =
             cartaDesbloqueada(
-                especie,
-                progresso
+                especie
             );
 
         const raridade =
@@ -217,44 +479,47 @@ document.addEventListener("DOMContentLoaded", function () {
                 especie.raridade
             );
 
-        if (filtroAtual === "fauna") {
+        if (
+            filtroAtual === "fauna"
+        ) {
             return (
-                especie.categoria ===
-                "fauna"
-            );
-        }
-
-        if (filtroAtual === "flora") {
-            return (
-                especie.categoria ===
-                "flora"
+                especie.categoria === "fauna"
             );
         }
 
         if (
-            filtroAtual ===
-            "descobertas"
+            filtroAtual === "flora"
+        ) {
+            return (
+                especie.categoria === "flora"
+            );
+        }
+
+        if (
+            filtroAtual === "descobertas"
         ) {
             return desbloqueada;
         }
 
         if (
-            filtroAtual ===
-            "bloqueadas"
+            filtroAtual === "bloqueadas"
         ) {
             return !desbloqueada;
         }
 
-        if (filtroAtual === "raras") {
-            return raridade === "rara";
+        if (
+            filtroAtual === "raras"
+        ) {
+            return (
+                raridade === "rara" ||
+                raridade === "lendaria"
+            );
         }
 
         return true;
     }
 
-    function correspondeAPesquisa(
-        especie
-    ) {
+    function correspondePesquisa(especie) {
         const pesquisa =
             normalizarTexto(
                 pesquisaAtual
@@ -264,7 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return true;
         }
 
-        const textoCompleto =
+        const texto =
             normalizarTexto(`
                 ${especie.nome}
                 ${especie.nomeCientifico}
@@ -273,83 +538,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${especie.descricao}
                 ${especie.habitat}
                 ${especie.alimentacao}
+                ${especie.importancia}
+                ${especie.curiosidade}
             `);
 
-        return textoCompleto.includes(
+        return texto.includes(
             pesquisa
         );
     }
 
-    function obterEspeciesFiltradas(
-        progresso
-    ) {
+    function obterEspeciesFiltradas() {
         return especies.filter(
-            function (especie) {
-                return (
-                    correspondeAoFiltro(
-                        especie,
-                        progresso
-                    ) &&
-                    correspondeAPesquisa(
-                        especie
-                    )
-                );
-            }
+            especie =>
+                correspondeFiltro(
+                    especie
+                ) &&
+                correspondePesquisa(
+                    especie
+                )
         );
     }
 
-    function nomeCategoria(categoria) {
-        return categoria === "fauna"
-            ? "Fauna"
-            : "Flora";
-    }
-
-    function descobrirEspecie(especie) {
-        const progresso =
-            obterDadosProgresso();
-
-        if (
-            progresso.cartas.includes(
-                especie.id
-            )
-        ) {
-            abrirModal(especie, true);
-            return;
-        }
-
-        if (
-            typeof window.descobrirCarta ===
-            "function"
-        ) {
-            window.descobrirCarta(
-                especie.id
-            );
-        } else if (
-            typeof descobrirCarta ===
-            "function"
-        ) {
-            descobrirCarta(
-                especie.id
-            );
-        } else {
-            console.error(
-                "A função descobrirCarta não foi encontrada."
-            );
-            return;
-        }
-
-        renderizarCartas();
-        abrirModal(especie, true);
-    }
-
-    function criarCarta(
-        especie,
-        progresso
-    ) {
+    function criarCarta(especie) {
         const desbloqueada =
             cartaDesbloqueada(
-                especie,
-                progresso
+                especie
             );
 
         const carta =
@@ -357,62 +570,86 @@ document.addEventListener("DOMContentLoaded", function () {
                 "article"
             );
 
+        const classeRaridade =
+            obterClasseRaridade(
+                especie.raridade
+            );
+
         carta.className =
             desbloqueada
-                ? "carta-cerradex"
+                ? `carta-cerradex ${classeRaridade}`
                 : "carta-cerradex bloqueada";
 
         carta.dataset.id =
             especie.id;
 
-        const nomeExibido =
+        const nome =
             desbloqueada
                 ? especie.nome
-                : "Espécie misteriosa";
+                : "???";
 
-        const descricaoExibida =
+        const nomeCientifico =
             desbloqueada
-                ? especie.descricao
-                : "Leia o artigo desta espécie para desbloquear sua carta no Cerradex.";
+                ? especie.nomeCientifico
+                : "Espécie ainda não identificada";
 
-        const iconeExibido =
+        const icone =
             desbloqueada
                 ? especie.icone
-                : "❔";
+                : "🔒";
 
-        const statusExibido =
+        const descricao =
             desbloqueada
-                ? "✓ Carta descoberta"
-                : "🔒 Carta bloqueada";
+                ? especie.descricao
+                : obterTextoRequisito(
+                      especie
+                  );
+
+        const status =
+            desbloqueada
+                ? "✓ Descoberta"
+                : "🔒 Bloqueada";
 
         const textoBotao =
             desbloqueada
                 ? "Ver carta"
-                : "Descobrir";
+                : "Ver requisito";
 
         carta.innerHTML = `
             <div class="carta-imagem-cerradex">
-                <span>${iconeExibido}</span>
+
+                <span class="icone-especie">
+                    ${icone}
+                </span>
 
                 <small class="selo-carta">
-                    ${nomeCategoria(
+                    ${obterNomeCategoria(
                         especie.categoria
                     )}
                 </small>
 
-                <small class="rarity-carta">
+                <small class="rarity-carta ${classeRaridade}">
                     ${especie.raridade}
                 </small>
+
             </div>
 
             <div class="carta-conteudo-cerradex">
-                <h3>${nomeExibido}</h3>
+
+                <h3>
+                    ${nome}
+                </h3>
+
+                <span class="nome-cientifico">
+                    ${nomeCientifico}
+                </span>
 
                 <p>
-                    ${descricaoExibida}
+                    ${descricao}
                 </p>
 
                 <div class="carta-rodape-cerradex">
+
                     <span
                         class="carta-status-cerradex ${
                             desbloqueada
@@ -420,7 +657,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 : "bloqueado"
                         }"
                     >
-                        ${statusExibido}
+                        ${status}
                     </span>
 
                     <button
@@ -429,37 +666,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     >
                         ${textoBotao}
                     </button>
+
                 </div>
+
             </div>
         `;
 
-        const botaoCarta =
+        const botao =
             carta.querySelector(
                 ".botao-carta-cerradex"
             );
 
-        botaoCarta.addEventListener(
+        botao.addEventListener(
             "click",
             function () {
-                const progressoAtual =
-                    obterDadosProgresso();
-
-                const jaDescoberta =
-                    cartaDesbloqueada(
-                        especie,
-                        progressoAtual
-                    );
-
-                if (!jaDescoberta) {
-                    descobrirEspecie(
-                        especie
-                    );
-                    return;
-                }
-
                 abrirModal(
                     especie,
-                    true
+                    cartaDesbloqueada(
+                        especie
+                    )
                 );
             }
         );
@@ -472,92 +697,83 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const progresso =
-            obterDadosProgresso();
+        sincronizarDesbloqueios();
 
         const filtradas =
-            obterEspeciesFiltradas(
-                progresso
-            );
+            obterEspeciesFiltradas();
 
         gradeCartas.innerHTML = "";
 
         filtradas.forEach(
-            function (especie) {
-                const carta =
-                    criarCarta(
-                        especie,
-                        progresso
-                    );
-
+            especie => {
                 gradeCartas.appendChild(
-                    carta
+                    criarCarta(
+                        especie
+                    )
                 );
             }
         );
 
-        if (contadorResultados) {
+        if (
+            contadorResultados
+        ) {
             contadorResultados.textContent =
                 filtradas.length === 1
-                    ? "1 espécie encontrada"
-                    : `${filtradas.length} espécies encontradas`;
+                    ? "1 carta encontrada"
+                    : `${filtradas.length} cartas encontradas`;
         }
 
-        if (semResultados) {
+        if (
+            semResultados
+        ) {
             semResultados.hidden =
-                filtradas.length !== 0;
+                filtradas.length > 0;
         }
 
-        atualizarProgresso(
-            progresso
-        );
+        atualizarProgresso();
     }
 
-    function atualizarProgresso(
-        progresso
-    ) {
+    function atualizarProgresso() {
+        const descobertasSalvas =
+            sincronizarDesbloqueios();
+
         const descobertas =
             especies.filter(
-                function (especie) {
-                    return progresso.cartas.includes(
+                especie =>
+                    descobertasSalvas.includes(
                         especie.id
-                    );
-                }
+                    )
             );
 
-        const faunaDescoberta =
+        const fauna =
             descobertas.filter(
-                function (especie) {
-                    return (
-                        especie.categoria ===
-                        "fauna"
-                    );
-                }
+                especie =>
+                    especie.categoria === "fauna"
             ).length;
 
-        const floraDescoberta =
+        const flora =
             descobertas.filter(
-                function (especie) {
-                    return (
-                        especie.categoria ===
-                        "flora"
-                    );
-                }
+                especie =>
+                    especie.categoria === "flora"
             ).length;
 
-        const rarasDescobertas =
+        const raras =
             descobertas.filter(
-                function (especie) {
-                    return (
+                especie => {
+                    const raridade =
                         normalizarTexto(
                             especie.raridade
-                        ) === "rara"
+                        );
+
+                    return (
+                        raridade === "rara" ||
+                        raridade === "lendaria"
                     );
                 }
             ).length;
 
         const porcentagem =
-            especies.length > 0
+            especies.length
                 ? Math.round(
                       (
                           descobertas.length /
@@ -566,9 +782,11 @@ document.addEventListener("DOMContentLoaded", function () {
                   )
                 : 0;
 
-        if (textoProgresso) {
+        if (
+            textoProgresso
+        ) {
             textoProgresso.textContent =
-                `${descobertas.length} de ${especies.length} espécies descobertas`;
+                `${descobertas.length} de ${especies.length} cartas descobertas`;
         }
 
         if (
@@ -578,29 +796,39 @@ document.addEventListener("DOMContentLoaded", function () {
                 `${porcentagem}%`;
         }
 
-        if (barraProgresso) {
+        if (
+            barraProgresso
+        ) {
             barraProgresso.style.width =
                 `${porcentagem}%`;
         }
 
-        if (totalDescobertas) {
+        if (
+            totalDescobertas
+        ) {
             totalDescobertas.textContent =
                 descobertas.length;
         }
 
-        if (totalFauna) {
+        if (
+            totalFauna
+        ) {
             totalFauna.textContent =
-                faunaDescoberta;
+                fauna;
         }
 
-        if (totalFlora) {
+        if (
+            totalFlora
+        ) {
             totalFlora.textContent =
-                floraDescoberta;
+                flora;
         }
 
-        if (totalRaras) {
+        if (
+            totalRaras
+        ) {
             totalRaras.textContent =
-                rarasDescobertas;
+                raras;
         }
     }
 
@@ -615,10 +843,10 @@ document.addEventListener("DOMContentLoaded", function () {
         modalIcone.textContent =
             desbloqueada
                 ? especie.icone
-                : "❔";
+                : "🔒";
 
         modalCategoria.textContent =
-            nomeCategoria(
+            obterNomeCategoria(
                 especie.categoria
             );
 
@@ -633,7 +861,9 @@ document.addEventListener("DOMContentLoaded", function () {
         modalDescricao.textContent =
             desbloqueada
                 ? especie.descricao
-                : "Esta carta ainda está bloqueada. Leia o artigo para conhecer a espécie e adicioná-la à sua coleção.";
+                : obterTextoRequisito(
+                      especie
+                  );
 
         modalHabitat.textContent =
             desbloqueada
@@ -651,8 +881,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 : "Informação ainda não descoberta.";
 
         if (
-            especie.categoria ===
-            "flora"
+            modalCuriosidade
+        ) {
+            modalCuriosidade.textContent =
+                desbloqueada
+                    ? especie.curiosidade ||
+                      "Continue explorando para descobrir mais."
+                    : "Esta curiosidade será revelada quando a carta for desbloqueada.";
+        }
+
+        if (
+            especie.categoria === "flora"
         ) {
             modalIconeAlimentacao.textContent =
                 "☀️";
@@ -670,13 +909,13 @@ document.addEventListener("DOMContentLoaded", function () {
         modalStatus.textContent =
             desbloqueada
                 ? "✓ Carta descoberta"
-                : "🔒 Carta bloqueada";
+                : obterTextoRequisito(
+                      especie
+                  );
 
-        botaoArtigoModal.href =
-            especie.artigo;
-
-        botaoArtigoModal.classList.remove(
-            "desativado"
+        configurarBotaoModal(
+            especie,
+            desbloqueada
         );
 
         modalCarta.classList.add(
@@ -685,6 +924,107 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.style.overflow =
             "hidden";
+    }
+
+    function configurarBotaoModal(
+        especie,
+        desbloqueada
+    ) {
+        if (!botaoArtigoModal) {
+            return;
+        }
+
+        botaoArtigoModal.classList.remove(
+            "desativado"
+        );
+
+        if (
+            especie.artigoId
+        ) {
+            botaoArtigoModal.href =
+                `artigo.html?id=${especie.artigoId}`;
+
+            if (desbloqueada) {
+                botaoArtigoModal.textContent =
+                    "📖 Rever artigo";
+            } else {
+                const regra =
+                    especie.desbloqueio;
+
+                if (
+                    regra &&
+                    regra.tipo ===
+                        "artigoQuiz"
+                ) {
+                    if (
+                        artigoConcluido(
+                            regra.artigoId
+                        ) &&
+                        !quizConcluido(
+                            regra.quizId
+                        )
+                    ) {
+                        botaoArtigoModal.href =
+                            "quizzes.html";
+
+                        botaoArtigoModal.textContent =
+                            "🧠 Ir para os quizzes";
+                    } else {
+                        botaoArtigoModal.textContent =
+                            "📖 Ir para o artigo";
+                    }
+                } else {
+                    botaoArtigoModal.textContent =
+                        "📖 Ir para o artigo";
+                }
+            }
+
+            return;
+        }
+
+        const regra =
+            especie.desbloqueio;
+
+        if (
+            regra &&
+            regra.tipo === "nivel"
+        ) {
+            botaoArtigoModal.removeAttribute(
+                "href"
+            );
+
+            botaoArtigoModal.textContent =
+                `⭐ Nível ${regra.nivel}`;
+
+            botaoArtigoModal.classList.add(
+                "desativado"
+            );
+
+            return;
+        }
+
+        if (
+            especie.artigo
+        ) {
+            botaoArtigoModal.href =
+                especie.artigo;
+
+            botaoArtigoModal.textContent =
+                "📖 Ler artigo";
+
+            return;
+        }
+
+        botaoArtigoModal.removeAttribute(
+            "href"
+        );
+
+        botaoArtigoModal.textContent =
+            "🔒 Continue explorando";
+
+        botaoArtigoModal.classList.add(
+            "desativado"
+        );
     }
 
     function fecharModalCarta() {
@@ -700,7 +1040,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "";
     }
 
-    if (campoPesquisa) {
+    if (
+        campoPesquisa
+    ) {
         campoPesquisa.addEventListener(
             "input",
             function () {
@@ -713,12 +1055,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     botoesFiltro.forEach(
-        function (botao) {
+        botao => {
             botao.addEventListener(
                 "click",
                 function () {
                     botoesFiltro.forEach(
-                        function (item) {
+                        item => {
                             item.classList.remove(
                                 "ativo"
                             );
@@ -739,14 +1081,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-    if (fecharModal) {
+    if (
+        fecharModal
+    ) {
         fecharModal.addEventListener(
             "click",
             fecharModalCarta
         );
     }
 
-    if (modalCarta) {
+    if (
+        modalCarta
+    ) {
         modalCarta.addEventListener(
             "click",
             function (evento) {
@@ -764,820 +1110,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "keydown",
         function (evento) {
             if (
-                evento.key ===
-                "Escape"
+                evento.key === "Escape"
             ) {
                 fecharModalCarta();
             }
         }
     );
-
-    if (botaoMenu && menu) {
-        botaoMenu.addEventListener(
-            "click",
-            function () {
-                menu.classList.toggle(
-                    "aberto"
-                );
-            }
-        );
-    }
-
-    window.addEventListener(
-        "storage",
-        renderizarCartas
-    );
-
-    window.addEventListener(
-        "progressoAtualizado",
-        renderizarCartas
-    );
-
-    renderizarCartas();
-});document.addEventListener("DOMContentLoaded", function () {
-    const especies = Array.isArray(window.especies)
-        ? window.especies
-        : [];
-
-    const gradeCartas =
-        document.getElementById("gradeCartas");
-
-    const campoPesquisa =
-        document.getElementById("campoPesquisa");
-
-    const botoesFiltro =
-        document.querySelectorAll(".filtro-cerradex");
-
-    const contadorResultados =
-        document.getElementById("contadorResultados");
-
-    const semResultados =
-        document.getElementById("semResultados");
-
-    const textoProgresso =
-        document.getElementById("textoProgresso");
-
-    const porcentagemProgresso =
-        document.getElementById("porcentagemProgresso");
-
-    const barraProgresso =
-        document.getElementById("barraProgresso");
-
-    const totalDescobertas =
-        document.getElementById("totalDescobertas");
-
-    const totalFauna =
-        document.getElementById("totalFauna");
-
-    const totalFlora =
-        document.getElementById("totalFlora");
-
-    const totalRaras =
-        document.getElementById("totalRaras");
-
-    const modalCarta =
-        document.getElementById("modalCarta");
-
-    const fecharModal =
-        document.getElementById("fecharModal");
-
-    const modalIcone =
-        document.getElementById("modalIcone");
-
-    const modalCategoria =
-        document.getElementById("modalCategoria");
-
-    const modalNome =
-        document.getElementById("modalNome");
-
-    const modalRaridade =
-        document.getElementById("modalRaridade");
-
-    const modalDescricao =
-        document.getElementById("modalDescricao");
-
-    const modalHabitat =
-        document.getElementById("modalHabitat");
-
-    const modalIconeAlimentacao =
-        document.getElementById(
-            "modalIconeAlimentacao"
-        );
-
-    const modalTituloAlimentacao =
-        document.getElementById(
-            "modalTituloAlimentacao"
-        );
-
-    const modalAlimentacao =
-        document.getElementById("modalAlimentacao");
-
-    const modalImportancia =
-        document.getElementById("modalImportancia");
-
-    const modalStatus =
-        document.getElementById("modalStatus");
-
-    const botaoArtigoModal =
-        document.getElementById("botaoArtigoModal");
-
-    const botaoMenu =
-        document.getElementById("botaoMenu");
-
-    const menu =
-        document.getElementById("menu");
-
-    let filtroAtual = "todas";
-    let pesquisaAtual = "";
-
-    function progressoPadrao() {
-        return {
-            xp: 0,
-            artigos: [],
-            cartas: [],
-            sequencia: 0,
-            quizzesConcluidos: 0,
-            respostasCorretas: 0
-        };
-    }
-
-    function lerProgressoLocal() {
-        const nomesPossiveis = [
-            "progressoGuardioes",
-            "progresso",
-            "guardioesProgresso"
-        ];
-
-        for (const nome of nomesPossiveis) {
-            try {
-                const salvo =
-                    localStorage.getItem(nome);
-
-                if (salvo) {
-                    return JSON.parse(salvo);
-                }
-            } catch {
-                continue;
-            }
-        }
-
-        return progressoPadrao();
-    }
-
-    function obterDadosProgresso() {
-        let progresso = progressoPadrao();
-
-        try {
-            if (
-                typeof window.obterProgresso ===
-                "function"
-            ) {
-                progresso =
-                    window.obterProgresso();
-            } else if (
-                typeof obterProgresso ===
-                "function"
-            ) {
-                progresso =
-                    obterProgresso();
-            } else {
-                progresso =
-                    lerProgressoLocal();
-            }
-        } catch {
-            progresso =
-                lerProgressoLocal();
-        }
-
-        return {
-            xp:
-                Number(progresso?.xp) || 0,
-
-            artigos:
-                Array.isArray(progresso?.artigos)
-                    ? progresso.artigos
-                    : [],
-
-            cartas:
-                Array.isArray(progresso?.cartas)
-                    ? progresso.cartas
-                    : [],
-
-            sequencia:
-                Number(progresso?.sequencia) || 0,
-
-            quizzesConcluidos:
-                Number(
-                    progresso?.quizzesConcluidos
-                ) || 0,
-
-            respostasCorretas:
-                Number(
-                    progresso?.respostasCorretas
-                ) || 0
-        };
-    }
-
-    function normalizarTexto(texto) {
-        return String(texto || "")
-            .normalize("NFD")
-            .replace(
-                /[\u0300-\u036f]/g,
-                ""
-            )
-            .toLowerCase()
-            .trim();
-    }
-
-    function cartaDesbloqueada(
-        especie,
-        progresso
-    ) {
-        return progresso.cartas.includes(
-            especie.id
-        );
-    }
-
-    function correspondeAoFiltro(
-        especie,
-        progresso
-    ) {
-        const desbloqueada =
-            cartaDesbloqueada(
-                especie,
-                progresso
-            );
-
-        const raridade =
-            normalizarTexto(
-                especie.raridade
-            );
-
-        if (filtroAtual === "fauna") {
-            return (
-                especie.categoria ===
-                "fauna"
-            );
-        }
-
-        if (filtroAtual === "flora") {
-            return (
-                especie.categoria ===
-                "flora"
-            );
-        }
-
-        if (
-            filtroAtual ===
-            "descobertas"
-        ) {
-            return desbloqueada;
-        }
-
-        if (
-            filtroAtual ===
-            "bloqueadas"
-        ) {
-            return !desbloqueada;
-        }
-
-        if (filtroAtual === "raras") {
-            return raridade === "rara";
-        }
-
-        return true;
-    }
-
-    function correspondeAPesquisa(
-        especie
-    ) {
-        const pesquisa =
-            normalizarTexto(
-                pesquisaAtual
-            );
-
-        if (!pesquisa) {
-            return true;
-        }
-
-        const textoCompleto =
-            normalizarTexto(`
-                ${especie.nome}
-                ${especie.nomeCientifico}
-                ${especie.categoria}
-                ${especie.raridade}
-                ${especie.descricao}
-                ${especie.habitat}
-                ${especie.alimentacao}
-            `);
-
-        return textoCompleto.includes(
-            pesquisa
-        );
-    }
-
-    function obterEspeciesFiltradas(
-        progresso
-    ) {
-        return especies.filter(
-            function (especie) {
-                return (
-                    correspondeAoFiltro(
-                        especie,
-                        progresso
-                    ) &&
-                    correspondeAPesquisa(
-                        especie
-                    )
-                );
-            }
-        );
-    }
-
-    function nomeCategoria(categoria) {
-        return categoria === "fauna"
-            ? "Fauna"
-            : "Flora";
-    }
-
-    function descobrirEspecie(especie) {
-        const progresso =
-            obterDadosProgresso();
-
-        if (
-            progresso.cartas.includes(
-                especie.id
-            )
-        ) {
-            abrirModal(especie, true);
-            return;
-        }
-
-        if (
-            typeof window.descobrirCarta ===
-            "function"
-        ) {
-            window.descobrirCarta(
-                especie.id
-            );
-        } else if (
-            typeof descobrirCarta ===
-            "function"
-        ) {
-            descobrirCarta(
-                especie.id
-            );
-        } else {
-            console.error(
-                "A função descobrirCarta não foi encontrada."
-            );
-            return;
-        }
-
-        renderizarCartas();
-        abrirModal(especie, true);
-    }
-
-    function criarCarta(
-        especie,
-        progresso
-    ) {
-        const desbloqueada =
-            cartaDesbloqueada(
-                especie,
-                progresso
-            );
-
-        const carta =
-            document.createElement(
-                "article"
-            );
-
-        carta.className =
-            desbloqueada
-                ? "carta-cerradex"
-                : "carta-cerradex bloqueada";
-
-        carta.dataset.id =
-            especie.id;
-
-        const nomeExibido =
-            desbloqueada
-                ? especie.nome
-                : "Espécie misteriosa";
-
-        const descricaoExibida =
-            desbloqueada
-                ? especie.descricao
-                : "Leia o artigo desta espécie para desbloquear sua carta no Cerradex.";
-
-        const iconeExibido =
-            desbloqueada
-                ? especie.icone
-                : "❔";
-
-        const statusExibido =
-            desbloqueada
-                ? "✓ Carta descoberta"
-                : "🔒 Carta bloqueada";
-
-        const textoBotao =
-            desbloqueada
-                ? "Ver carta"
-                : "Descobrir";
-
-        carta.innerHTML = `
-            <div class="carta-imagem-cerradex">
-                <span>${iconeExibido}</span>
-
-                <small class="selo-carta">
-                    ${nomeCategoria(
-                        especie.categoria
-                    )}
-                </small>
-
-                <small class="rarity-carta">
-                    ${especie.raridade}
-                </small>
-            </div>
-
-            <div class="carta-conteudo-cerradex">
-                <h3>${nomeExibido}</h3>
-
-                <p>
-                    ${descricaoExibida}
-                </p>
-
-                <div class="carta-rodape-cerradex">
-                    <span
-                        class="carta-status-cerradex ${
-                            desbloqueada
-                                ? ""
-                                : "bloqueado"
-                        }"
-                    >
-                        ${statusExibido}
-                    </span>
-
-                    <button
-                        type="button"
-                        class="botao-carta-cerradex"
-                    >
-                        ${textoBotao}
-                    </button>
-                </div>
-            </div>
-        `;
-
-        const botaoCarta =
-            carta.querySelector(
-                ".botao-carta-cerradex"
-            );
-
-        botaoCarta.addEventListener(
-            "click",
-            function () {
-                const progressoAtual =
-                    obterDadosProgresso();
-
-                const jaDescoberta =
-                    cartaDesbloqueada(
-                        especie,
-                        progressoAtual
-                    );
-
-                if (!jaDescoberta) {
-                    descobrirEspecie(
-                        especie
-                    );
-                    return;
-                }
-
-                abrirModal(
-                    especie,
-                    true
-                );
-            }
-        );
-
-        return carta;
-    }
-
-    function renderizarCartas() {
-        if (!gradeCartas) {
-            return;
-        }
-
-        const progresso =
-            obterDadosProgresso();
-
-        const filtradas =
-            obterEspeciesFiltradas(
-                progresso
-            );
-
-        gradeCartas.innerHTML = "";
-
-        filtradas.forEach(
-            function (especie) {
-                const carta =
-                    criarCarta(
-                        especie,
-                        progresso
-                    );
-
-                gradeCartas.appendChild(
-                    carta
-                );
-            }
-        );
-
-        if (contadorResultados) {
-            contadorResultados.textContent =
-                filtradas.length === 1
-                    ? "1 espécie encontrada"
-                    : `${filtradas.length} espécies encontradas`;
-        }
-
-        if (semResultados) {
-            semResultados.hidden =
-                filtradas.length !== 0;
-        }
-
-        atualizarProgresso(
-            progresso
-        );
-    }
-
-    function atualizarProgresso(
-        progresso
-    ) {
-        const descobertas =
-            especies.filter(
-                function (especie) {
-                    return progresso.cartas.includes(
-                        especie.id
-                    );
-                }
-            );
-
-        const faunaDescoberta =
-            descobertas.filter(
-                function (especie) {
-                    return (
-                        especie.categoria ===
-                        "fauna"
-                    );
-                }
-            ).length;
-
-        const floraDescoberta =
-            descobertas.filter(
-                function (especie) {
-                    return (
-                        especie.categoria ===
-                        "flora"
-                    );
-                }
-            ).length;
-
-        const rarasDescobertas =
-            descobertas.filter(
-                function (especie) {
-                    return (
-                        normalizarTexto(
-                            especie.raridade
-                        ) === "rara"
-                    );
-                }
-            ).length;
-
-        const porcentagem =
-            especies.length > 0
-                ? Math.round(
-                      (
-                          descobertas.length /
-                          especies.length
-                      ) * 100
-                  )
-                : 0;
-
-        if (textoProgresso) {
-            textoProgresso.textContent =
-                `${descobertas.length} de ${especies.length} espécies descobertas`;
-        }
-
-        if (
-            porcentagemProgresso
-        ) {
-            porcentagemProgresso.textContent =
-                `${porcentagem}%`;
-        }
-
-        if (barraProgresso) {
-            barraProgresso.style.width =
-                `${porcentagem}%`;
-        }
-
-        if (totalDescobertas) {
-            totalDescobertas.textContent =
-                descobertas.length;
-        }
-
-        if (totalFauna) {
-            totalFauna.textContent =
-                faunaDescoberta;
-        }
-
-        if (totalFlora) {
-            totalFlora.textContent =
-                floraDescoberta;
-        }
-
-        if (totalRaras) {
-            totalRaras.textContent =
-                rarasDescobertas;
-        }
-    }
-
-    function abrirModal(
-        especie,
-        desbloqueada
-    ) {
-        if (!modalCarta) {
-            return;
-        }
-
-        modalIcone.textContent =
-            desbloqueada
-                ? especie.icone
-                : "❔";
-
-        modalCategoria.textContent =
-            nomeCategoria(
-                especie.categoria
-            );
-
-        modalNome.textContent =
-            desbloqueada
-                ? especie.nome
-                : "Espécie misteriosa";
-
-        modalRaridade.textContent =
-            especie.raridade;
-
-        modalDescricao.textContent =
-            desbloqueada
-                ? especie.descricao
-                : "Esta carta ainda está bloqueada. Leia o artigo para conhecer a espécie e adicioná-la à sua coleção.";
-
-        modalHabitat.textContent =
-            desbloqueada
-                ? especie.habitat
-                : "Informação ainda não descoberta.";
-
-        modalAlimentacao.textContent =
-            desbloqueada
-                ? especie.alimentacao
-                : "Informação ainda não descoberta.";
-
-        modalImportancia.textContent =
-            desbloqueada
-                ? especie.importancia
-                : "Informação ainda não descoberta.";
-
-        if (
-            especie.categoria ===
-            "flora"
-        ) {
-            modalIconeAlimentacao.textContent =
-                "☀️";
-
-            modalTituloAlimentacao.textContent =
-                "Nutrição";
-        } else {
-            modalIconeAlimentacao.textContent =
-                "🍽️";
-
-            modalTituloAlimentacao.textContent =
-                "Alimentação";
-        }
-
-        modalStatus.textContent =
-            desbloqueada
-                ? "✓ Carta descoberta"
-                : "🔒 Carta bloqueada";
-
-        botaoArtigoModal.href =
-            especie.artigo;
-
-        botaoArtigoModal.classList.remove(
-            "desativado"
-        );
-
-        modalCarta.classList.add(
-            "ativo"
-        );
-
-        document.body.style.overflow =
-            "hidden";
-    }
-
-    function fecharModalCarta() {
-        if (!modalCarta) {
-            return;
-        }
-
-        modalCarta.classList.remove(
-            "ativo"
-        );
-
-        document.body.style.overflow =
-            "";
-    }
-
-    if (campoPesquisa) {
-        campoPesquisa.addEventListener(
-            "input",
-            function () {
-                pesquisaAtual =
-                    campoPesquisa.value;
-
-                renderizarCartas();
-            }
-        );
-    }
-
-    botoesFiltro.forEach(
-        function (botao) {
-            botao.addEventListener(
-                "click",
-                function () {
-                    botoesFiltro.forEach(
-                        function (item) {
-                            item.classList.remove(
-                                "ativo"
-                            );
-                        }
-                    );
-
-                    botao.classList.add(
-                        "ativo"
-                    );
-
-                    filtroAtual =
-                        botao.dataset.filtro ||
-                        "todas";
-
-                    renderizarCartas();
-                }
-            );
-        }
-    );
-
-    if (fecharModal) {
-        fecharModal.addEventListener(
-            "click",
-            fecharModalCarta
-        );
-    }
-
-    if (modalCarta) {
-        modalCarta.addEventListener(
-            "click",
-            function (evento) {
-                if (
-                    evento.target ===
-                    modalCarta
-                ) {
-                    fecharModalCarta();
-                }
-            }
-        );
-    }
-
-    document.addEventListener(
-        "keydown",
-        function (evento) {
-            if (
-                evento.key ===
-                "Escape"
-            ) {
-                fecharModalCarta();
-            }
-        }
-    );
-
-    if (botaoMenu && menu) {
-        botaoMenu.addEventListener(
-            "click",
-            function () {
-                menu.classList.toggle(
-                    "aberto"
-                );
-            }
-        );
-    }
 
     window.addEventListener(
         "storage",
