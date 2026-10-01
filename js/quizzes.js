@@ -1,3 +1,4 @@
+
 let quizAtual = null;
 let indicePergunta = 0;
 let respostasCorretas = 0;
@@ -38,7 +39,6 @@ const tituloExplicacao = document.getElementById("tituloExplicacao");
 const textoExplicacao = document.getElementById("textoExplicacao");
 
 const voltarQuizzes = document.getElementById("voltarQuizzes");
-
 const outroQuiz = document.getElementById("outroQuiz");
 const refazerQuiz = document.getElementById("refazerQuiz");
 
@@ -56,12 +56,116 @@ const textoDescoberta = document.getElementById("textoDescoberta");
 
 const CHAVE_QUIZZES = "guardioesQuizProgresso";
 
+const ICONES_QUIZ = {
+    "🐺": "fa-paw",
+    "🐾": "fa-paw",
+    "🐆": "fa-cat",
+    "🐈": "fa-cat",
+    "🦊": "fa-paw",
+    "🐦": "fa-dove",
+    "🦜": "fa-dove",
+    "🦉": "fa-feather-pointed",
+    "🪶": "fa-feather",
+    "🦌": "fa-paw",
+    "🐒": "fa-paw",
+    "🐍": "fa-water",
+    "🌿": "fa-leaf",
+    "🍃": "fa-leaf",
+    "🌱": "fa-seedling",
+    "🌳": "fa-tree",
+    "🌲": "fa-tree",
+    "🌴": "fa-tree",
+    "🌼": "fa-seedling",
+    "🌾": "fa-wheat-awn",
+    "🍏": "fa-apple-whole",
+    "🍈": "fa-apple-whole",
+    "🌰": "fa-seedling",
+    "🟡": "fa-circle",
+    "🟠": "fa-circle",
+    "🌎": "fa-earth-americas",
+    "🌍": "fa-earth-americas",
+    "💧": "fa-droplet",
+    "💦": "fa-water",
+    "🌧️": "fa-cloud-rain",
+    "☀️": "fa-sun",
+    "🔥": "fa-fire",
+    "🪵": "fa-tree",
+    "🧩": "fa-puzzle-piece",
+    "⚠️": "fa-triangle-exclamation",
+    "🏞️": "fa-mountain-sun",
+    "🐝": "fa-bug",
+    "♻️": "fa-recycle",
+    "🛡️": "fa-shield-halved",
+    "🧠": "fa-brain",
+    "📖": "fa-book-open",
+    "📚": "fa-book-open",
+    "📝": "fa-clipboard-list",
+    "⭐": "fa-star",
+    "🏆": "fa-trophy",
+    "👑": "fa-crown",
+    "🥇": "fa-medal",
+    "🥈": "fa-medal",
+    "🥉": "fa-medal",
+    "🔒": "fa-lock",
+    "🔓": "fa-lock-open",
+    "✅": "fa-circle-check",
+    "❌": "fa-circle-xmark"
+};
+
 document.addEventListener("DOMContentLoaded", iniciarPagina);
 
+function criarIcone(nome, classeExtra = "") {
+    const classe = String(nome || "fa-leaf")
+        .replace(/^fa-solid\s+/, "");
+
+    return `<i class="fa-solid ${classe} ${classeExtra}" aria-hidden="true"></i>`;
+}
+
+function converterIcone(icone, padrao = "fa-leaf") {
+    if (typeof icone !== "string" || !icone.trim()) {
+        return padrao;
+    }
+
+    const valor = icone.trim();
+
+    if (valor.startsWith("fa-")) {
+        return valor;
+    }
+
+    if (valor.startsWith("fa-solid ")) {
+        return valor.replace(/^fa-solid\s+/, "");
+    }
+
+    return ICONES_QUIZ[valor] || padrao;
+}
+
+function obterIconeQuiz(quiz) {
+    const porId = {
+        "lobo-guara": "fa-paw",
+        "tamandua-bandeira": "fa-paw",
+        "onca-pintada": "fa-cat",
+        "tatu-canastra": "fa-paw",
+        "seriema": "fa-dove",
+        "ema": "fa-feather",
+        "arara-caninde": "fa-dove",
+        "veado-campeiro": "fa-paw",
+        "anta": "fa-paw",
+        "macaco-prego": "fa-paw",
+        "raposa-do-campo": "fa-paw",
+        "gato-palheiro": "fa-cat",
+        "coruja-buraqueira": "fa-feather-pointed",
+        "tucano-toco": "fa-dove",
+        "sucuri": "fa-water"
+    };
+
+    return porId[quiz.artigoId] ||
+        converterIcone(quiz.icone, "fa-book-open");
+}
+
 function iniciarPagina() {
-    telaQuiz.hidden = true;
-    telaResultado.hidden = true;
-    listaQuizzes.hidden = false;
+    if (telaQuiz) telaQuiz.hidden = true;
+    if (telaResultado) telaResultado.hidden = true;
+    if (listaQuizzes) listaQuizzes.hidden = false;
 
     configurarEventos();
     atualizarResumo();
@@ -70,59 +174,35 @@ function iniciarPagina() {
 
 function configurarEventos() {
     if (pesquisaQuiz) {
-        pesquisaQuiz.addEventListener(
-            "input",
-            aplicarFiltros
-        );
+        pesquisaQuiz.addEventListener("input", aplicarFiltros);
     }
 
     if (filtroDificuldade) {
-        filtroDificuldade.addEventListener(
-            "change",
-            aplicarFiltros
-        );
+        filtroDificuldade.addEventListener("change", aplicarFiltros);
     }
 
     if (filtroStatus) {
-        filtroStatus.addEventListener(
-            "change",
-            aplicarFiltros
-        );
+        filtroStatus.addEventListener("change", aplicarFiltros);
     }
 
     if (confirmarResposta) {
-        confirmarResposta.addEventListener(
-            "click",
-            corrigirResposta
-        );
+        confirmarResposta.addEventListener("click", corrigirResposta);
     }
 
     if (proximaQuestao) {
-        proximaQuestao.addEventListener(
-            "click",
-            avancarPergunta
-        );
+        proximaQuestao.addEventListener("click", avancarPergunta);
     }
 
     if (voltarQuizzes) {
-        voltarQuizzes.addEventListener(
-            "click",
-            voltarLista
-        );
+        voltarQuizzes.addEventListener("click", voltarLista);
     }
 
     if (outroQuiz) {
-        outroQuiz.addEventListener(
-            "click",
-            voltarLista
-        );
+        outroQuiz.addEventListener("click", voltarLista);
     }
 
     if (refazerQuiz) {
-        refazerQuiz.addEventListener(
-            "click",
-            refazerQuizAtual
-        );
+        refazerQuiz.addEventListener("click", refazerQuizAtual);
     }
 }
 
@@ -135,47 +215,36 @@ function obterProgressoPrincipal() {
                 return progresso;
             }
         }
-    } catch (erro) {
-    }
+    } catch (erro) {}
 
     try {
-        return JSON.parse(
-            localStorage.getItem("progresso")
-        ) || {};
+        return JSON.parse(localStorage.getItem("progresso")) || {};
     } catch (erro) {
         return {};
     }
 }
 
 function salvarProgressoPrincipal(progresso) {
-    localStorage.setItem(
-        "progresso",
-        JSON.stringify(progresso)
-    );
+    localStorage.setItem("progresso", JSON.stringify(progresso));
 }
 
 function obterProgressoQuizzes() {
     try {
-        const salvo = JSON.parse(
-            localStorage.getItem(CHAVE_QUIZZES)
-        );
+        const salvo = JSON.parse(localStorage.getItem(CHAVE_QUIZZES));
 
         if (salvo) {
             return {
                 concluidos: Array.isArray(salvo.concluidos)
                     ? salvo.concluidos
                     : [],
-                resultados:
-                    salvo.resultados &&
+                resultados: salvo.resultados &&
                     typeof salvo.resultados === "object"
-                        ? salvo.resultados
-                        : {},
-                acertosTotais:
-                    Number(salvo.acertosTotais) || 0
+                    ? salvo.resultados
+                    : {},
+                acertosTotais: Number(salvo.acertosTotais) || 0
             };
         }
-    } catch (erro) {
-    }
+    } catch (erro) {}
 
     return {
         concluidos: [],
@@ -185,31 +254,24 @@ function obterProgressoQuizzes() {
 }
 
 function salvarProgressoQuizzes(progresso) {
-    localStorage.setItem(
-        CHAVE_QUIZZES,
-        JSON.stringify(progresso)
-    );
+    localStorage.setItem(CHAVE_QUIZZES, JSON.stringify(progresso));
 }
 
 function obterArtigosConcluidos() {
     const progresso = obterProgressoPrincipal();
 
-    if (!Array.isArray(progresso.artigos)) {
-        return [];
-    }
-
-    return progresso.artigos;
+    return Array.isArray(progresso.artigos)
+        ? progresso.artigos
+        : [];
 }
 
 function quizEstaDesbloqueado(quiz) {
     const artigos = obterArtigosConcluidos();
-
     return artigos.includes(quiz.artigoId);
 }
 
 function quizEstaConcluido(quizId) {
     const progresso = obterProgressoQuizzes();
-
     return progresso.concluidos.includes(quizId);
 }
 
@@ -227,22 +289,17 @@ function obterStatusQuiz(quiz) {
 
 function obterNomeDificuldade(dificuldade) {
     const dificuldades = {
-        facil: "🌱 Fácil",
-        medio: "🌿 Médio",
-        dificil: "🔥 Difícil",
-        hard: "👑 Hard"
+        facil: `${criarIcone("fa-seedling")} Fácil`,
+        medio: `${criarIcone("fa-leaf")} Médio`,
+        dificil: `${criarIcone("fa-fire")} Difícil`,
+        hard: `${criarIcone("fa-crown")} Hard`
     };
 
     return dificuldades[dificuldade] || dificuldade;
 }
 
 function obterClasseDificuldade(dificuldade) {
-    if (
-        dificuldade === "facil" ||
-        dificuldade === "medio" ||
-        dificuldade === "dificil" ||
-        dificuldade === "hard"
-    ) {
+    if (["facil", "medio", "dificil", "hard"].includes(dificuldade)) {
         return dificuldade;
     }
 
@@ -251,12 +308,12 @@ function obterClasseDificuldade(dificuldade) {
 
 function obterTextoStatus(status) {
     const textos = {
-        bloqueado: "🔒 Bloqueado",
-        desbloqueado: "🔓 Disponível",
-        concluido: "✓ Concluído"
+        bloqueado: `${criarIcone("fa-lock")} Bloqueado`,
+        desbloqueado: `${criarIcone("fa-lock-open")} Disponível`,
+        concluido: `${criarIcone("fa-circle-check")} Concluído`
     };
 
-    return textos[status];
+    return textos[status] || "";
 }
 
 function atualizarResumo() {
@@ -269,28 +326,23 @@ function atualizarResumo() {
     ).length;
 
     if (xpTotal) {
-        xpTotal.textContent =
-            `${Number(progressoPrincipal.xp) || 0} XP`;
+        xpTotal.textContent = `${Number(progressoPrincipal.xp) || 0} XP`;
     }
 
     if (quizzesConcluidos) {
-        quizzesConcluidos.textContent =
-            progressoQuiz.concluidos.length;
+        quizzesConcluidos.textContent = progressoQuiz.concluidos.length;
     }
 
     if (acertosTotais) {
-        acertosTotais.textContent =
-            progressoQuiz.acertosTotais;
+        acertosTotais.textContent = progressoQuiz.acertosTotais;
     }
 
     if (quizzesDesbloqueados) {
-        quizzesDesbloqueados.textContent =
-            `${desbloqueados}/${lista.length}`;
+        quizzesDesbloqueados.textContent = `${desbloqueados}/${lista.length}`;
     }
 
     if (quantidadeQuizzes) {
-        quantidadeQuizzes.textContent =
-            `${lista.length} desafios`;
+        quantidadeQuizzes.textContent = `${lista.length} desafios`;
     }
 }
 
@@ -324,9 +376,7 @@ function aplicarFiltros() {
             ${quiz.dificuldade}
         `);
 
-        const correspondePesquisa =
-            !termo ||
-            textoQuiz.includes(termo);
+        const correspondePesquisa = !termo || textoQuiz.includes(termo);
 
         const correspondeDificuldade =
             dificuldade === "todos" ||
@@ -337,18 +387,15 @@ function aplicarFiltros() {
         let correspondeStatus = true;
 
         if (statusSelecionado === "bloqueado") {
-            correspondeStatus =
-                status === "bloqueado";
+            correspondeStatus = status === "bloqueado";
         }
 
         if (statusSelecionado === "desbloqueado") {
-            correspondeStatus =
-                status === "desbloqueado";
+            correspondeStatus = status === "desbloqueado";
         }
 
         if (statusSelecionado === "concluido") {
-            correspondeStatus =
-                status === "concluido";
+            correspondeStatus = status === "concluido";
         }
 
         return (
@@ -362,28 +409,19 @@ function aplicarFiltros() {
 }
 
 function renderizarQuizzes(lista) {
-    if (!gradeQuizzes) {
-        return;
-    }
+    if (!gradeQuizzes) return;
 
     gradeQuizzes.innerHTML = "";
 
     if (!lista || lista.length === 0) {
-        if (nenhumQuiz) {
-            nenhumQuiz.hidden = false;
-        }
-
+        if (nenhumQuiz) nenhumQuiz.hidden = false;
         return;
     }
 
-    if (nenhumQuiz) {
-        nenhumQuiz.hidden = true;
-    }
+    if (nenhumQuiz) nenhumQuiz.hidden = true;
 
     lista.forEach(quiz => {
-        gradeQuizzes.appendChild(
-            criarCardQuiz(quiz)
-        );
+        gradeQuizzes.appendChild(criarCardQuiz(quiz));
     });
 }
 
@@ -394,34 +432,21 @@ function criarCardQuiz(quiz) {
 
     const card = document.createElement("article");
 
-    card.className =
-        `cardQuiz ${bloqueado ? "bloqueado" : ""}`;
+    card.className = `cardQuiz ${bloqueado ? "bloqueado" : ""}`;
 
-    const dificuldade =
-        obterNomeDificuldade(
-            quiz.dificuldade
-        );
-
-    const classeDificuldade =
-        obterClasseDificuldade(
-            quiz.dificuldade
-        );
+    const dificuldade = obterNomeDificuldade(quiz.dificuldade);
+    const classeDificuldade = obterClasseDificuldade(quiz.dificuldade);
 
     let textoBotao = "Começar desafio";
 
-    if (bloqueado) {
-        textoBotao = "Quiz bloqueado";
-    }
-
-    if (concluido) {
-        textoBotao = "Refazer desafio";
-    }
+    if (bloqueado) textoBotao = "Quiz bloqueado";
+    if (concluido) textoBotao = "Refazer desafio";
 
     card.innerHTML = `
         <div class="topoCardQuiz">
 
             <div class="iconeQuiz">
-                ${quiz.icone}
+                ${criarIcone(obterIconeQuiz(quiz))}
             </div>
 
             <span class="dificuldade nivel ${classeDificuldade}">
@@ -436,26 +461,25 @@ function criarCardQuiz(quiz) {
 
         <div class="conteudoQuiz">
 
-            <h3>
-                ${quiz.titulo}
-            </h3>
+            <h3>${quiz.titulo}</h3>
 
-            <p>
-                ${quiz.descricao}
-            </p>
+            <p>${quiz.descricao}</p>
 
             <div class="infoQuiz">
 
                 <span>
-                    📝 ${quiz.perguntas.length} perguntas
+                    ${criarIcone("fa-clipboard-list")}
+                    ${quiz.perguntas.length} perguntas
                 </span>
 
                 <span>
-                    ⭐ ${quiz.xp} XP
+                    ${criarIcone("fa-star")}
+                    ${quiz.xp} XP
                 </span>
 
                 <span>
-                    📖 1 artigo
+                    ${criarIcone("fa-book-open")}
+                    1 artigo
                 </span>
 
             </div>
@@ -464,7 +488,8 @@ function criarCardQuiz(quiz) {
                 bloqueado
                     ? `
                         <div class="avisoBloqueio">
-                            🔒 Leia o artigo correspondente na Biblioteca para liberar este desafio.
+                            ${criarIcone("fa-lock")}
+                            Leia o artigo correspondente na Biblioteca para liberar este desafio.
                         </div>
                     `
                     : ""
@@ -481,36 +506,21 @@ function criarCardQuiz(quiz) {
         </div>
     `;
 
-    const botao =
-        card.querySelector(
-            ".botaoComecar"
-        );
+    const botao = card.querySelector(".botaoComecar");
 
-    if (!bloqueado) {
-        botao.addEventListener(
-            "click",
-            () => iniciarQuiz(quiz.id)
-        );
+    if (!bloqueado && botao) {
+        botao.addEventListener("click", () => iniciarQuiz(quiz.id));
     }
 
     return card;
 }
 
 function iniciarQuiz(id) {
-    const quiz =
-        typeof window.buscarQuizPorId === "function"
-            ? window.buscarQuizPorId(id)
-            : (window.quizzes || []).find(
-                item => item.id === id
-            );
+    const quiz = typeof window.buscarQuizPorId === "function"
+        ? window.buscarQuizPorId(id)
+        : (window.quizzes || []).find(item => item.id === id);
 
-    if (!quiz) {
-        return;
-    }
-
-    if (!quizEstaDesbloqueado(quiz)) {
-        return;
-    }
+    if (!quiz || !quizEstaDesbloqueado(quiz)) return;
 
     quizAtual = quiz;
     indicePergunta = 0;
@@ -521,20 +531,12 @@ function iniciarQuiz(id) {
     telaResultado.hidden = true;
     telaQuiz.hidden = false;
 
-    if (heroQuiz) {
-        heroQuiz.hidden = true;
-    }
-
-    if (resumoAcademia) {
-        resumoAcademia.hidden = true;
-    }
+    if (heroQuiz) heroQuiz.hidden = true;
+    if (resumoAcademia) resumoAcademia.hidden = true;
 
     mostrarPergunta();
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function mostrarPergunta() {
@@ -542,205 +544,126 @@ function mostrarPergunta() {
 
     confirmarResposta.disabled = true;
     confirmarResposta.hidden = false;
-
     proximaQuestao.hidden = true;
 
     explicacaoQuiz.hidden = true;
-    explicacaoQuiz.className =
-        "explicacaoQuiz";
+    explicacaoQuiz.className = "explicacaoQuiz";
 
-    const pergunta =
-        quizAtual.perguntas[
-            indicePergunta
-        ];
+    const pergunta = quizAtual.perguntas[indicePergunta];
+    const total = quizAtual.perguntas.length;
 
-    const total =
-        quizAtual.perguntas.length;
-
-    temaQuiz.textContent =
-        quizAtual.titulo;
-
-    nivelQuiz.textContent =
-        obterNomeDificuldade(
-            quizAtual.dificuldade
-        );
+    temaQuiz.textContent = quizAtual.titulo;
+    nivelQuiz.innerHTML = obterNomeDificuldade(quizAtual.dificuldade);
 
     nivelQuiz.className =
-        `nivelQuestao nivel ${obterClasseDificuldade(
-            quizAtual.dificuldade
-        )}`;
+        `nivelQuestao nivel ${obterClasseDificuldade(quizAtual.dificuldade)}`;
 
-    perguntaQuiz.textContent =
-        pergunta.pergunta;
+    perguntaQuiz.textContent = pergunta.pergunta;
 
     contadorQuestao.textContent =
         `Questão ${indicePergunta + 1} de ${total}`;
 
-    contadorAcertos.textContent =
-        `${respostasCorretas} acertos`;
+    contadorAcertos.textContent = `${respostasCorretas} acertos`;
 
     barraProgresso.style.width =
         `${(indicePergunta / total) * 100}%`;
 
     alternativasQuiz.innerHTML = "";
 
-    const letras = [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E"
-    ];
+    const letras = ["A", "B", "C", "D", "E"];
 
-    pergunta.alternativas.forEach(
-        (texto, indice) => {
+    pergunta.alternativas.forEach((texto, indice) => {
+        const botao = document.createElement("button");
 
-            const botao =
-                document.createElement(
-                    "button"
-                );
+        botao.type = "button";
+        botao.className = "alternativaQuiz";
 
-            botao.type = "button";
+        botao.innerHTML = `
+            <span class="letraAlternativa">
+                ${letras[indice] || indice + 1}
+            </span>
 
-            botao.className =
-                "alternativaQuiz";
+            <span class="textoAlternativa"></span>
+        `;
 
-            botao.innerHTML = `
-                <span class="letraAlternativa">
-                    ${letras[indice]}
-                </span>
+        botao.querySelector(".textoAlternativa").textContent = texto;
 
-                <span class="textoAlternativa">
-                    ${texto}
-                </span>
-            `;
+        botao.addEventListener(
+            "click",
+            () => selecionarAlternativa(indice)
+        );
 
-            botao.addEventListener(
-                "click",
-                () => selecionarAlternativa(
-                    indice
-                )
-            );
-
-            alternativasQuiz.appendChild(
-                botao
-            );
-        }
-    );
+        alternativasQuiz.appendChild(botao);
+    });
 }
 
 function selecionarAlternativa(indice) {
-    alternativaSelecionada =
-        indice;
+    alternativaSelecionada = indice;
+    confirmarResposta.disabled = false;
 
-    confirmarResposta.disabled =
-        false;
-
-    const botoes =
-        alternativasQuiz.querySelectorAll(
-            ".alternativaQuiz"
-        );
+    const botoes = alternativasQuiz.querySelectorAll(".alternativaQuiz");
 
     botoes.forEach(botao => {
-        botao.classList.remove(
-            "selecionada"
-        );
+        botao.classList.remove("selecionada");
     });
 
-    botoes[indice].classList.add(
-        "selecionada"
-    );
+    if (botoes[indice]) {
+        botoes[indice].classList.add("selecionada");
+    }
 }
 
 function corrigirResposta() {
-    if (
-        alternativaSelecionada === null
-    ) {
-        return;
-    }
+    if (alternativaSelecionada === null) return;
 
-    const pergunta =
-        quizAtual.perguntas[
-            indicePergunta
-        ];
-
-    const botoes =
-        alternativasQuiz.querySelectorAll(
-            ".alternativaQuiz"
-        );
+    const pergunta = quizAtual.perguntas[indicePergunta];
+    const botoes = alternativasQuiz.querySelectorAll(".alternativaQuiz");
 
     botoes.forEach(botao => {
         botao.disabled = true;
     });
 
-    botoes[
-        pergunta.correta
-    ].classList.add(
-        "correta"
-    );
+    if (botoes[pergunta.correta]) {
+        botoes[pergunta.correta].classList.add("correta");
+    }
 
-    const acertou =
-        alternativaSelecionada ===
-        pergunta.correta;
+    const acertou = alternativaSelecionada === pergunta.correta;
 
     if (acertou) {
         respostasCorretas++;
 
-        tituloExplicacao.textContent =
-            "✅ Resposta correta!";
+        tituloExplicacao.innerHTML =
+            `${criarIcone("fa-circle-check")} Resposta correta!`;
 
-        explicacaoQuiz.classList.add(
-            "correta"
-        );
+        explicacaoQuiz.classList.add("correta");
     } else {
-        botoes[
-            alternativaSelecionada
-        ].classList.add(
-            "errada"
-        );
+        if (botoes[alternativaSelecionada]) {
+            botoes[alternativaSelecionada].classList.add("errada");
+        }
 
-        tituloExplicacao.textContent =
-            "❌ Resposta incorreta";
+        tituloExplicacao.innerHTML =
+            `${criarIcone("fa-circle-xmark")} Resposta incorreta`;
 
-        explicacaoQuiz.classList.add(
-            "errada"
-        );
+        explicacaoQuiz.classList.add("errada");
     }
 
-    textoExplicacao.textContent =
-        pergunta.explicacao;
+    textoExplicacao.textContent = pergunta.explicacao;
 
-    explicacaoQuiz.hidden =
-        false;
+    explicacaoQuiz.hidden = false;
+    confirmarResposta.hidden = true;
+    proximaQuestao.hidden = false;
 
-    confirmarResposta.hidden =
-        true;
+    contadorAcertos.textContent = `${respostasCorretas} acertos`;
 
-    proximaQuestao.hidden =
-        false;
-
-    contadorAcertos.textContent =
-        `${respostasCorretas} acertos`;
-
-    if (
-        indicePergunta ===
-        quizAtual.perguntas.length - 1
-    ) {
-        proximaQuestao.textContent =
-            "Ver resultado";
-    } else {
-        proximaQuestao.textContent =
-            "Próxima questão";
-    }
+    proximaQuestao.textContent =
+        indicePergunta === quizAtual.perguntas.length - 1
+            ? "Ver resultado"
+            : "Próxima questão";
 }
 
 function avancarPergunta() {
     indicePergunta++;
 
-    if (
-        indicePergunta >=
-        quizAtual.perguntas.length
-    ) {
+    if (indicePergunta >= quizAtual.perguntas.length) {
         finalizarQuiz();
         return;
     }
@@ -749,158 +672,88 @@ function avancarPergunta() {
 }
 
 function finalizarQuiz() {
-    const total =
-        quizAtual.perguntas.length;
+    const total = quizAtual.perguntas.length;
 
-    const porcentagem =
-        Math.round(
-            (respostasCorretas / total) *
-            100
-        );
+    const porcentagem = Math.round(
+        (respostasCorretas / total) * 100
+    );
 
-    const progressoQuiz =
-        obterProgressoQuizzes();
+    const progressoQuiz = obterProgressoQuizzes();
 
     const primeiraConclusao =
-        !progressoQuiz.concluidos.includes(
-            quizAtual.id
-        );
+        !progressoQuiz.concluidos.includes(quizAtual.id);
 
     let xpRecebido = 0;
 
     if (primeiraConclusao) {
-        xpRecebido =
-            Math.max(
-                1,
-                Math.round(
-                    quizAtual.xp *
-                    (porcentagem / 100)
-                )
-            );
-
-        progressoQuiz.concluidos.push(
-            quizAtual.id
+        xpRecebido = Math.max(
+            1,
+            Math.round(quizAtual.xp * (porcentagem / 100))
         );
 
-        progressoQuiz.acertosTotais +=
-            respostasCorretas;
+        progressoQuiz.concluidos.push(quizAtual.id);
+        progressoQuiz.acertosTotais += respostasCorretas;
 
-        adicionarXP(
-            respostasCorretas,
-            xpRecebido
-        );
-
-        desbloquearDescoberta(
-            quizAtual.descoberta
-        );
+        adicionarXP(respostasCorretas, xpRecebido);
+        desbloquearDescoberta(quizAtual.descoberta);
     }
 
-    const resultadoAnterior =
-        progressoQuiz.resultados[
-            quizAtual.id
-        ];
+    const resultadoAnterior = progressoQuiz.resultados[quizAtual.id];
 
     if (
         !resultadoAnterior ||
-        porcentagem >
-        resultadoAnterior.porcentagem
+        porcentagem > resultadoAnterior.porcentagem
     ) {
-        progressoQuiz.resultados[
-            quizAtual.id
-        ] = {
-            acertos:
-                respostasCorretas,
-            total:
-                total,
-            porcentagem:
-                porcentagem
+        progressoQuiz.resultados[quizAtual.id] = {
+            acertos: respostasCorretas,
+            total: total,
+            porcentagem: porcentagem
         };
     }
 
-    salvarProgressoQuizzes(
-        progressoQuiz
-    );
+    salvarProgressoQuizzes(progressoQuiz);
 
-    mostrarResultado(
-        porcentagem,
-        xpRecebido,
-        primeiraConclusao
-    );
-
+    mostrarResultado(porcentagem, xpRecebido, primeiraConclusao);
     atualizarResumo();
 }
 
-function adicionarXP(
-    acertos,
-    xpRecebido
-) {
-    if (
-        typeof window.registrarQuiz ===
-        "function"
-    ) {
+function adicionarXP(acertos, xpRecebido) {
+    if (typeof window.registrarQuiz === "function") {
         try {
-            window.registrarQuiz(
-                acertos,
-                xpRecebido
-            );
-
+            window.registrarQuiz(acertos, xpRecebido);
             return;
-        } catch (erro) {
-        }
+        } catch (erro) {}
     }
 
-    const progresso =
-        obterProgressoPrincipal();
+    const progresso = obterProgressoPrincipal();
 
-    progresso.xp =
-        (Number(progresso.xp) || 0) +
-        xpRecebido;
+    progresso.xp = (Number(progresso.xp) || 0) + xpRecebido;
 
-    salvarProgressoPrincipal(
-        progresso
-    );
+    salvarProgressoPrincipal(progresso);
 }
 
-function desbloquearDescoberta(
-    descoberta
-) {
-    if (!descoberta) {
-        return;
-    }
+function desbloquearDescoberta(descoberta) {
+    if (!descoberta) return;
 
     let cartas = [];
 
     try {
-        cartas =
-            JSON.parse(
-                localStorage.getItem(
-                    "cartasDetalhadas"
-                )
-            ) || [];
+        cartas = JSON.parse(
+            localStorage.getItem("cartasDetalhadas")
+        ) || [];
     } catch (erro) {
         cartas = [];
     }
 
-    const existe =
-        cartas.some(
-            item =>
-                item.id ===
-                descoberta.id
-        );
+    const existe = cartas.some(item => item.id === descoberta.id);
 
     if (!existe) {
         cartas.push({
             id: descoberta.id,
             nome: descoberta.nome,
-            raridade:
-                descoberta.raridade ||
-                "Comum",
-            categoria:
-                descoberta.tipo ||
-                "Conhecimento",
-            icone:
-                descoberta.icone ||
-                "🌿",
+            raridade: descoberta.raridade || "Comum",
+            categoria: descoberta.tipo || "Conhecimento",
+            icone: descoberta.icone || "🌿",
             imagem: ""
         });
 
@@ -913,52 +766,32 @@ function desbloquearDescoberta(
     let descobertas = [];
 
     try {
-        descobertas =
-            JSON.parse(
-                localStorage.getItem(
-                    "descobertasCerradex"
-                )
-            ) || [];
+        descobertas = JSON.parse(
+            localStorage.getItem("descobertasCerradex")
+        ) || [];
     } catch (erro) {
         descobertas = [];
     }
 
-    if (
-        !descobertas.includes(
-            descoberta.id
-        )
-    ) {
-        descobertas.push(
-            descoberta.id
-        );
+    if (!descobertas.includes(descoberta.id)) {
+        descobertas.push(descoberta.id);
 
         localStorage.setItem(
             "descobertasCerradex",
-            JSON.stringify(
-                descobertas
-            )
+            JSON.stringify(descobertas)
         );
     }
 }
 
-function mostrarResultado(
-    porcentagem,
-    xpRecebido,
-    primeiraConclusao
-) {
+function mostrarResultado(porcentagem, xpRecebido, primeiraConclusao) {
     telaQuiz.hidden = true;
     telaResultado.hidden = false;
 
-    const classificacao =
-        obterClassificacao(
-            porcentagem
-        );
+    const classificacao = obterClassificacao(porcentagem);
 
-    iconeResultado.textContent =
-        classificacao.icone;
+    iconeResultado.innerHTML = criarIcone(classificacao.icone);
 
-    tituloResultado.textContent =
-        classificacao.titulo;
+    tituloResultado.textContent = classificacao.titulo;
 
     mensagemResultado.textContent =
         `Você acertou ${respostasCorretas} de ${quizAtual.perguntas.length} perguntas.`;
@@ -966,108 +799,71 @@ function mostrarResultado(
     notaResultado.textContent =
         `${respostasCorretas}/${quizAtual.perguntas.length}`;
 
-    porcentagemResultado.textContent =
-        `${porcentagem}%`;
+    porcentagemResultado.textContent = `${porcentagem}%`;
 
-    if (primeiraConclusao) {
-        xpResultado.textContent =
-            `+${xpRecebido} XP`;
-    } else {
-        xpResultado.textContent =
-            "XP já recebido";
-    }
+    xpResultado.textContent = primeiraConclusao
+        ? `+${xpRecebido} XP`
+        : "XP já recebido";
 
-    classificacaoResultado.textContent =
-        classificacao.titulo;
+    classificacaoResultado.textContent = classificacao.titulo;
 
-    if (
-        quizAtual.descoberta &&
-        descobertaResultado
-    ) {
-        descobertaResultado.hidden =
-            false;
+    if (quizAtual.descoberta && descobertaResultado) {
+        descobertaResultado.hidden = false;
 
-        nomeDescoberta.textContent =
-            quizAtual.descoberta.nome;
+        nomeDescoberta.textContent = quizAtual.descoberta.nome;
 
-        if (primeiraConclusao) {
-            textoDescoberta.textContent =
-                `Nova descoberta registrada na sua Cerradex: ${quizAtual.descoberta.nome}.`;
-        } else {
-            textoDescoberta.textContent =
-                `Esta descoberta já faz parte da sua Cerradex.`;
-        }
+        textoDescoberta.textContent = primeiraConclusao
+            ? `Nova descoberta registrada na sua Cerradex: ${quizAtual.descoberta.nome}.`
+            : "Esta descoberta já faz parte da sua Cerradex.";
 
-        const icone =
-            descobertaResultado.querySelector(
-                ".iconeDescoberta"
-            );
+        const icone = descobertaResultado.querySelector(".iconeDescoberta");
 
         if (icone) {
-            icone.textContent =
-                quizAtual.descoberta.icone ||
-                "🐾";
+            icone.innerHTML = criarIcone(
+                converterIcone(quizAtual.descoberta.icone, "fa-paw")
+            );
         }
-    } else if (
-        descobertaResultado
-    ) {
-        descobertaResultado.hidden =
-            true;
+    } else if (descobertaResultado) {
+        descobertaResultado.hidden = true;
     }
 
-    barraProgresso.style.width =
-        "100%";
+    barraProgresso.style.width = "100%";
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function obterClassificacao(
-    porcentagem
-) {
+function obterClassificacao(porcentagem) {
     if (porcentagem === 100) {
         return {
-            titulo:
-                "Lenda do Cerrado",
-            icone:
-                "👑"
+            titulo: "Lenda do Cerrado",
+            icone: "fa-crown"
         };
     }
 
     if (porcentagem >= 80) {
         return {
-            titulo:
-                "Guardião de Ouro",
-            icone:
-                "🥇"
+            titulo: "Guardião de Ouro",
+            icone: "fa-medal"
         };
     }
 
     if (porcentagem >= 60) {
         return {
-            titulo:
-                "Guardião de Prata",
-            icone:
-                "🥈"
+            titulo: "Guardião de Prata",
+            icone: "fa-medal"
         };
     }
 
     if (porcentagem >= 40) {
         return {
-            titulo:
-                "Guardião de Bronze",
-            icone:
-                "🥉"
+            titulo: "Guardião de Bronze",
+            icone: "fa-medal"
         };
     }
 
     return {
-        titulo:
-            "Aprendiz do Cerrado",
-        icone:
-            "🌱"
+        titulo: "Aprendiz do Cerrado",
+        icone: "fa-seedling"
     };
 }
 
@@ -1076,23 +872,15 @@ function voltarLista() {
     telaResultado.hidden = true;
     listaQuizzes.hidden = false;
 
-    if (heroQuiz) {
-        heroQuiz.hidden = false;
-    }
-
-    if (resumoAcademia) {
-        resumoAcademia.hidden = false;
-    }
+    if (heroQuiz) heroQuiz.hidden = false;
+    if (resumoAcademia) resumoAcademia.hidden = false;
 
     quizAtual = null;
 
     atualizarResumo();
     aplicarFiltros();
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function refazerQuizAtual() {
@@ -1102,6 +890,5 @@ function refazerQuizAtual() {
     }
 
     const id = quizAtual.id;
-
     iniciarQuiz(id);
 }

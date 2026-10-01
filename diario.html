@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,54 +7,124 @@
 
     <title>Diário de Campo | Guardiões do Cerrado</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/diario.css">
-   
+
+    <style>
+        .logo-icone i,
+        .decoracao-capa i,
+        .cartao-flutuante > span i,
+        .medalha-certificado i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .subtitulo-capa i,
+        .rodape-capa-diario i,
+        .campo-ficha strong i,
+        .ficha-expedicao h3 i,
+        .secao h3 i,
+        .titulo-conquistado i,
+        .xp-certificado i {
+            margin-right: 7px;
+        }
+
+        .rodape-capa-diario span,
+        .campo-ficha strong,
+        .secao h3 {
+            align-items: center;
+        }
+
+        .seta-botao i {
+            line-height: 1;
+        }
+
+        .lista-especies i {
+            margin-right: 7px;
+        }
+
+        #tituloLocal i {
+            margin-right: 9px;
+        }
+
+        #resultado i {
+            margin-right: 6px;
+        }
+
+        #proximo i,
+        #anterior i {
+            margin: 0 5px;
+        }
+
+        .titulo-conquistado i:last-child {
+            margin-left: 7px;
+            margin-right: 0;
+        }
+    </style>
 </head>
 
 <body>
+
 <header class="cabecalho">
+
     <a href="perfil.html" class="logo">
+
         <div class="logo-icone">
-            🐺
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
         </div>
 
         <div class="logo-texto">
             <strong>Guardiões</strong>
             <span>do Cerrado</span>
         </div>
+
     </a>
 
     <nav class="menu">
         <a href="principal.html">Início</a>
         <a href="missoes.html">Missões</a>
-        <a href="biblioteca.html" >Biblioteca</a>
+        <a href="biblioteca.html">Biblioteca</a>
         <a href="quizzes.html">Quizzes</a>
         <a href="cerradex.html">Cerradex</a>
         <a href="diario.html" class="ativo">Diário</a>
     </nav>
+
 </header>
 
 <main>
+
     <section id="capaDiario" class="capa-diario">
-        <div class="decoracao-capa decoracao-esquerda">🌿</div>
-        <div class="decoracao-capa decoracao-direita">🍂</div>
+
+        <div class="decoracao-capa decoracao-esquerda">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+        </div>
+
+        <div class="decoracao-capa decoracao-direita">
+            <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+        </div>
 
         <div class="apresentacao-diario">
+
             <div class="etiqueta-expedicao">
                 Diário oficial de expedição
             </div>
 
             <div class="conteudo-capa-diario">
+
                 <div class="texto-capa-diario">
+
                     <span class="subtitulo-capa">
-                        🐾 Uma jornada pelo coração do Brasil
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                        Uma jornada pelo coração do Brasil
                     </span>
 
                     <h1>
                         Diário de Campo
-                        <span>da Onça-Pintada </span>
+                        <span>da Onça-Pintada</span>
                     </h1>
 
                     <p>
@@ -63,6 +134,7 @@
                     </p>
 
                     <div class="informacoes-capa">
+
                         <div class="informacao-capa">
                             <strong>6</strong>
                             <span>Expedições</span>
@@ -77,57 +149,96 @@
                             <strong>1</strong>
                             <span>Título especial</span>
                         </div>
+
                     </div>
 
-                    <button id="abrirDiario" class="botao-iniciar-diario">
+                    <button
+                        id="abrirDiario"
+                        class="botao-iniciar-diario"
+                        type="button"
+                    >
+
                         <span id="textoBotaoAbrir">
                             Iniciar expedição
                         </span>
 
-                        <span class="seta-botao">➜</span>
+                        <span class="seta-botao">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+
                     </button>
+
                 </div>
 
                 <div class="visual-capa-diario">
+
                     <div class="circulo-capa"></div>
 
                     <img
                         src="/WhatsApp Image 2026-09-25 at 07.48.45.png"
-                        alt="onça explorador sentado"
+                        alt="Onça exploradora sentada"
                         class="lobo-capa-diario"
                     >
 
                     <div class="cartao-flutuante cartao-local">
-                        <span>📍</span>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        </span>
 
                         <div>
                             <strong>Primeira parada</strong>
                             <small>Chapada dos Veadeiros</small>
                         </div>
+
                     </div>
 
                     <div class="cartao-flutuante cartao-xp">
-                        <span>⭐</span>
+
+                        <span>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        </span>
 
                         <div>
                             <strong>Ganhe XP</strong>
                             <small>Complete os desafios</small>
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
 
             <div class="rodape-capa-diario">
-                <span>🌱 Conhecer</span>
-                <span>🔎 Explorar</span>
-                <span>💚 Preservar</span>
+
+                <span>
+                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                    Conhecer
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    Explorar
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    Preservar
+                </span>
+
             </div>
+
         </div>
+
     </section>
 
     <section id="livro" class="livro oculto">
+
         <div class="topo-expedicao">
+
             <div class="identificacao-expedicao">
+
                 <span
                     class="numero-expedicao"
                     id="numeroExpedicao"
@@ -141,15 +252,19 @@
                     id="paginaAtual"
                     class="pagina-atual"
                 ></span>
+
             </div>
 
             <div class="area-progresso">
+
                 <div class="texto-progresso">
+
                     <span>Progresso da jornada</span>
 
                     <strong id="porcentagemProgresso">
                         17%
                     </strong>
+
                 </div>
 
                 <div class="barra">
@@ -160,64 +275,105 @@
                     <span>Início</span>
                     <span>Guardião</span>
                 </div>
+
             </div>
+
         </div>
 
         <div class="pagina">
+
             <div class="coluna-imagem">
+
                 <div class="imagem-local">
+
                     <img
                         id="imagemLocal"
                         src=""
-                        alt="Ambiente do Cerrado">
+                        alt="Ambiente do Cerrado"
+                    >
+
                 </div>
 
                 <div id="fichaExpedicao" class="ficha-expedicao">
+
                     <div class="fita-ficha"></div>
 
                     <div id="fichaNormal">
-                        <h3>📖 Registro da Expedição</h3>
+
+                        <h3>
+                            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                            Registro da Expedição
+                        </h3>
 
                         <div class="linha-ficha"></div>
 
                         <div class="campo-ficha">
-                            <strong>📍 Local</strong>
+
+                            <strong>
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                Local
+                            </strong>
+
                             <span id="localFicha"></span>
+
                         </div>
 
                         <div class="campo-ficha">
-                            <strong>👣 Espécies observadas</strong>
+
+                            <strong>
+                                <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                                Espécies observadas
+                            </strong>
 
                             <div
                                 id="especiesFicha"
                                 class="lista-especies"
                             ></div>
+
                         </div>
 
                         <div class="informacoes-ficha">
+
                             <div class="campo-ficha">
-                                <strong>🎒 Dificuldade</strong>
+
+                                <strong>
+                                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                                    Dificuldade
+                                </strong>
+
                                 <span id="dificuldadeFicha"></span>
+
                             </div>
 
                             <div class="campo-ficha">
-                                <strong>⭐ Recompensa</strong>
+
+                                <strong>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    Recompensa
+                                </strong>
+
                                 <span id="recompensaFicha"></span>
+
                             </div>
+
                         </div>
+
                     </div>
 
                     <div
                         id="certificado"
                         class="certificado oculto"
                     >
+
                         <span class="medalha-certificado">
-                            🏅
+                            <i class="fa-solid fa-medal" aria-hidden="true"></i>
                         </span>
 
                         <h3>Certificado de Conclusão</h3>
 
-                        <p>Este documento reconhece que</p>
+                        <p>
+                            Este documento reconhece que
+                        </p>
 
                         <strong class="nome-explorador">
                             Explorador do Cerrado
@@ -225,62 +381,98 @@
 
                         <p>
                             concluiu todas as expedições do Diário
-                            de Campo do Lobo-guará.
+                            de Campo da Onça-Pintada.
                         </p>
 
                         <span class="titulo-conquistado">
-                            🌿 Guardião do Cerrado 🌿
+                            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                            Guardião do Cerrado
+                            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
                         </span>
 
                         <span class="xp-certificado">
-                            ⭐ +200 XP
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            +200 XP
                         </span>
+
                     </div>
+
                 </div>
+
             </div>
 
             <div class="coluna-conteudo">
+
                 <div class="fala-lobo">
+
                     <img
                         src="/WhatsApp Image 2026-09-25 at 07.48.44.png"
-                        alt="Onça explorador"
+                        alt="Onça exploradora"
                         id="lobo"
                     >
 
                     <div class="balao">
                         <p id="falaLobo"></p>
                     </div>
+
                 </div>
 
                 <div class="conteudo">
+
                     <div class="secao">
-                        <h3>🌎 Onde fica?</h3>
+
+                        <h3>
+                            <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                            Onde fica?
+                        </h3>
+
                         <p id="ondeFica"></p>
+
                     </div>
 
                     <div class="secao">
-                        <h3>🌿 O que encontramos?</h3>
+
+                        <h3>
+                            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                            O que encontramos?
+                        </h3>
+
                         <p id="encontramos"></p>
+
                     </div>
 
                     <div class="secao">
-                        <h3>💡 Curiosidade</h3>
+
+                        <h3>
+                            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                            Curiosidade
+                        </h3>
+
                         <p id="curiosidade"></p>
+
                     </div>
 
                     <div class="secao desafio">
+
                         <div class="cabecalho-desafio">
+
                             <div>
+
                                 <span class="etiqueta-desafio">
                                     Teste seus conhecimentos
                                 </span>
 
-                                <h3>🎯 Mini Desafio</h3>
+                                <h3>
+                                    <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                                    Mini Desafio
+                                </h3>
+
                             </div>
 
                             <span id="xpPagina" class="xp-pagina">
                                 +40 XP
                             </span>
+
                         </div>
 
                         <p id="pergunta"></p>
@@ -293,6 +485,7 @@
                         <button
                             id="verificarResposta"
                             class="botao"
+                            type="button"
                         >
                             Verificar resposta
                         </button>
@@ -300,26 +493,45 @@
                         <p
                             id="resultado"
                             class="resultado"
+                            aria-live="polite"
                         ></p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
         <div class="rodape-livro">
-            <button id="anterior" class="botao">
-                ◀ Página anterior
+
+            <button
+                id="anterior"
+                class="botao"
+                type="button"
+            >
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Página anterior
             </button>
 
             <span id="contadorPaginas">
                 Página 1 de 6
             </span>
 
-            <button id="proximo" class="botao">
-                Próxima página ▶
+            <button
+                id="proximo"
+                class="botao"
+                type="button"
+            >
+                Próxima página
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </button>
+
         </div>
+
     </section>
+
 </main>
 
 <script src="js/diario.js"></script>

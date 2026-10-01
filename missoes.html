@@ -1,17 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"content="Missões e desafios dos Guardiões do Cerrado">
+    <meta name="description" content="Missões e desafios dos Guardiões do Cerrado">
 
     <title>Missões | Guardiões do Cerrado</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
     <link rel="stylesheet" href="css/missoes.css">
     <link rel="stylesheet" href="css/notificacoes.css">
+
+    <style>
+    
+
+        .logo-icone i,
+        .quadro-icone i,
+        .estatistica-icone i,
+        .icone-grupo i,
+        .contador-missoes i,
+        .sem-missoes > i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .hero-mini-missoes i,
+        .hero-passos-missoes i,
+        .botao-missoes-principal i,
+        .botao-missoes-secundario i,
+        .selo-missoes i,
+        .filtro-missao i,
+        .pesquisa-missoes i,
+        .rodape i {
+            margin-right: 7px;
+        }
+
+        .botao-missoes-principal i {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+
+        .cartao-hero-missao > span i {
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .hero-passos-missoes span i {
+            vertical-align: middle;
+        }
+
+        .filtro-missao i {
+            pointer-events: none;
+        }
+
+        .rodape strong i {
+            color: #66bb6a;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +79,7 @@
     <a href="principal.html" class="logo">
 
         <div class="logo-icone">
-            🐺
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
         </div>
 
         <div class="logo-texto">
@@ -36,19 +94,20 @@
 
     </a>
 
-    <nav class="menu">
+    <nav class="menu" aria-label="Navegação principal">
         <a href="principal.html">Início</a>
-        <a href="missoes.html" class="ativo">Missões</a>
+        <a href="missoes.html" class="ativo" aria-current="page">Missões</a>
         <a href="biblioteca.html">Biblioteca</a>
         <a href="quizzes.html">Quizzes</a>
         <a href="cerradex.html">Cerradex</a>
         <a href="diario.html">Diário</a>
-
     </nav>
 
 </header>
 
 <main>
+
+    
 
     <section class="hero-missoes">
 
@@ -61,7 +120,8 @@
                 </span>
 
                 <p class="hero-mini-missoes">
-                    🧭 Novos desafios aguardam você
+                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    Novos desafios aguardam você
                 </p>
 
                 <h1>
@@ -83,14 +143,17 @@
                         class="botao-missoes-principal"
                     >
                         Ver missões
-                        <span>↓</span>
+                        <span>
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </span>
                     </a>
 
                     <a
                         href="biblioteca.html"
                         class="botao-missoes-secundario"
                     >
-                        📚 Começar explorando
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        Começar explorando
                     </a>
 
                 </div>
@@ -98,19 +161,23 @@
                 <div class="hero-passos-missoes">
 
                     <span>
-                        📖 Aprenda
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        Aprenda
                     </span>
 
                     <span>
-                        🎯 Complete
+                        <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                        Complete
                     </span>
 
                     <span>
-                        ⭐ Ganhe XP
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        Ganhe XP
                     </span>
 
                     <span>
-                        🏆 Evolua
+                        <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                        Evolua
                     </span>
 
                 </div>
@@ -124,7 +191,7 @@
                     <div class="alfinete-missao"></div>
 
                     <span class="quadro-icone">
-                        🎯
+                        <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
                     </span>
 
                     <strong>
@@ -140,7 +207,7 @@
                 <div class="cartao-hero-missao leitura">
 
                     <span>
-                        📚
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                     </span>
 
                     <div>
@@ -158,7 +225,7 @@
                 <div class="cartao-hero-missao quiz">
 
                     <span>
-                        🧠
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
                     </span>
 
                     <div>
@@ -176,7 +243,7 @@
                 <div class="cartao-hero-missao premio">
 
                     <span>
-                        ⭐
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </span>
 
                     <div>
@@ -196,6 +263,7 @@
         </div>
 
     </section>
+
 
     <section class="secao-resumo-missoes">
 
@@ -221,7 +289,8 @@
                 </div>
 
                 <div class="selo-missoes">
-                    🏕️ Central de Expedições
+                    <i class="fa-solid fa-campground" aria-hidden="true"></i>
+                    Central de Expedições
                 </div>
 
             </div>
@@ -264,7 +333,7 @@
                 <article class="estatistica-missao">
 
                     <div class="estatistica-icone">
-                        ✅
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -282,7 +351,7 @@
                 <article class="estatistica-missao">
 
                     <div class="estatistica-icone">
-                        🧭
+                        <i class="fa-solid fa-compass" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -300,7 +369,7 @@
                 <article class="estatistica-missao">
 
                     <div class="estatistica-icone">
-                        ⭐
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -318,7 +387,7 @@
                 <article class="estatistica-missao">
 
                     <div class="estatistica-icone">
-                        👑
+                        <i class="fa-solid fa-crown" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -338,6 +407,8 @@
         </div>
 
     </section>
+
+  
 
     <section
         class="secao-lista-missoes"
@@ -368,7 +439,7 @@
                 <div class="contador-missoes">
 
                     <span>
-                        🎯
+                        <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
                     </span>
 
                     <strong id="contadorMissoes">
@@ -379,12 +450,14 @@
 
             </div>
 
+           
+
             <div class="ferramentas-missoes">
 
                 <label class="pesquisa-missoes">
 
                     <span>
-                        🔎
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                     </span>
 
                     <input
@@ -392,6 +465,7 @@
                         id="pesquisaMissoes"
                         placeholder="Pesquisar missão..."
                         autocomplete="off"
+                        aria-label="Pesquisar missão"
                     >
 
                 </label>
@@ -411,7 +485,8 @@
                         class="filtro-missao"
                         data-filtro="andamento"
                     >
-                        🧭 Em andamento
+                        <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                        Em andamento
                     </button>
 
                     <button
@@ -419,7 +494,8 @@
                         class="filtro-missao"
                         data-filtro="concluidas"
                     >
-                        ✓ Concluídas
+                        <i class="fa-solid fa-check" aria-hidden="true"></i>
+                        Concluídas
                     </button>
 
                     <button
@@ -427,7 +503,8 @@
                         class="filtro-missao"
                         data-filtro="leitura"
                     >
-                        📚 Leitura
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        Leitura
                     </button>
 
                     <button
@@ -435,7 +512,8 @@
                         class="filtro-missao"
                         data-filtro="quiz"
                     >
-                        🧠 Quiz
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                        Quiz
                     </button>
 
                     <button
@@ -443,7 +521,8 @@
                         class="filtro-missao"
                         data-filtro="cerradex"
                     >
-                        🃏 Cerradex
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        Cerradex
                     </button>
 
                     <button
@@ -451,7 +530,8 @@
                         class="filtro-missao"
                         data-filtro="diario"
                     >
-                        📖 Diário
+                        <i class="fa-solid fa-book" aria-hidden="true"></i>
+                        Diário
                     </button>
 
                     <button
@@ -459,12 +539,14 @@
                         class="filtro-missao"
                         data-filtro="especial"
                     >
-                        👑 Especiais
+                        <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                        Especiais
                     </button>
 
                 </div>
 
             </div>
+
 
             <div class="grupo-missoes">
 
@@ -473,7 +555,7 @@
                     <div>
 
                         <span class="icone-grupo">
-                            🌞
+                            <i class="fa-solid fa-sun" aria-hidden="true"></i>
                         </span>
 
                         <div>
@@ -502,6 +584,8 @@
 
             </div>
 
+           
+
             <div class="grupo-missoes">
 
                 <div class="cabecalho-grupo-missoes">
@@ -509,7 +593,7 @@
                     <div>
 
                         <span class="icone-grupo">
-                            🔥
+                            <i class="fa-solid fa-fire" aria-hidden="true"></i>
                         </span>
 
                         <div>
@@ -538,6 +622,8 @@
 
             </div>
 
+           
+
             <div class="grupo-missoes">
 
                 <div class="cabecalho-grupo-missoes">
@@ -545,7 +631,7 @@
                     <div>
 
                         <span class="icone-grupo">
-                            👑
+                            <i class="fa-solid fa-crown" aria-hidden="true"></i>
                         </span>
 
                         <div>
@@ -574,15 +660,15 @@
 
             </div>
 
+    
+
             <div
                 id="semMissoes"
                 class="sem-missoes"
                 hidden
             >
 
-                <span>
-                    🌾
-                </span>
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
 
                 <h3>
                     Nenhuma missão encontrada
@@ -606,7 +692,8 @@
     <div>
 
         <strong>
-            🌿 Guardiões do Cerrado
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            Guardiões do Cerrado
         </strong>
 
         <span>

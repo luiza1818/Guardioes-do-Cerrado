@@ -985,3 +985,54 @@ button {
         font-size: 28px;
     }
 }
+
+/* ÍCONES DA PÁGINA INICIAL */
+
+.logo-icone i {
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.etiqueta i {
+    margin-right: 7px;
+    font-size: 1rem;
+}
+
+.card-icone i {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.fala-mascote > span i {
+    font-size: 1.2rem;
+    color: #2E7D32;
+}
+
+.convite-conteudo > div > span i {
+    margin-right: 7px;
+}
+
+.modal-icone i {
+    font-size: 2rem;
+    color: #2E7D32;
+}
+
+.destaque-modal > span i {
+    font-size: 1.5rem;
+}
+
+.rolar-seta i {
+    font-size: 1.1rem;
+}
+
+.seta i {
+    font-size: .95rem;
+}
+
+.fechar-modal i {
+    font-size: 1.2rem;
+}
+
+.botao-modal i {
+    margin-left: 8px;
+}

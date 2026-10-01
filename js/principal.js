@@ -1,22 +1,15 @@
+
 function lerJSON(chave, padrao = {}) {
     try {
         const valor = JSON.parse(localStorage.getItem(chave));
-
-        if (valor === null || valor === undefined) {
-            return padrao;
-        }
-
-        return valor;
+        return valor === null || valor === undefined ? padrao : valor;
     } catch {
         return padrao;
     }
 }
 
 function salvarJSON(chave, valor) {
-    localStorage.setItem(
-        chave,
-        JSON.stringify(valor)
-    );
+    localStorage.setItem(chave, JSON.stringify(valor));
 }
 
 function contar(valor) {
@@ -29,10 +22,7 @@ function contar(valor) {
     }
 
     const numero = Number(valor);
-
-    return Number.isFinite(numero)
-        ? numero
-        : 0;
+    return Number.isFinite(numero) ? numero : 0;
 }
 
 function pegarPrimeiro(objeto, chaves, padrao) {
@@ -58,70 +48,79 @@ function dataLocalString(data = new Date()) {
 }
 
 function diferencaDias(data1, data2) {
-    const umDia = 1000 * 60 * 60 * 24;
+    const primeira = new Date(`${data1}T12:00:00`);
+    const segunda = new Date(`${data2}T12:00:00`);
 
-    const primeira = new Date(
-        `${data1}T12:00:00`
-    );
-
-    const segunda = new Date(
-        `${data2}T12:00:00`
-    );
+    if (
+        Number.isNaN(primeira.getTime()) ||
+        Number.isNaN(segunda.getTime())
+    ) {
+        return NaN;
+    }
 
     return Math.round(
-        (segunda - primeira) / umDia
+        (segunda.getTime() - primeira.getTime()) / 86400000
     );
 }
 
 function atualizarSequencia() {
     const hoje = dataLocalString();
 
-    let dados = lerJSON(
-        "sequenciaGuardiao",
-        {
+    let dados = lerJSON("sequenciaGuardiao", {
+        dias: 0,
+        ultimoDia: null,
+        historico: []
+    });
+
+    if (!dados || typeof dados !== "object" || Array.isArray(dados)) {
+        dados = {
             dias: 0,
             ultimoDia: null,
             historico: []
-        }
-    );
-
-    if (!dados.ultimoDia) {
-        dados.dias = 1;
-        dados.ultimoDia = hoje;
-    } else {
-        const diferenca = diferencaDias(
-            dados.ultimoDia,
-            hoje
-        );
-
-        if (diferenca === 1) {
-            dados.dias += 1;
-            dados.ultimoDia = hoje;
-        }
-
-        if (diferenca > 1) {
-            dados.dias = 1;
-            dados.ultimoDia = hoje;
-        }
+        };
     }
 
     if (!Array.isArray(dados.historico)) {
         dados.historico = [];
     }
 
-    if (!dados.historico.includes(hoje)) {
-        dados.historico.push(hoje);
-    }
-
-    if (dados.historico.length > 60) {
-        dados.historico =
-            dados.historico.slice(-60);
-    }
-
-    salvarJSON(
-        "sequenciaGuardiao",
-        dados
+    const historico = new Set(
+        dados.historico.filter(
+            data => typeof data === "string" &&
+                    /^\d{4}-\d{2}-\d{2}$/.test(data)
+        )
     );
+
+    if (dados.ultimoDia && dados.ultimoDia > hoje) {
+        dados.ultimoDia = null;
+        dados.dias = 0;
+    }
+
+    if (!dados.ultimoDia) {
+        dados.dias = 1;
+        dados.ultimoDia = hoje;
+    } else {
+        const diferenca = diferencaDias(dados.ultimoDia, hoje);
+
+        if (diferenca === 1) {
+            dados.dias = Math.max(0, Number(dados.dias) || 0) + 1;
+            dados.ultimoDia = hoje;
+        } else if (diferenca > 1 || Number.isNaN(diferenca)) {
+            dados.dias = 1;
+            dados.ultimoDia = hoje;
+        } else if (diferenca === 0) {
+            dados.dias = Math.max(1, Number(dados.dias) || 1);
+        }
+    }
+
+    historico.add(hoje);
+
+    dados.historico = Array.from(historico)
+        .filter(data => data <= hoje)
+        .sort()
+        .slice(-60);
+
+    salvarJSON("sequenciaGuardiao", dados);
 
     return dados;
 }
@@ -141,48 +140,35 @@ function obterDadosUsuario() {
 
     const nome = pegarPrimeiro(
         dados,
-        [
-            "nome",
-            "nomeUsuario",
-            "usuario"
-        ],
+        ["nome", "nomeUsuario", "usuario"],
         "Guardiã"
     );
 
     const xp = Number(
         pegarPrimeiro(
             dados,
-            [
-                "xp",
-                "xpTotal",
-                "experiencia",
-                "pontos"
-            ],
+            ["xp", "xpTotal", "experiencia", "pontos"],
             0
         )
     ) || 0;
 
     const avatar = pegarPrimeiro(
         dados,
-        [
-            "avatar",
-            "foto",
-            "imagemPerfil"
-        ],
+        ["avatar", "foto", "imagemPerfil"],
         ""
     );
 
     return {
-        nome,
-        xp,
+        nome: String(nome || "Guardiã"),
+        xp: Math.max(0, xp),
         avatar
     };
 }
 
 function obterNomeCurto(nome) {
-    return String(nome)
+    return String(nome || "Guardiã")
         .trim()
-        .split(" ")[0];
+        .split(/\s+/)[0];
 }
 
 function obterNivel(xp) {
@@ -190,25 +176,11 @@ function obterNivel(xp) {
 }
 
 function obterNomeNivel(nivel) {
-    if (nivel >= 15) {
-        return "Guardião Lendário";
-    }
-
-    if (nivel >= 12) {
-        return "Protetor do Cerrado";
-    }
-
-    if (nivel >= 9) {
-        return "Naturalista";
-    }
-
-    if (nivel >= 6) {
-        return "Explorador";
-    }
-
-    if (nivel >= 3) {
-        return "Aventureiro";
-    }
+    if (nivel >= 15) return "Guardião Lendário";
+    if (nivel >= 12) return "Protetor do Cerrado";
+    if (nivel >= 9) return "Naturalista";
+    if (nivel >= 6) return "Explorador";
+    if (nivel >= 3) return "Aventureiro";
 
     return "Aprendiz";
 }
@@ -246,7 +218,8 @@ function obterCerradex() {
         contar(cerradex.cartas),
         contar(cerradex.especies),
         contar(lerJSON("cartasDesbloqueadas", [])),
-        contar(lerJSON("especiesDescobertas", []))
+        contar(lerJSON("especiesDescobertas", [])),
+        contar(lerJSON("descobertasCerradex", []))
     );
 }
 
@@ -278,150 +251,119 @@ function obterMissoes() {
 }
 
 function preencherBarra(elemento, porcentagem) {
-    const valor = Math.max(
-        0,
-        Math.min(100, porcentagem)
-    );
+    if (!elemento) return;
 
-    elemento.style.width = `${valor}%`;
+    const valor = Number(porcentagem) || 0;
+    elemento.style.width = `${Math.max(0, Math.min(100, valor))}%`;
 }
 
 function atualizarPerfil() {
     const usuario = obterDadosUsuario();
+    const nomeCurto = obterNomeCurto(usuario.nome);
+    const nivel = obterNivel(usuario.xp);
+    const nomeNivel = obterNomeNivel(nivel);
 
-    const nomeCurto =
-        obterNomeCurto(usuario.nome);
+    document.getElementById("nomeHero").textContent = nomeCurto;
+    document.getElementById("nomeMenu").textContent = nomeCurto;
+    document.getElementById("nivelMenu").textContent = `Nível ${nivel}`;
+    document.getElementById("nomeNivel").textContent = nomeNivel;
+    document.getElementById("numeroNivel").textContent = `Nível ${nivel}`;
+    document.getElementById("xpTotal").textContent = usuario.xp;
 
-    const nivel =
-        obterNivel(usuario.xp);
-
-    const nomeNivel =
-        obterNomeNivel(nivel);
-
-    document.getElementById(
-        "nomeHero"
-    ).textContent = nomeCurto;
-
-    document.getElementById(
-        "nomeMenu"
-    ).textContent = nomeCurto;
-
-    document.getElementById(
-        "nivelMenu"
-    ).textContent = `Nível ${nivel}`;
-
-    document.getElementById(
-        "nomeNivel"
-    ).textContent = nomeNivel;
-
-    document.getElementById(
-        "numeroNivel"
-    ).textContent = `Nível ${nivel}`;
-
-    document.getElementById(
-        "xpTotal"
-    ).textContent = usuario.xp;
-
-    const progressoNivel =
-        obterProgressoNivel(
-            usuario.xp
-        );
+    const progressoNivel = obterProgressoNivel(usuario.xp);
 
     preencherBarra(
-        document.getElementById(
-            "barraNivel"
-        ),
+        document.getElementById("barraNivel"),
         progressoNivel.porcentagem
     );
 
-    document.getElementById(
-        "proximoNivel"
-    ).textContent =
+    document.getElementById("proximoNivel").textContent =
         `${progressoNivel.atual} / ${progressoNivel.necessario} XP para o próximo nível`;
 
-    if (usuario.avatar) {
-        document.getElementById(
-            "avatarMenu"
-        ).src = usuario.avatar;
-    }
+    const avatar = document.getElementById("avatarMenu");
 
-    document.getElementById(
-        "avatarMenu"
-    ).addEventListener(
-        "error",
-        () => {
-            document.getElementById(
-                "avatarMenu"
-            ).src =
-                "assets/imagens/avatar.png";
+    if (avatar) {
+        const avatarPadrao = "assets/imagens/avatar.png";
+
+        avatar.onerror = function () {
+            if (!this.src.endsWith(avatarPadrao)) {
+                this.src = avatarPadrao;
+            }
+        };
+
+        if (usuario.avatar) {
+            avatar.src = usuario.avatar;
         }
-    );
+    }
 }
 
 function atualizarData() {
     const agora = new Date();
 
-    const texto = agora.toLocaleDateString(
-        "pt-BR",
-        {
-            weekday: "long",
-            day: "numeric",
-            month: "long"
-        }
-    );
+    const texto = agora.toLocaleDateString("pt-BR", {
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+    });
 
-    document.getElementById(
-        "dataAtual"
-    ).textContent =
+    document.getElementById("dataAtual").textContent =
         `Expedição de ${texto}`;
 }
 
 function atualizarSequenciaTela() {
-    const dados =
-        atualizarSequencia();
+    const dados = atualizarSequencia();
 
-    document.getElementById(
-        "sequenciaDias"
-    ).textContent =
+    document.getElementById("sequenciaDias").textContent =
         dados.dias;
 
-    document.getElementById(
-        "textoSequencia"
-    ).textContent =
-        dados.dias === 1
-            ? "dia seguido"
-            : "dias seguidos";
+    document.getElementById("textoSequencia").textContent =
+        dados.dias === 1 ? "dia seguido" : "dias seguidos";
 
-    const bolinhas = document.querySelectorAll(
-        "#miniSemana span"
+    const bolinhas = document.querySelectorAll("#miniSemana span");
+
+    const hoje = new Date();
+    const diaSemana = hoje.getDay();
+    const deslocamento = (diaSemana + 6) % 7;
+
+    const segundaFeira = new Date(
+        hoje.getFullYear(),
+        hoje.getMonth(),
+        hoje.getDate() - deslocamento
     );
 
-    bolinhas.forEach(
-        bolinha => {
-            bolinha.classList.remove("ativo");
-        }
-    );
+    const historico = new Set(dados.historico || []);
+    const nomesDias = ["S", "T", "Q", "Q", "S", "S", "D"];
 
-    const quantidade =
-        Math.min(
-            dados.dias,
-            7
+    bolinhas.forEach((bolinha, indice) => {
+        const data = new Date(
+            segundaFeira.getFullYear(),
+            segundaFeira.getMonth(),
+            segundaFeira.getDate() + indice
         );
 
-    for (
-        let i = 0;
-        i < quantidade;
-        i++
-    ) {
-        const indice =
-            bolinhas.length - 1 - i;
+        const dataFormatada = dataLocalString(data);
+        const ehHoje = dataFormatada === dataLocalString(hoje);
 
-        if (bolinhas[indice]) {
-            bolinhas[indice]
-                .classList
-                .add("ativo");
-        }
-    }
+        bolinha.textContent = nomesDias[indice];
+
+        bolinha.classList.toggle(
+            "ativo",
+            historico.has(dataFormatada)
+        );
+
+        bolinha.classList.toggle("hoje", ehHoje);
+
+        bolinha.title = data.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            day: "numeric",
+            month: "long"
+        });
+
+        bolinha.setAttribute(
+            "aria-label",
+            `${bolinha.title}${historico.has(dataFormatada) ? ", visitado" : ""}${ehHoje ? ", hoje" : ""}`
+        );
+    });
 }
 
 function atualizarProgressoGeral() {
@@ -430,56 +372,40 @@ function atualizarProgressoGeral() {
     const diario = obterDiario();
     const missoes = obterMissoes();
 
-    const totalArtigos = 12;
-    const totalCerradex = 12;
+    const totalArtigos = 50;
+    const totalCerradex = 50;
     const totalDiario = 6;
     const totalMissoes = 10;
 
-    document.getElementById(
-        "artigosNumero"
-    ).textContent =
+    document.getElementById("artigosNumero").textContent =
         `${artigos}/${totalArtigos}`;
 
-    document.getElementById(
-        "cerradexNumero"
-    ).textContent =
+    document.getElementById("cerradexNumero").textContent =
         `${cerradex}/${totalCerradex}`;
 
-    document.getElementById(
-        "diarioNumero"
-    ).textContent =
+    document.getElementById("diarioNumero").textContent =
         `${diario}/${totalDiario}`;
 
-    document.getElementById(
-        "missoesNumero"
-    ).textContent =
+    document.getElementById("missoesNumero").textContent =
         `${missoes}/${totalMissoes}`;
 
     preencherBarra(
-        document.getElementById(
-            "barraArtigos"
-        ),
+        document.getElementById("barraArtigos"),
         artigos / totalArtigos * 100
     );
 
     preencherBarra(
-        document.getElementById(
-            "barraCerradex"
-        ),
+        document.getElementById("barraCerradex"),
         cerradex / totalCerradex * 100
     );
 
     preencherBarra(
-        document.getElementById(
-            "barraDiario"
-        ),
+        document.getElementById("barraDiario"),
         diario / totalDiario * 100
     );
 
     preencherBarra(
-        document.getElementById(
-            "barraMissoes"
-        ),
+        document.getElementById("barraMissoes"),
         missoes / totalMissoes * 100
     );
 }
@@ -535,25 +461,33 @@ const missoesDiarias = [
 function numeroDoDiaDoAno() {
     const agora = new Date();
 
-    const inicio =
-        new Date(
-            agora.getFullYear(),
-            0,
-            0
-        );
+    const inicio = new Date(
+        agora.getFullYear(),
+        0,
+        1
+    );
 
-    const diferenca =
-        agora - inicio;
+    const hoje = new Date(
+        agora.getFullYear(),
+        agora.getMonth(),
+        agora.getDate()
+    );
 
-    return Math.floor(
-        diferenca /
-        (1000 * 60 * 60 * 24)
+    return Math.round(
+        (Date.UTC(
+            hoje.getFullYear(),
+            hoje.getMonth(),
+            hoje.getDate()
+        ) - Date.UTC(
+            inicio.getFullYear(),
+            inicio.getMonth(),
+            inicio.getDate()
+        )) / 86400000
     );
 }
 
 function obterMissaoDoDia() {
-    const numero =
-        numeroDoDiaDoAno();
+    const numero = numeroDoDiaDoAno();
 
     return missoesDiarias[
         numero % missoesDiarias.length
@@ -561,123 +495,72 @@ function obterMissaoDoDia() {
 }
 
 function atualizarMissaoDoDia() {
-    const missao =
-        obterMissaoDoDia();
+    const missao = obterMissaoDoDia();
+    const progresso = missao.progresso();
+    const porcentagem = Math.min(100, progresso * 100);
 
-    const progresso =
-        missao.progresso();
-
-    const porcentagem =
-        Math.min(
-            100,
-            progresso * 100
-        );
-
-    document.getElementById(
-        "missaoTipo"
-    ).textContent =
+    document.getElementById("missaoTipo").textContent =
         missao.tipo;
 
-    document.getElementById(
-        "tituloMissao"
-    ).textContent =
+    document.getElementById("tituloMissao").textContent =
         missao.titulo;
 
-    document.getElementById(
-        "descricaoMissao"
-    ).textContent =
+    document.getElementById("descricaoMissao").textContent =
         missao.descricao;
 
-    document.getElementById(
-        "recompensaMissao"
-    ).textContent =
+    document.getElementById("recompensaMissao").textContent =
         `+${missao.recompensa} XP`;
 
-    document.getElementById(
-        "porcentagemMissao"
-    ).textContent =
+    document.getElementById("porcentagemMissao").textContent =
         `${Math.round(porcentagem)}%`;
 
     preencherBarra(
-        document.getElementById(
-            "barraMissao"
-        ),
+        document.getElementById("barraMissao"),
         porcentagem
     );
 
-    const circunferencia =
-        2 * Math.PI * 50;
+    const circunferencia = 2 * Math.PI * 50;
+    const offset = circunferencia -
+        (porcentagem / 100) * circunferencia;
 
-    const offset =
-        circunferencia -
-        (
-            porcentagem /
-            100
-        ) * circunferencia;
+    const circulo = document.getElementById("circuloMissao");
 
-    const circulo =
-        document.getElementById(
-            "circuloMissao"
-        );
+    circulo.style.strokeDasharray = circunferencia;
+    circulo.style.strokeDashoffset = offset;
 
-    circulo.style.strokeDasharray =
-        circunferencia;
+    const botao = document.getElementById("botaoMissao");
 
-    circulo.style.strokeDashoffset =
-        offset;
+    botao.href = missao.link;
 
-    const botao =
-        document.getElementById(
-            "botaoMissao"
-        );
-
-    botao.href =
-        missao.link;
-
-    botao.innerHTML = `
-        ${missao.textoBotao}
-        <i class="fa-solid fa-arrow-right"></i>
-    `;
-
-    const status =
-        document.getElementById(
-            "statusMissao"
-        );
+    const status = document.getElementById("statusMissao");
 
     if (porcentagem >= 100) {
-        status.textContent =
-            "Concluída";
-
-        status.classList.add(
-            "concluida"
-        );
+        status.textContent = "Concluída";
+        status.classList.add("concluida");
 
         botao.innerHTML = `
             Missão concluída
             <i class="fa-solid fa-check"></i>
         `;
     } else {
-        status.textContent =
-            "Em andamento";
+        status.textContent = "Em andamento";
+        status.classList.remove("concluida");
 
-        status.classList.remove(
-            "concluida"
-        );
+        botao.innerHTML = `
+            ${missao.textoBotao}
+            <i class="fa-solid fa-arrow-right"></i>
+        `;
     }
 }
 
 function atualizarFalaLobo() {
-    const sequencia =
-        lerJSON(
-            "sequenciaGuardiao",
-            { dias: 1 }
-        );
+    const sequencia = lerJSON(
+        "sequenciaGuardiao",
+        { dias: 1 }
+    );
 
-    const artigos =
-        obterArtigos();
-
-    const cerradex =
-        obterCerradex();
+    const artigos = obterArtigos();
+    const cerradex = obterCerradex();
 
     let mensagem;
 
@@ -698,105 +581,237 @@ function atualizarFalaLobo() {
             "Que bom que você voltou! Escolha uma missão e vamos explorar o Cerrado juntos.";
     }
 
-    document.getElementById(
-        "falaLobo"
-    ).textContent =
+    document.getElementById("falaLobo").textContent =
         mensagem;
 }
 
 function configurarMenuMobile() {
-    const botao =
-        document.getElementById(
-            "botaoMenuMobile"
-        );
+    const botao = document.getElementById("botaoMenuMobile");
+    const menu = document.getElementById("menuLateral");
+    const fundo = document.getElementById("fundoMenu");
 
-    const menu =
-        document.getElementById(
-            "menuLateral"
-        );
+    if (!botao || !menu || !fundo) return;
 
-    const fundo =
-        document.getElementById(
-            "fundoMenu"
-        );
+    function fecharMenu() {
+        menu.classList.remove("aberto");
+        fundo.classList.remove("ativo");
 
-    function alternarMenu() {
-        menu.classList.toggle(
-            "aberto"
-        );
-
-        fundo.classList.toggle(
-            "ativo"
-        );
-
-        const aberto =
-            menu.classList.contains(
-                "aberto"
-            );
-
-        botao.innerHTML =
-            aberto
-                ? '<i class="fa-solid fa-xmark"></i>'
-                : '<i class="fa-solid fa-bars"></i>';
+        botao.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        botao.setAttribute("aria-expanded", "false");
+        botao.setAttribute("aria-label", "Abrir menu");
     }
 
-    botao.addEventListener(
-        "click",
-        alternarMenu
-    );
+    function alternarMenu() {
+        const aberto = menu.classList.toggle("aberto");
 
-    fundo.addEventListener(
-        "click",
-        alternarMenu
-    );
+        fundo.classList.toggle("ativo", aberto);
 
-    menu.querySelectorAll("a")
-        .forEach(
-            link => {
-                link.addEventListener(
-                    "click",
-                    () => {
-                        menu.classList.remove(
-                            "aberto"
-                        );
+        botao.innerHTML = aberto
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
 
-                        fundo.classList.remove(
-                            "ativo"
-                        );
-
-                        botao.innerHTML =
-                            '<i class="fa-solid fa-bars"></i>';
-                    }
-                );
-            }
+        botao.setAttribute("aria-expanded", String(aberto));
+        botao.setAttribute(
+            "aria-label",
+            aberto ? "Fechar menu" : "Abrir menu"
         );
+    }
+
+    botao.addEventListener("click", alternarMenu);
+    fundo.addEventListener("click", fecharMenu);
+
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", fecharMenu);
+    });
+
+    document.addEventListener("keydown", evento => {
+        if (evento.key === "Escape") {
+            fecharMenu();
+        }
+    });
 }
 
 function configurarImagemLobo() {
-    const lobo =
-        document.getElementById(
-            "loboPrincipal"
+    const lobo = document.getElementById("loboPrincipal");
+    const fundo = document.querySelector(".lobo-fundo");
+
+    if (!lobo || !fundo) return;
+
+    lobo.addEventListener("error", () => {
+        lobo.style.display = "none";
+
+        if (!fundo.querySelector(".lobo-substituto")) {
+            const substituto = document.createElement("div");
+
+            substituto.className = "lobo-substituto";
+            substituto.style.cssText = `
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                color: #2E7D32;
+                font-size: 6rem;
+            `;
+
+            substituto.innerHTML =
+                '<i class="fa-solid fa-paw"></i>';
+
+            fundo.appendChild(substituto);
+        }
+    });
+
+    if (lobo.complete && lobo.naturalWidth === 0) {
+        lobo.dispatchEvent(new Event("error"));
+    }
+}
+
+const configuracoesVisuaisPadrao = {
+    animacoes: true,
+    folhas: true
+};
+
+function obterConfiguracoesVisuais() {
+    const salvas = lerJSON("configuracoes", {});
+
+    if (
+        !salvas ||
+        typeof salvas !== "object" ||
+        Array.isArray(salvas)
+    ) {
+        return { ...configuracoesVisuaisPadrao };
+    }
+
+    return {
+        ...configuracoesVisuaisPadrao,
+        ...salvas
+    };
+}
+
+function animacoesPermitidasPeloSistema() {
+    return !window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+}
+
+function aplicarConfiguracoesVisuais() {
+    const configuracoes = obterConfiguracoesVisuais();
+
+    const animacoesAtivas =
+        configuracoes.animacoes !== false &&
+        animacoesPermitidasPeloSistema();
+
+    const folhasAtivas =
+        configuracoes.folhas !== false &&
+        animacoesAtivas;
+
+    document.body.classList.toggle(
+        "sem-animacoes",
+        !animacoesAtivas
+    );
+
+    document.body.classList.toggle(
+        "sem-folhas",
+        !folhasAtivas
+    );
+
+    configurarFolhasAnimadas(folhasAtivas);
+}
+
+function configurarFolhasAnimadas(ativar) {
+    const hero = document.querySelector(".hero");
+
+    if (!hero) return;
+
+    let recipiente = hero.querySelector(".folhas-animadas");
+
+    if (!ativar) {
+        if (recipiente) {
+            recipiente.remove();
+        }
+        return;
+    }
+
+    if (recipiente) return;
+
+    recipiente = document.createElement("div");
+    recipiente.className = "folhas-animadas";
+    recipiente.setAttribute("aria-hidden", "true");
+
+    const quantidade = window.innerWidth <= 560 ? 6 : 11;
+
+    for (let i = 0; i < quantidade; i++) {
+        const folha = document.createElement("i");
+
+        folha.className = i % 3 === 0
+            ? "fa-brands fa-pagelines folha-animada"
+            : "fa-solid fa-leaf folha-animada";
+
+        const posicao = 5 + Math.random() * 90;
+        const tamanho = 12 + Math.random() * 12;
+        const duracao = 10 + Math.random() * 9;
+        const atraso = -Math.random() * duracao;
+        const deslocamento = -70 + Math.random() * 140;
+
+        folha.style.setProperty(
+            "--folha-x",
+            `${posicao}%`
         );
 
-    lobo.addEventListener(
-        "error",
-        () => {
-            lobo.style.display =
-                "none";
+        folha.style.setProperty(
+            "--folha-tamanho",
+            `${tamanho}px`
+        );
 
-            document.querySelector(
-                ".lobo-fundo"
-            ).innerHTML += `
-                <div style="
-                    position:absolute;
-                    inset:0;
-                    display:grid;
-                    place-items:center;
-                    font-size:7rem;
-                ">
-                    🐺
-                </div>
-            `;
+        folha.style.setProperty(
+            "--folha-duracao",
+            `${duracao}s`
+        );
+
+        folha.style.setProperty(
+            "--folha-atraso",
+            `${atraso}s`
+        );
+
+        folha.style.setProperty(
+            "--folha-deslocamento",
+            `${deslocamento}px`
+        );
+
+        recipiente.appendChild(folha);
+    }
+
+    hero.appendChild(recipiente);
+}
+
+function configurarPreferenciasVisuais() {
+    aplicarConfiguracoesVisuais();
+
+    window.addEventListener("storage", evento => {
+        if (
+            evento.key === "configuracoes" ||
+            evento.key === null
+        ) {
+            aplicarConfiguracoesVisuais();
+        }
+    });
+
+    const preferenciaMovimento = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    if (typeof preferenciaMovimento.addEventListener === "function") {
+        preferenciaMovimento.addEventListener(
+            "change",
+            aplicarConfiguracoesVisuais
+        );
+    }
+
+    document.addEventListener(
+        "visibilitychange",
+        () => {
+            if (!document.hidden) {
+                aplicarConfiguracoesVisuais();
+            }
         }
     );
 }
@@ -810,6 +825,7 @@ function iniciarPrincipal() {
     atualizarFalaLobo();
     configurarMenuMobile();
     configurarImagemLobo();
+    configurarPreferenciasVisuais();
 }
 
 document.addEventListener(

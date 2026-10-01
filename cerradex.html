@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,13 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Coleção de animais e plantas do Cerrado">
 
-    <title>Cerradex | Guardiões do Cerrado </title>
+    <title>Cerradex | Guardiões do Cerrado</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="css/cerradex.css">
     <link rel="stylesheet" href="css/notificacoes.css">
+
+    <style>
+        .logo-icone i,
+        .circulo-cerradex i,
+        .cartao-flutuante > span i,
+        .estatistica-icone-cerradex i,
+        .contador-cartas > span i,
+        .pesquisa-cerradex > span i,
+        .sem-resultados-cerradex > span i,
+        .modal-cerradex-icone i,
+        .modal-cerradex-informacoes article > span i,
+        .modal-curiosidade > span i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .hero-mini-titulo i,
+        .botao-secundario i,
+        .hero-legenda i,
+        .selo-nivel i,
+        .filtro-cerradex i,
+        .rodape strong i {
+            margin-right: 7px;
+        }
+
+        .botao-explorar i {
+            margin-left: 8px;
+        }
+
+        .filtro-cerradex i {
+            pointer-events: none;
+        }
+
+        .rodape strong i {
+            color: #66bb6a;
+        }
+
+        .icone-especie i,
+        .carta-status-cerradex i,
+        #modalStatus i,
+        #botaoArtigoModal i {
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .carta-status-cerradex i,
+        #modalStatus i,
+        #botaoArtigoModal i {
+            margin-right: 5px;
+        }
+
+        .modal-cerradex-icone i {
+            font-size: inherit;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,57 +85,108 @@
 <header class="cabecalho">
 
     <a href="perfil.html" class="logo">
-        <div class="logo-icone">🐺</div>
-        <div class="logo-texto"><strong>Guardiões</strong><span>do Cerrado</span></div>
+        <div class="logo-icone">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+
+        <div class="logo-texto">
+            <strong>Guardiões</strong>
+            <span>do Cerrado</span>
+        </div>
     </a>
 
     <nav class="menu" id="menu">
         <a href="principal.html">Início</a>
         <a href="missoes.html">Missões</a>
-        <a href="biblioteca.html" >Biblioteca</a>
+        <a href="biblioteca.html">Biblioteca</a>
         <a href="quizzes.html">Quizzes</a>
-        <a href="cerradex.html"class="ativo">Cerradex</a>
+        <a href="cerradex.html" class="ativo">Cerradex</a>
         <a href="diario.html">Diário</a>
     </nav>
 
 </header>
 
 <main>
+
     <section class="hero-cerradex">
+
         <div class="hero-papel">
+
             <div class="hero-texto">
-                <span class="hero-etiqueta">COLEÇÃO DO GUARDIÃO</span>
 
-                <p class="hero-mini-titulo">🧭 Registre suas descobertas</p>
+                <span class="hero-etiqueta">
+                    COLEÇÃO DO GUARDIÃO
+                </span>
 
-                <h1>Seu<span>Cerradex</span></h1>
+                <p class="hero-mini-titulo">
+                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    Registre suas descobertas
+                </p>
 
-                <p class="hero-descricao">Explore as espécies do Cerrado, complete artigos e desafios e transforme sua jornada em uma coleção viva de descobertas.</p>
+                <h1>
+                    Seu
+                    <span>Cerradex</span>
+                </h1>
+
+                <p class="hero-descricao">
+                    Explore as espécies do Cerrado, complete artigos e desafios
+                    e transforme sua jornada em uma coleção viva de descobertas.
+                </p>
 
                 <div class="hero-acoes">
-                    <a href="#colecao" class="botao-explorar">Explorar coleção<span>↓</span></a>
-                    <a href="biblioteca.html" class="botao-secundario">📚 Ir para Biblioteca</a>
-                </div>
-                <div class="hero-legenda">
-                    <span>📖 Leia</span>
-                    <span>🧠 Complete quizzes</span>
-                    <span>🃏 Desbloqueie cartas</span>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="circulo-cerradex">
-                    <span>📖</span>
-                </div>
-                <div class="cartao-flutuante fauna">
-                    <span></span>
-                    <div>
-                        <strong>
-                            25 cartas
-                        </strong>
 
-                        <small>
-                            Fauna
-                        </small>
+                    <a href="#colecao" class="botao-explorar">
+                        Explorar coleção
+                        <span>
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </span>
+                    </a>
+
+                    <a href="biblioteca.html" class="botao-secundario">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        Ir para Biblioteca
+                    </a>
+
+                </div>
+
+                <div class="hero-legenda">
+
+                    <span>
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        Leia
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                        Complete quizzes
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        Desbloqueie cartas
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="circulo-cerradex">
+                    <span>
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="cartao-flutuante fauna">
+
+                    <span>
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </span>
+
+                    <div>
+                        <strong>25 cartas</strong>
+                        <small>Fauna</small>
                     </div>
 
                 </div>
@@ -77,29 +194,19 @@
                 <div class="cartao-flutuante flora">
 
                     <span>
-                        🌿
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
                     </span>
 
                     <div>
-                        <strong>
-                            25 cartas
-                        </strong>
-
-                        <small>
-                            Flora
-                        </small>
+                        <strong>25 cartas</strong>
+                        <small>Flora</small>
                     </div>
 
                 </div>
 
                 <div class="selo-total">
-                    <span>
-                        50
-                    </span>
-
-                    <small>
-                        descobertas
-                    </small>
+                    <span>50</span>
+                    <small>descobertas</small>
                 </div>
 
             </div>
@@ -125,14 +232,14 @@
                     </h2>
 
                     <p>
-                        Cada carta conta uma parte
-                        da história do Cerrado.
+                        Cada carta conta uma parte da história do Cerrado.
                     </p>
 
                 </div>
 
                 <div class="selo-nivel">
-                    🏕️ Coleção do Guardião
+                    <i class="fa-solid fa-campground" aria-hidden="true"></i>
+                    Coleção do Guardião
                 </div>
 
             </div>
@@ -142,30 +249,39 @@
                 <div class="progresso-informacoes">
 
                     <div>
-
-                        <span>
-                            Coleção descoberta
-                        </span>
+                        <span>Coleção descoberta</span>
 
                         <strong id="textoProgresso">
                             0 de 50 cartas descobertas
                         </strong>
                     </div>
-                    <strong id="porcentagemProgresso">0%</strong>
+
+                    <strong id="porcentagemProgresso">
+                        0%
+                    </strong>
+
                 </div>
+
                 <div class="barra-cerradex">
-                    <div class="barra-cerradex-preenchimento" id="barraProgresso"></div>
+                    <div
+                        class="barra-cerradex-preenchimento"
+                        id="barraProgresso"
+                    ></div>
                 </div>
+
             </div>
 
             <div class="estatisticas-cerradex">
+
                 <article class="estatistica-cerradex">
-                    <div class="estatistica-icone-cerradex">📚</div>
+
+                    <div class="estatistica-icone-cerradex">
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                    </div>
+
                     <div>
                         <strong id="totalDescobertas">0</strong>
-                        <span>
-                            Descobertas
-                        </span>
+                        <span>Descobertas</span>
                     </div>
 
                 </article>
@@ -173,17 +289,12 @@
                 <article class="estatistica-cerradex">
 
                     <div class="estatistica-icone-cerradex">
-                        🐾
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
                     </div>
 
                     <div>
-                        <strong id="totalFauna">
-                            0
-                        </strong>
-
-                        <span>
-                            Fauna
-                        </span>
+                        <strong id="totalFauna">0</strong>
+                        <span>Fauna</span>
                     </div>
 
                 </article>
@@ -191,17 +302,12 @@
                 <article class="estatistica-cerradex">
 
                     <div class="estatistica-icone-cerradex">
-                        🌿
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
                     </div>
 
                     <div>
-                        <strong id="totalFlora">
-                            0
-                        </strong>
-
-                        <span>
-                            Flora
-                        </span>
+                        <strong id="totalFlora">0</strong>
+                        <span>Flora</span>
                     </div>
 
                 </article>
@@ -209,17 +315,12 @@
                 <article class="estatistica-cerradex">
 
                     <div class="estatistica-icone-cerradex">
-                        ✨
+                        <i class="fa-solid fa-gem" aria-hidden="true"></i>
                     </div>
 
                     <div>
-                        <strong id="totalRaras">
-                            0
-                        </strong>
-
-                        <span>
-                            Raras
-                        </span>
+                        <strong id="totalRaras">0</strong>
+                        <span>Raras</span>
                     </div>
 
                 </article>
@@ -230,10 +331,7 @@
 
     </section>
 
-    <section
-        class="colecao-cerradex"
-        id="colecao"
-    >
+    <section class="colecao-cerradex" id="colecao">
 
         <div class="container-cerradex">
 
@@ -250,9 +348,8 @@
                     </h2>
 
                     <p>
-                        Complete sua coleção e descubra
-                        animais e plantas escondidos
-                        pelo bioma.
+                        Complete sua coleção e descubra animais
+                        e plantas escondidos pelo bioma.
                     </p>
 
                 </div>
@@ -260,7 +357,7 @@
                 <div class="contador-cartas">
 
                     <span>
-                        🃏
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
                     </span>
 
                     <strong id="contadorResultados">
@@ -276,7 +373,7 @@
                 <label class="pesquisa-cerradex">
 
                     <span>
-                        🔎
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                     </span>
 
                     <input
@@ -303,7 +400,8 @@
                         class="filtro-cerradex"
                         data-filtro="fauna"
                     >
-                        🐾 Fauna
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                        Fauna
                     </button>
 
                     <button
@@ -311,7 +409,8 @@
                         class="filtro-cerradex"
                         data-filtro="flora"
                     >
-                        🌿 Flora
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                        Flora
                     </button>
 
                     <button
@@ -319,7 +418,8 @@
                         class="filtro-cerradex"
                         data-filtro="descobertas"
                     >
-                        ✓ Descobertas
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        Descobertas
                     </button>
 
                     <button
@@ -327,7 +427,8 @@
                         class="filtro-cerradex"
                         data-filtro="bloqueadas"
                     >
-                        🔒 Bloqueadas
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        Bloqueadas
                     </button>
 
                     <button
@@ -335,7 +436,8 @@
                         class="filtro-cerradex"
                         data-filtro="raras"
                     >
-                        ✨ Raras
+                        <i class="fa-solid fa-gem" aria-hidden="true"></i>
+                        Raras
                     </button>
 
                 </div>
@@ -354,16 +456,13 @@
             >
 
                 <span>
-                    🌾
+                    <i class="fa-solid fa-wheat-awn" aria-hidden="true"></i>
                 </span>
 
-                <h3>
-                    Nenhuma carta encontrada
-                </h3>
+                <h3>Nenhuma carta encontrada</h3>
 
                 <p>
-                    Tente pesquisar outro nome
-                    ou selecionar outro filtro.
+                    Tente pesquisar outro nome ou selecionar outro filtro.
                 </p>
 
             </div>
@@ -374,10 +473,7 @@
 
 </main>
 
-<div
-    class="modal-cerradex-fundo"
-    id="modalCarta"
->
+<div class="modal-cerradex-fundo" id="modalCarta">
 
     <div class="modal-cerradex">
 
@@ -396,7 +492,7 @@
                 class="modal-cerradex-icone"
                 id="modalIcone"
             >
-                ❔
+                <i class="fa-solid fa-question" aria-hidden="true"></i>
             </div>
 
             <div class="modal-identificacao">
@@ -429,14 +525,11 @@
             <article>
 
                 <span>
-                    🏞️
+                    <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
                 </span>
 
                 <div>
-                    <h3>
-                        Habitat
-                    </h3>
-
+                    <h3>Habitat</h3>
                     <p id="modalHabitat"></p>
                 </div>
 
@@ -445,17 +538,15 @@
             <article>
 
                 <span id="modalIconeAlimentacao">
-                    🍽️
+                    <i class="fa-solid fa-utensils" aria-hidden="true"></i>
                 </span>
 
                 <div>
-
                     <h3 id="modalTituloAlimentacao">
                         Alimentação
                     </h3>
 
                     <p id="modalAlimentacao"></p>
-
                 </div>
 
             </article>
@@ -463,17 +554,12 @@
             <article>
 
                 <span>
-                    🌎
+                    <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
                 </span>
 
                 <div>
-
-                    <h3>
-                        Importância
-                    </h3>
-
+                    <h3>Importância</h3>
                     <p id="modalImportancia"></p>
-
                 </div>
 
             </article>
@@ -483,7 +569,7 @@
         <div class="modal-curiosidade">
 
             <span>
-                💡
+                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
             </span>
 
             <div>
@@ -503,14 +589,13 @@
         <div class="modal-cerradex-rodape">
 
             <span id="modalStatus">
-                🔒 Carta bloqueada
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                Carta bloqueada
             </span>
 
-            <a
-                href="#"
-                id="botaoArtigoModal"
-            >
-                📖 Ir para o artigo
+            <a href="#" id="botaoArtigoModal">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                Ir para o artigo
             </a>
 
         </div>
@@ -524,7 +609,8 @@
     <div>
 
         <strong>
-            🌿 Guardiões do Cerrado
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            Guardiões do Cerrado
         </strong>
 
         <span>

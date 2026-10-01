@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,22 +13,90 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        .logo-icone i,
+        .falaMascote > span i,
+        .iconeResumo i,
+        .contadorLista > span i,
+        .nenhumQuiz > span i,
+        .iconeResultado i,
+        .iconeDescoberta i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .heroSubtitulo i,
+        .legendaDificuldades i,
+        .seloAcademia i,
+        .rodape strong i {
+            margin-right: 7px;
+        }
+
+        .campoPesquisa > span i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .informacoesResultado > div > span i {
+            display: inline-block;
+        }
+
+        .rodape strong i {
+            color: #66bb6a;
+        }
+
+        .iconeQuiz i,
+        .infoQuiz i,
+        .dificuldade i,
+        .statusQuiz i,
+        .avisoBloqueio i,
+        .nivelQuestao i,
+        #tituloExplicacao i {
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .infoQuiz i,
+        .dificuldade i,
+        .statusQuiz i,
+        .avisoBloqueio i,
+        .nivelQuestao i,
+        #tituloExplicacao i {
+            margin-right: 5px;
+        }
+
+        .iconeQuiz i {
+            font-size: inherit;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
 
 <header class="cabecalho">
+
     <a href="principal.html" class="logo">
-        <div class="logo-icone">🐺</div>
+        <div class="logo-icone">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+
         <div class="logo-texto">
             <strong>Guardiões</strong>
             <span>do Cerrado</span>
         </div>
     </a>
+
     <nav class="menu">
         <a href="principal.html">Início</a>
         <a href="missoes.html">Missões</a>
@@ -40,15 +109,20 @@
 </header>
 
 <main>
+
     <section class="heroQuiz">
+
         <div class="heroPapel">
+
             <div class="heroTexto">
+
                 <span class="etiqueta">
                     ACADEMIA DOS GUARDIÕES
                 </span>
 
                 <p class="heroSubtitulo">
-                    🧭 Uma nova etapa da sua expedição
+                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    Uma nova etapa da sua expedição
                 </p>
 
                 <h1>
@@ -65,19 +139,23 @@
                 <div class="legendaDificuldades">
 
                     <span class="nivel facil">
-                        🌱 Fácil
+                        <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                        Fácil
                     </span>
 
                     <span class="nivel medio">
-                        🌿 Médio
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                        Médio
                     </span>
 
                     <span class="nivel dificil">
-                        🔥 Difícil
+                        <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                        Difícil
                     </span>
 
                     <span class="nivel hard">
-                        👑 Hard
+                        <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                        Hard
                     </span>
 
                 </div>
@@ -97,7 +175,7 @@
                 <div class="falaMascote">
 
                     <span>
-                        🧠
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
                     </span>
 
                     <div>
@@ -128,7 +206,8 @@
             </div>
 
             <span class="seloAcademia">
-                🏕️ Academia do Cerrado
+                <i class="fa-solid fa-campground" aria-hidden="true"></i>
+                Academia do Cerrado
             </span>
 
         </div>
@@ -138,7 +217,7 @@
             <article class="cardResumo">
 
                 <div class="iconeResumo">
-                    ⭐
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
 
                 <div>
@@ -151,7 +230,7 @@
             <article class="cardResumo">
 
                 <div class="iconeResumo">
-                    🧠
+                    <i class="fa-solid fa-brain" aria-hidden="true"></i>
                 </div>
 
                 <div>
@@ -164,7 +243,7 @@
             <article class="cardResumo">
 
                 <div class="iconeResumo">
-                    ✅
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                 </div>
 
                 <div>
@@ -177,7 +256,7 @@
             <article class="cardResumo">
 
                 <div class="iconeResumo">
-                    🔓
+                    <i class="fa-solid fa-lock-open" aria-hidden="true"></i>
                 </div>
 
                 <div>
@@ -196,7 +275,6 @@
         <div class="topoLista">
 
             <div>
-
                 <span class="miniTitulo">
                     CADERNO DE DESAFIOS
                 </span>
@@ -208,11 +286,12 @@
                 <p>
                     Leia os artigos da Biblioteca para desbloquear novos desafios.
                 </p>
-
             </div>
 
             <div class="contadorLista">
-                <span>🧠</span>
+                <span>
+                    <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                </span>
 
                 <strong id="quantidadeQuizzes">
                     50 desafios
@@ -226,7 +305,7 @@
             <label class="campoPesquisa">
 
                 <span>
-                    🔎
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 </span>
 
                 <input
@@ -239,43 +318,18 @@
             </label>
 
             <select id="filtroDificuldade">
-                <option value="todos">
-                    Todas as dificuldades
-                </option>
-
-                <option value="facil">
-                    🌱 Fácil
-                </option>
-
-                <option value="medio">
-                    🌿 Médio
-                </option>
-
-                <option value="dificil">
-                    🔥 Difícil
-                </option>
-
-                <option value="hard">
-                    👑 Hard
-                </option>
+                <option value="todos">Todas as dificuldades</option>
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+                <option value="hard">Hard</option>
             </select>
 
             <select id="filtroStatus">
-                <option value="todos">
-                    Todos
-                </option>
-
-                <option value="desbloqueado">
-                    🔓 Desbloqueados
-                </option>
-
-                <option value="bloqueado">
-                    🔒 Bloqueados
-                </option>
-
-                <option value="concluido">
-                    ✅ Concluídos
-                </option>
+                <option value="todos">Todos</option>
+                <option value="desbloqueado">Desbloqueados</option>
+                <option value="bloqueado">Bloqueados</option>
+                <option value="concluido">Concluídos</option>
             </select>
 
         </div>
@@ -292,12 +346,10 @@
         >
 
             <span>
-                🌿
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
             </span>
 
-            <h3>
-                Nenhum desafio encontrado
-            </h3>
+            <h3>Nenhum desafio encontrado</h3>
 
             <p>
                 Tente outro termo ou altere os filtros.
@@ -307,11 +359,7 @@
 
     </section>
 
-    <section
-        id="telaQuiz"
-        class="telaQuiz"
-        hidden
-    >
+    <section id="telaQuiz" class="telaQuiz" hidden>
 
         <div class="barraQuiz">
 
@@ -320,7 +368,8 @@
                 class="botaoVoltar"
                 type="button"
             >
-                ← Voltar
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Voltar
             </button>
 
             <div class="progressoQuiz">
@@ -338,12 +387,10 @@
                 </div>
 
                 <div class="barra">
-
                     <div
                         id="barraProgresso"
                         class="preenchimento"
                     ></div>
-
                 </div>
 
             </div>
@@ -382,7 +429,6 @@
             >
 
                 <h3 id="tituloExplicacao"></h3>
-
                 <p id="textoExplicacao"></p>
 
             </div>
@@ -425,7 +471,7 @@
                 id="iconeResultado"
                 class="iconeResultado"
             >
-                🏆
+                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
             </div>
 
             <span class="etiquetaResultado">
@@ -433,7 +479,6 @@
             </span>
 
             <h2 id="tituloResultado"></h2>
-
             <p id="mensagemResultado"></p>
 
             <div class="notaResultado">
@@ -451,19 +496,25 @@
             <div class="informacoesResultado">
 
                 <div>
-                    <span>⭐</span>
+                    <span>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    </span>
+
                     <p>XP recebido</p>
+
                     <h3 id="xpResultado">
                         +0 XP
                     </h3>
                 </div>
 
                 <div>
-                    <span>🏆</span>
+                    <span>
+                        <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                    </span>
+
                     <p>Classificação</p>
-                    <h3 id="classificacaoResultado">
-                        —
-                    </h3>
+
+                    <h3 id="classificacaoResultado"></h3>
                 </div>
 
             </div>
@@ -475,13 +526,11 @@
             >
 
                 <div class="iconeDescoberta">
-                    🐾
+                    <i class="fa-solid fa-paw" aria-hidden="true"></i>
                 </div>
 
                 <div>
-                    <span>
-                        NOVA DESCOBERTA
-                    </span>
+                    <span>NOVA DESCOBERTA</span>
 
                     <h3 id="nomeDescoberta">
                         Cerradex atualizado!
@@ -524,7 +573,8 @@
 
     <div>
         <strong>
-            🌿 Guardiões do Cerrado
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            Guardiões do Cerrado
         </strong>
 
         <span>
