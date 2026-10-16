@@ -326,6 +326,7 @@ input{
     display:flex;
     align-items:flex-end;
     justify-content:center;
+    padding-top:40px;
 }
 
 .lobo-fundo{
@@ -365,6 +366,7 @@ input{
     position:relative;
     z-index:2;
     object-fit:contain;
+    transform:translate(18px, 12px);
     filter:drop-shadow(0 20px 14px rgba(39,74,44,.18));
 }
 
@@ -373,8 +375,8 @@ input{
     padding:14px 17px;
     position:absolute;
     z-index:6;
-    top:-7px;
-    left:-35px;
+    top:-28px;
+    left:-8px;
     border:1px solid #DDD1B8;
     border-radius:17px 17px 17px 4px;
     background:#FFFDF7;
@@ -390,15 +392,15 @@ input{
     content:"";
     position:absolute;
     bottom:-10px;
-    left:23px;
+    left:42px;
     border-width:10px 10px 0 0;
     border-style:solid;
     border-color:#FFFDF7 transparent transparent transparent;
 }
 
 .plaquinha-lobo{
-    right:6px;
-    bottom:8px;
+    right:-4px;
+    bottom:-2px;
     padding:8px 12px;
     position:absolute;
     z-index:7;
@@ -959,7 +961,6 @@ input{
 }
 
 @media(max-width:1100px){
-
     .menu-lateral{
         width:215px;
     }
@@ -974,17 +975,20 @@ input{
     }
 
     .fala-lobo{
-        left:-10px;
+        top:-25px;
+        left:0;
+    }
+
+    .hero-lobo img{
+        transform:translate(12px, 12px);
     }
 
     .grade-conteudo{
         grid-template-columns:1fr;
     }
-
 }
 
 @media(max-width:850px){
-
     .menu-lateral{
         width:250px;
         transform:translateX(-100%);
@@ -1045,13 +1049,18 @@ input{
     }
 
     .hero-lobo{
-        min-height:300px;
+        min-height:330px;
+        padding-top:55px;
+    }
+
+    .hero-lobo img{
+        transform:translate(15px, 10px);
     }
 
     .fala-lobo{
         top:0;
         left:50%;
-        transform:translateX(-85%) rotate(-2deg);
+        transform:translateX(-115%) rotate(-2deg);
     }
 
     .cards-resumo{
@@ -1065,11 +1074,9 @@ input{
     .atalhos-grade{
         grid-template-columns:1fr;
     }
-
 }
 
 @media(max-width:560px){
-
     .hero{
         padding-inline:5%;
     }
@@ -1091,11 +1098,13 @@ input{
     }
 
     .hero-lobo{
-        min-height:265px;
+        min-height:300px;
+        padding-top:65px;
     }
 
     .hero-lobo img{
         max-width:235px;
+        transform:translate(10px, 8px);
     }
 
     .lobo-fundo{
@@ -1118,9 +1127,16 @@ input{
     }
 
     .fala-lobo{
-        max-width:210px;
+        max-width:205px;
+        top:8px;
+        left:50%;
         font-size:.72rem;
-        transform:translateX(-75%) rotate(-2deg);
+        transform:translateX(-105%) rotate(-2deg);
+    }
+
+    .plaquinha-lobo{
+        right:0;
+        bottom:0;
     }
 
     .resumo-jornada,
@@ -1173,5 +1189,4 @@ input{
     .atalho{
         padding:16px;
     }
-
 }

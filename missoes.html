@@ -3,39 +3,624 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"content="Missões e desafios dos Guardiões do Cerrado">
 
     <title>Missões | Guardiões do Cerrado</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/missoes.css">
     <link rel="stylesheet" href="css/notificacoes.css">
-  
 </head>
 
 <body>
 
-<header class="topo">
-    <h1>🎯 Missões</h1>
-    <p>Complete desafios para ganhar experiência e proteger o Cerrado.</p>
+<header class="cabecalho">
+
+    <a href="principal.html" class="logo">
+
+        <div class="logo-icone">
+            🐺
+        </div>
+
+        <div class="logo-texto">
+            <strong>
+                Guardiões
+            </strong>
+
+            <span>
+                do Cerrado
+            </span>
+        </div>
+
+    </a>
+
+    <nav class="menu">
+        <a href="principal.html">Início</a>
+        <a href="missoes.html" class="ativo">Missões</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="quizzes.html">Quizzes</a>
+        <a href="cerradex.html">Cerradex</a>
+        <a href="diario.html">Diário</a>
+
+    </nav>
+
 </header>
 
-<main class="conteudo">
+<main>
 
-    <section class="categoria">
-        <h2>🌞 Missões Diárias</h2>
-        <div id="missoesDiarias" class="listaMissoes"></div>
+    <section class="hero-missoes">
+
+        <div class="hero-papel-missoes">
+
+            <div class="hero-texto-missoes">
+
+                <span class="hero-etiqueta-missoes">
+                    QUADRO DE EXPEDIÇÕES
+                </span>
+
+                <p class="hero-mini-missoes">
+                    🧭 Novos desafios aguardam você
+                </p>
+
+                <h1>
+                    Missões do
+                    <span>Guardião</span>
+                </h1>
+
+                <p class="hero-descricao-missoes">
+                    Leia artigos, enfrente quizzes,
+                    explore o Cerradex e complete
+                    desafios para ganhar experiência
+                    durante sua jornada pelo Cerrado.
+                </p>
+
+                <div class="hero-acoes-missoes">
+
+                    <a
+                        href="#listaMissoes"
+                        class="botao-missoes-principal"
+                    >
+                        Ver missões
+                        <span>↓</span>
+                    </a>
+
+                    <a
+                        href="biblioteca.html"
+                        class="botao-missoes-secundario"
+                    >
+                        📚 Começar explorando
+                    </a>
+
+                </div>
+
+                <div class="hero-passos-missoes">
+
+                    <span>
+                        📖 Aprenda
+                    </span>
+
+                    <span>
+                        🎯 Complete
+                    </span>
+
+                    <span>
+                        ⭐ Ganhe XP
+                    </span>
+
+                    <span>
+                        🏆 Evolua
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual-missoes">
+
+                <div class="quadro-central-missoes">
+
+                    <div class="alfinete-missao"></div>
+
+                    <span class="quadro-icone">
+                        🎯
+                    </span>
+
+                    <strong>
+                        Missões
+                    </strong>
+
+                    <small>
+                        do Guardião
+                    </small>
+
+                </div>
+
+                <div class="cartao-hero-missao leitura">
+
+                    <span>
+                        📚
+                    </span>
+
+                    <div>
+                        <strong>
+                            Exploração
+                        </strong>
+
+                        <small>
+                            Leia e descubra
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="cartao-hero-missao quiz">
+
+                    <span>
+                        🧠
+                    </span>
+
+                    <div>
+                        <strong>
+                            Desafios
+                        </strong>
+
+                        <small>
+                            Teste seu conhecimento
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="cartao-hero-missao premio">
+
+                    <span>
+                        ⭐
+                    </span>
+
+                    <div>
+                        <strong>
+                            Recompensas
+                        </strong>
+
+                        <small>
+                            Ganhe experiência
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="categoria">
-        <h2>🔥 Missões Semanais</h2>
-        <div id="missoesSemanais" class="listaMissoes"></div>
+    <section class="secao-resumo-missoes">
+
+        <div class="container-missoes">
+
+            <div class="cabecalho-resumo-missoes">
+
+                <div>
+
+                    <span class="mini-titulo-missoes">
+                        SEU PROGRESSO
+                    </span>
+
+                    <h2>
+                        Jornada de missões
+                    </h2>
+
+                    <p>
+                        Veja o quanto você já avançou
+                        como Guardião do Cerrado.
+                    </p>
+
+                </div>
+
+                <div class="selo-missoes">
+                    🏕️ Central de Expedições
+                </div>
+
+            </div>
+
+            <div class="painel-progresso-missoes">
+
+                <div class="progresso-topo-missoes">
+
+                    <div>
+
+                        <span>
+                            Missões concluídas
+                        </span>
+
+                        <strong id="textoProgressoMissoes">
+                            0 de 0 missões
+                        </strong>
+
+                    </div>
+
+                    <strong id="porcentagemMissoes">
+                        0%
+                    </strong>
+
+                </div>
+
+                <div class="barra-missoes">
+
+                    <div
+                        id="barraProgressoMissoes"
+                        class="barra-preenchimento-missoes"
+                    ></div>
+
+                </div>
+
+            </div>
+
+            <div class="estatisticas-missoes">
+
+                <article class="estatistica-missao">
+
+                    <div class="estatistica-icone">
+                        ✅
+                    </div>
+
+                    <div>
+                        <strong id="totalMissoesConcluidas">
+                            0
+                        </strong>
+
+                        <span>
+                            Concluídas
+                        </span>
+                    </div>
+
+                </article>
+
+                <article class="estatistica-missao">
+
+                    <div class="estatistica-icone">
+                        🧭
+                    </div>
+
+                    <div>
+                        <strong id="totalMissoesAndamento">
+                            0
+                        </strong>
+
+                        <span>
+                            Em andamento
+                        </span>
+                    </div>
+
+                </article>
+
+                <article class="estatistica-missao">
+
+                    <div class="estatistica-icone">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <strong id="xpMissoes">
+                            0 XP
+                        </strong>
+
+                        <span>
+                            XP em missões
+                        </span>
+                    </div>
+
+                </article>
+
+                <article class="estatistica-missao">
+
+                    <div class="estatistica-icone">
+                        👑
+                    </div>
+
+                    <div>
+                        <strong id="totalEspeciais">
+                            0
+                        </strong>
+
+                        <span>
+                            Especiais
+                        </span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section class="categoria">
-        <h2>👑 Missões Permanentes</h2>
-        <div id="missoesPermanentes" class="listaMissoes"></div>
+    <section
+        class="secao-lista-missoes"
+        id="listaMissoes"
+    >
+
+        <div class="container-missoes">
+
+            <div class="titulo-lista-missoes">
+
+                <div>
+
+                    <span class="mini-titulo-missoes">
+                        QUADRO DE MISSÕES
+                    </span>
+
+                    <h2>
+                        Escolha seu próximo desafio
+                    </h2>
+
+                    <p>
+                        As missões acompanham sua
+                        evolução durante toda a jornada.
+                    </p>
+
+                </div>
+
+                <div class="contador-missoes">
+
+                    <span>
+                        🎯
+                    </span>
+
+                    <strong id="contadorMissoes">
+                        0 missões
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="ferramentas-missoes">
+
+                <label class="pesquisa-missoes">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <input
+                        type="search"
+                        id="pesquisaMissoes"
+                        placeholder="Pesquisar missão..."
+                        autocomplete="off"
+                    >
+
+                </label>
+
+                <div class="filtros-missoes">
+
+                    <button
+                        type="button"
+                        class="filtro-missao ativo"
+                        data-filtro="todas"
+                    >
+                        Todas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="andamento"
+                    >
+                        🧭 Em andamento
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="concluidas"
+                    >
+                        ✓ Concluídas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="leitura"
+                    >
+                        📚 Leitura
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="quiz"
+                    >
+                        🧠 Quiz
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="cerradex"
+                    >
+                        🃏 Cerradex
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="diario"
+                    >
+                        📖 Diário
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filtro-missao"
+                        data-filtro="especial"
+                    >
+                        👑 Especiais
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="grupo-missoes">
+
+                <div class="cabecalho-grupo-missoes">
+
+                    <div>
+
+                        <span class="icone-grupo">
+                            🌞
+                        </span>
+
+                        <div>
+                            <h3>
+                                Missões Diárias
+                            </h3>
+
+                            <p>
+                                Pequenos desafios para
+                                manter sua jornada ativa.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <span class="etiqueta-tempo">
+                        Hoje
+                    </span>
+
+                </div>
+
+                <div
+                    id="missoesDiarias"
+                    class="grade-missoes"
+                ></div>
+
+            </div>
+
+            <div class="grupo-missoes">
+
+                <div class="cabecalho-grupo-missoes">
+
+                    <div>
+
+                        <span class="icone-grupo">
+                            🔥
+                        </span>
+
+                        <div>
+                            <h3>
+                                Missões Semanais
+                            </h3>
+
+                            <p>
+                                Objetivos maiores para
+                                Guardiões determinados.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <span class="etiqueta-tempo">
+                        Esta semana
+                    </span>
+
+                </div>
+
+                <div
+                    id="missoesSemanais"
+                    class="grade-missoes"
+                ></div>
+
+            </div>
+
+            <div class="grupo-missoes">
+
+                <div class="cabecalho-grupo-missoes">
+
+                    <div>
+
+                        <span class="icone-grupo">
+                            👑
+                        </span>
+
+                        <div>
+                            <h3>
+                                Missões Permanentes
+                            </h3>
+
+                            <p>
+                                Grandes marcos da sua
+                                trajetória pelo Cerrado.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <span class="etiqueta-tempo">
+                        Jornada
+                    </span>
+
+                </div>
+
+                <div
+                    id="missoesPermanentes"
+                    class="grade-missoes"
+                ></div>
+
+            </div>
+
+            <div
+                id="semMissoes"
+                class="sem-missoes"
+                hidden
+            >
+
+                <span>
+                    🌾
+                </span>
+
+                <h3>
+                    Nenhuma missão encontrada
+                </h3>
+
+                <p>
+                    Tente pesquisar outro termo
+                    ou escolher outro filtro.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
 </main>
+
+<footer class="rodape">
+
+    <div>
+
+        <strong>
+            🌿 Guardiões do Cerrado
+        </strong>
+
+        <span>
+            Cada desafio concluído deixa
+            sua jornada mais forte.
+        </span>
+
+    </div>
+
+    <a href="biblioteca.html">
+        Ir para a Biblioteca
+    </a>
+
+</footer>
 
 <script src="js/progresso.js"></script>
 <script src="js/dados.js"></script>
@@ -43,150 +628,6 @@
 <script src="js/missoesDados.js"></script>
 <script src="js/missoes.js"></script>
 <script src="js/notificacoes.js"></script>
-
-<script>
-function criarCard(missao) {
-    const progressoAtual = Math.min(
-        Number(missao.atual) || 0,
-        Number(missao.objetivo) || 0
-    );
-
-    const objetivo = Number(missao.objetivo) || 0;
-    const porcentagem = Number(missao.porcentagem) || 0;
-    const recompensa = Number(missao.recompensa) || 0;
-
-    return `
-        <article class="cardMissao ${missao.concluida ? "concluida" : ""}">
-
-            <div class="cabecalho">
-
-                <div>
-                    <h3>${missao.titulo}</h3>
-                    <p>${missao.descricao}</p>
-                </div>
-
-                <span class="xp">
-                    +${recompensa} XP
-                </span>
-
-            </div>
-
-            <div class="barra">
-                <div
-                    class="progresso"
-                    style="width: ${porcentagem}%"
-                ></div>
-            </div>
-
-            <div class="rodape">
-
-                <span>
-                    ${progressoAtual}/${objetivo}
-                </span>
-
-                ${
-                    missao.concluida
-                        ? "<span class='status'>✅ Concluída</span>"
-                        : "<span class='statusPendente'>Em andamento</span>"
-                }
-
-            </div>
-
-        </article>
-    `;
-}
-
-function mostrarMensagemErro(mensagem) {
-    const texto = `
-        <div class="mensagemErro">
-            <strong>Não foi possível carregar as missões.</strong>
-            <p>${mensagem}</p>
-        </div>
-    `;
-
-    document.getElementById("missoesDiarias").innerHTML = texto;
-    document.getElementById("missoesSemanais").innerHTML = "";
-    document.getElementById("missoesPermanentes").innerHTML = "";
-}
-
-function carregarMissoes() {
-    if (
-        !window.sistemaMissoes ||
-        typeof window.sistemaMissoes.listar !== "function"
-    ) {
-        mostrarMensagemErro(
-            "Confira se os arquivos missoes.js e missoesDados.js estão na pasta js."
-        );
-
-        console.error(
-            "window.sistemaMissoes não foi encontrado."
-        );
-
-        return;
-    }
-
-    try {
-        const dados = window.sistemaMissoes.listar();
-
-        const diarias = Array.isArray(dados.diarias)
-            ? dados.diarias
-            : [];
-
-        const semanais = Array.isArray(dados.semanais)
-            ? dados.semanais
-            : [];
-
-        const permanentes = Array.isArray(dados.permanentes)
-            ? dados.permanentes
-            : [];
-
-        document.getElementById("missoesDiarias").innerHTML =
-            diarias.length > 0
-                ? diarias.map(criarCard).join("")
-                : "<p class='semMissoes'>Nenhuma missão diária disponível.</p>";
-
-        document.getElementById("missoesSemanais").innerHTML =
-            semanais.length > 0
-                ? semanais.map(criarCard).join("")
-                : "<p class='semMissoes'>Nenhuma missão semanal disponível.</p>";
-
-        document.getElementById("missoesPermanentes").innerHTML =
-            permanentes.length > 0
-                ? permanentes.map(criarCard).join("")
-                : "<p class='semMissoes'>Nenhuma missão permanente disponível.</p>";
-
-    } catch (erro) {
-        console.error(
-            "Erro ao carregar as missões:",
-            erro
-        );
-
-        mostrarMensagemErro(
-            "Ocorreu um erro no JavaScript. Abra o console para ver os detalhes."
-        );
-    }
-}
-
-document.addEventListener(
-    "DOMContentLoaded",
-    carregarMissoes
-);
-
-window.addEventListener(
-    "missoesAtualizadas",
-    carregarMissoes
-);
-
-window.addEventListener(
-    "missaoConcluida",
-    carregarMissoes
-);
-
-window.addEventListener(
-    "progressoAtualizado",
-    carregarMissoes
-);
-</script>
 
 </body>
 </html>

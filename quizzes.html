@@ -1,377 +1,546 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Academia dos Guardiões</title>
+    <title>Quizzes | Guardiões do Cerrado</title>
 
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quizzes.css">
     <link rel="stylesheet" href="css/notificacoes.css">
-   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
 <header class="cabecalho">
-
-    <a href="index.html" class="logo">
-        🐺 Guardiões do Cerrado
+    <a href="principal.html" class="logo">
+        <div class="logo-icone">🐺</div>
+        <div class="logo-texto">
+            <strong>Guardiões</strong>
+            <span>do Cerrado</span>
+        </div>
     </a>
-
-    <nav>
-
-        <a href="index.html">
-            Início
-        </a>
-
-        <a href="biblioteca.html">
-            Biblioteca
-        </a>
-
-        <a href="cerradex.html">
-            Cerradex
-        </a>
-
-        <a href="quizzes.html" class="ativo">
-            Academia
-        </a>
-
+    <nav class="menu">
+        <a href="principal.html">Início</a>
+        <a href="missoes.html">Missões</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="quizzes.html" class="ativo">Quizzes</a>
+        <a href="cerradex.html">Cerradex</a>
+        <a href="diario.html">Diário</a>
     </nav>
 
 </header>
 
-
 <main>
+    <section class="heroQuiz">
+        <div class="heroPapel">
+            <div class="heroTexto">
+                <span class="etiqueta">
+                    ACADEMIA DOS GUARDIÕES
+                </span>
 
+                <p class="heroSubtitulo">
+                    🧭 Uma nova etapa da sua expedição
+                </p>
 
-<section class="bannerAcademia">
+                <h1>
+                    Teste seus
+                    <span>conhecimentos</span>
+                </h1>
 
-    <div class="bannerTexto">
+                <p class="heroDescricao">
+                    Cada artigo concluído libera um novo desafio.
+                    Supere o quiz correspondente para registrar uma
+                    nova descoberta em sua Cerradex.
+                </p>
 
-        <span class="categoria">
-            Academia dos Guardiões
-        </span>
+                <div class="legendaDificuldades">
 
-        <h1>
-            Teste tudo o que você aprendeu sobre o Cerrado.
-        </h1>
+                    <span class="nivel facil">
+                        🌱 Fácil
+                    </span>
 
-        <p>
+                    <span class="nivel medio">
+                        🌿 Médio
+                    </span>
 
-            Responda quizzes de diferentes dificuldades,
-            ganhe XP, desbloqueie conquistas e torne-se
-            uma verdadeira Lenda do Cerrado.
+                    <span class="nivel dificil">
+                        🔥 Difícil
+                    </span>
 
-        </p>
+                    <span class="nivel hard">
+                        👑 Hard
+                    </span>
 
-    </div>
+                </div>
 
+            </div>
 
-    <div class="painelResumo">
+            <div class="heroMascote">
 
-        <div class="cardResumo">
+                <div class="circuloMascote"></div>
 
-            <h2 id="xpTotal">
-                0
-            </h2>
+                <img
+                    src="assets/imagens/lobo-quiz.png"
+                    alt="Lobo-guará explorador"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('semImagem')"
+                >
 
-            <p>XP Total</p>
+                <div class="falaMascote">
+
+                    <span>
+                        🧠
+                    </span>
+
+                    <div>
+                        <strong>50 desafios</strong>
+                        <small>Um para cada artigo</small>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="cardResumo">
+    </section>
 
-            <h2 id="quizzesConcluidos">
-                0
-            </h2>
+    <section class="resumoAcademia">
 
-            <p>Quizzes Concluídos</p>
+        <div class="cabecalhoResumo">
 
-        </div>
+            <div>
+                <span class="miniTitulo">
+                    SEU TREINAMENTO
+                </span>
 
-        <div class="cardResumo">
+                <h2>
+                    Progresso na Academia
+                </h2>
+            </div>
 
-            <h2 id="acertosTotais">
-                0
-            </h2>
-
-            <p>Acertos Totais</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="listaQuizzes">
-
-    <div class="topoLista">
-
-        <div>
-
-            <span class="categoria">
-                Desafios
+            <span class="seloAcademia">
+                🏕️ Academia do Cerrado
             </span>
 
-            <h2>
-                Escolha um Quiz
-            </h2>
+        </div>
+
+        <div class="gradeResumo">
+
+            <article class="cardResumo">
+
+                <div class="iconeResumo">
+                    ⭐
+                </div>
+
+                <div>
+                    <span>Experiência</span>
+                    <strong id="xpTotal">0</strong>
+                </div>
+
+            </article>
+
+            <article class="cardResumo">
+
+                <div class="iconeResumo">
+                    🧠
+                </div>
+
+                <div>
+                    <span>Quizzes concluídos</span>
+                    <strong id="quizzesConcluidos">0</strong>
+                </div>
+
+            </article>
+
+            <article class="cardResumo">
+
+                <div class="iconeResumo">
+                    ✅
+                </div>
+
+                <div>
+                    <span>Acertos totais</span>
+                    <strong id="acertosTotais">0</strong>
+                </div>
+
+            </article>
+
+            <article class="cardResumo">
+
+                <div class="iconeResumo">
+                    🔓
+                </div>
+
+                <div>
+                    <span>Desbloqueados</span>
+                    <strong id="quizzesDesbloqueados">0/50</strong>
+                </div>
+
+            </article>
 
         </div>
 
+    </section>
+
+    <section class="listaQuizzes">
+
+        <div class="topoLista">
+
+            <div>
+
+                <span class="miniTitulo">
+                    CADERNO DE DESAFIOS
+                </span>
+
+                <h2>
+                    Quizzes disponíveis
+                </h2>
+
+                <p>
+                    Leia os artigos da Biblioteca para desbloquear novos desafios.
+                </p>
+
+            </div>
+
+            <div class="contadorLista">
+                <span>🧠</span>
+
+                <strong id="quantidadeQuizzes">
+                    50 desafios
+                </strong>
+            </div>
+
+        </div>
 
         <div class="filtros">
 
-            <input
-                type="text"
-                id="pesquisaQuiz"
-                placeholder="Pesquisar..."
-            >
+            <label class="campoPesquisa">
+
+                <span>
+                    🔎
+                </span>
+
+                <input
+                    type="text"
+                    id="pesquisaQuiz"
+                    placeholder="Pesquisar desafio..."
+                    autocomplete="off"
+                >
+
+            </label>
 
             <select id="filtroDificuldade">
-
                 <option value="todos">
-                    Todas
+                    Todas as dificuldades
                 </option>
 
-                <option value="intermediario">
-                    Intermediário
+                <option value="facil">
+                    🌱 Fácil
                 </option>
 
-                <option value="avancado">
-                    Avançado
+                <option value="medio">
+                    🌿 Médio
                 </option>
 
+                <option value="dificil">
+                    🔥 Difícil
+                </option>
+
+                <option value="hard">
+                    👑 Hard
+                </option>
+            </select>
+
+            <select id="filtroStatus">
+                <option value="todos">
+                    Todos
+                </option>
+
+                <option value="desbloqueado">
+                    🔓 Desbloqueados
+                </option>
+
+                <option value="bloqueado">
+                    🔒 Bloqueados
+                </option>
+
+                <option value="concluido">
+                    ✅ Concluídos
+                </option>
             </select>
 
         </div>
 
-    </div>
-
-
-    <div
-        class="gradeQuizzes"
-        id="gradeQuizzes"
-    >
-
-    </div>
-
-
-    <div
-        id="nenhumQuiz"
-        class="nenhumQuiz"
-        hidden
-    >
-
-        🌿
-
-        <h3>
-            Nenhum quiz encontrado
-        </h3>
-
-        <p>
-            Tente pesquisar outro tema.
-        </p>
-
-    </div>
-
-</section>
-<section
-    id="telaQuiz"
-    class="telaQuiz"
-    hidden
->
-
-    <div class="barraQuiz">
-
-        <button
-            id="voltarQuizzes"
-            class="botaoVoltar"
-        >
-            ← Voltar
-        </button>
-
-        <div class="progressoQuiz">
-
-            <div class="textoProgresso">
-
-                <span id="contadorQuestao">
-                    Questão 1 de 5
-                </span>
-
-                <span id="contadorAcertos">
-                    0 acertos
-                </span>
-
-            </div>
-
-            <div class="barra">
-
-                <div
-                    id="barraProgresso"
-                    class="preenchimento"
-                ></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="cardPergunta">
-
-        <div class="informacoesQuiz">
-
-            <span id="temaQuiz"></span>
-
-            <span id="nivelQuiz"></span>
-
-        </div>
-
-        <h2 id="perguntaQuiz"></h2>
+        <div
+            class="gradeQuizzes"
+            id="gradeQuizzes"
+        ></div>
 
         <div
-            id="alternativasQuiz"
-            class="alternativasQuiz"
-        >
-
-        </div>
-
-        <div
-            id="explicacaoQuiz"
-            class="explicacaoQuiz"
+            id="nenhumQuiz"
+            class="nenhumQuiz"
             hidden
         >
 
-            <h3 id="tituloExplicacao"></h3>
-
-            <p id="textoExplicacao"></p>
-
-        </div>
-
-        <div class="acoesQuiz">
-
-            <button
-                id="confirmarResposta"
-                class="botaoPrincipal"
-                disabled
-            >
-                Confirmar Resposta
-            </button>
-
-            <button
-                id="proximaQuestao"
-                class="botaoPrincipal"
-                hidden
-            >
-                Próxima Questão
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section
-    id="telaResultado"
-    class="telaResultado"
-    hidden
->
-
-    <div class="cardResultado">
-
-        <div
-            id="iconeResultado"
-            class="iconeResultado"
-        >
-            🏆
-        </div>
-
-        <span class="categoria">
-            Quiz Finalizado
-        </span>
-
-        <h2 id="tituloResultado"></h2>
-
-        <p id="mensagemResultado"></p>
-
-        <div class="notaResultado">
-
-            <h1 id="notaResultado">
-                5/5
-            </h1>
-
-            <span id="porcentagemResultado">
-                100%
+            <span>
+                🌿
             </span>
 
+            <h3>
+                Nenhum desafio encontrado
+            </h3>
+
+            <p>
+                Tente outro termo ou altere os filtros.
+            </p>
+
         </div>
 
-        <div class="informacoesResultado">
+    </section>
 
-            <div>
+    <section
+        id="telaQuiz"
+        class="telaQuiz"
+        hidden
+    >
 
-                <p>XP Recebido</p>
+        <div class="barraQuiz">
 
-                <h3 id="xpResultado">
-                    +0 XP
-                </h3>
+            <button
+                id="voltarQuizzes"
+                class="botaoVoltar"
+                type="button"
+            >
+                ← Voltar
+            </button>
+
+            <div class="progressoQuiz">
+
+                <div class="textoProgresso">
+
+                    <span id="contadorQuestao">
+                        Questão 1
+                    </span>
+
+                    <span id="contadorAcertos">
+                        0 acertos
+                    </span>
+
+                </div>
+
+                <div class="barra">
+
+                    <div
+                        id="barraProgresso"
+                        class="preenchimento"
+                    ></div>
+
+                </div>
 
             </div>
 
-            <div>
+        </div>
 
-                <p>Classificação</p>
+        <article class="cardPergunta">
 
-                <h3 id="classificacaoResultado">
-                    —
-                </h3>
+            <div class="topoPergunta">
+
+                <div class="informacoesQuiz">
+                    <span id="temaQuiz"></span>
+                    <span
+                        id="nivelQuiz"
+                        class="nivelQuestao"
+                    ></span>
+                </div>
+
+                <span class="marcaPergunta">
+                    ACADEMIA DOS GUARDIÕES
+                </span>
 
             </div>
 
-        </div>
+            <h2 id="perguntaQuiz"></h2>
 
-        <div class="botoesResultado">
+            <div
+                id="alternativasQuiz"
+                class="alternativasQuiz"
+            ></div>
 
-            <button
-                id="refazerQuiz"
-                class="botaoSecundario"
+            <div
+                id="explicacaoQuiz"
+                class="explicacaoQuiz"
+                hidden
             >
-                Refazer Quiz
-            </button>
 
-            <button
-                id="outroQuiz"
-                class="botaoPrincipal"
+                <h3 id="tituloExplicacao"></h3>
+
+                <p id="textoExplicacao"></p>
+
+            </div>
+
+            <div class="acoesQuiz">
+
+                <button
+                    id="confirmarResposta"
+                    class="botaoPrincipal"
+                    type="button"
+                    disabled
+                >
+                    Confirmar resposta
+                </button>
+
+                <button
+                    id="proximaQuestao"
+                    class="botaoPrincipal"
+                    type="button"
+                    hidden
+                >
+                    Próxima questão
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <section
+        id="telaResultado"
+        class="telaResultado"
+        hidden
+    >
+
+        <article class="cardResultado">
+
+            <div
+                id="iconeResultado"
+                class="iconeResultado"
             >
-                Escolher Outro
-            </button>
+                🏆
+            </div>
 
-        </div>
+            <span class="etiquetaResultado">
+                DESAFIO FINALIZADO
+            </span>
 
-    </div>
+            <h2 id="tituloResultado"></h2>
 
-</section>
+            <p id="mensagemResultado"></p>
+
+            <div class="notaResultado">
+
+                <h1 id="notaResultado">
+                    0/0
+                </h1>
+
+                <span id="porcentagemResultado">
+                    0%
+                </span>
+
+            </div>
+
+            <div class="informacoesResultado">
+
+                <div>
+                    <span>⭐</span>
+                    <p>XP recebido</p>
+                    <h3 id="xpResultado">
+                        +0 XP
+                    </h3>
+                </div>
+
+                <div>
+                    <span>🏆</span>
+                    <p>Classificação</p>
+                    <h3 id="classificacaoResultado">
+                        —
+                    </h3>
+                </div>
+
+            </div>
+
+            <div
+                id="descobertaResultado"
+                class="descobertaResultado"
+                hidden
+            >
+
+                <div class="iconeDescoberta">
+                    🐾
+                </div>
+
+                <div>
+                    <span>
+                        NOVA DESCOBERTA
+                    </span>
+
+                    <h3 id="nomeDescoberta">
+                        Cerradex atualizado!
+                    </h3>
+
+                    <p id="textoDescoberta">
+                        Uma nova entrada foi adicionada à sua coleção.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="botoesResultado">
+
+                <button
+                    id="refazerQuiz"
+                    class="botaoSecundario"
+                    type="button"
+                >
+                    Refazer quiz
+                </button>
+
+                <button
+                    id="outroQuiz"
+                    class="botaoPrincipal"
+                    type="button"
+                >
+                    Escolher outro
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
 
 </main>
 
+<footer class="rodape">
+
+    <div>
+        <strong>
+            🌿 Guardiões do Cerrado
+        </strong>
+
+        <span>
+            Aprender também faz parte da expedição.
+        </span>
+    </div>
+
+    <a href="biblioteca.html">
+        Ir para Biblioteca
+    </a>
+
+</footer>
 
 <script src="js/progresso.js"></script>
-<script src="js/dados.js"></script>
-<script src="js/conquistas.js"></script>
-<script src="js/missoesDados.js"></script>
-<script src="js/missoes.js"></script>
-
 <script src="js/quizzesDados.js"></script>
 <script src="js/quizzes.js"></script>
-
 <script src="js/notificacoes.js"></script>
 
 </body>

@@ -539,7 +539,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     function obterArtigosConcluidos() {
 
         try {
