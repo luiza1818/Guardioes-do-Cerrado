@@ -55,7 +55,7 @@ const paginas = [
     {
         titulo: "Campo Limpo",
         icone: "fa-wheat-awn",
-        imagem: "cerrado-deforestation-goiás-goiânia.jpg",
+        imagem: "assets/artigos/campo-limpo.jpg",
         fala: "Aqui quase não existem árvores. As gramíneas dominam a paisagem.",
         ondeFica: "É encontrado em diversas regiões do Cerrado.",
         encontramos: "Capins, flores, emas, seriemas e pequenos mamíferos.",
@@ -107,7 +107,7 @@ const paginas = [
     {
         titulo: "Rio Cristalino",
         icone: "fa-water",
-        imagem: "6bec7536a8cfb8730aada9c4874a9504.jpg",
+        imagem: "js/34e7c55d62973282be24786c9bfb6792.jpg",
         fala: "A água limpa permite enxergar peixes, pedras e plantas aquáticas. É um ambiente muito delicado.",
         ondeFica: "Diversos rios do Cerrado apresentam águas extremamente transparentes.",
         encontramos: "Peixes, lontras, aves aquáticas, pedras e vegetação ciliar.",
@@ -133,7 +133,7 @@ const paginas = [
     {
         titulo: "Guardião do Cerrado",
         icone: "fa-trophy",
-        imagem: "pexels-hiagorocha-17025997.jpg",
+        imagem: "assets/artigos/o-que-e-cerrado.jpg",
         fala: "Parabéns! Você chegou ao fim da nossa expedição. Agora conhece muito mais sobre o Cerrado e pode ajudar a protegê-lo.",
         ondeFica: "O Cerrado ocupa uma grande parte do território brasileiro e está presente em vários estados.",
         encontramos: "Animais, plantas, rios, comunidades e muita biodiversidade que precisam ser preservados.",

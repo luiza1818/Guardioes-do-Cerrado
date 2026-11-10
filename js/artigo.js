@@ -387,7 +387,7 @@ const artigos = {
         titulo: "Gato-palheiro: o felino discreto dos campos",
         categoria: "Fauna",
         icone: "🐈",
-        imagem: "gato-palheiro.jpg",
+        imagem: "gato-palheiro.png",
         tempo: "5 minutos",
         xp: 25,
         resumo: "Um pequeno felino selvagem que quase sempre passa despercebido.",
@@ -1686,7 +1686,7 @@ const artigos = {
         titulo: "Consumo consciente: escolhas que deixam pegadas menores",
         categoria: "Sustentabilidade",
         icone: "♻️",
-        imagem: "consumo-consciente.jpg",
+        imagem: "o-que-e-cerrado.jpg",
         tempo: "5 minutos",
         xp: 25,
         resumo: "Pequenas escolhas cotidianas podem diminuir desperdícios e o uso desnecessário de recursos.",
@@ -1916,12 +1916,7 @@ function configurarImagem() {
         return;
     }
 
-    const caminhos = [
-        `assets/artigos/${artigoId}.jpg`,
-        `assets/artigos/${artigoId}.jpeg`,
-        `assets/artigos/${artigoId}.png`,
-        `assets/artigos/${artigoId}.webp`
-    ];
+    const caminhos = [`assets/artigos/${artigo.imagem}`];
 
     let indice = 0;
 

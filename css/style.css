@@ -184,7 +184,7 @@ button {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-image: url("../assets/imagens/cerrado-fundo.jpg");
+    background-image: url("../assets/artigos/o-que-e-cerrado.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -585,7 +585,7 @@ button {
     color: var(--branco);
     background:
         linear-gradient(130deg, rgba(17, 62, 39, 0.98), rgba(41, 105, 56, 0.94)),
-        url("../assets/imagens/cerrado-fundo.jpg");
+        url("../assets/artigos/o-que-e-cerrado.jpg");
     background-size: cover;
     background-position: center;
     box-shadow: var(--sombra);

@@ -283,7 +283,7 @@ function atualizarPerfil() {
     const avatar = document.getElementById("avatarMenu");
 
     if (avatar) {
-        const avatarPadrao = "assets/imagens/avatar.png";
+        const avatarPadrao = "lobo.png";
 
         avatar.onerror = function () {
             if (!this.src.endsWith(avatarPadrao)) {

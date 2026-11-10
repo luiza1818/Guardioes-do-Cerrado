@@ -299,7 +299,7 @@ function carregarPerfil() {
         () => {
 
             elementos.avatarUsuario.src =
-                "assets/imagens/logo.png";
+                "lobo.png";
 
         }
     );
