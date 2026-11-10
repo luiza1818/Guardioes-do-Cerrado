@@ -184,7 +184,7 @@ button {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-image: url("../assets/artigos/o-que-e-cerrado.jpg");
+    background: var(--verde-escuro);
     background-size: cover;
     background-position: center;
 }
