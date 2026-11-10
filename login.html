@@ -61,6 +61,7 @@
                 <input
                     type="password"
                     placeholder="Senha"
+                    autocomplete="current-password"
                     required
                 >
 
@@ -70,7 +71,10 @@
 
                 </button>
 
+                <button type="button" id="btnEsqueciSenha">Esqueci minha senha</button>
             </form>
+
+            <p id="mensagemConta" role="status" aria-live="polite"></p>
 
             <form id="cadastro">
 
@@ -91,12 +95,16 @@
                 <input
                     type="password"
                     placeholder="Senha"
+                    minlength="8"
+                    autocomplete="new-password"
                     required
                 >
 
                 <input
                     type="password"
                     placeholder="Confirmar Senha"
+                    minlength="8"
+                    autocomplete="new-password"
                     required
                 >
 
@@ -108,13 +116,23 @@
 
             </form>
 
+            <form id="recuperar" style="display:none">
+                <h2>Redefinir senha</h2>
+                <input type="password" placeholder="Nova senha" minlength="8" autocomplete="new-password" required>
+                <input type="password" placeholder="Confirmar senha" minlength="8" autocomplete="new-password" required>
+                <button type="submit" class="principal">Salvar senha</button>
+            </form>
+
         </div>
 
     </div>
 
 </div>
 
-<script src="js/login.js"></script>
+<script type="application/json" data-app-src="js/login.js"></script>
 
+<script src="js/vendor/supabase-2.119.0.js"></script>
+<script src="js/conta.js"></script>
+<script src="js/iniciar-conta.js"></script>
 </body>
 </html>

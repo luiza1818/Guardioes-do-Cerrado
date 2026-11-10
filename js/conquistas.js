@@ -159,7 +159,7 @@
     function obterConquistasSalvas() {
         try {
             const dados = JSON.parse(
-                localStorage.getItem(CHAVE_CONQUISTAS)
+                Guardioes.storage.getItem(CHAVE_CONQUISTAS)
             );
 
             return Array.isArray(dados)
@@ -173,7 +173,7 @@
     function salvarConquistas(ids) {
         const listaSemRepeticao = [...new Set(ids)];
 
-        localStorage.setItem(
+        Guardioes.storage.setItem(
             CHAVE_CONQUISTAS,
             JSON.stringify(listaSemRepeticao)
         );
@@ -288,7 +288,7 @@
     }
 
     function limparConquistas() {
-        localStorage.removeItem(CHAVE_CONQUISTAS);
+        Guardioes.storage.removeItem(CHAVE_CONQUISTAS);
     }
 
     window.sistemaConquistas = {

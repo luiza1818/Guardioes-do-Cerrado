@@ -92,7 +92,7 @@ function lerJSON(chave, valorPadrao = {}) {
 
         const valor =
             JSON.parse(
-                localStorage.getItem(chave)
+                Guardioes.storage.getItem(chave)
             );
 
         if (
@@ -388,7 +388,7 @@ function salvarConfiguracoes(
     const configuracoes =
         obterConfiguracoesDaTela();
 
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         "configuracoes",
         JSON.stringify(configuracoes)
     );
@@ -643,7 +643,7 @@ function restaurarConfiguracoes() {
         return;
     }
 
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         "configuracoes",
         JSON.stringify(
             configuracoesPadrao
@@ -686,13 +686,20 @@ function reiniciarProgresso() {
         "missoes",
         "cerradex",
         "cartasDesbloqueadas",
-        "especiesDescobertas"
+        "especiesDescobertas",
+        "guardioesQuizProgresso",
+        "guardioesMissoes",
+        "guardioesConquistas",
+        "descobertasCerradex",
+        "cartasDetalhadas",
+        "ultimaVisitaGuardioes",
+        "xpTotal"
     ];
 
     chavesDoProgresso.forEach(
         chave => {
 
-            localStorage.removeItem(
+            Guardioes.storage.removeItem(
                 chave
             );
 
@@ -709,7 +716,7 @@ function reiniciarProgresso() {
         () => {
 
             window.location.href =
-                "inicio.html";
+                "principal.html";
 
         },
         1400
@@ -902,6 +909,6 @@ function iniciarPagina() {
 }
 
 document.addEventListener(
-    "DOMContentLoaded",
+    "guardioes:ready",
     iniciarPagina
 );

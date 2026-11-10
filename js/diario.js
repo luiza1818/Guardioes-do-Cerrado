@@ -209,7 +209,7 @@ function mostrarMensagem(texto, classeIcone, cor) {
 }
 
 function obterProgresso() {
-    const salvo = localStorage.getItem("progressoDiario");
+    const salvo = Guardioes.storage.getItem("progressoDiario");
 
     if (!salvo) {
         return {
@@ -239,7 +239,7 @@ function obterProgresso() {
 }
 
 function salvarObjetoProgresso(progresso) {
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         "progressoDiario",
         JSON.stringify(progresso)
     );
@@ -407,10 +407,10 @@ function carregarPagina() {
 }
 
 function adicionarXpAoPerfil(valor) {
-    const xpAtual = Number(localStorage.getItem("xpTotal")) || 0;
+    const xpAtual = Number(Guardioes.storage.getItem("xpTotal")) || 0;
     const novoXp = xpAtual + valor;
 
-    localStorage.setItem("xpTotal", String(novoXp));
+    Guardioes.storage.setItem("xpTotal", String(novoXp));
 }
 
 function salvarConclusaoPagina() {

@@ -520,12 +520,13 @@
         </div>
 
         <p class="descricao-card">
-            Suas preferências são salvas neste dispositivo.
+            Suas preferências e seu progresso são salvos na sua conta.
             Você também pode restaurar as configurações ou
             iniciar uma nova jornada.
         </p>
 
         <div class="botoes-progresso">
+            <button type="button" id="btnSair" class="botao botao-secundario">Sair da conta</button>
 
             <button
                 type="button"
@@ -592,7 +593,10 @@
 
 </footer>
 
-<script src="js/configuracoes.js"></script>
+<script type="application/json" data-app-src="js/configuracoes.js"></script>
 
+<script src="js/vendor/supabase-2.119.0.js"></script>
+<script src="js/conta.js"></script>
+<script src="js/iniciar-conta.js"></script>
 </body>
 </html>

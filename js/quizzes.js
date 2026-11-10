@@ -112,7 +112,7 @@ const ICONES_QUIZ = {
     "❌": "fa-circle-xmark"
 };
 
-document.addEventListener("DOMContentLoaded", iniciarPagina);
+document.addEventListener("guardioes:ready", iniciarPagina);
 
 function criarIcone(nome, classeExtra = "") {
     const classe = String(nome || "fa-leaf")
@@ -218,19 +218,19 @@ function obterProgressoPrincipal() {
     } catch (erro) {}
 
     try {
-        return JSON.parse(localStorage.getItem("progresso")) || {};
+        return JSON.parse(Guardioes.storage.getItem("progresso")) || {};
     } catch (erro) {
         return {};
     }
 }
 
 function salvarProgressoPrincipal(progresso) {
-    localStorage.setItem("progresso", JSON.stringify(progresso));
+    Guardioes.storage.setItem("progresso", JSON.stringify(progresso));
 }
 
 function obterProgressoQuizzes() {
     try {
-        const salvo = JSON.parse(localStorage.getItem(CHAVE_QUIZZES));
+        const salvo = JSON.parse(Guardioes.storage.getItem(CHAVE_QUIZZES));
 
         if (salvo) {
             return {
@@ -254,7 +254,7 @@ function obterProgressoQuizzes() {
 }
 
 function salvarProgressoQuizzes(progresso) {
-    localStorage.setItem(CHAVE_QUIZZES, JSON.stringify(progresso));
+    Guardioes.storage.setItem(CHAVE_QUIZZES, JSON.stringify(progresso));
 }
 
 function obterArtigosConcluidos() {
@@ -739,7 +739,7 @@ function desbloquearDescoberta(descoberta) {
 
     try {
         cartas = JSON.parse(
-            localStorage.getItem("cartasDetalhadas")
+            Guardioes.storage.getItem("cartasDetalhadas")
         ) || [];
     } catch (erro) {
         cartas = [];
@@ -757,7 +757,7 @@ function desbloquearDescoberta(descoberta) {
             imagem: ""
         });
 
-        localStorage.setItem(
+        Guardioes.storage.setItem(
             "cartasDetalhadas",
             JSON.stringify(cartas)
         );
@@ -767,7 +767,7 @@ function desbloquearDescoberta(descoberta) {
 
     try {
         descobertas = JSON.parse(
-            localStorage.getItem("descobertasCerradex")
+            Guardioes.storage.getItem("descobertasCerradex")
         ) || [];
     } catch (erro) {
         descobertas = [];
@@ -776,7 +776,7 @@ function desbloquearDescoberta(descoberta) {
     if (!descobertas.includes(descoberta.id)) {
         descobertas.push(descoberta.id);
 
-        localStorage.setItem(
+        Guardioes.storage.setItem(
             "descobertasCerradex",
             JSON.stringify(descobertas)
         );

@@ -75,7 +75,7 @@ function obterProgressoPrincipal() {
     for (const chave of chaves) {
         try {
             const salvo =
-                localStorage.getItem(chave);
+                Guardioes.storage.getItem(chave);
 
             if (salvo) {
                 return JSON.parse(salvo);
@@ -95,7 +95,7 @@ function obterProgressoQuizzes() {
     try {
         const salvo =
             JSON.parse(
-                localStorage.getItem(
+                Guardioes.storage.getItem(
                     CHAVE_QUIZZES
                 )
             );
@@ -135,7 +135,7 @@ function obterCartasCerradex() {
     try {
         const salvo =
             JSON.parse(
-                localStorage.getItem(
+                Guardioes.storage.getItem(
                     CHAVE_CERRADEX
                 )
             );
@@ -177,7 +177,7 @@ function obterQuantidadeConquistas() {
     try {
         const conquistas =
             JSON.parse(
-                localStorage.getItem(
+                Guardioes.storage.getItem(
                     "conquistasDesbloqueadas"
                 )
             );
@@ -302,7 +302,7 @@ function obterProgressoDiario() {
         try {
             const salvo =
                 JSON.parse(
-                    localStorage.getItem(
+                    Guardioes.storage.getItem(
                         chave
                     )
                 );
@@ -484,7 +484,7 @@ function obterDadosMissoes() {
     try {
         const salvo =
             JSON.parse(
-                localStorage.getItem(
+                Guardioes.storage.getItem(
                     CHAVE_MISSOES
                 )
             );
@@ -500,7 +500,7 @@ function obterDadosMissoes() {
 function salvarDadosMissoes(
     dados
 ) {
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         CHAVE_MISSOES,
         JSON.stringify(dados)
     );
@@ -1395,7 +1395,7 @@ function configurarFiltrosMissoes() {
 }
 
 function zerarMissoes() {
-    localStorage.removeItem(
+    Guardioes.storage.removeItem(
         CHAVE_MISSOES
     );
 
@@ -1453,7 +1453,7 @@ window.addEventListener(
 );
 
 document.addEventListener(
-    "DOMContentLoaded",
+    "guardioes:ready",
     function () {
         configurarFiltrosMissoes();
         verificarMissoes();

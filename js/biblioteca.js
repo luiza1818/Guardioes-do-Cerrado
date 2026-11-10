@@ -452,7 +452,7 @@ const artigosBiblioteca = [
     }
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("guardioes:ready", () => {
     const areaArtigos = document.getElementById("artigos");
     const pesquisa = document.getElementById("pesquisa");
     const botoesCategorias = document.querySelectorAll(".categorias button");
@@ -482,7 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const progresso = JSON.parse(
-                localStorage.getItem("progresso")
+                Guardioes.storage.getItem("progresso")
             ) || {};
 
             return Array.isArray(progresso.artigos)

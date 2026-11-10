@@ -2076,7 +2076,7 @@ function obterProgressoSeguro() {
     for (const chave of chaves) {
         try {
             const dados = JSON.parse(
-                localStorage.getItem(chave)
+                Guardioes.storage.getItem(chave)
             );
 
             if (dados) {
@@ -2117,7 +2117,7 @@ function salvarProgressoSeguro(progresso) {
         }
     }
 
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         "progresso",
         JSON.stringify(progresso)
     );

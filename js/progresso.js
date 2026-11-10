@@ -40,7 +40,7 @@ function normalizarProgresso(dados) {
 function obterProgresso() {
     try {
         const dadosSalvos = JSON.parse(
-            localStorage.getItem("progresso")
+            Guardioes.storage.getItem("progresso")
         );
 
         return normalizarProgresso(dadosSalvos);
@@ -52,7 +52,7 @@ function obterProgresso() {
 function salvarProgresso(progresso) {
     const dadosNormalizados = normalizarProgresso(progresso);
 
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         "progresso",
         JSON.stringify(dadosNormalizados)
     );
@@ -163,7 +163,7 @@ function registrarQuiz(acertos, xp = 0) {
 function atualizarSequencia() {
     const progresso = obterProgresso();
     const hoje = new Date().toISOString().split("T")[0];
-    const ultimaVisita = localStorage.getItem(
+    const ultimaVisita = Guardioes.storage.getItem(
         "ultimaVisitaGuardioes"
     );
 
@@ -183,16 +183,16 @@ function atualizarSequencia() {
         }
     }
 
-    localStorage.setItem("ultimaVisitaGuardioes", hoje);
+    Guardioes.storage.setItem("ultimaVisitaGuardioes", hoje);
     salvarProgresso(progresso);
 
     return progresso.sequencia;
 }
 
 function zerarProgresso() {
-    localStorage.removeItem("progresso");
-    localStorage.removeItem("guardioesConquistas");
-    localStorage.removeItem("ultimaVisitaGuardioes");
+    Guardioes.storage.removeItem("progresso");
+    Guardioes.storage.removeItem("guardioesConquistas");
+    Guardioes.storage.removeItem("ultimaVisitaGuardioes");
 
     const progresso = criarProgressoPadrao();
 
