@@ -1,0 +1,49 @@
+GUARDIÕES DO CERRADO | INTEGRAÇÃO COM SUPABASE
+================================================
+
+IMPLEMENTADO NO PACOTE
+- Login e cadastro verdadeiros via Supabase Auth (e-mail/senha).
+- Sessão persistente, link de recuperação e opção de login pelo Google.
+- Controle de acesso às páginas internas.
+- Leitura do nome, XP, nível e sequência OFICIAIS do servidor.
+- Preferências sincronizadas pela tabela configuracoes_usuario.
+- Anotações privadas em "anotacoes.html" com criar/editar/excluir.
+- Mantém js/login.js antigo sem uso, para não apagar seu código.
+- O instalador guarda backups fora do Git, em ~/.backups-guardioes.
+
+NÃO IMPLEMENTADO NESTA ETAPA
+- Importação dos conteúdos do site para o banco (espécies, artigos, quizzes, missões).
+- Sincronização das recompensas antigas em localStorage (elas continuam locais e NÃO são aceitas como XP oficial).
+- Premiação segura de missões/cerradex: precisa relacionar IDs, regras e eventos validados pelo servidor.
+- Configuração do Google Cloud e URLs de autenticação do painel Supabase.
+- Publicação do site no GitHub: a conexão de leitura não permite enviar diretamente.
+
+INSTALAÇÃO NO CODESPACES
+1) Envie "guardioes-integracao-supabase.zip" para a RAIZ do repositório, junto do index.html.
+2) Abra o terminal na raiz e execute:
+   unzip -o guardioes-integracao-supabase.zip
+   python3 integracao_supabase/instalar_integracao.py
+3) Confirme alterações com git status. Para subir apenas arquivos do site:
+   git add login.html principal.html perfil.html configuracoes.html diario.html biblioteca.html cerradex.html missoes.html quizzes.html anotacoes.html js/supabase-client.js js/login-supabase.js js/guardiao-supabase.js js/anotacoes-supabase.js css/supabase-guardioes.css
+   git commit -m "Integra autenticacao e perfil Supabase"
+   git push origin main
+4) Acompanhe GitHub Actions até publicação do Pages.
+
+AJUSTES MANUAIS NO PAINEL SUPABASE
+A) Abra https://supabase.com/dashboard/project/ztowltuuzwggsobruhst/auth/url-configuration
+   Site URL: https://luiza1818.github.io/Guardioes-do-Cerrado/
+   Redirect URLs:
+     https://luiza1818.github.io/Guardioes-do-Cerrado/login.html
+     https://luiza1818.github.io/Guardioes-do-Cerrado/login.html?recuperar=1
+   Atenção: use o endereço EXATO do site no navegador, considerando se o nome da pasta no Pages tem grafia antiga diferente.
+B) Habilite Email (se ainda estiver desligado) e configure confirmação de e-mail.
+C) Para Google: crie um app OAuth no Google Cloud, e no Google Cloud defina o redirect URI:
+     https://ztowltuuzwggsobruhst.supabase.co/auth/v1/callback
+   Coloque Client ID e Client Secret SOMENTE em Auth > Providers > Google no painel Supabase.
+   Não copie o Client Secret para o GitHub.
+
+SEGURANÇA E TESTES
+- A chave sb_publishable_ no frontend é PUBLICÁVEL; não inclua service_role nem sb_secret_.
+- Login/cadastro e sincronização não foram testados com conta real neste ambiente.
+- O banco já possui RLS, e a recompensa oficial fica em funções seguras do servidor.
+- O site já existente ainda calcula parte da gamificação localmente; antes de divulgar um placar oficial, é necessário integrar toda a lógica ao servidor.

@@ -1,0 +1,10 @@
+/* Folha isolada: preserva o visual original do projeto. */
+html.guardioes-verificando body { visibility: hidden; }
+#status-auth { min-height: 1.5rem; font-size: 0.9rem; line-height: 1.4; text-align: center; }
+#login[hidden], #cadastro[hidden], #recuperar-senha[hidden], #entrar-google[hidden], #esqueci-senha[hidden] { display: none !important; }
+.guardioes-link { color: #245d39; background: transparent; padding: 0.6rem 0.4rem; text-decoration: underline; cursor:pointer; }
+.guardioes-google { display:block; width:100%; min-height:45px; border:1px solid #9fac9e; background:#fff; color:#20422a; border-radius:12px; font-weight:700; margin-top:0.6rem; }
+.guardioes-google:hover { background:#f1f8ee; }
+.guardioes-sair { position:fixed; right:18px; bottom:18px; z-index:10000; background:#174b30; color:white; padding:11px 17px; border-radius:28px; border:1px solid #d4e8d4; box-shadow:0 5px 22px #0003; cursor:pointer; font:700 14px system-ui,sans-serif; }
+.guardioes-sair:hover { background:#226740; }
+.guardioes-nota { background:#e9f4e7; border:1px solid #91bda0; border-radius:14px; padding:1rem; margin:1rem 0; color:#153d25; font: 15px/1.5 system-ui,sans-serif; }

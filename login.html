@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/login.css">
 
+<link rel="stylesheet" href="css/supabase-guardioes.css">
 </head>
 
 <body>
@@ -48,65 +49,24 @@
 
             </div>
 
-            <form id="login">
+            <form id="login"><h2>Entrar</h2>
+<input id="email-login" name="email" type="email" placeholder="E-mail" autocomplete="email" required>
+<input id="senha-login" name="senha" type="password" placeholder="Senha" autocomplete="current-password" required>
+<button class="principal" type="submit">Entrar</button></form>
 
-                <h2>Entrar</h2>
-
-                <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                >
-
-                <input
-                    type="password"
-                    placeholder="Senha"
-                    required
-                >
-
-                <button class="principal">
-
-                    Entrar
-
-                </button>
-
-            </form>
-
-            <form id="cadastro">
-
-                <h2>Criar Conta</h2>
-
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    required
-                >
-
-                <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                >
-
-                <input
-                    type="password"
-                    placeholder="Senha"
-                    required
-                >
-
-                <input
-                    type="password"
-                    placeholder="Confirmar Senha"
-                    required
-                >
-
-                <button class="principal">
-
-                    Criar Conta
-
-                </button>
-
-            </form>
+            <form id="cadastro" hidden><h2>Criar conta</h2>
+<input id="nome-cadastro" name="nome" type="text" placeholder="Nome" autocomplete="name" required>
+<input id="email-cadastro" name="email" type="email" placeholder="E-mail" autocomplete="email" required>
+<input id="senha-cadastro" name="senha" type="password" placeholder="Senha" autocomplete="new-password" minlength="8" required>
+<input id="confirmar-cadastro" name="confirmar" type="password" placeholder="Confirmar senha" autocomplete="new-password" minlength="8" required>
+<button class="principal" type="submit">Criar conta</button></form>
+<button type="button" id="entrar-google" class="guardioes-google">Continuar com Google</button>
+<button type="button" id="esqueci-senha" class="guardioes-link">Esqueci minha senha</button>
+<form id="recuperar-senha" hidden><h2>Nova senha</h2>
+<input name="novaSenha" type="password" placeholder="Nova senha" minlength="8" required>
+<input name="confirmaNovaSenha" type="password" placeholder="Confirmar nova senha" minlength="8" required>
+<button type="submit" class="principal">Atualizar minha senha</button></form>
+<p id="status-auth" role="status" aria-live="polite"></p>
 
         </div>
 
@@ -114,7 +74,7 @@
 
 </div>
 
-<script src="js/login.js"></script>
+<script type="module" src="js/login-supabase.js"></script>
 
 </body>
 </html>

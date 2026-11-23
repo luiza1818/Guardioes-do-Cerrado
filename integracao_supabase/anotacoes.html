@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minhas anotações | Guardiões do Cerrado</title>
+<link rel="stylesheet" href="css/supabase-guardioes.css">
+<script>document.documentElement.classList.add('guardioes-verificando');</script>
+<style>
+:root{font-family:system-ui,sans-serif;color:#1a3827;background:#f5f1e8}
+*{box-sizing:border-box}body{margin:0}header{background:#184c30;color:#fff;padding:1.2rem 1.3rem}
+main{max-width:940px;margin:2rem auto;padding:0 1rem 5rem}header a{color:#fff}
+.card{background:white;border:1px solid #d9e8d5;border-radius:16px;padding:1.3rem;margin:1rem 0;box-shadow:0 4px 17px #1232}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #91ac95;margin:0.5rem 0 1rem;font:inherit}
+textarea{min-height:150px;resize:vertical}button{border:0;border-radius:9px;padding:.75rem 1.15rem;background:#297c36;color:white;cursor:pointer;margin:.2rem}
+button.secundario{background:#6b786c}button.perigo{background:#ab3540}
+.anotacao{border-bottom:1px solid #d3e1d1;padding:1rem 0}.anotacao h3{margin:0}.anotacao small{color:#60766a}
+#mensagem{min-height:1.5rem;color:#286742}
+</style>
+</head>
+<body>
+<header><a href="diario.html">← Voltar ao Diário</a> &nbsp; 🌿 Guardiões do Cerrado</header>
+<main>
+<h1>Minhas anotações de campo</h1>
+<p>Registre suas descobertas. Este diário pessoal é sincronizado com sua conta e só você pode acessá-lo.</p>
+<section class="card">
+<h2 id="titulo-formulario">Nova anotação</h2>
+<form id="form-anotacao">
+<label for="titulo">Título</label><input id="titulo" name="titulo" maxlength="180" required>
+<label for="conteudo">Minha anotação</label><textarea id="conteudo" name="conteudo" required></textarea>
+<button type="submit">Salvar anotação</button><button type="button" class="secundario" id="cancelar-edicao">Cancelar edição</button>
+</form><p id="mensagem" role="status" aria-live="polite"></p>
+</section>
+<section class="card"><h2>Minhas anotações salvas</h2><div id="lista-anotacoes"><p>Carregando...</p></div></section>
+</main>
+<script type="module" src="js/anotacoes-supabase.js"></script>
+</body></html>
