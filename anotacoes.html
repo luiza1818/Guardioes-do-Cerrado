@@ -4,25 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Minhas anotações | Guardiões do Cerrado</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/diario.css">
 <link rel="stylesheet" href="css/supabase-guardioes.css">
 <script>document.documentElement.classList.add('guardioes-verificando');</script>
-<style>
-:root{font-family:system-ui,sans-serif;color:#1a3827;background:#f5f1e8}
-*{box-sizing:border-box}body{margin:0}header{background:#184c30;color:#fff;padding:1.2rem 1.3rem}
-main{max-width:940px;margin:2rem auto;padding:0 1rem 5rem}header a{color:#fff}
-.card{background:white;border:1px solid #d9e8d5;border-radius:16px;padding:1.3rem;margin:1rem 0;box-shadow:0 4px 17px #1232}
-input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #91ac95;margin:0.5rem 0 1rem;font:inherit}
-textarea{min-height:150px;resize:vertical}button{border:0;border-radius:9px;padding:.75rem 1.15rem;background:#297c36;color:white;cursor:pointer;margin:.2rem}
-button.secundario{background:#6b786c}button.perigo{background:#ab3540}
-.anotacao{border-bottom:1px solid #d3e1d1;padding:1rem 0}.anotacao h3{margin:0}.anotacao small{color:#60766a}
-#mensagem{min-height:1.5rem;color:#286742}
-</style>
+<link rel="stylesheet" href="css/anotacoes.css">
 </head>
-<body>
-<header><a href="diario.html">← Voltar ao Diário</a> &nbsp; 🌿 Guardiões do Cerrado</header>
-<main>
+<body class="pagina-anotacoes">
+<header class="cabecalho">
+
+    <a href="perfil.html" class="logo">
+
+        <div class="logo-icone">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+
+        <div class="logo-texto">
+            <strong>Guardiões</strong>
+            <span>do Cerrado</span>
+        </div>
+
+    </a>
+
+    <nav class="menu">
+        <a href="principal.html">Início</a>
+        <a href="missoes.html">Missões</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="quizzes.html">Quizzes</a>
+        <a href="cerradex.html">Cerradex</a>
+        <a href="diario.html" class="ativo">Diário</a>
+    </nav>
+
+</header>
+<main class="anotacoes-conteudo">
+<a class="anotacoes-voltar" href="diario.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar ao Diário</a>
+<div class="anotacoes-intro"><span class="numero-expedicao"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Diário de Campo</span>
 <h1>Minhas anotações de campo</h1>
-<p>Registre suas descobertas. Este diário pessoal é sincronizado com sua conta e só você pode acessá-lo.</p>
+<p>Registre suas descobertas. Este diário pessoal é sincronizado com sua conta e só você pode acessá-lo.</p></div>
+<div class="anotacoes-grid">
 <section class="card">
 <h2 id="titulo-formulario">Nova anotação</h2>
 <form id="form-anotacao">
@@ -32,6 +53,7 @@ button.secundario{background:#6b786c}button.perigo{background:#ab3540}
 </form><p id="mensagem" role="status" aria-live="polite"></p>
 </section>
 <section class="card"><h2>Minhas anotações salvas</h2><div id="lista-anotacoes"><p>Carregando...</p></div></section>
+</div>
 </main>
 <script src="js/vendor/supabase-2.119.0.js"></script>
 <script src="js/conta.js"></script>
