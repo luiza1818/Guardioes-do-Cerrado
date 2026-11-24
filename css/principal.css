@@ -1368,3 +1368,27 @@ body.sem-animacoes .folhas-animadas {
 @media (max-width: 850px) {
     .menu-lateral { width: min(250px, 88vw); }
 }
+
+/* Distribui os oito atalhos pela altura disponível, sem cortar o perfil. */
+.menu-lateral .menu {
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+.menu-lateral .menu a {
+    min-height: clamp(46px, 6.5vh, 60px);
+}
+.menu-lateral .menu-rodape {
+    margin-top: 14px;
+}
+@media (max-height: 760px) {
+    .menu-lateral .menu { gap: 7px; }
+    .menu-lateral .menu a { min-height: 42px; }
+    .menu-lateral .menu-rodape { margin-top: 10px; }
+}
+@media (max-height: 600px) {
+    .menu-lateral .menu { gap: 5px; justify-content: flex-start; }
+    .menu-lateral .menu a { min-height: 36px; }
+    .menu-lateral .menu-rodape { margin-top: 8px; }
+}
