@@ -165,15 +165,18 @@
 
             </div>
 
+            <div class="mascote-com-cartao">
             <div class="heroMascote">
 
                 <div class="circuloMascote"></div>
 
                 <img
-                    src="lobo.png"
-                    alt="Lobo-guará explorador"
-                    onerror="this.style.display='none'; this.parentElement.classList.add('semImagem')"
+                    src="Veado.png"
+                    alt="Veado explorador"
+                    onerror="if (!this.src.endsWith('/lobo.png')) { this.src='lobo.png'; this.alt='Lobo-guará explorador'; } else { this.style.display='none'; this.parentElement.classList.add('semImagem'); }"
                 >
+
+                </div>
 
                 <div class="falaMascote">
 
