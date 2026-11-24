@@ -1,0 +1,166 @@
+/* Responsividade compartilhada - preserva os estilos originais no desktop. */
+html { -webkit-text-size-adjust:100%; }
+body[data-tela] { min-width:0; }
+body[data-tela] img { max-width:100%; }
+body[data-tela] :is(main,section,article,nav,form) { min-width:0; }
+body[data-tela] :is(input,select,textarea) { max-width:100%; min-width:0; }
+body[data-tela] :is(button,a,input,select,textarea):focus-visible { outline:3px solid #d9a62e; outline-offset:3px; }
+body[data-tela] :is(h1,h2,h3,p,button,a,small) { overflow-wrap:break-word; }
+body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes,.conteudo-capa-diario,.perfil-apresentacao,.grade-perfil,.conteudo-inicio) > * {min-width:0;}
+body[data-tela] .menu-mobile-guardioes, body[data-tela] .atalho-perfil-mobile {display:none;}
+body[data-tela="perfil"] .perfil-apresentacao {grid-template-columns:auto minmax(0,1fr) auto;}
+body[data-tela="perfil"] .perfil-identidade h1 {overflow-wrap:anywhere;}
+body[data-tela="perfil"] .avatar-dialog {max-width:calc(100% - 24px);}
+body[data-tela="principal"] #menuLateral > nav.menu {min-height:0; flex:1 1 0; justify-content:space-between;}
+body[data-tela="principal"] .hero-lobo img {object-fit:contain;}
+body[data-tela="perfil"] .perfil-gestao .estatistica {min-width:0;}
+@media (max-width:1100px) {
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) {gap:clamp(18px,3vw,32px);}
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) h1 {font-size:clamp(2.45rem,6vw,4.5rem);}
+    body[data-tela="perfil"] .perfil-apresentacao {grid-template-columns:auto minmax(0,1fr);}
+    body[data-tela="perfil"] .botao-configuracoes {grid-column:2;justify-self:start;}
+}
+/* Cabeçalhos internos: menu compacto e acessível em tablets e celulares. */
+@media (max-width:980px) {
+    body[data-menu="compacto"] header.cabecalho {position:sticky;top:0;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;width:100%;height:auto;min-height:70px;padding:10px max(16px, env(safe-area-inset-left,0px));z-index:1000;}
+    body[data-menu="compacto"] header.cabecalho .logo {min-width:0;flex:0 1 auto;gap:9px;}
+    body[data-menu="compacto"] header.cabecalho .logo-icone {width:43px;height:43px;flex:none;font-size:1.4rem;border-radius:13px;}
+    body[data-menu="compacto"] header.cabecalho .logo-texto strong {font-size:1.05rem;}
+    body[data-menu="compacto"] header.cabecalho .logo-texto span {font-size:.72rem;}
+    body[data-menu="compacto"] .menu-mobile-guardioes {display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #ffffff52;border-radius:12px;padding:10px 13px;min-height:44px;flex:none;color:#fff;background:#ffffff18;font:800 .9rem/1.2 Nunito,Arial,sans-serif;cursor:pointer;}
+    body[data-menu="compacto"] header.cabecalho > nav.menu {position:absolute;top:100%;left:10px;right:10px;width:auto;max-height:calc(100vh - 85px);max-height:calc(100dvh - 85px);overflow-y:auto;overscroll-behavior:contain;display:none;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:6px;padding:12px;border:1px solid #ffffff24;background:#174b35;border-radius:0 0 18px 18px;box-shadow:0 18px 36px #0c2d2450;}
+    body[data-menu="compacto"] header.cabecalho > nav.menu[data-aberto="true"] {display:flex;}
+    body[data-menu="compacto"] header.cabecalho > nav.menu > a {display:flex;align-items:center;min-height:46px;gap:12px;padding:11px 14px;font-size:1rem;text-align:left;white-space:normal;}
+    body[data-menu="compacto"] header.cabecalho > nav.menu > a.ativo {background:#f6bd35;color:#45391f;}
+    body[data-menu="compacto"] header.cabecalho > nav.menu > .atalho-perfil-mobile {display:flex;}
+    body[data-menu="compacto"] header.cabecalho > nav.menu > a > .nav-mobile-icone {display:inline-flex;width:22px;justify-content:center;flex:none;}
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) {grid-template-columns:minmax(0,1fr);padding:clamp(26px,5vw,42px) clamp(18px,5vw,40px);min-height:0;}
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) h1 {font-size:clamp(2.5rem,7vw,4.5rem);line-height:1.06;}
+    body[data-tela] :is(.hero-descricao,.heroDescricao,.hero-descricao-missoes) {font-size:1rem;line-height:1.65;}
+    body[data-tela] :is(.mascote-com-cartao,.hero-visual,.hero-visual-missoes) {max-width:420px;width:100%;margin-inline:auto;}
+    body[data-tela] :is(.gradeQuizzes,.grade-cerradex,.grade-missoes) {grid-template-columns:repeat(2,minmax(0,1fr));}
+    body[data-tela="principal"] .hero {grid-template-columns:minmax(0,1fr);gap:20px;text-align:center;}
+    body[data-tela="principal"] .hero-texto {display:flex;flex-direction:column;align-items:center;}
+    body[data-tela="principal"] .hero-acoes {justify-content:center;}
+    body[data-tela="principal"] .cards-resumo {grid-template-columns:repeat(2,minmax(0,1fr));}
+    body[data-tela="principal"] .card-resumo:last-child {grid-column:1/-1;}
+}
+@media (max-width:850px) {
+    /* Mantém a navegação original da apresentação e do Perfil. */
+    body:is([data-tela="index"],[data-tela="perfil"]) .cabecalho > nav.menu {max-height:calc(100dvh - 82px);overflow-y:auto;overscroll-behavior:contain;gap:7px;padding:12px;}
+    body[data-tela="perfil"] .cabecalho > nav.menu.aberto {display:flex;}
+    body:is([data-tela="index"],[data-tela="perfil"]) .cabecalho > nav.menu > :is(a,button) {min-height:44px;padding:12px;display:flex;align-items:center;justify-content:center;}
+    body[data-tela="principal"] #menuLateral {width:min(300px,86vw);padding-top:66px;padding-bottom:16px;}
+    body[data-tela="principal"] #menuLateral > .marca {margin-bottom:14px;}
+    body[data-tela="principal"] #menuLateral > nav.menu {gap:8px;}
+    body[data-tela="principal"] #menuLateral > nav.menu > a {min-height:44px;}
+    body[data-tela="principal"] #menuLateral > .menu-rodape {margin-top:14px;}
+    body[data-tela="principal"] .botao-menu-mobile {top:max(12px,env(safe-area-inset-top,0px));left:12px;z-index:1100;}
+    body[data-tela="principal"] #menuLateral.aberto {z-index:1000;}
+    body[data-tela="principal"] .fundo-menu {z-index:950;}
+    body[data-tela="principal"] .hero {padding-top:78px;}
+}
+@media (max-width:600px) {
+    body[data-tela] :is(.hero,.heroQuiz,.hero-cerradex,.hero-missoes,.pagina-artigo,.container-cerradex,.container-missoes,.biblioteca,.progresso,.perfil-container,.telaQuiz,.telaResultado) {max-width:100%;}
+    body[data-tela]:not([data-tela="principal"]) :is(.hero,.heroQuiz,.hero-cerradex,.hero-missoes,.pagina-artigo,.container-cerradex,.container-missoes,.biblioteca,.progresso,.perfil-container,.telaQuiz,.telaResultado) {width:calc(100% - 24px);}
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) {padding:29px 16px 22px;gap:16px;border-radius:20px;}
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) h1 {font-size:clamp(2.15rem,9vw,3.2rem);}
+    body[data-tela] :is(.hero-papel,.heroPapel,.hero-papel-missoes) :is(.hero-etiqueta,.hero-etiqueta-missoes) {max-width:100%;}
+    body[data-tela] :is(.mascote-com-cartao,.hero-visual,.hero-visual-missoes) {max-width:100%;min-height:0;}
+    body[data-tela] :is(.mascote-com-cartao .heroMascote img,.mascote-com-cartao .hero-mascote img) {width:min(210px,90%);max-height:235px;}
+    body[data-tela] :is(.mascote-com-cartao .circuloMascote,.mascote-com-cartao .circulo-mascote) {width:min(200px,95%);}
+    body[data-tela] :is(.falaMascote,.fala-mascote) {max-width:100%;}
+    body[data-tela] :is(.gradeQuizzes,.grade-cerradex,.grade-missoes,.cards-resumo,.grade-conteudo,.grade-perfil,.grade-conquistas) {grid-template-columns:minmax(0,1fr);}
+    body[data-tela] :is(.cardQuiz,.carta-cerradex,.artigo-card,.cardMissao) {min-height:0;}
+    body[data-tela] :is(.gradeResumo,.progresso-grade,.estatisticas-cerradex,.estatisticas-missoes) {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+    body[data-tela] :is(.progresso-card,.cardResumo,.estatistica-cerradex,.estatistica-missao) {padding:12px 8px;min-width:0;gap:7px;flex-wrap:wrap;}
+    body[data-tela] :is(.progresso-card,.cardResumo,.estatistica-cerradex,.estatistica-missao) > * {min-width:0;max-width:100%;}
+    body[data-tela] :is(.progresso-icone,.estatistica-icone,.estatistica-icone-cerradex) {width:36px;height:36px;flex:none;}
+    body[data-tela] :is(.progresso,.painel-progresso-cerradex,.painel-progresso-missoes,.resumoAcademia) {padding:16px 12px;}
+    body[data-tela] :is(.filtros,.filtros-cerradex,.filtros-missoes) {grid-template-columns:minmax(0,1fr);}
+    body[data-tela] :is(.filtro-missao,.filtro-cerradex) {min-height:44px;font-size:.82rem;}
+    body[data-tela] :is(input:not([type="checkbox"]):not([type="range"]),select,textarea) {font-size:16px;}
+    body[data-tela] :is(.botao-artigo,.botaoComecar,.botao-carta-cerradex,.botaoPrincipal,.botaoSecundario,.botao-navegacao,.botao-biblioteca) {min-height:44px;}
+    body[data-tela="index"] .inicio {min-height:0;padding:105px 18px 35px;}
+    body[data-tela="index"] .texto-inicio h1 {font-size:clamp(2.2rem,9vw,3.2rem);}
+    body[data-tela="index"] .conteudo-inicio {gap:22px;grid-template-columns:minmax(0,1fr);}
+    body[data-tela="index"] .circulo-mascote {width:min(270px,90%);height:auto;aspect-ratio:1;}
+    body[data-tela="index"] .mascote {width:min(245px,90%);}
+    body[data-tela="index"] .fala-mascote {max-width:90%;}
+    body[data-tela="index"] .modal {max-height:calc(100dvh - 32px);overflow:auto;padding:22px;}
+    body[data-tela="index"] .convite-conteudo {flex-direction:column;padding:25px 18px;gap:18px;}
+    body[data-tela="login"] .container {padding:22px 14px;gap:18px;grid-template-columns:minmax(0,1fr);min-height:100dvh;}
+    body[data-tela="login"] .lado-esquerdo {min-height:0;justify-content:center;gap:6px;}
+    body[data-tela="login"] .lado-esquerdo::before {width:min(240px,90%);height:auto;aspect-ratio:1;top:0;}
+    body[data-tela="login"] .lobo {width:min(230px,80%);max-height:190px;object-fit:contain;}
+    body[data-tela="login"] .lado-esquerdo h1 {font-size:clamp(1.5rem,7vw,2rem);margin:0;}
+    body[data-tela="login"] .lado-esquerdo p {font-size:.9rem;margin:0;line-height:1.5;}
+    body[data-tela="login"] .card {padding:20px 16px;}
+    body[data-tela="principal"] .hero {padding:75px 16px 22px;min-height:0;gap:14px;}
+    body[data-tela="principal"] .hero h1 {font-size:clamp(2.2rem,10vw,3.15rem);}
+    body[data-tela="principal"] .hero-descricao {font-size:1rem;}
+    body[data-tela="principal"] .hero-lobo {min-height:0;padding-top:0;display:flex;flex-direction:column;align-items:center;gap:8px;}
+    body[data-tela="principal"] .hero-lobo img {width:min(220px,85%);max-height:250px;transform:none;}
+    body[data-tela="principal"] .lobo-fundo {width:min(200px,80%);height:auto;aspect-ratio:1;}
+    body[data-tela="principal"] .fala-lobo,body[data-tela="principal"] .plaquinha-lobo {position:relative;inset:auto;transform:none;max-width:100%;text-align:left;}
+    body[data-tela="principal"] .fala-lobo::after {display:none;}
+    body[data-tela="principal"] .cards-resumo {grid-template-columns:minmax(0,1fr);}
+    body[data-tela="principal"] .resumo-jornada,body[data-tela="principal"] .grade-conteudo,body[data-tela="principal"] .atalhos {width:calc(100% - 24px);}
+    body[data-tela="principal"] .titulo-secao {flex-wrap:wrap;}
+    body[data-tela="principal"] .titulo-secao > a {display:inline-flex;min-height:40px;align-items:center;}
+    body[data-tela="quizzes"] .cardPergunta,body[data-tela="quizzes"] .cardResultado {padding:22px 14px;border-radius:18px;}
+    body[data-tela="quizzes"] .cardPergunta > h2 {font-size:clamp(1.4rem,5.5vw,1.8rem);}
+    body[data-tela="quizzes"] .alternativaQuiz {min-height:54px;grid-template-columns:32px minmax(0,1fr);gap:10px;padding:10px;}
+    body[data-tela="quizzes"] .textoAlternativa {font-size:1rem;}
+    body[data-tela="cerradex"] .hero-visual {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));justify-items:center;gap:9px;}
+    body[data-tela="cerradex"] .circulo-cerradex {grid-column:1/-1;width:min(205px,100%);height:auto;aspect-ratio:1;}
+    body[data-tela="cerradex"] .mascote-cerradex {width:min(155px,90%);height:auto;aspect-ratio:1;}
+    body[data-tela="cerradex"] .hero-visual .cartao-flutuante {position:relative;inset:auto;min-width:0;width:100%;padding:9px;gap:6px;flex-wrap:wrap;}
+    body[data-tela="cerradex"] .modal-cerradex-fundo {padding:10px;}
+    body[data-tela="cerradex"] .modal-cerradex {max-height:calc(100dvh - 20px);overflow:auto;padding:22px 15px;}
+    body[data-tela="missoes"] .hero-visual-missoes {display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;}
+    body[data-tela="missoes"] .hero-visual-missoes .cartao-hero-missao {position:relative;inset:auto;min-width:0;max-width:100%;flex:1 1 130px;padding:10px;}
+    body[data-tela="diario"] .capa-diario {padding:18px 12px;min-height:0;}
+    body[data-tela="diario"] .conteudo-capa-diario {padding:40px 16px 20px;min-height:0;gap:18px;grid-template-columns:minmax(0,1fr);}
+    body[data-tela="diario"] .texto-capa-diario h1 {font-size:clamp(2.1rem,9vw,3.1rem);}
+    body[data-tela="diario"] .visual-capa-diario {min-height:0;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+    body[data-tela="diario"] .lobo-capa-diario {width:min(210px,92%);max-height:235px;}
+    body[data-tela="diario"] .circulo-capa {width:min(210px,90%);height:auto;aspect-ratio:1;top:10px;bottom:auto;}
+    body[data-tela="diario"] .visual-capa-diario .cartao-flutuante {position:relative;inset:auto;flex:1 1 120px;min-width:0;padding:9px;gap:6px;}
+    body[data-tela="diario"] .livro {padding:16px 12px;}
+    body[data-tela="diario"] .pagina {grid-template-columns:minmax(0,1fr);gap:18px;}
+    body[data-tela="diario"] .rodape-capa-diario {flex-wrap:wrap;gap:12px;padding:14px;}
+    body[data-tela="artigo"] .conteudo {width:calc(100% - 30px);padding:26px 0;}
+    body[data-tela="artigo"] .bloco-artigo > p {font-size:1rem;line-height:1.75;}
+    body[data-tela="artigo"] .bloco-titulo h2 {font-size:1.35rem;}
+    body[data-tela="perfil"] .perfil-inicio {padding:105px 0 35px;min-height:0;}
+    body[data-tela="perfil"] .perfil-apresentacao {grid-template-columns:minmax(0,1fr);gap:18px;text-align:center;}
+    body[data-tela="perfil"] .botao-configuracoes {grid-column:auto;justify-self:center;max-width:100%;white-space:normal;}
+    body[data-tela="perfil"] .perfil-resumo {justify-content:center;}
+    body[data-tela="perfil"] .perfil-identidade h1 {font-size:clamp(2rem,9vw,3.2rem);}
+    body[data-tela="perfil"] .perfil-avatar-area {margin:auto;width:fit-content;}
+    body[data-tela="perfil"] .perfil-avatar {width:110px;height:110px;font-size:56px;}
+    body[data-tela="perfil"] .cartao-perfil {padding:20px 16px;}
+    body[data-tela="perfil"] .cartao-titulo {flex-wrap:wrap;gap:10px;}
+    body[data-tela="perfil"] .cartao-titulo h2 {font-size:1.45rem;}
+    body[data-tela="perfil"] .estatisticas-perfil {grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+    body[data-tela="perfil"] .estatistica-perfil {min-width:0;min-height:108px;padding:12px 10px;gap:8px;flex-wrap:wrap;}
+    body[data-tela="perfil"] .estatistica-perfil-icone {width:40px;height:40px;font-size:20px;}
+    body[data-tela="perfil"] .estatistica-perfil strong {font-size:1.3rem;}
+    body[data-tela="perfil"] .estatistica-perfil span {font-size:.78rem;}
+    body[data-tela="perfil"] .resumo-cerradex-perfil {padding:18px;gap:16px;grid-template-columns:minmax(0,1fr);}
+    body[data-tela="perfil"] .perfil-gestao .card {padding:18px 12px;}
+    body[data-tela="perfil"] .perfil-gestao .estatisticas {gap:8px;}
+    body[data-tela="perfil"] .perfil-gestao .estatistica {padding:12px 6px;}
+    body[data-tela="perfil"] .perfil-gestao .gestao-preferencias {padding:10px;}
+    body[data-tela="perfil"] .avatar-dialog {max-height:calc(100dvh - 24px);}
+    body[data-tela="anotacoes"] .anotacoes-conteudo {width:calc(100% - 24px);padding:16px;margin:16px auto 30px;}
+    body[data-tela="anotacoes"] .anotacoes-grid {grid-template-columns:minmax(0,1fr);}
+    body[data-tela="anotacoes"] .anotacoes-grid .card button {min-height:44px;}
+    body[data-tela] #containerNotificacoes {max-width:calc(100vw - 24px);right:12px;}
+}
+@media (max-width:360px) {
+    body[data-tela] :is(.gradeResumo,.progresso-grade,.estatisticas-cerradex,.estatisticas-missoes) {grid-template-columns:minmax(0,1fr);}
+    body[data-menu="compacto"] .menu-mobile-guardioes {padding:10px;}
+}
+@media (prefers-reduced-motion:reduce) {body[data-tela] *,body[data-tela] *::before,body[data-tela] *::after {scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;}}

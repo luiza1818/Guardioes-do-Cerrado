@@ -19,8 +19,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <link rel="stylesheet" href="css/missoes.css?v=20261124-r6">
-    <link rel="stylesheet" href="css/notificacoes.css?v=20261124-r6">
+    <link rel="stylesheet" href="css/missoes.css?v=20261124-r7">
+    <link rel="stylesheet" href="css/notificacoes.css?v=20261124-r7">
 
     <style>
     
@@ -71,15 +71,17 @@
         }
     </style>
 <!-- INTEGRACAO-GUARDIOES-SUPABASE -->
-<link rel="stylesheet" href="css/supabase-guardioes.css?v=20261124-r6">
+<link rel="stylesheet" href="css/supabase-guardioes.css?v=20261124-r7">
 <script>document.documentElement.classList.add('guardioes-verificando');</script>
+    <link rel="stylesheet" href="css/responsivo.css?v=20261124-r7">
+    <script defer src="js/menu-responsivo.js?v=20261124-r7"></script>
 </head>
 
-<body>
+<body data-tela="missoes" data-menu="compacto">
 
 <header class="cabecalho">
 
-    <a href="principal.html?v=20261124-r6" class="logo">
+    <a href="principal.html?v=20261124-r7" class="logo">
 
         <div class="logo-icone">
             <i class="fa-solid fa-paw" aria-hidden="true"></i>
@@ -97,13 +99,15 @@
 
     </a>
 
-    <nav class="menu" aria-label="Navegação principal">
-        <a href="principal.html?v=20261124-r6">Início</a>
-        <a href="missoes.html?v=20261124-r6" class="ativo" aria-current="page">Missões</a>
-        <a href="biblioteca.html?v=20261124-r6">Biblioteca</a>
-        <a href="quizzes.html?v=20261124-r6">Quizzes</a>
-        <a href="cerradex.html?v=20261124-r6">Cerradex</a>
-        <a href="diario.html?v=20261124-r6">Diário</a>
+    <button type="button" class="menu-mobile-guardioes" aria-controls="menuResponsivo" aria-expanded="false" aria-label="Abrir ou fechar menu"><i class="fa-solid fa-bars" aria-hidden="true"></i> Menu</button>
+    <nav class="menu" aria-label="Navegação principal" id="menuResponsivo">
+        <a href="principal.html?v=20261124-r7">Início</a>
+        <a href="missoes.html?v=20261124-r7" class="ativo" aria-current="page">Missões</a>
+        <a href="biblioteca.html?v=20261124-r7">Biblioteca</a>
+        <a href="quizzes.html?v=20261124-r7">Quizzes</a>
+        <a href="cerradex.html?v=20261124-r7">Cerradex</a>
+        <a href="diario.html?v=20261124-r7">Diário</a>
+        <a href="perfil.html?v=20261124-r7" class="atalho-perfil-mobile">Perfil</a>
     </nav>
 
 </header>
@@ -152,7 +156,7 @@
                     </a>
 
                     <a
-                        href="biblioteca.html?v=20261124-r6"
+                        href="biblioteca.html?v=20261124-r7"
                         class="botao-missoes-secundario"
                     >
                         <i class="fa-solid fa-book-open" aria-hidden="true"></i>
@@ -706,21 +710,21 @@
 
     </div>
 
-    <a href="biblioteca.html?v=20261124-r6">
+    <a href="biblioteca.html?v=20261124-r7">
         Ir para a Biblioteca
     </a>
 
 </footer>
 
-<script type="application/json" data-app-src="js/progresso.js?v=20261124-r6"></script>
-<script type="application/json" data-app-src="js/dados.js?v=20261124-r6"></script>
-<script type="application/json" data-app-src="js/conquistas.js?v=20261124-r6"></script>
-<script type="application/json" data-app-src="js/missoesDados.js?v=20261124-r6"></script>
-<script type="application/json" data-app-src="js/missoes.js?v=20261124-r6"></script>
-<script type="application/json" data-app-src="js/notificacoes.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/progresso.js?v=20261124-r7"></script>
+<script type="application/json" data-app-src="js/dados.js?v=20261124-r7"></script>
+<script type="application/json" data-app-src="js/conquistas.js?v=20261124-r7"></script>
+<script type="application/json" data-app-src="js/missoesDados.js?v=20261124-r7"></script>
+<script type="application/json" data-app-src="js/missoes.js?v=20261124-r7"></script>
+<script type="application/json" data-app-src="js/notificacoes.js?v=20261124-r7"></script>
 
 <script src="js/vendor/supabase-2.119.0.js"></script>
-<script src="js/conta.js?v=20261124-r6"></script>
-<script src="js/iniciar-conta.js?v=20261124-r6"></script>
+<script src="js/conta.js?v=20261124-r7"></script>
+<script src="js/iniciar-conta.js?v=20261124-r7"></script>
 </body>
 </html>
