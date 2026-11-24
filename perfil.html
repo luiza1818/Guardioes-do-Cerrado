@@ -24,11 +24,11 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/avatar-guardiao.css?v=2">
-    <link rel="stylesheet" href="css/perfil-gestao.css?v=1">
-    <link rel="stylesheet" href="css/notificacoes.css">
+    <link rel="stylesheet" href="css/style.css?v=20261124-r6">
+    <link rel="stylesheet" href="css/perfil.css?v=20261124-r6">
+    <link rel="stylesheet" href="css/avatar-guardiao.css?v=20261124-r6">
+    <link rel="stylesheet" href="css/perfil-gestao.css?v=20261124-r6">
+    <link rel="stylesheet" href="css/notificacoes.css?v=20261124-r6">
 
     <style>
         .logo-icone i,
@@ -58,29 +58,11 @@
             font-size: 0.75em;
         }
     
-    /* Controles do avatar no fluxo normal, sempre visíveis abaixo do círculo. */
-    .perfil-apresentacao .perfil-avatar-area {
-        display:flex; flex-direction:column; align-items:center; gap:8px;
-        padding-bottom:0; min-width:0; overflow:visible;
-    }
-    .perfil-apresentacao .perfil-avatar-area .perfil-nivel-selo {
-        position:relative; left:auto; bottom:auto; transform:none;
-        margin-top:-22px; z-index:1;
-    }
-    .perfil-apresentacao .perfil-avatar-area #editarAvatar {
-        position:relative; display:inline-flex; align-items:center; justify-content:center;
-        left:auto; bottom:auto; transform:none; margin:5px 0 0; gap:7px;
-        padding:9px 14px; min-height:36px; width:max-content; max-width:100%;
-        color:#174b30; background:#fff8e8; border:1px solid #f2d47c;
-        border-radius:999px; font:800 .8rem/1.2 Nunito,Arial,sans-serif;
-        cursor:pointer; opacity:1; visibility:visible; z-index:2;
-    }
-    .perfil-apresentacao .perfil-avatar-area #editarAvatar:hover {background:#f6d67a;}
-    .perfil-apresentacao .perfil-avatar-area #editarAvatar:focus-visible {outline:3px solid #f6d67a;outline-offset:3px;}
+    
 
     </style>
 
-<link rel="stylesheet" href="css/supabase-guardioes.css">
+<link rel="stylesheet" href="css/supabase-guardioes.css?v=20261124-r6">
 <script>document.documentElement.classList.add('guardioes-verificando');</script>
 </head>
 
@@ -88,7 +70,7 @@
 
 <header class="cabecalho">
 
-    <a href="principal.html" class="logo">
+    <a href="principal.html?v=20261124-r6" class="logo">
 
         <div class="logo-icone">
             <i class="fa-solid fa-paw" aria-hidden="true"></i>
@@ -115,13 +97,13 @@
     </button>
 
     <nav class="menu" id="menu">
-        <a href="principal.html">Início</a>
-        <a href="biblioteca.html">Biblioteca</a>
-        <a href="quizzes.html">Quizzes</a>
-        <a href="missoes.html">Missões</a>
-        <a href="cerradex.html">Cerradex</a>
+        <a href="principal.html?v=20261124-r6">Início</a>
+        <a href="biblioteca.html?v=20261124-r6">Biblioteca</a>
+        <a href="quizzes.html?v=20261124-r6">Quizzes</a>
+        <a href="missoes.html?v=20261124-r6">Missões</a>
+        <a href="cerradex.html?v=20261124-r6">Cerradex</a>
         <a href="mapa.html">Diário</a>
-        <a href="perfil.html" class="botao-entrar pagina-ativa">
+        <a href="perfil.html?v=20261124-r6" class="botao-entrar pagina-ativa">
             Perfil
         </a>
     </nav>
@@ -406,7 +388,7 @@
 
                         </div>
 
-                        <a href="cerradex.html">
+                        <a href="cerradex.html?v=20261124-r6">
                             Abrir Cerradex
                             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
@@ -810,7 +792,7 @@
 
 <footer class="rodape rodape-perfil">
 
-    <a href="principal.html" class="logo logo-rodape">
+    <a href="principal.html?v=20261124-r6" class="logo logo-rodape">
 
         <div class="logo-icone">
             <i class="fa-solid fa-paw" aria-hidden="true"></i>
@@ -831,10 +813,10 @@
 
 </footer>
 
-<script type="application/json" data-app-src="js/progresso.js"></script>
-<script type="application/json" data-app-src="js/dados.js"></script>
-<script type="application/json" data-app-src="js/conquistas.js"></script>
-<script type="application/json" data-app-src="js/cerradexDados.js"></script>
+<script type="application/json" data-app-src="js/progresso.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/dados.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/conquistas.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/cerradexDados.js?v=20261124-r6"></script>
 <dialog id="editorAvatar" class="avatar-dialog" aria-labelledby="avatarTitulo">
     <div class="avatar-dialog-cabecalho"><div><h2 id="avatarTitulo">Personalize seu perfil</h2><p>Escolha um símbolo e uma cor para representar sua jornada.</p></div><button type="button" id="fecharAvatar" class="avatar-fechar" aria-label="Fechar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
     <div class="avatar-preview-area"><div id="avatarPreview" class="avatar-preview" aria-hidden="true"></div><span id="avatarEscolha" aria-live="polite"></span></div>
@@ -844,13 +826,13 @@
     <p id="avatarMensagem" role="status" aria-live="polite"></p>
     <div class="avatar-acoes"><button type="button" id="padraoAvatar">Padrão</button><button type="button" id="cancelarAvatar">Cancelar</button><button type="button" id="salvarAvatar"><i class="fa-solid fa-check" aria-hidden="true"></i> Salvar</button></div>
 </dialog>
-<script type="application/json" data-app-src="js/perfil.js"></script>
-<script type="application/json" data-app-src="js/avatar-guardiao.js?v=2"></script>
-<script type="application/json" data-app-src="js/perfil-gestao.js"></script>
-<script type="application/json" data-app-src="js/notificacoes.js"></script>
+<script type="application/json" data-app-src="js/perfil.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/avatar-guardiao.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/perfil-gestao.js?v=20261124-r6"></script>
+<script type="application/json" data-app-src="js/notificacoes.js?v=20261124-r6"></script>
 
 <script src="js/vendor/supabase-2.119.0.js"></script>
-<script src="js/conta.js"></script>
-<script src="js/iniciar-conta.js"></script>
+<script src="js/conta.js?v=20261124-r6"></script>
+<script src="js/iniciar-conta.js?v=20261124-r6"></script>
 </body>
 </html>

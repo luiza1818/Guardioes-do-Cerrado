@@ -14,10 +14,31 @@
         return svg;
     }
     function paint(element,value){if(!element)return;const v=normalize(value,icons,colors,defaults),c=colors.find(x=>x[0]===v.color);element.replaceChildren(symbol(v.icon));element.style.setProperty("--avatar-start",c[2]);element.style.setProperty("--avatar-end",c[3]);element.style.setProperty("--avatar-ink",c[4]);element.classList.add("avatar-personalizado");}
-    function render(){const saved=read();paint(byId("perfilAvatar"),saved);paint(byId("avatarMenu"),saved);}
+    function render(saved=read()){paint(byId("perfilAvatar"),saved);paint(byId("avatarMenu"),saved);}
+    // Atualiza a miniatura quando a aba antiga volta ao primeiro plano.
+    // O Supabase continua sendo a fonte de verdade; não cria nem altera registros.
+    let refreshing=false;
+    async function refreshHome(){
+        if(!byId("avatarMenu")||refreshing||document.visibilityState==="hidden")return;
+        refreshing=true;
+        try{
+            await Guardioes.flush();
+            const {data:session,error:sessionError}=await Guardioes.client.auth.getSession();
+            if(sessionError||!session.session?.user)return;
+            const {data,error}=await Guardioes.client.from("guardioes_dados").select("valor").eq("usuario_id",session.session.user.id).eq("chave",key).maybeSingle();
+            if(error)return;
+            const value=data?.valor;
+            const parsed=typeof value==="string"?JSON.parse(value):value;
+            render(normalize(parsed,icons,colors,defaults));
+        }catch{}finally{refreshing=false;}
+    }
     document.addEventListener("guardioes:ready",()=>{
         render();
+        refreshHome();
         window.addEventListener("storage",e=>{if(e.key===key)render();});
+        window.addEventListener("pageshow",e=>{if(e.persisted){if(byId("avatarMenu"))refreshHome();else location.reload();}});
+        document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refreshHome();});
+        window.addEventListener("focus",refreshHome);
         const dialog=byId("editorAvatar");if(!dialog)return;
         const open=byId("editarAvatar"),save=byId("salvarAvatar"),msg=byId("avatarMensagem"),preview=byId("avatarPreview");
         let draft=read(),saving=false;
