@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("guardioes:ready", function () {
     const especies = Array.isArray(window.especies)
         ? window.especies
         : [];
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (const chave of chaves) {
             try {
-                const salvo = localStorage.getItem(chave);
+                const salvo = Guardioes.storage.getItem(chave);
 
                 if (salvo) {
                     return JSON.parse(salvo);
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function obterProgressoQuizzes() {
         try {
             const salvo = JSON.parse(
-                localStorage.getItem("guardioesQuizProgresso")
+                Guardioes.storage.getItem("guardioesQuizProgresso")
             );
 
             if (salvo) {
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function obterDescobertasSalvas() {
         try {
             const salvo = JSON.parse(
-                localStorage.getItem("descobertasCerradex")
+                Guardioes.storage.getItem("descobertasCerradex")
             );
 
             return Array.isArray(salvo) ? salvo : [];
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function salvarDescobertas(lista) {
         const unicas = [...new Set(lista)];
 
-        localStorage.setItem(
+        Guardioes.storage.setItem(
             "descobertasCerradex",
             JSON.stringify(unicas)
         );

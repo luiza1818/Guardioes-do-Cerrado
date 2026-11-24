@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("guardioes:ready", function () {
     const especies = Array.isArray(window.especies)
         ? window.especies
         : [];
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function lerListaSalva(chave) {
         try {
-            const valor = JSON.parse(localStorage.getItem(chave));
+            const valor = JSON.parse(Guardioes.storage.getItem(chave));
             return Array.isArray(valor) ? valor : [];
         } catch (erro) {
             return [];
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
         for (const chave of nomesPossiveis) {
-            const valor = localStorage.getItem(chave);
+            const valor = Guardioes.storage.getItem(chave);
 
             if (valor && valor.trim()) {
                 return valor.trim();

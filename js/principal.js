@@ -1,7 +1,7 @@
 
 function lerJSON(chave, padrao = {}) {
     try {
-        const valor = JSON.parse(localStorage.getItem(chave));
+        const valor = JSON.parse(Guardioes.storage.getItem(chave));
         return valor === null || valor === undefined ? padrao : valor;
     } catch {
         return padrao;
@@ -9,7 +9,7 @@ function lerJSON(chave, padrao = {}) {
 }
 
 function salvarJSON(chave, valor) {
-    localStorage.setItem(chave, JSON.stringify(valor));
+    Guardioes.storage.setItem(chave, JSON.stringify(valor));
 }
 
 function contar(valor) {
@@ -283,7 +283,7 @@ function atualizarPerfil() {
     const avatar = document.getElementById("avatarMenu");
 
     if (avatar) {
-        const avatarPadrao = "assets/imagens/avatar.png";
+        const avatarPadrao = "lobo.png";
 
         avatar.onerror = function () {
             if (!this.src.endsWith(avatarPadrao)) {
@@ -829,6 +829,6 @@ function iniciarPrincipal() {
 }
 
 document.addEventListener(
-    "DOMContentLoaded",
+    "guardioes:ready",
     iniciarPrincipal
 );

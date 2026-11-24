@@ -1,3 +1,4 @@
+
 const progressoPadrao = {
     xp: 0,
     artigos: [],
@@ -18,29 +19,38 @@ function criarProgressoPadrao() {
     };
 }
 
+function obterDataHojeBrasilia() {
+    const partes = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Sao_Paulo',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    }).formatToParts(new Date());
+
+    const ano = partes.find(p => p.type === 'year').value;
+    const mes = partes.find(p => p.type === 'month').value;
+    const dia = partes.find(p => p.type === 'day').value;
+
+    return `${ano}-${mes}-${dia}`;
+}
+
 function normalizarProgresso(dados) {
     const progresso = dados || criarProgressoPadrao();
 
     return {
         xp: Number(progresso.xp) || 0,
-        artigos: Array.isArray(progresso.artigos)
-            ? progresso.artigos
-            : [],
-        cartas: Array.isArray(progresso.cartas)
-            ? progresso.cartas
-            : [],
+        artigos: Array.isArray(progresso.artigos) ? progresso.artigos : [],
+        cartas: Array.isArray(progresso.cartas) ? progresso.cartas : [],
         sequencia: Number(progresso.sequencia) || 0,
-        quizzesConcluidos:
-            Number(progresso.quizzesConcluidos) || 0,
-        respostasCorretas:
-            Number(progresso.respostasCorretas) || 0
+        quizzesConcluidos: Number(progresso.quizzesConcluidos) || 0,
+        respostasCorretas: Number(progresso.respostasCorretas) || 0
     };
 }
 
 function obterProgresso() {
     try {
         const dadosSalvos = JSON.parse(
-            localStorage.getItem("progresso")
+            Guardioes.storage.getItem("progresso")
         );
 
         return normalizarProgresso(dadosSalvos);
@@ -52,7 +62,7 @@ function obterProgresso() {
 function salvarProgresso(progresso) {
     const dadosNormalizados = normalizarProgresso(progresso);
 
-    localStorage.setItem(
+    Guardioes.storage.setItem(
         "progresso",
         JSON.stringify(dadosNormalizados)
     );
@@ -162,37 +172,61 @@ function registrarQuiz(acertos, xp = 0) {
 
 function atualizarSequencia() {
     const progresso = obterProgresso();
-    const hoje = new Date().toISOString().split("T")[0];
-    const ultimaVisita = localStorage.getItem(
+    const hoje = obterDataHojeBrasilia();
+
+    const oficial = window.GuardioesBackend?.progressoOficial;
+
+    if (
+        window.GuardioesBackend?.usuario?.id &&
+        oficial &&
+        oficial.sequencia_dias !== undefined
+    ) {
+        progresso.sequencia = Number(oficial.sequencia_dias) || 0;
+
+        salvarProgresso(progresso);
+
+        Guardioes.storage.setItem(
+            "ultimaVisitaGuardioes",
+            hoje
+        );
+
+        return progresso.sequencia;
+    }
+
+    const ultimaVisita = Guardioes.storage.getItem(
         "ultimaVisitaGuardioes"
     );
 
     if (!ultimaVisita) {
-        progresso.sequencia = 1;
+        progresso.sequencia = Math.max(progresso.sequencia, 1);
     } else if (ultimaVisita !== hoje) {
-        const dataAnterior = new Date(`${ultimaVisita}T00:00:00`);
-        const dataAtual = new Date(`${hoje}T00:00:00`);
+        const dataAnterior = Date.parse(`${ultimaVisita}T00:00:00Z`);
+        const dataAtual = Date.parse(`${hoje}T00:00:00Z`);
         const diferenca = Math.round(
             (dataAtual - dataAnterior) / 86400000
         );
 
         if (diferenca === 1) {
             progresso.sequencia += 1;
-        } else if (diferenca > 1) {
+        } else if (diferenca > 1 || !Number.isFinite(diferenca)) {
             progresso.sequencia = 1;
         }
     }
 
-    localStorage.setItem("ultimaVisitaGuardioes", hoje);
+    Guardioes.storage.setItem(
+        "ultimaVisitaGuardioes",
+        hoje
+    );
+
     salvarProgresso(progresso);
 
     return progresso.sequencia;
 }
 
 function zerarProgresso() {
-    localStorage.removeItem("progresso");
-    localStorage.removeItem("guardioesConquistas");
-    localStorage.removeItem("ultimaVisitaGuardioes");
+    Guardioes.storage.removeItem("progresso");
+    Guardioes.storage.removeItem("guardioesConquistas");
+    Guardioes.storage.removeItem("ultimaVisitaGuardioes");
 
     const progresso = criarProgressoPadrao();
 

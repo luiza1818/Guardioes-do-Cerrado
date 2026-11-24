@@ -3,7 +3,7 @@ function carregarTemaGlobal() {
 
     try {
         configuracoes = JSON.parse(
-            localStorage.getItem("configuracoes")
+            Guardioes.storage.getItem("configuracoes")
         ) || {};
     } catch {
         configuracoes = {};
@@ -23,7 +23,7 @@ function carregarTemaGlobal() {
 }
 
 document.addEventListener(
-    "DOMContentLoaded",
+    "guardioes:ready",
     carregarTemaGlobal
 );
 

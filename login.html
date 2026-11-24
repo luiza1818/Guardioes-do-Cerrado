@@ -23,7 +23,7 @@
 
     <div class="lado-esquerdo">
 
-        <img src="/WhatsApp Image 2026-09-25 at 07.48.43 (1).png" class="lobo">
+        <img src="WhatsApp Image 2026-09-25 at 07.48.43 (1).png" class="lobo">
 
         <h1>Guardiões do Cerrado</h1>
 
@@ -68,6 +68,13 @@
 <button type="submit" class="principal">Atualizar minha senha</button></form>
 <p id="status-auth" role="status" aria-live="polite"></p>
 
+            <form id="recuperar" style="display:none">
+                <h2>Redefinir senha</h2>
+                <input type="password" placeholder="Nova senha" minlength="8" autocomplete="new-password" required>
+                <input type="password" placeholder="Confirmar senha" minlength="8" autocomplete="new-password" required>
+                <button type="submit" class="principal">Salvar senha</button>
+            </form>
+
         </div>
 
     </div>
@@ -76,5 +83,8 @@
 
 <script type="module" src="js/login-supabase.js"></script>
 
+<script src="js/vendor/supabase-2.119.0.js"></script>
+<script src="js/conta.js"></script>
+<script src="js/iniciar-conta.js"></script>
 </body>
 </html>
