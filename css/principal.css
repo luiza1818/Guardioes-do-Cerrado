@@ -1392,3 +1392,8 @@ body.sem-animacoes .folhas-animadas {
     .menu-lateral .menu a { min-height: 36px; }
     .menu-lateral .menu-rodape { margin-top: 8px; }
 }
+
+/* Sete atalhos, com respiro uniforme e perfil inferior preservado. */
+.menu-lateral .menu {gap:14px; justify-content:space-between;}
+@media(max-height:760px){.menu-lateral .menu{gap:10px;}}
+@media(max-height:600px){.menu-lateral .menu{gap:6px;justify-content:flex-start;}}

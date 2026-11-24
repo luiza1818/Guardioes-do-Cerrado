@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/perfil-gestao.css?v=1">
     <link rel="stylesheet" href="css/notificacoes.css">
 
     <style>
@@ -161,11 +162,11 @@
                 </div>
 
                 <a
-                    href="configuracoes.html"
+                    href="#gerenciar-progresso"
                     class="botao-configuracoes"
                 >
                     <i class="fa-solid fa-gear" aria-hidden="true"></i>
-                    Configurações
+                    Gerenciar progresso
                 </a>
 
             </div>
@@ -393,6 +394,391 @@
 
             </section>
 
+
+            <div id="gerenciar-progresso" class="perfil-gestao">
+                <section class="card card-estatisticas">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <div>
+                <span>Resumo da aventura</span>
+                <h2>Seu progresso</h2>
+            </div>
+
+        </div>
+
+        <div class="estatisticas">
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                </div>
+
+                <span class="estatistica-nome">
+                    Biblioteca
+                </span>
+
+                <strong id="gestao-totalArtigos">
+                    0
+                </strong>
+
+                <small>
+                    artigos concluídos
+                </small>
+
+            </div>
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                </div>
+
+                <span class="estatistica-nome">
+                    Diário
+                </span>
+
+                <strong id="gestao-totalDiario">
+                    0
+                </strong>
+
+                <small>
+                    expedições concluídas
+                </small>
+
+            </div>
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                </div>
+
+                <span class="estatistica-nome">
+                    Cerradex
+                </span>
+
+                <strong id="gestao-totalCerradex">
+                    0
+                </strong>
+
+                <small>
+                    espécies descobertas
+                </small>
+
+            </div>
+
+            <div class="estatistica">
+
+                <div class="estatistica-icone">
+                    <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                </div>
+
+                <span class="estatistica-nome">
+                    Missões
+                </span>
+
+                <strong id="gestao-totalMissoes">
+                    0
+                </strong>
+
+                <small>
+                    missões completas
+                </small>
+
+            </div>
+
+            <div class="estatistica estatistica-xp">
+
+                <div class="estatistica-icone">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+
+                <span class="estatistica-nome">
+                    Experiência
+                </span>
+
+                <strong id="gestao-xpTotal">
+                    0
+                </strong>
+
+                <small>
+                    XP acumulado
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+                <section class="card card-progresso">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <div>
+                <span>Dados da jornada</span>
+                <h2>Gerenciar progresso</h2>
+            </div>
+
+        </div>
+
+        <p class="descricao-card">
+            Suas preferências e seu progresso são salvos na sua conta.
+            Você também pode restaurar as configurações ou
+            iniciar uma nova jornada.
+        </p>
+
+        <details class="gestao-preferencias"><summary><i class="fa-solid fa-sliders" aria-hidden="true"></i> Preferências e áudio</summary><div class="gestao-preferencias-grade"><section class="card">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+
+            <div>
+                <span>Ambiente da jornada</span>
+                <h2>Áudio</h2>
+            </div>
+
+        </div>
+
+        <div class="lista-configuracoes">
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Música</strong>
+
+                    <small>
+                        Música ambiente durante a exploração
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="musica"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Sons da natureza</strong>
+
+                    <small>
+                        Vento, pássaros e sons do Cerrado
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="natureza"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Sons dos botões</strong>
+
+                    <small>
+                        Efeitos ao interagir com o site
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="botoes"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+        </div>
+
+        <div class="controle-volume">
+
+            <div class="controle-volume-topo">
+
+                <label for="volume">
+                    Volume
+                </label>
+
+                <strong id="valorVolume">
+                    80%
+                </strong>
+
+            </div>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="100"
+                value="80"
+            >
+
+        </div>
+
+    </section><section class="card">
+
+        <div class="card-cabecalho">
+
+            <div class="card-icone">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+                <span>Detalhes da exploração</span>
+                <h2>Preferências</h2>
+            </div>
+
+        </div>
+
+        <div class="lista-configuracoes">
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Animações</strong>
+
+                    <small>
+                        Movimentos e transições suaves
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="animacoes"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Folhas animadas</strong>
+
+                    <small>
+                        Folhas aparecendo durante a jornada
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="folhas"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Dicas</strong>
+
+                    <small>
+                        Orientações durante as atividades
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="dicas"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+            <label class="linha-configuracao">
+
+                <div>
+                    <strong>Vibração</strong>
+
+                    <small>
+                        Resposta em dispositivos compatíveis
+                    </small>
+                </div>
+
+                <input
+                    type="checkbox"
+                    id="vibracao"
+                >
+
+                <span class="interruptor"></span>
+
+            </label>
+
+        </div>
+
+    </section></div></details>
+        <div class="botoes-progresso">
+            <button type="button" id="btnSair" class="botao botao-secundario"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sair da conta</button>
+
+            <button
+                type="button"
+                id="btnSalvar"
+                class="botao"
+            >
+                <i class="fa-solid fa-floppy-disk"></i>
+                Salvar configurações
+            </button>
+
+            <button
+                type="button"
+                id="btnRestaurar"
+                class="botao botao-secundario"
+            >
+                <i class="fa-solid fa-rotate-left"></i>
+                Restaurar padrão
+            </button>
+
+            <button
+                type="button"
+                id="btnReiniciar"
+                class="botao botao-perigo"
+            >
+                <i class="fa-solid fa-trash"></i>
+                Reiniciar progresso
+            </button>
+
+        </div>
+
+        <div class="aviso">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <p>
+                Reiniciar apagará XP, artigos concluídos,
+                missões, páginas do Diário e espécies descobertas.
+            </p>
+
+        </div>
+
+    </section>
+                <div id="gestao-notificacao" class="gestao-notificacao" role="status" aria-live="polite"></div>
+            </div>
         </div>
 
     </section>
@@ -427,6 +813,7 @@
 <script type="application/json" data-app-src="js/conquistas.js"></script>
 <script type="application/json" data-app-src="js/cerradexDados.js"></script>
 <script type="application/json" data-app-src="js/perfil.js"></script>
+<script type="application/json" data-app-src="js/perfil-gestao.js"></script>
 <script type="application/json" data-app-src="js/notificacoes.js"></script>
 
 <script src="js/vendor/supabase-2.119.0.js"></script>
