@@ -99,6 +99,35 @@
             flush().catch(() => {});
         }
     };
+    function atualizarSequenciaDiaria(hoje) {
+        if (!hoje) {
+            const data = new Date();
+            hoje = `${data.getFullYear()}-${String(data.getMonth()+1).padStart(2,"0")}-${String(data.getDate()).padStart(2,"0")}`;
+        }
+        let dados;
+        try { dados = JSON.parse(storage.getItem("sequenciaGuardiao")); } catch {}
+        if (!dados || typeof dados !== "object" || Array.isArray(dados)) {
+            dados = { dias: 0, ultimoDia: null, historico: [] };
+            // Aproveita apenas o registro antigo quando ainda não existe a sequência principal.
+            try {
+                const antigo = JSON.parse(storage.getItem("progresso") || "{}");
+                const ultimoDia = storage.getItem("ultimaVisitaGuardioes");
+                if (/^\d{4}-\d{2}-\d{2}$/.test(ultimoDia || "") && ultimoDia <= hoje && Number(antigo?.sequencia) > 0) {
+                    dados = { dias: Number(antigo.sequencia), ultimoDia, historico: [ultimoDia] };
+                }
+            } catch {}
+        }
+        const historico = new Set((Array.isArray(dados.historico) ? dados.historico : []).filter(data => typeof data === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data) && data <= hoje));
+        const diferenca = /^\d{4}-\d{2}-\d{2}$/.test(dados.ultimoDia || "")
+            ? Math.round((Date.parse(hoje+"T00:00:00Z")-Date.parse(dados.ultimoDia+"T00:00:00Z"))/86400000)
+            : NaN;
+        const anterior = Math.max(1, Math.floor(Number(dados.dias)) || 1);
+        const dias = diferenca === 0 ? anterior : diferenca === 1 ? anterior + 1 : 1;
+        historico.add(hoje);
+        const resultado = { dias, ultimoDia: hoje, historico: [...historico].sort().slice(-60) };
+        storage.setItem("sequenciaGuardiao", JSON.stringify(resultado));
+        return resultado;
+    }
     async function initialize() {
         const { data, error } = await client.auth.getSession();
         if (error) throw error;
@@ -130,6 +159,7 @@
         const nome = user.user_metadata?.nome || 'Guardião';
         values.nomeUsuario = nome;
         values.usuario = JSON.stringify({ nome, email: user.email });
+        atualizarSequenciaDiaria();
         flush().catch(() => {});
         client.auth.onAuthStateChange((event, session) => {
             if (event === 'SIGNED_OUT' || (session && session.user.id !== user.id)) {
@@ -144,7 +174,7 @@
         if (error) throw error;
         goToLogin();
     }
-    window.Guardioes = { recovery, client, storage, flush, signOut, initialize, status };
+    window.Guardioes = { recovery, client, storage, flush, signOut, initialize, status, atualizarSequenciaDiaria };
     window.addEventListener('storage', event => {
         if (!user || !event.key?.startsWith(prefix() + 'pending:') || !event.newValue) return;
         const { key, value } = JSON.parse(event.newValue);

@@ -47,82 +47,8 @@ function dataLocalString(data = new Date()) {
     return `${ano}-${mes}-${dia}`;
 }
 
-function diferencaDias(data1, data2) {
-    const primeira = new Date(`${data1}T12:00:00`);
-    const segunda = new Date(`${data2}T12:00:00`);
-
-    if (
-        Number.isNaN(primeira.getTime()) ||
-        Number.isNaN(segunda.getTime())
-    ) {
-        return NaN;
-    }
-
-    return Math.round(
-        (segunda.getTime() - primeira.getTime()) / 86400000
-    );
-}
-
 function atualizarSequencia() {
-    const hoje = dataLocalString();
-
-    let dados = lerJSON("sequenciaGuardiao", {
-        dias: 0,
-        ultimoDia: null,
-        historico: []
-    });
-
-    if (!dados || typeof dados !== "object" || Array.isArray(dados)) {
-        dados = {
-            dias: 0,
-            ultimoDia: null,
-            historico: []
-        };
-    }
-
-    if (!Array.isArray(dados.historico)) {
-        dados.historico = [];
-    }
-
-    const historico = new Set(
-        dados.historico.filter(
-            data => typeof data === "string" &&
-                    /^\d{4}-\d{2}-\d{2}$/.test(data)
-        )
-    );
-
-    if (dados.ultimoDia && dados.ultimoDia > hoje) {
-        dados.ultimoDia = null;
-        dados.dias = 0;
-    }
-
-    if (!dados.ultimoDia) {
-        dados.dias = 1;
-        dados.ultimoDia = hoje;
-    } else {
-        const diferenca = diferencaDias(dados.ultimoDia, hoje);
-
-        if (diferenca === 1) {
-            dados.dias = Math.max(0, Number(dados.dias) || 0) + 1;
-            dados.ultimoDia = hoje;
-        } else if (diferenca > 1 || Number.isNaN(diferenca)) {
-            dados.dias = 1;
-            dados.ultimoDia = hoje;
-        } else if (diferenca === 0) {
-            dados.dias = Math.max(1, Number(dados.dias) || 1);
-        }
-    }
-
-    historico.add(hoje);
-
-    dados.historico = Array.from(historico)
-        .filter(data => data <= hoje)
-        .sort()
-        .slice(-60);
-
-    salvarJSON("sequenciaGuardiao", dados);
-
-    return dados;
+    return Guardioes.atualizarSequenciaDiaria();
 }
 
 function obterDadosUsuario() {

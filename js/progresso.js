@@ -53,7 +53,13 @@ function obterProgresso() {
             Guardioes.storage.getItem("progresso")
         );
 
-        return normalizarProgresso(dadosSalvos);
+        const dados = normalizarProgresso(dadosSalvos);
+        // A sequência é a mesma da tela inicial, sem alterar XP ou outras conquistas.
+        const registro = JSON.parse(Guardioes.storage.getItem("sequenciaGuardiao") || "null");
+        if (registro && Number.isFinite(Number(registro.dias))) {
+            dados.sequencia = Math.max(0, Number(registro.dias));
+        }
+        return dados;
     } catch {
         return criarProgressoPadrao();
     }
@@ -171,56 +177,7 @@ function registrarQuiz(acertos, xp = 0) {
 }
 
 function atualizarSequencia() {
-    const progresso = obterProgresso();
-    const hoje = obterDataHojeBrasilia();
-
-    const oficial = window.GuardioesBackend?.progressoOficial;
-
-    if (
-        window.GuardioesBackend?.usuario?.id &&
-        oficial &&
-        oficial.sequencia_dias !== undefined
-    ) {
-        progresso.sequencia = Number(oficial.sequencia_dias) || 0;
-
-        salvarProgresso(progresso);
-
-        Guardioes.storage.setItem(
-            "ultimaVisitaGuardioes",
-            hoje
-        );
-
-        return progresso.sequencia;
-    }
-
-    const ultimaVisita = Guardioes.storage.getItem(
-        "ultimaVisitaGuardioes"
-    );
-
-    if (!ultimaVisita) {
-        progresso.sequencia = Math.max(progresso.sequencia, 1);
-    } else if (ultimaVisita !== hoje) {
-        const dataAnterior = Date.parse(`${ultimaVisita}T00:00:00Z`);
-        const dataAtual = Date.parse(`${hoje}T00:00:00Z`);
-        const diferenca = Math.round(
-            (dataAtual - dataAnterior) / 86400000
-        );
-
-        if (diferenca === 1) {
-            progresso.sequencia += 1;
-        } else if (diferenca > 1 || !Number.isFinite(diferenca)) {
-            progresso.sequencia = 1;
-        }
-    }
-
-    Guardioes.storage.setItem(
-        "ultimaVisitaGuardioes",
-        hoje
-    );
-
-    salvarProgresso(progresso);
-
-    return progresso.sequencia;
+    return Guardioes.atualizarSequenciaDiaria().dias;
 }
 
 function zerarProgresso() {
