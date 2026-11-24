@@ -206,21 +206,6 @@ function atualizarPerfil() {
     document.getElementById("proximoNivel").textContent =
         `${progressoNivel.atual} / ${progressoNivel.necessario} XP para o próximo nível`;
 
-    const avatar = document.getElementById("avatarMenu");
-
-    if (avatar) {
-        const avatarPadrao = "lobo.png";
-
-        avatar.onerror = function () {
-            if (!this.src.endsWith(avatarPadrao)) {
-                this.src = avatarPadrao;
-            }
-        };
-
-        if (usuario.avatar) {
-            avatar.src = usuario.avatar;
-        }
-    }
 }
 
 function atualizarData() {
