@@ -299,7 +299,7 @@ a {
 }
 
 .heroMascote.semImagem::after {
-    content: "🐺";
+    content: "🦌";
     position: relative;
     z-index: 2;
     font-size: 10rem;
@@ -1252,12 +1252,11 @@ a {
     }
 }
 
-/* Mascote e cartão separados: o cartão nunca cobre a ilustração. */
+/* Mascote em tamanho original, com cartão próximo à base, fora do rosto. */
 .mascote-com-cartao {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-    align-items: center;
+    gap: 0;
     min-width: 0;
     position: relative;
     z-index: 3;
@@ -1270,40 +1269,43 @@ a {
 }
 .mascote-com-cartao .heroMascote img {
     display: block;
-    width: min(340px, 100%);
-    height: auto;
+    width: min(340px, 95%);
     max-height: 390px;
+    height: auto;
+    object-fit: contain;
 }
 .mascote-com-cartao .circuloMascote {
-    width: min(100%, 325px);
+    width: min(95%, 325px);
     height: auto;
     aspect-ratio: 1;
-    max-height: none;
     left: 50%;
     transform: translateX(-50%);
 }
 .mascote-com-cartao .falaMascote {
     position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    inset: auto;
     min-width: 0;
-    max-width: 100%;
     width: max-content;
+    max-width: 100%;
     justify-self: end;
+    margin-top: 8px;
+    margin-right: clamp(0px, 5%, 20px);
+    padding: 10px 14px;
     text-align: left;
-    overflow-wrap: anywhere;
 }
 .mascote-com-cartao .falaMascote > span { flex-shrink: 0; }
 @media (min-width: 1051px) {
-    .heroPapel { grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); gap: 30px; }
-    .mascote-com-cartao { grid-template-columns: minmax(0, 1fr) minmax(0, 155px); gap: 12px; }
-    .mascote-com-cartao .falaMascote { align-self: end; margin-bottom: 28px; width: 100%; padding: 12px; }
-    .mascote-com-cartao .falaMascote > span { font-size: 1.25rem; }
+    .mascote-com-cartao .falaMascote {
+        margin-top: -5px;
+        margin-right: 0;
+    }
+}
+@media (max-width: 820px) {
+    .mascote-com-cartao .heroMascote img { max-width: 280px; max-height: 320px; }
+    .mascote-com-cartao .circuloMascote { width: min(95%, 270px); }
+    .mascote-com-cartao .falaMascote { justify-self: center; margin-right: 0; }
 }
 @media (max-width: 560px) {
-    .mascote-com-cartao .circuloMascote { width: min(100%, 220px); }
-    .mascote-com-cartao .heroMascote img { max-width: 225px; }
-    .mascote-com-cartao .falaMascote { justify-self: center; }
+    .mascote-com-cartao .heroMascote img { max-width: 225px; max-height: 270px; }
+    .mascote-com-cartao .circuloMascote { width: min(95%, 220px); }
 }
