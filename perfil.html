@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/avatar-guardiao.css?v=1">
     <link rel="stylesheet" href="css/perfil-gestao.css?v=1">
     <link rel="stylesheet" href="css/notificacoes.css">
 
@@ -125,6 +126,7 @@
                     <span class="perfil-nivel-selo" id="seloNivel">
                         Nível 1
                     </span>
+                    <button type="button" class="avatar-editar" id="editarAvatar" aria-label="Editar avatar" aria-haspopup="dialog"><i class="fa-solid fa-pen" aria-hidden="true"></i> Editar</button>
 
                 </div>
 
@@ -812,7 +814,17 @@
 <script type="application/json" data-app-src="js/dados.js"></script>
 <script type="application/json" data-app-src="js/conquistas.js"></script>
 <script type="application/json" data-app-src="js/cerradexDados.js"></script>
+<dialog id="editorAvatar" class="avatar-dialog" aria-labelledby="avatarTitulo">
+    <div class="avatar-dialog-cabecalho"><div><h2 id="avatarTitulo">Personalize seu perfil</h2><p>Escolha um símbolo e uma cor para representar sua jornada.</p></div><button type="button" id="fecharAvatar" class="avatar-fechar" aria-label="Fechar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <div class="avatar-preview-area"><div id="avatarPreview" class="avatar-preview" aria-hidden="true"></div><span id="avatarEscolha" aria-live="polite"></span></div>
+    <h3 id="avatarAnimaisTitulo">Animais</h3><div id="avatarAnimais" class="avatar-opcoes" role="group" aria-labelledby="avatarAnimaisTitulo"></div>
+    <h3 id="avatarFrutasTitulo">Frutas e natureza</h3><div id="avatarFrutas" class="avatar-opcoes" role="group" aria-labelledby="avatarFrutasTitulo"></div>
+    <h3 id="avatarCoresTitulo">Cores</h3><div id="avatarCores" class="avatar-cores" role="group" aria-labelledby="avatarCoresTitulo"></div>
+    <p id="avatarMensagem" role="status" aria-live="polite"></p>
+    <div class="avatar-acoes"><button type="button" id="padraoAvatar">Padrão</button><button type="button" id="cancelarAvatar">Cancelar</button><button type="button" id="salvarAvatar"><i class="fa-solid fa-check" aria-hidden="true"></i> Salvar</button></div>
+</dialog>
 <script type="application/json" data-app-src="js/perfil.js"></script>
+<script type="application/json" data-app-src="js/avatar-guardiao.js?v=1"></script>
 <script type="application/json" data-app-src="js/perfil-gestao.js"></script>
 <script type="application/json" data-app-src="js/notificacoes.js"></script>
 
