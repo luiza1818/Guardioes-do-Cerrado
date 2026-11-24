@@ -23,5 +23,7 @@
         retry.textContent = 'Tentar novamente';
         retry.addEventListener('click', () => location.reload());
         document.getElementById('contaStatus').after(retry);
+    } finally {
+        document.documentElement.classList.remove("guardioes-verificando");
     }
 })();
