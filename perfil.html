@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/avatar-guardiao.css?v=1">
+    <link rel="stylesheet" href="css/avatar-guardiao.css?v=2">
     <link rel="stylesheet" href="css/perfil-gestao.css?v=1">
     <link rel="stylesheet" href="css/notificacoes.css">
 
@@ -57,6 +57,27 @@
         .perfil-avatar i {
             font-size: 0.75em;
         }
+    
+    /* Controles do avatar no fluxo normal, sempre visíveis abaixo do círculo. */
+    .perfil-apresentacao .perfil-avatar-area {
+        display:flex; flex-direction:column; align-items:center; gap:8px;
+        padding-bottom:0; min-width:0; overflow:visible;
+    }
+    .perfil-apresentacao .perfil-avatar-area .perfil-nivel-selo {
+        position:relative; left:auto; bottom:auto; transform:none;
+        margin-top:-22px; z-index:1;
+    }
+    .perfil-apresentacao .perfil-avatar-area #editarAvatar {
+        position:relative; display:inline-flex; align-items:center; justify-content:center;
+        left:auto; bottom:auto; transform:none; margin:5px 0 0; gap:7px;
+        padding:9px 14px; min-height:36px; width:max-content; max-width:100%;
+        color:#174b30; background:#fff8e8; border:1px solid #f2d47c;
+        border-radius:999px; font:800 .8rem/1.2 Nunito,Arial,sans-serif;
+        cursor:pointer; opacity:1; visibility:visible; z-index:2;
+    }
+    .perfil-apresentacao .perfil-avatar-area #editarAvatar:hover {background:#f6d67a;}
+    .perfil-apresentacao .perfil-avatar-area #editarAvatar:focus-visible {outline:3px solid #f6d67a;outline-offset:3px;}
+
     </style>
 
 <link rel="stylesheet" href="css/supabase-guardioes.css">
@@ -126,7 +147,7 @@
                     <span class="perfil-nivel-selo" id="seloNivel">
                         Nível 1
                     </span>
-                    <button type="button" class="avatar-editar" id="editarAvatar" aria-label="Editar avatar" aria-haspopup="dialog"><i class="fa-solid fa-pen" aria-hidden="true"></i> Editar</button>
+                    <button type="button" class="avatar-editar" id="editarAvatar" aria-label="Editar ícone e cor do perfil" aria-haspopup="dialog"><i class="fa-solid fa-pen" aria-hidden="true"></i> Editar avatar</button>
 
                 </div>
 
@@ -824,7 +845,7 @@
     <div class="avatar-acoes"><button type="button" id="padraoAvatar">Padrão</button><button type="button" id="cancelarAvatar">Cancelar</button><button type="button" id="salvarAvatar"><i class="fa-solid fa-check" aria-hidden="true"></i> Salvar</button></div>
 </dialog>
 <script type="application/json" data-app-src="js/perfil.js"></script>
-<script type="application/json" data-app-src="js/avatar-guardiao.js?v=1"></script>
+<script type="application/json" data-app-src="js/avatar-guardiao.js?v=2"></script>
 <script type="application/json" data-app-src="js/perfil-gestao.js"></script>
 <script type="application/json" data-app-src="js/notificacoes.js"></script>
 
