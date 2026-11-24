@@ -2,7 +2,7 @@ const artigos = {
     "lobo-guara": {
         titulo: "Lobo-guará: o símbolo do Cerrado",
         categoria: "Fauna",
-        icone: "🐺",
+        icone: "fa-paw",
         imagem: "lobo-guara.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -41,7 +41,7 @@ const artigos = {
     "tamandua-bandeira": {
         titulo: "Tamanduá-bandeira: o gigante comedor de formigas",
         categoria: "Fauna",
-        icone: "🐾",
+        icone: "fa-paw",
         imagem: "tamandua-bandeira.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -78,7 +78,7 @@ const artigos = {
     "onca-pintada": {
         titulo: "Onça-pintada: a grande predadora",
         categoria: "Fauna",
-        icone: "🐆",
+        icone: "fa-paw",
         imagem: "onca-pintada.jpg",
         tempo: "6 minutos",
         xp: 25,
@@ -115,7 +115,7 @@ const artigos = {
     "tatu-canastra": {
         titulo: "Tatu-canastra: o gigante de armadura",
         categoria: "Fauna",
-        icone: "🦔",
+        icone: "fa-paw",
         imagem: "tatu-canastra.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -151,7 +151,7 @@ const artigos = {
     "seriema": {
         titulo: "Seriema: a cantora dos campos",
         categoria: "Fauna",
-        icone: "🐦",
+        icone: "fa-dove",
         imagem: "seriema.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -185,7 +185,7 @@ const artigos = {
     "ema": {
         titulo: "Ema: a grande corredora do Cerrado",
         categoria: "Fauna",
-        icone: "🪶",
+        icone: "fa-feather",
         imagem: "ema.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -219,7 +219,7 @@ const artigos = {
     "arara-caninde": {
         titulo: "Arara-canindé: cores voando pelo Cerrado",
         categoria: "Fauna",
-        icone: "🦜",
+        icone: "fa-dove",
         imagem: "arara-caninde.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -253,7 +253,7 @@ const artigos = {
     "veado-campeiro": {
         titulo: "Veado-campeiro: delicadeza nos campos",
         categoria: "Fauna",
-        icone: "🦌",
+        icone: "fa-paw",
         imagem: "veado-campeiro.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -286,7 +286,7 @@ const artigos = {
     "anta": {
         titulo: "Anta: a jardineira das florestas",
         categoria: "Fauna",
-        icone: "🐾",
+        icone: "fa-paw",
         imagem: "anta.jpg",
         tempo: "5 minutos",
         xp: 25,
@@ -320,7 +320,7 @@ const artigos = {
     "macaco-prego": {
         titulo: "Macaco-prego: inteligência entre as árvores",
         categoria: "Fauna",
-        icone: "🐒",
+        icone: "fa-paw",
         imagem: "macaco-prego.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -354,7 +354,7 @@ const artigos = {
     "raposa-do-campo": {
         titulo: "Raposa-do-campo: pequena caçadora do Cerrado",
         categoria: "Fauna",
-        icone: "🦊",
+        icone: "fa-paw",
         imagem: "raposa-do-campo.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -386,7 +386,7 @@ const artigos = {
     "gato-palheiro": {
         titulo: "Gato-palheiro: o felino discreto dos campos",
         categoria: "Fauna",
-        icone: "🐈",
+        icone: "fa-cat",
         imagem: "gato-palheiro.png",
         tempo: "5 minutos",
         xp: 25,
@@ -419,7 +419,7 @@ const artigos = {
     "coruja-buraqueira": {
         titulo: "Coruja-buraqueira: olhos atentos no chão",
         categoria: "Fauna",
-        icone: "🦉",
+        icone: "fa-feather-pointed",
         imagem: "coruja-buraqueira.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -451,7 +451,7 @@ const artigos = {
     "tucano-toco": {
         titulo: "Tucano-toco: o grande bico do Cerrado",
         categoria: "Fauna",
-        icone: "🐦",
+        icone: "fa-dove",
         imagem: "tucano-toco.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -484,7 +484,7 @@ const artigos = {
     "sucuri": {
         titulo: "Sucuri: gigante das águas",
         categoria: "Fauna",
-        icone: "🐍",
+        icone: "fa-water",
         imagem: "sucuri.jpg",
         tempo: "5 minutos",
         xp: 25,
@@ -517,7 +517,7 @@ const artigos = {
     "ipe-amarelo": {
         titulo: "Ipê-amarelo: ouro entre os galhos",
         categoria: "Flora",
-        icone: "🌼",
+        icone: "fa-spa",
         imagem: "ipe-amarelo.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -551,7 +551,7 @@ const artigos = {
     "pequi": {
         titulo: "Pequi: sabor e tradição do Cerrado",
         categoria: "Flora",
-        icone: "🟡",
+        icone: "fa-apple-whole",
         imagem: "pequi.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -586,7 +586,7 @@ const artigos = {
     "barbatimao": {
         titulo: "Barbatimão: árvore resistente do Cerrado",
         categoria: "Flora",
-        icone: "🌳",
+        icone: "fa-tree",
         imagem: "barbatimao.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -621,7 +621,7 @@ const artigos = {
     "buriti": {
         titulo: "Buriti: a palmeira das veredas",
         categoria: "Flora",
-        icone: "🌴",
+        icone: "fa-tree",
         imagem: "buriti.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -656,7 +656,7 @@ const artigos = {
     "cagaita": {
         titulo: "Cagaita: pequena fruta, grande Cerrado",
         categoria: "Flora",
-        icone: "🍈",
+        icone: "fa-apple-whole",
         imagem: "cagaita.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -690,7 +690,7 @@ const artigos = {
     "araticum": {
         titulo: "Araticum: fruto perfumado do Cerrado",
         categoria: "Flora",
-        icone: "🍃",
+        icone: "fa-leaf",
         imagem: "araticum.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -723,7 +723,7 @@ const artigos = {
     "baru": {
         titulo: "Baru: a castanha do Cerrado",
         categoria: "Flora",
-        icone: "🌰",
+        icone: "fa-seedling",
         imagem: "baru.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -757,7 +757,7 @@ const artigos = {
     "mangaba": {
         titulo: "Mangaba: fruta delicada do Cerrado",
         categoria: "Flora",
-        icone: "🍈",
+        icone: "fa-apple-whole",
         imagem: "mangaba.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -791,7 +791,7 @@ const artigos = {
     "lobeira": {
         titulo: "Lobeira: a fruta ligada ao lobo-guará",
         categoria: "Flora",
-        icone: "🫐",
+        icone: "fa-apple-whole",
         imagem: "lobeira.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -825,7 +825,7 @@ const artigos = {
     "sucupira": {
         titulo: "Sucupira: força entre as árvores",
         categoria: "Flora",
-        icone: "🌳",
+        icone: "fa-tree",
         imagem: "sucupira.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -859,7 +859,7 @@ const artigos = {
     "copaiba": {
         titulo: "Copaíba: a árvore do óleo",
         categoria: "Flora",
-        icone: "🌳",
+        icone: "fa-tree",
         imagem: "copaiba.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -893,7 +893,7 @@ const artigos = {
     "jatoba": {
         titulo: "Jatobá: gigante de frutos resistentes",
         categoria: "Flora",
-        icone: "🌳",
+        icone: "fa-tree",
         imagem: "jatoba.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -926,7 +926,7 @@ const artigos = {
     "murici": {
         titulo: "Murici: pequeno fruto de grande valor",
         categoria: "Flora",
-        icone: "🟡",
+        icone: "fa-apple-whole",
         imagem: "murici.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -960,7 +960,7 @@ const artigos = {
     "sempre-viva": {
         titulo: "Sempre-viva: delicadeza que resiste ao tempo",
         categoria: "Flora",
-        icone: "🌼",
+        icone: "fa-spa",
         imagem: "sempre-viva.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -995,7 +995,7 @@ const artigos = {
     "canela-de-ema": {
         titulo: "Canela-de-ema: sobrevivente dos campos",
         categoria: "Flora",
-        icone: "🌱",
+        icone: "fa-seedling",
         imagem: "canela-de-ema.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -1029,7 +1029,7 @@ const artigos = {
     "o-que-e-cerrado": {
         titulo: "O que é o Cerrado?",
         categoria: "Bioma",
-        icone: "🌎",
+        icone: "fa-earth-americas",
         imagem: "o-que-e-cerrado.jpg",
         tempo: "6 minutos",
         xp: 25,
@@ -1068,7 +1068,7 @@ const artigos = {
     "veredas": {
         titulo: "Veredas: caminhos de água no Cerrado",
         categoria: "Ecossistemas",
-        icone: "💧",
+        icone: "fa-droplet",
         imagem: "veredas.jpg",
         tempo: "5 minutos",
         xp: 25,
@@ -1104,7 +1104,7 @@ const artigos = {
     "mata-de-galeria": {
         titulo: "Mata de Galeria: florestas acompanhando os rios",
         categoria: "Ecossistemas",
-        icone: "🌳",
+        icone: "fa-tree",
         imagem: "mata-de-galeria.jpg",
         tempo: "5 minutos",
         xp: 25,
@@ -1139,7 +1139,7 @@ const artigos = {
     "campo-limpo": {
         titulo: "Campo Limpo: um Cerrado quase sem árvores",
         categoria: "Ecossistemas",
-        icone: "🌾",
+        icone: "fa-wheat-awn",
         imagem: "campo-limpo.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -1174,7 +1174,7 @@ const artigos = {
     "campo-sujo": {
         titulo: "Campo Sujo: gramíneas, arbustos e diversidade",
         categoria: "Ecossistemas",
-        icone: "🌿",
+        icone: "fa-leaf",
         imagem: "campo-sujo.jpg",
         tempo: "4 minutos",
         xp: 20,
@@ -1209,7 +1209,7 @@ const artigos = {
     "cerradao": {
         titulo: "Cerradão: quando o Cerrado parece floresta",
         categoria: "Ecossistemas",
-        icone: "🌳",
+        icone: "fa-tree",
         imagem: "cerradao.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -1244,7 +1244,7 @@ const artigos = {
     "fogo-no-cerrado": {
         titulo: "Fogo no Cerrado: entre natureza e perigo",
         categoria: "Ecologia",
-        icone: "🔥",
+        icone: "fa-fire",
         imagem: "fogo-no-cerrado.jpg",
         tempo: "7 minutos",
         xp: 30,
@@ -1284,7 +1284,7 @@ const artigos = {
     "estacao-seca": {
         titulo: "Estação seca: meses de resistência",
         categoria: "Clima",
-        icone: "☀️",
+        icone: "fa-sun",
         imagem: "estacao-seca.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -1321,7 +1321,7 @@ const artigos = {
     "estacao-chuvosa": {
         titulo: "Estação chuvosa: o Cerrado desperta",
         categoria: "Clima",
-        icone: "🌧️",
+        icone: "fa-cloud-rain",
         imagem: "estacao-chuvosa.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -1357,7 +1357,7 @@ const artigos = {
     "berco-das-aguas": {
         titulo: "Cerrado: o berço das águas",
         categoria: "Água",
-        icone: "💦",
+        icone: "fa-water",
         imagem: "berco-das-aguas.jpg",
         tempo: "6 minutos",
         xp: 30,
@@ -1395,7 +1395,7 @@ const artigos = {
     "desmatamento": {
         titulo: "Desmatamento: quando o Cerrado perde espaço",
         categoria: "Conservação",
-        icone: "🪓",
+        icone: "fa-tree",
         imagem: "desmatamento.jpg",
         tempo: "6 minutos",
         xp: 30,
@@ -1432,7 +1432,7 @@ const artigos = {
     "fragmentacao": {
         titulo: "Fragmentação: ilhas de natureza",
         categoria: "Conservação",
-        icone: "🧩",
+        icone: "fa-puzzle-piece",
         imagem: "fragmentacao.jpg",
         tempo: "6 minutos",
         xp: 25,
@@ -1467,7 +1467,7 @@ const artigos = {
     "corredores-ecologicos": {
         titulo: "Corredores ecológicos: pontes para a biodiversidade",
         categoria: "Conservação",
-        icone: "🌿",
+        icone: "fa-leaf",
         imagem: "corredores-ecologicos.jpg",
         tempo: "5 minutos",
         xp: 25,
@@ -1503,7 +1503,7 @@ const artigos = {
     "especies-ameacadas": {
         titulo: "Espécies ameaçadas: sinais de alerta",
         categoria: "Conservação",
-        icone: "⚠️",
+        icone: "fa-triangle-exclamation",
         imagem: "especies-ameacadas.jpg",
         tempo: "6 minutos",
         xp: 30,
@@ -1540,7 +1540,7 @@ const artigos = {
     "unidades-conservacao": {
         titulo: "Unidades de Conservação: territórios protegidos",
         categoria: "Conservação",
-        icone: "🏞️",
+        icone: "fa-mountain-sun",
         imagem: "unidades-conservacao.jpg",
         tempo: "6 minutos",
         xp: 30,
@@ -1577,7 +1577,7 @@ const artigos = {
     "polinizadores": {
         titulo: "Polinizadores: pequenos trabalhadores da natureza",
         categoria: "Ecologia",
-        icone: "🐝",
+        icone: "fa-bug",
         imagem: "polinizadores.jpg",
         tempo: "6 minutos",
         xp: 25,
@@ -1613,7 +1613,7 @@ const artigos = {
     "sementes": {
         titulo: "Sementes: pequenas viajantes do Cerrado",
         categoria: "Ecologia",
-        icone: "🌱",
+        icone: "fa-seedling",
         imagem: "sementes.jpg",
         tempo: "5 minutos",
         xp: 20,
@@ -1648,7 +1648,7 @@ const artigos = {
     "agua": {
         titulo: "Água no Cerrado: cada gota conecta a paisagem",
         categoria: "Água",
-        icone: "💧",
+        icone: "fa-droplet",
         imagem: "agua.jpg",
         tempo: "6 minutos",
         xp: 25,
@@ -1685,7 +1685,7 @@ const artigos = {
     "consumo-consciente": {
         titulo: "Consumo consciente: escolhas que deixam pegadas menores",
         categoria: "Sustentabilidade",
-        icone: "♻️",
+        icone: "fa-recycle",
         imagem: "o-que-e-cerrado.jpg",
         tempo: "5 minutos",
         xp: 25,
@@ -1725,7 +1725,7 @@ const artigos = {
     "guardiao-do-cerrado": {
         titulo: "Guardião do Cerrado: conhecimento que vira atitude",
         categoria: "Sustentabilidade",
-        icone: "🐺",
+        icone: "fa-paw",
         imagem: "guardiao-do-cerrado.jpg",
         tempo: "7 minutos",
         xp: 50,
@@ -1909,7 +1909,11 @@ function configurarImagem() {
     const icone = document.getElementById("iconeArtigo");
 
     if (icone) {
-        icone.textContent = artigo.icone || "";
+        const simbolo = document.createElement("i");
+        const classe = /^fa-[a-z0-9-]+$/.test(artigo.icone || "") ? artigo.icone : "fa-leaf";
+        simbolo.className = "fa-solid " + classe;
+        simbolo.setAttribute("aria-hidden", "true");
+        icone.replaceChildren(simbolo);
     }
 
     if (!imagem || !alternativa) {

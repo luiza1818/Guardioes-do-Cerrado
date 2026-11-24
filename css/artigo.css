@@ -818,3 +818,10 @@ h1 {
         text-align: center;
     }
 }
+
+/* Ícones Font Awesome no mesmo padrão das demais páginas. */
+.logo-icone i, #iconeArtigo i, .bloco-titulo > span i, .recompensa-icone i, .icone-biblioteca i, .seta i { display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
+#iconeArtigo { color: var(--verde); }
+.linha-expedicao i, .rodape strong i { margin-right: 7px; }
+.informacoes > span i { color: var(--verde); flex-shrink: 0; }
+.logo-icone i { color: #263238; }
