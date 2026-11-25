@@ -1,0 +1,106 @@
+/* Mascotes de Missões e Cerradex: proporções equivalentes às da Biblioteca. */
+body[data-tela="missoes"] .hero-visual-missoes,
+body[data-tela="cerradex"] .hero-visual {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:center;
+    justify-items:center;
+    align-content:center;
+    min-height:0;
+    width:100%;
+    gap:10px;
+}
+body[data-tela="missoes"] .mascote-missoes-area,
+body[data-tela="cerradex"] .hero-visual > .circulo-cerradex {
+    grid-column:1/-1;
+    position:relative;
+    display:grid;
+    place-items:center;
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:auto;
+    border:0;
+    border-radius:0;
+    background:none;
+    box-shadow:none;
+    isolation:isolate;
+}
+body[data-tela="missoes"] .mascote-missoes-circulo,
+body[data-tela="cerradex"] .hero-visual > .circulo-cerradex::before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    width:min(95%,325px);
+    aspect-ratio:1;
+    bottom:4px;
+    left:50%;
+    transform:translateX(-50%);
+    border:12px solid #c8e5ca;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 35%,#68be70,#30853f);
+    box-shadow:0 12px 25px rgba(46,125,50,.15);
+}
+body[data-tela="missoes"] .mascote-missoes,
+body[data-tela="cerradex"] .hero-visual .mascote-cerradex {
+    display:block;
+    width:min(340px,95%);
+    height:auto;
+    max-height:390px;
+    aspect-ratio:auto;
+    object-fit:contain;
+    position:relative;
+    filter:drop-shadow(0 14px 10px rgba(54,46,30,.18));
+}
+body[data-tela="missoes"] .hero-visual-missoes .cartao-hero-missao,
+body[data-tela="cerradex"] .hero-visual .cartao-flutuante {
+    position:relative;
+    inset:auto;
+    min-width:0;
+    width:100%;
+    max-width:100%;
+    padding:10px;
+    gap:8px;
+    align-self:stretch;
+    flex-wrap:nowrap;
+}
+body[data-tela="missoes"] .cartao-hero-missao > span,
+body[data-tela="cerradex"] .cartao-flutuante > span {flex:0 0 36px;width:36px;height:36px;}
+body[data-tela="missoes"] .cartao-hero-missao > div,
+body[data-tela="cerradex"] .cartao-flutuante > div {min-width:0;overflow-wrap:anywhere;}
+body[data-tela="missoes"] .hero-visual-missoes .cartao-hero-missao.premio {grid-column:1/-1;max-width:225px;}
+body[data-tela="cerradex"] .hero-visual .selo-total {
+    grid-column:1/-1;
+    position:relative;
+    inset:auto;
+    transform:none;
+    width:auto;
+    height:auto;
+    min-height:40px;
+    padding:6px 13px;
+    border-width:2px;
+    border-radius:999px;
+    flex-direction:row;
+    gap:7px;
+}
+body[data-tela="cerradex"] .hero-visual .selo-total span {font-size:1.3rem;}
+body[data-tela="cerradex"] .hero-visual .selo-total small {font-size:.7rem;margin:0;}
+@media(max-width:820px) {
+    body[data-tela="missoes"] .mascote-missoes,
+    body[data-tela="cerradex"] .hero-visual .mascote-cerradex {max-width:280px;max-height:320px;}
+    body[data-tela="missoes"] .mascote-missoes-circulo,
+    body[data-tela="cerradex"] .hero-visual > .circulo-cerradex::before {width:min(95%,270px);}
+}
+@media(max-width:600px) {
+    body[data-tela="missoes"] .mascote-missoes,
+    body[data-tela="cerradex"] .hero-visual .mascote-cerradex {width:min(210px,90%);max-height:235px;}
+    body[data-tela="missoes"] .mascote-missoes-circulo,
+    body[data-tela="cerradex"] .hero-visual > .circulo-cerradex::before {width:min(200px,95%);border-width:10px;}
+    body[data-tela="missoes"] .hero-visual-missoes .cartao-hero-missao,
+    body[data-tela="cerradex"] .hero-visual .cartao-flutuante {padding:8px;gap:6px;}
+}
+@media(max-width:360px) {
+    body[data-tela="missoes"] .hero-visual-missoes,
+    body[data-tela="cerradex"] .hero-visual {grid-template-columns:minmax(0,1fr);}
+    body[data-tela="missoes"] .hero-visual-missoes .cartao-hero-missao.premio {max-width:none;}
+}
