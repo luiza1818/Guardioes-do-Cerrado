@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="css/cerradex.css?v=20261124-r7">
+    <link rel="stylesheet" href="css/cerradex.css?v=tamandua-grande-2">
     <link rel="stylesheet" href="css/notificacoes.css?v=20261124-r7">
 
     <style>
@@ -84,6 +84,57 @@
     <link rel="stylesheet" href="css/responsivo.css?v=20261124-r7">
     <script defer src="js/menu-responsivo.js?v=20261124-r7"></script>
     <link rel="stylesheet" href="css/mascotes-expedicao.css?v=20261125-1">
+
+    <style id="tamandua-tamanho">
+        /* Dimensões locais para não depender de uma folha de estilos antiga. */
+        body[data-tela="cerradex"] .hero-visual > .circulo-cerradex {
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            aspect-ratio: auto;
+            border: 0;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            place-items: center;
+        }
+        body[data-tela="cerradex"] .hero-visual > .circulo-cerradex::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            bottom: 4px;
+            transform: translateX(-50%);
+            width: min(95%, 325px);
+            aspect-ratio: 1;
+            border: 12px solid #c8e5ca;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 35%, #68be70, #30853f);
+            box-shadow: 0 12px 25px rgba(46,125,50,.15);
+        }
+        body[data-tela="cerradex"] .hero-visual > .circulo-cerradex > img.mascote-cerradex {
+            display: block;
+            width: min(360px, 100%);
+            max-width: 100%;
+            height: auto;
+            max-height: 410px;
+            aspect-ratio: auto;
+            object-fit: contain;
+            position: relative;
+            filter: drop-shadow(0 14px 10px rgba(54,46,30,.18));
+        }
+        @media(max-width:820px) {
+            body[data-tela="cerradex"] .hero-visual > .circulo-cerradex > img.mascote-cerradex {width:min(300px,100%);max-height:335px;}
+            body[data-tela="cerradex"] .hero-visual > .circulo-cerradex::before {width:min(95%,270px);}
+        }
+        @media(max-width:600px) {
+            body[data-tela="cerradex"] .hero-visual > .circulo-cerradex > img.mascote-cerradex {width:min(235px,100%);max-height:260px;}
+            body[data-tela="cerradex"] .hero-visual > .circulo-cerradex::before {width:min(95%,200px);border-width:10px;}
+        }
+    </style>
 </head>
 
 <body data-tela="cerradex" data-menu="compacto">

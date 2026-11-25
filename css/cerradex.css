@@ -296,11 +296,12 @@ a {
     align-items: center;
     justify-content: center;
 }
-.mascote-cerradex{
-width:180px;
-height:180px;
-object-fit: contain;
-
+.mascote-cerradex {
+    display: block;
+    width: min(360px, 100%);
+    height: auto;
+    max-height: 410px;
+    object-fit: contain;
 }
 .circulo-cerradex {
     width: 300px;
